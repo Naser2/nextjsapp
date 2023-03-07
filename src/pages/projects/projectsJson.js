@@ -1,4 +1,3 @@
-import highLightProject from '@/lib/highlightProject'
 import miras_work_main from '@/images/projectImages/miras_work_main.png'
 import podcast_main from '@/images/projectImages/podacst_adobe_2.png'
 import project3 from '@/images/projectImages/geo_location.png'
