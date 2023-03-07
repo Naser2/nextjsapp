@@ -20,7 +20,7 @@ import ImageUrlBuilder from '@sanity/image-url'
 // import cleardot from '@/images/cleardot.gif'
 import { Eyebrow } from '@/components/siteMdxComponents'
 // import { client } from '../../sanityClient'
-import { keys } from '../../lib/keys'
+import { keys } from '@/lib/keys'
 import Link from 'next/link'
 import blogsJson from '../blogs/blogsJson'
 const languages = ['en', 'fr', 'hn']
@@ -201,7 +201,7 @@ export default function Episode(
               </ul>
               <h2 id="sponsors">Sponsors</h2>
               <ul>
-                {/* {episode.sponsors &&
+                {episode.sponsors &&
                   episode.sponsors.map((sponsor) => (
                     <Link href={episode.id} key={sponsor}>
                       <li>
@@ -212,7 +212,7 @@ export default function Episode(
                         />
                       </li>
                     </Link>
-                  ))} */}
+                  ))}
 
                 <li>
                   <Link href="#">Real Corporation</Link> — is has been a
