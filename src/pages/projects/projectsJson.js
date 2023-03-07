@@ -9,6 +9,7 @@ import blog_photolarge from '@/images/projectImages/blog_photo-large-1.png'
 import chef_1 from '@/images/projectImages/chef_1.png'
 import chef_2 from '@/images/projectImages/chef/chef_3.png'
 import eth_deployer from '@/images/projectImages/eth_deployer.png'
+import eth_deployer_2 from '@/images/projectImages/Solidity_deployer.png'
 
 import podcastBabe1 from '@/images/projectImages/podcastBabe1.png'
 
@@ -121,11 +122,11 @@ const projectsList = [
     description:
       ' You’ve ordered your SM7B, boom arm, and a bunch of acoustic foam. With this template, you can finally stop procrastinating and record your first episode.',
     projectImage: {
-      src: eth_deployer,
+      src: eth_deployer_2,
       alt: 'Screenshot of Podcast app ',
       class: 'mt-10 aspect-[1216/640] sm:rounded-3xl md:mt-0',
     },
-    images: [eth_deployer],
+    images: [eth_deployer_2],
   },
   {
     id: 2,

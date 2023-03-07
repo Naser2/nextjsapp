@@ -30,12 +30,14 @@ export const SuperChagedCodeblock = () => {
               <pre className="text-[0.8125rem] leading-6 text-gray-300">
                 <code>
                   import {<span className="text-[#7dd3fc]">useState</span>} from{' '}
-                  <span className="text-emerald-300">'react'</span>
+                  <span className="text-emerald-300">&quot;react&quot;</span>
                   <br />
                   import {
                     <span className="text-[#7dd3fc]">Switch</span>
                   } from{' '}
-                  <span className="text-emerald-300">'@headlessui/react'</span>
+                  <span className="text-emerald-300">
+                    &quot;@headlessui/react&quot;
+                  </span>
                   <br />
                   <span className="text-sky-500">function </span>
                   <span className="text-indigo-400">CongratulateMembers</span>
@@ -103,9 +105,9 @@ export const SuperChagedCodeblock = () => {
                   </div>
                   <span className="[text-[#7dd3fc]]">return (</span>
                   &lt;<span className="text-indigo-400">form</span>{' '}
-                  action=&quot;/
+                  action=&quot;
                   <span className="text-emerald-300">
-                    notification-settings
+                    NOTIFICATION_SETTINGS
                   </span>
                   &quot; method=&quot;
                   <span className="code-yellow">POST</span>&quot; <br />

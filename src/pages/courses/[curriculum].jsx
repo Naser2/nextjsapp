@@ -182,9 +182,9 @@ const CoursePageContentNav = ({ tags, specifics, courseCategory, theme }) => {
       >
         <li>
           <div className="flex items-center">
-            <a href="#" className="mr-2 text-sm font-medium text-gray-900">
+            <Link href="#" className="mr-2 text-sm font-medium text-gray-900">
               {'tag'}
-            </a>
+            </Link>
             <svg
               width="16"
               height="20"
@@ -201,9 +201,9 @@ const CoursePageContentNav = ({ tags, specifics, courseCategory, theme }) => {
 
         <li>
           <div className="flex items-center">
-            <a href="#" className="mr-2 text-sm font-medium text-gray-900">
+            <Link href="#" className="mr-2 text-sm font-medium text-gray-900">
               {courseCategory}
-            </a>
+            </Link>
             <svg
               width="16"
               height="20"
@@ -219,13 +219,13 @@ const CoursePageContentNav = ({ tags, specifics, courseCategory, theme }) => {
         </li>
 
         <li className="text-sm">
-          <a
+          <Link
             href="#curriculum"
             aria-current="page"
             className="font-medium text-gray-500 hover:text-gray-600"
           >
             {'specifics'}
-          </a>
+          </Link>
         </li>
       </ol>
     </nav>
@@ -281,7 +281,6 @@ export default function Curriculum({ course, components }, props) {
     // return console.log('You havent taken  this class', JSON.stringify(index))
   }
 
-
   // console.log(
   //   ' PROPSSS->>>',
   //   CodeGroup,
@@ -302,7 +301,7 @@ export default function Curriculum({ course, components }, props) {
     <div className="darKtext-white mb-10 bg-white dark:bg-black">
       <>
         <div className="relative">
-          <div className="pt-16 dark:pt-0 lg:dark:pt-16">
+          <div className="mt-6 dark:pt-0 lg:dark:pt-16">
             <div
               id="regular-image-style"
               className="mx-auto mt-0 max-w-2xl sm:px-0 lg:max-w-7xl "
@@ -325,13 +324,13 @@ export default function Curriculum({ course, components }, props) {
                   </>
                 ) : (
                   <>
-                    <div className="aspect-w-7 aspect-h-4 overflow-hidden bg-gray-50">
+                    <div className="mt-14 overflow-hidden bg-gray-50">
                       <Image
                         src={image}
                         alt="Off-white t-shirt with circular dot illustration on the front of mountain ridges that fade."
                         // className="object-cover object-center"
 
-                        className="h-full w-full object-contain object-center"
+                        className="h-48 w-full object-cover object-cover"
                       />
                     </div>
                     <CoursePageContentNav
@@ -355,10 +354,10 @@ export default function Curriculum({ course, components }, props) {
                   {title}
                 </h1>
                 <h3 className="my-4 text-lg font-medium  text-gray-900  dark:text-slate-200 ">
-                  <a href="#">
+                  <Link href="#">
                     Officially crafted course in collabortion with brave
                     Mountains and nas design
-                  </a>
+                  </Link>
                 </h3>
                 <div className="font-display my-6 mb-4 space-y-6 text-lg tracking-tight text-slate-700  dark:text-slate-300">
                   <p>{shortDescription}</p>
@@ -484,7 +483,7 @@ export default function Curriculum({ course, components }, props) {
                   </p>
                 </div>
 
-                <form className="mt-10 flex-shrink-1 overflow-hidden  max-w-64">
+                <form className="flex-shrink-1 max-w-64 mt-10  overflow-hidden">
                   <div>
                     <h3 className="border-b border-t  py-2 text-lg font-medium text-gray-900 dark:border-slate-800  dark:text-slate-300">
                       Overview
@@ -500,7 +499,9 @@ export default function Curriculum({ course, components }, props) {
                           <dt className="font-mono text-sm text-slate-600 dark:text-slate-300">
                             {name}
                           </dt>
-                          <dd className={`${theme.text} mt-0.5 text-2xl font-semibold tracking-tight`}>
+                          <dd
+                            className={`${theme.text} mt-0.5 text-2xl font-semibold tracking-tight`}
+                          >
                             {value}
                           </dd>
                         </div>
@@ -509,12 +510,14 @@ export default function Curriculum({ course, components }, props) {
                   </div>
 
                   <Link
-                    type="button" href={`/courses/${course.courseSlug}`}
+                    type="button"
+                    href={`/courses/${course.courseSlug}`}
                     className={[
                       theme.button
                         ? [theme.button, theme.hover]
-                        : `mt-10 flex w-full items-center justify-center rounded-md border border-transparent  py-3 px-8 text-base font-medium text-white 
- focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-white dark:text-black `,
+                        : `mt-10 flex w-full items-center justify-center rounded-md border border-transparent  
+                        py-3 px-8 text-base font-medium text-white 
+                        focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-white dark:text-black `,
                     ]}
                   >
                     Start {course.courseSlug}
@@ -524,10 +527,11 @@ export default function Curriculum({ course, components }, props) {
             </div>
           </div>
         </div>
-        <div id="course-curriculum-description"
+        <div
+          id="course-curriculum-description"
           className={`${
             theme.bg ?? ' bg-sky-200'
-          } mx-auto max-w-10xl px-8 pt-6 pb-16 sm:px-6  lg:px-0 lg:pt-10 lg:pt-16 lg:px-28 lg:py-32 `}
+          } max-w-10xl mx-auto px-8 pt-6 pb-16 sm:px-6  lg:px-0 lg:px-28 lg:py-32 lg:pt-10 lg:pt-16 `}
         >
           <h2
             className={`${
@@ -615,12 +619,11 @@ export default function Curriculum({ course, components }, props) {
                       <StarRated
                         rating={count.rating}
                         className={
-                          (count.count > 0
+                          count.count > 0
                             ? 'text-yellow-400'
-                            : 'text-gray-300 dark:text-slate-200',
-                          // 'h-5 w-5 flex-shrink-0 dark:text-slate-200'
-                          )
+                            : 'text-gray-300 dark:text-slate-200'
                         }
+                        // 'h-5 w-5 flex-shrink-0 dark:text-slate-200'
                         aria-hidden="true"
                       />
 
@@ -654,12 +657,12 @@ export default function Curriculum({ course, components }, props) {
               customers
             </p>
 
-            <a
+            <Link
               href="#"
               className="mt-6 inline-flex w-full items-center justify-center rounded-md border border-gray-300 bg-white py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-50 dark:text-white sm:w-auto lg:w-full"
             >
               Write a review
-            </a>
+            </Link>
           </div>
           {/* <!-- Reviews --> */}
           <div className="mt-6">
@@ -667,7 +670,6 @@ export default function Curriculum({ course, components }, props) {
             <div className="flex items-center">
               <div className="flex items-center"></div>
               <p className="sr-only">4 out of 5 stars</p>
-           
             </div>
           </div>
         </div>
@@ -894,8 +896,6 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const courses = await getCourses()
-  // console.log('Courses ', courses)
-  // let feed = await parse('https://their-side-feed.vercel.app/api/feed')
 
   return {
     paths: courses.map(({ courseSlug }) => ({
@@ -905,23 +905,4 @@ export async function getStaticPaths() {
     })),
     fallback: 'blocking',
   }
-  // const client = createClient({
-  //   name: 'default',
-  //   title: 'sanity-backend',
-  //   projectId: PROJECT_ID,
-  //   dataset: DATA_SET,
-  // })
-  // const music = await client.fetch(`*[_type == "music"]`)
-  // // let feed = await parse('https://their-side-feed.vercel.app/api/feed')
-  // music.map(({ id }) => {
-  //   console.log('ID_____>', id)
-  // })
-  // return {
-  //   paths: music.map(({ id }) => ({
-  //     params: {
-  //       episode: id.toString(),
-  //     },
-  //   })),
-  //   fallback: 'blocking',
-  // }
 }

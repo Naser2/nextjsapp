@@ -2,6 +2,7 @@ import { forwardRef } from 'react'
 import { CustomizedContainer } from '../CustomizedContainer'
 import Image from 'next/image'
 import nasSings from '@/images/nas_singing.jpeg'
+import Link from 'next/link'
 const AboutSection = forwardRef((props, ref) => {
   // console.log('ABOUT IMAGE', nasSings)
   return (
@@ -29,12 +30,6 @@ const AboutSection = forwardRef((props, ref) => {
             About
           </h2>
         </div>
-        {/* <h2
-          id="about"
-          className="md: bg-black py-10 px-4 pl-10  text-3xl font-semibold  leading-7 text-sky-500 md:text-base  l"
-        >
-        
-        </h2> */}
         <div
           id="about-section"
           className="group relative grid grid-cols-1 gap-x-0 gap-y-0 group-hover:opacity-100 sm:grid-cols-2 sm:gap-x-0 md:grid-cols-2 md:gap-y-8  lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-0"
@@ -51,25 +46,11 @@ const AboutSection = forwardRef((props, ref) => {
               height={600}
               className="aspect-h-20  aspect-w-34  lg:aspect-auto h-full w-full w-full bg-gray-50 object-cover object-cover object-center group-hover:opacity-75 md:rounded-md lg:absolute lg:inset-0"
             />
-            {/* <div className="flex items-end p-4 opacity-0 group-hover:opacity-100" aria-hidden="true">
-               <a
-                  href="#"
-                  className="backdrop-blur backdrop-filter pointer-events-auto  rounded-lg bg-white text-slate-900 dark:bg-slate-900 bg-white bg-opacity-75 inline-flex justify-center rounded-lg bg-white text-slate-900 dark:bg-slate-900 py-3 px-4 text-sm font-semibold dark:text-white hover:bg-slate-700"
-                >
-                  Read more
-                </a>
-          
-                </div> */}
           </div>
           <div
             id="about-section-right"
             className="relative bg-black  dark:bg-indigo-500 md:dark:bg-black"
           >
-            {/* <div className="max-w-full">
-            <p className="mt-4 mx-auto black-2-bg dark:bg-white px-6 py-4 text-2xl font-bold tracking-tight text-slate-100 dark:bg-gray-600 dark:text-slate-700 dark:text-slate-200">
-              How this happenned ?
-            </p>
-          </div> */}
             <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-2 lg:pl-6 xl:pl-10">
               <div
                 id="landing-about-text"
@@ -103,19 +84,19 @@ const AboutSection = forwardRef((props, ref) => {
                     className="flex items-end p-4 opacity-0 group-hover:opacity-100"
                     aria-hidden="true"
                   >
-                    <a
+                    <Link
                       href="/about"
                       className="pointer-events-auto inline-flex justify-center  rounded-lg rounded-lg bg-white bg-white bg-white bg-opacity-75 py-3 px-4 text-sm font-semibold text-slate-900 text-slate-900 backdrop-blur backdrop-filter hover:bg-slate-700 dark:bg-slate-900 dark:bg-slate-900 dark:text-white"
                     >
                       Read more
-                    </a>
+                    </Link>
                   </div>
-                  <a
+                  <Link
                     href="/about"
                     className="text-base font-semibold leading-7 text-gray-900 text-white dark:text-white"
                   >
                     Learn more <span aria-hidden="true">→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div
@@ -148,11 +129,10 @@ const AboutSection = forwardRef((props, ref) => {
           data-url="blogs://nasdesign.com/blogs?campaign_id=band_campaign"
           aria-label="A list of great blogs to read"
         >
-          Music and art has always been part of my life.{' '}
+          Music and art has always been part of my life.
           <span className=" ">
             <span className="footnote footnote-supglyph">
-              {' '}
-              watch some of my music{' '}
+              watch some of my music
               <a href="#footnote-1" aria-label="Footnote * symbol">
                 *
               </a>

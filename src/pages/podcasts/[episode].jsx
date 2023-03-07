@@ -108,30 +108,30 @@ export default function Episode({ episode, components }, props) {
         </Head>
         <article className="lg:border-t-0-16  mt-14 border-t border-b  border-slate-500 md:border-t md:py-0 ">
           <div className="to-blue-500,z-[100]  h-[40px] w-full flex-col items-center  bg-gray-100 bg-gradient-to-r bg-gradient-to-r from-cyan-500 from-sky-500 to-indigo-500  text-base dark:bg-gray-700 sm:flex-row sm:py-0 md:text-lg lg:flex">
-            <div className="inline flex">
-              <button
-                onClick={() => router.back()}
-                id="play-btn-Glodal"
-                type="button"
-                className="group relative flex h-10 flex-shrink-0 items-center  justify-center bg-slate-900 py-2 px-2  hover:text-white focus:outline-none focus:ring lg:h-11 lg:w-24 "
-                aria-label="go-back"
+            {/* <div className="inline flex"> */}
+            <button
+              onClick={() => router.back()}
+              id="podcast-go-back"
+              type="button"
+              className="w-23 group absolute top-0  flex h-10 flex-shrink-0  items-center justify-center bg-slate-900 py-2 px-2 hover:text-white focus:outline-none focus:ring lg:h-11 lg:w-24 "
+              aria-label="go-back"
+            >
+              <svg
+                viewBox="0 0 20 20"
+                fill="none"
+                aria-hidden="true"
+                className="h-10 w-10 rotate-180  font-bold text-white  md:h-14 md:w-14"
               >
-                <svg
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  aria-hidden="true"
-                  className="h-10 w-10 rotate-180  font-bold text-white  md:h-14 md:w-14"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m11.5 6.5 3 3.5m0 0-3 3.5m3-3.5h-9"
-                  ></path>
-                </svg>
-                Back
-              </button>
-            </div>
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m11.5 6.5 3 3.5m0 0-3 3.5m3-3.5h-9"
+                ></path>
+              </svg>
+              Back
+            </button>
+            {/* </div> */}
           </div>
 
           <Image
@@ -181,8 +181,9 @@ export default function Episode({ episode, components }, props) {
                   rounder="rounded-md "
                   href="/sdks"
                   variant="outline"
-                  children="Translate this poadcast"
-                />
+                >
+                  Translate this poadcast
+                </Button>
               </div>
             </header>
             <hr className="my-12 border-gray-200" />
@@ -260,9 +261,7 @@ export async function getStaticProps({ params }) {
     projectId: projectId,
     dataset: 'production',
   })
-  //   useCdn: true, // set to `true` to fetch from edge cache
-  //   apiVersion: '2023-02-12', // use current date (YYYY-MM-DD) to target the latest API version
-  //   // token: process.env.SANITY_SECRET_TOKEN // Only if you want to update content with the client
+
   let options = { projectId, dataSet }
   const episodes = await client.fetch(`*[_type == "episode"]`)
 

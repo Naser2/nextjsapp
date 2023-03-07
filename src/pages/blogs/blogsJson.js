@@ -36,7 +36,6 @@ let blogsJson = [
   },
   {
     author: { name: 'Nasser Sanou', href: '/about', image: author },
-    href: '#',
     href: 'blogs/meet-the-man',
     category: 'Environment-technology',
     event: 'music',
@@ -51,7 +50,7 @@ let blogsJson = [
   },
   {
     author: { name: 'Nasser Sanou', href: '/about', image: author },
-    href: 'blogs/unlocking-opportunity..mdx',
+    href: 'blogs/unlocking-opportunity',
     date: '2023-01-02',
     title: ' Unlocking opportunity',
     category: 'Self-development',
@@ -152,7 +151,7 @@ let blogsJson = [
   },
   {
     author: { name: 'Nasser Sanou', href: '/about', image: author },
-    href: 'blogs/rewriting-the-cosmos-kernel-in-rust',
+    href: 'blogs/crafting-a-design-system-for-a-multiplanetary-future',
     event: 'music',
     date: '2022-09-02',
     category: 'Lessons',

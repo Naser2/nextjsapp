@@ -11,6 +11,7 @@ import clsx from 'clsx'
 
 import projectJson from './projectsJson'
 import Image from 'next/image'
+import Link from 'next/link'
 function SpeakingSection({ children, ...props }) {
   return (
     <Section {...props}>
@@ -56,13 +57,18 @@ export default function Projects() {
         </strong>
       </div>
       <section id="modern-features">
-        <div id="projects-broadcasct-baby" className="projects-broadcast">
-          <h1 className="col-start-1 row-start-2 max-w-[36rem] px-2 text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-7xl sm:text-6xl md:mt-4 xl:max-w-[43.5rem]">
-            BroadcastBaby
+        <div
+          id="projects-broadcasct-baby"
+          className="projects-broadcast bg-wheat"
+        >
+          <h1 className=" lg:Lmy-10 my-4 max-w-[36rem] justify-center px-2 text-center text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-7xl sm:text-6xl md:mt-4 xl:max-w-[43.5rem]">
+            Projects Page
           </h1>
           <SuperChargedHalhPhone className="dark:bg-wheat mt-0 bg-transparent " />
         </div>
-        <ProjectsIndex projects={projectJson} />
+        <div id="project-list-wrapper" className="my-10 bg-sky-200/20">
+          <ProjectsIndex projects={projectJson} />
+        </div>
 
         <div className="relative mt-10 pt-10 xl:mt-2 xl:pt-0">
           <div className="absolute inset-x-0 top-0 top-0 hidden h-[37.5rem] bg-gradient-to-b from-[#0c1120] dark:block xl:top-8"></div>
@@ -183,14 +189,14 @@ const ProjectsIndex = function (projects) {
         return (
           <div
             key={project.id}
-            className="project-list relative my-8  grid grid-cols-1 gap-x-4 gap-y-4 sm:gap-x-6 md:gap-y-8 md:gap-y-8 md:gap-x-4 lg:my-20 lg:grid-cols-2 xl:gap-x-8"
+            className="project-list relative  my-8 mt-20 grid  grid-cols-1 gap-x-4 gap-y-4 pb-2 sm:gap-x-6 md:gap-y-8 md:gap-y-8 md:gap-x-4 lg:my-20 lg:grid-cols-2 xl:gap-x-8"
           >
-            <div className="md mt-2 sm:mx-6">
+            <div className=" lg:mt-12lg:block sm:mx-6 lg:hidden">
               <Image
                 className={clsx(
                   project.imageAspectRatio,
                   ' rounded-md' ??
-                    'mt-2 aspect-[1216/640] sm:rounded-3xl md:mt-0 lg:mt-12'
+                    'mt-2 aspect-[1216/640] sm:rounded-3xl md:mt-0 '
                 )}
                 key={project.id}
                 src={project.images[0]}
@@ -200,10 +206,10 @@ const ProjectsIndex = function (projects) {
             </div>
 
             <div
-              id="project-conte-text"
-              className="relative mx-6 flex h-[48.625rem] max-h-[60vh] overflow-hidden bg-slate-800 px-8 shadow-xl dark:bg-slate-900/70 dark:ring-1 dark:ring-inset dark:ring-white/10 dark:backdrop-blur sm:max-h-[none] sm:rounded-xl lg:h-[34.6875rem] xl:h-[31.625rem]"
+              id="project-content-text"
+              className="relative flex h-[35.625rem] max-h-[42vh] overflow-hidden bg-slate-800 px-8 shadow-xl dark:bg-slate-900/70 dark:ring-1 dark:ring-inset dark:ring-white/10 dark:backdrop-blur sm:max-h-[none] sm:rounded-xl lg:mx-6 lg:h-[51.625rem] lg:h-[34.6875rem] lg:max-h-[60vh] xl:h-[31.625rem]"
             >
-              <div className="-mx-4 mt-4 sm:mx-0 lg:col-span-7 lg:mt-0 xl:col-span-6">
+              <div className="-mx-4 mt-2 sm:mx-0 lg:col-span-7 lg:mt-0 xl:col-span-6">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
                   <h2 className="mt-8 font-semibold text-indigo-500 dark:text-indigo-400">
                     {project.category}
@@ -211,8 +217,21 @@ const ProjectsIndex = function (projects) {
                   <p className="mt-4 text-3xl font-extrabold tracking-tight text-slate-100 dark:text-slate-50 sm:text-4xl ">
                     {project.name}
                   </p>
-                  <div className="mt-4 max-w-3xl space-y-6 text-slate-200">
+                  <div className="mt-2 max-w-3xl space-y-6 text-slate-200 lg:hidden">
                     <p>{project.description}</p>
+                    <div className="md hidden py-4 sm:mx-6 lg:flex">
+                      <Image
+                        className={clsx(
+                          project.imageAspectRatio,
+                          ' rounded-md' ??
+                            'mt-2 aspect-[1216/640] sm:rounded-3xl md:mt-0 lg:mt-12'
+                        )}
+                        key={project.id}
+                        src={project.images[0]}
+                        alt={project.projectImage.alt}
+                        sizes="100vw"
+                      />
+                    </div>
                     {/* <p>
                       We've got first-class CSS grid support, composable
                       transforms and gradients powered by CSS variables, support
@@ -224,12 +243,12 @@ const ProjectsIndex = function (projects) {
                     </p> */}
                   </div>
 
-                  <a
+                  <Link
                     className="group mt-8 inline-flex h-9 items-center whitespace-nowrap rounded-full bg-indigo-500 px-3 text-sm font-semibold text-indigo-100 hover:bg-indigo-200 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-indigo-500 dark:text-slate-100 dark:hover:bg-slate-600 dark:hover:text-white dark:focus:ring-slate-500"
                     href="/docs/grid-template-columns"
                   >
                     More details
-                    <span className="sr-only">, grid template columns</span>
+                    <span className="sr-only">Visit the projects page</span>
                     <svg
                       className="ml-3 overflow-visible text-indigo-300 group-hover:text-indigo-400 dark:text-white dark:group-hover:text-slate-400"
                       width="3"
@@ -243,7 +262,7 @@ const ProjectsIndex = function (projects) {
                     >
                       <path d="M0 0L3 3L0 6"></path>
                     </svg>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

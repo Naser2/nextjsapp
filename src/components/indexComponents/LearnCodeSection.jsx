@@ -63,7 +63,7 @@ const LearnCodeSection = forwardRef((props, ref) => {
           id="stay-amazing"
           className="relative  bg-sky-100/20 dark:bg-teal-600"
         >
-          <Link className="" href="/courses">
+          <div className="" href="/courses">
             <div
               id="sectio-title-text"
               className="h-4 px-4  py-10 text-3xl  leading-7 lg:mb-10 lg:px-28 lg:py-8 xl:px-24 "
@@ -104,12 +104,12 @@ const LearnCodeSection = forwardRef((props, ref) => {
                     1500s, when an unknown printer took a galley of type and
                     scrambled it to make a type specimen book.
                   </p>
-                  <a
+                  <Link
                     href="#"
                     className="mt-6 inline-block w-full rounded-md border border-transparent bg-gray-900 py-3 px-8 px-4 font-medium text-white hover:bg-gray-800 sm:w-auto"
                   >
                     Get access to courses for Free
-                  </a>
+                  </Link>
                 </div>
               </section>
             </div>
@@ -164,7 +164,7 @@ const LearnCodeSection = forwardRef((props, ref) => {
                 </Link>
               </div>
             </div>
-          </Link>
+          </div>
         </div>
         {/* </CustomizedContainer> */}
         <section
@@ -185,10 +185,13 @@ const LearnCodeSection = forwardRef((props, ref) => {
                       To learn.
                     </h2>
                     <div className="mt-6 text-base">
-                      <a href="#" className="font-semibold text-white">
+                      <Link
+                        href="/courses"
+                        className="font-semibold text-white"
+                      >
                         See the site
                         <span aria-hidden="true"> &rarr;</span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
 
@@ -228,7 +231,7 @@ const LearnCodeSection = forwardRef((props, ref) => {
                           <div className="mt-6 flex-shrink-0 sm:mt-0">
                             <img
                               className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
-                              src={uixu_img.src}
+                              // src={uixu_img.src}
                               // src="https://tailwindui.com/img/ecommerce-images/home-page-03-favorite-02.jpg"
                               src={uixu_img2.src}
                               alt=""

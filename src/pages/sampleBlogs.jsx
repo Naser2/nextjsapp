@@ -1,6 +1,5 @@
 import Head from 'next/head'
 
-import { Card } from '@/components/Card'
 import Link from 'next/link'
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
 import { forwardRef } from 'react'
@@ -13,8 +12,7 @@ import office from '@/images/blogsImages/office.png'
 import work from '@/images/blogsImages/work_space.png'
 import author from '@/images/nas_about.png'
 import BlackNewYorkers from '@/images/blogsImages/black-New-yorkers.webp'
-import { HeroPattern } from '@/components/HeroPattern'
-import { Container } from '@/components/PodcastComponents/Container'
+// import { HeroPattern } from '@/components/HeroPattern'
 
 let BlogSamples = [
   {
@@ -182,25 +180,6 @@ function MobileBlog({ sample }) {
         </p>
         <div>
           <div className="CommunityPersonPreview_location__cdE2S">
-            {/* <svg
-              data-sanity-icon="pin"
-              width="1em"
-              height="1em"
-              viewBox="0 0 25 25"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.5 10.5C6.5 7 9 4.5 12.5 4.5C16 4.5 18.5 7 18.5 10.5C18.5 14 15.5 17.5 12.5 20.5C9.5 17.5 6.5 14 6.5 10.5Z"
-                stroke="currentColor"
-                strokeWidth="1.2"
-              ></path>
-              <path
-                d="M14 10.5C14 11.3284 13.3284 12 12.5 12C11.6716 12 11 11.3284 11 10.5C11 9.67157 11.6716 9 12.5 9C13.3284 9 14 9.67157 14 10.5Z"
-                stroke="currentColor"
-                strokeWidth="1.2"
-              ></path>
-            </svg> */}
             <span className="visually-hidden mb-2 -mt-2 ">{sample.date}</span>{' '}
             {sample.readingTime}
           </div>
@@ -208,9 +187,8 @@ function MobileBlog({ sample }) {
       </div>
       <div className="CommunityPersonPreview_photoWrapper__LN7Ly">
         <div
-          className="CommunityPersonPreview_photo__ztqTs Image_root__GJXWR  rounded-lg"
+          className="CommunityPersonPreview_photo__ztqTs Image_root__GJXWR  --aspect-ratio:1; --source-width:1200px rounded-lg"
           data-has-aspect="true"
-          className="--aspect-ratio:1; --source-width:1200px;"
         >
           <picture>
             <Image
@@ -226,12 +204,12 @@ function MobileBlog({ sample }) {
           <noscript></noscript>
         </div>
       </div>
-      <a
+      <Link
         className="CommunityPersonPreview_link__vTot1 sr-only"
         href="/exchange/community/kmelve"
       >
-        <span className="visually-hidden">Visit author's profile</span>{' '}
-      </a>
+        <span className="visually-hidden">Visit author&lsquo;s profile</span>
+      </Link>
     </article>
   )
 }
@@ -262,8 +240,8 @@ function Blog({ sample }) {
           className="md:rounded-t-0 h-48 w-full  object-cover"
         />
         {/* <img className="h-48 w-full object-cover" src={sample.image} alt="" /> */}
-        <a
-          href="#"
+        <Link
+          href={sample.href}
           className="inline-block border-t border-yellow-300 bg-slate-700 py-1"
         >
           <span
@@ -275,80 +253,42 @@ function Blog({ sample }) {
           >
             {sample.tag ? sample.tag.name : 'Blog'}
           </span>
-        </a>
+        </Link>
       </div>
-      {/* <a href="#" className="black-2-bg inline-block py-4">
-      <span
-            className={[
-              sample.tag
-                ? `py-0.2 inline-flex items-center rounded-full  px-3 text-sm font-medium text${sample.themeColor} bg${sample.themeColor} mr-2`
-                : '',
-            ]}
-          >
-            {sample.tag ? sample.tag.name : 'Blog'}
-          </span>
-        <span
-          className={[
-            sample.tag
-              ? `py-0.2 inline-flex items-center rounded-full  px-3 text-sm font-medium text${sample.themeColor} bg${sample.themeColor} mr-2`
-              : '',
-          ]}
-        >
-          {sample.tag ? sample.tag.name : 'Blog'}
-        </span>
-        <span
-          className={
-            sample.tag
-              ? sample.tag.color
-              : 'py-0.2 inline-flex items-center rounded-full bg-indigo-100 px-3 text-sm text-sm font-medium font-medium text-indigo-600 text-indigo-800'
-          }
-        >
-          {sample.tag ? sample.tag.name : 'Blog'}
-        </span>
-      </a> */}
+
       <div className="flex flex-1 flex-col justify-between">
         <div id="blog-card-body" className="bg-white px-6 py-4">
-          {' '}
           <div className="flex-1">
-            <p className="text-sm font-medium text-indigo-600">
-              <a href={sample.href} className="hover:underline">
+            <h2 className="text-sm font-medium text-indigo-600">
+              <Link href={sample.href} className="hover:underline">
                 {sample.name}
-              </a>
-            </p>
-            <a href={sample.href} className="mt-2 block">
-              <p className="commom-blog-card-title-typography text-xl font-semibold text-gray-900 ">
+              </Link>
+            </h2>
+            <Link href={sample.href} className="mt-2 block">
+              <h1 className="commom-blog-card-title-typography text-xl font-semibold text-gray-900 ">
                 {sample.title}
-              </p>
-              {/* <p className="mt-3 text-base text-gray-500">
-                {sample.description}
-              </p> */}
-            </a>
+              </h1>
+            </Link>
           </div>
         </div>
 
         <div className="mt-0 flex items-center bg-gray-100 px-6 py-4">
           <div className="flex-shrink-0">
-            <a href={sample.author.href}>
+            <Link href={sample.author.href}>
               <span className="sr-only">{sample.author.name}</span>
               <Image
                 className="h-10 w-10 rounded-full md:rounded-sm"
                 src={sample.author.image}
                 alt="the author image"
               />
-            </a>
+            </Link>
           </div>
-          {/* <div className="flex-shrink-0">
-      <a href={sample.author.href}>
-        <span className="sr-only">{sample.author.name}</span>
-        <img className="h-10 w-10 rounded-full" src={sample.author.image} alt="" />
-      </a>
-    </div> */}
 
           <div className="ml-3">
             <p className="text-sm font-medium text-gray-900">
-              <a href={sample.author.href} className="hover:underline">
+              <Link href={sample.author.href} className="hover:underline">
                 {sample.author.name}
-              </a>
+              </Link>
             </p>
             <div className="flex space-x-1 text-sm text-gray-500">
               <time dateTime={sample.dateTime}>{sample.date}</time>
@@ -367,7 +307,7 @@ function MainBlog() {
   return (
     <div className="not-prose grid grid-cols-1 gap-4 border-t  border-zinc-900/5 bg-black dark:border-white/5  dark:bg-white sm:grid-cols-2 lg:mt-4 lg:pt-10 xl:grid-cols-2">
       <div className="main-blog-left px-0 lg:px-4 ">
-        <a className="" href="/blog/behind-the-feature-find-and-replace/">
+        <Link className="" href="/blog/behind-the-feature-find-and-replace/">
           <div className="">
             <img
               src="https://cdn.sanity.io/images/599r6htc/localized/4bdef980a683245a8e218ec905cae8cb0f230829-2120x1000.png?rect=0,1,2120,998&amp;w=514&amp;h=242&amp;q=75&amp;fit=max&amp;auto=format"
@@ -409,7 +349,7 @@ function MainBlog() {
               {blogSample.description}
             </div>
           </div>
-        </a>
+        </Link>
       </div>
       <div className="main-blog-right -mt-2 px-4 text-gray-900 text-zinc-600 dark:text-zinc-200 md:py-8  lg:px-4 xl:-mt-8">
         <div className="">
@@ -441,14 +381,10 @@ const BlogsSample = forwardRef((props, ref) => {
       {/* <HeroPattern/> */}
       <div className="my-0 md:my-4 xl:max-w-none">
         <div className="max-w-10xl xl:px-34 md:px-10 ">
-          {' '}
           <div className="l">
             <h2 className="pb-10  pt-4 text-4xl font-semibold leading-7 text-sky-500 lg:py-8">
               Blogs
             </h2>
-            {/* <p className="my-4 px-4 headline typography-headline mt-4 text-3xl font-extrabold tracking-[-0.04em] text-black sm:text-5xl sm:leading-[3.5rem]text-4xl text-white dark:text-gray-900 glue-mod-spacer-3-top font-semi-bold tracking-tight sm:text-5xl">
-            Things I write about
-          </p> */}
           </div>
           <MainBlog />
           <div className="not-prose mt-4 grid grid-cols-1 gap-8 border-t border-zinc-900/5 px-4 pt-10 dark:border-white/5 sm:grid-cols-2 md:px-0 xl:grid-cols-3 ">
@@ -463,7 +399,6 @@ const BlogsSample = forwardRef((props, ref) => {
             Most read
           </p>
           <div className="mobile-most-read grid grid-cols-1 gap-2  dark:border-white/5 sm:grid-cols-2 md:px-0 xl:grid-cols-3 ">
-            {' '}
             {BlogSamples.slice(0, -1).map((sample) => (
               <MobileBlog key={sample.href} sample={sample} />
             ))}

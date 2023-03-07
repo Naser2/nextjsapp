@@ -213,7 +213,9 @@ export function ArticleLayout({
                   >
                     <a
                       className={clsx(
-                        meta.theme.tag ?? 'dark:yellow-bg',
+                        meta.theme && meta.theme.tag
+                          ? meta.theme.tag
+                          : 'dark:yellow-bg',
                         'eyebrow blog_list_card_tag group mb-4 inline-flex h-6 items-center whitespace-nowrap rounded-xl bg-transparent px-3 text-sm font-semibold text-black shadow-sm shadow-slate-300 hover:bg-slate-600/90 hover:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:text-slate-900 dark:hover:bg-slate-900 dark:hover:text-white dark:focus:ring-slate-500'
                       )}
                       href={`/blogs/${meta.tag && meta.tag}`}

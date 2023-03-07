@@ -1,17 +1,17 @@
-import { Header } from '@/components/Header'
+// import { Header } from '@/components/Header'
 // import { Heading } from '@/components/siteMdxComponents'
 // import { SectionCodeBlock as CodeBlockSection } from '@/components/indexComponents/SectionCodeBlock'
 import { AboutSection } from '@/components/indexComponents/AboutSection'
 // import { StayAmazing } from '@/components/indexComponents/StayAmazing'
 import { LearnCodeSection } from '@/components/indexComponents/LearnCodeSection'
-import { SectionProjects } from '@/components/indexComponents/SectionProjects'
-import Resume from '@/components/indexComponents/SectionResumer'
+// import { SectionProjects } from '@/components/indexComponents/SectionProjects'
+// import Resume from '@/components/indexComponents/SectionResumer'
 import Newsletter from '@/components/NewsLetter'
 import { HeroPattern } from '@/components/HeroPattern'
 // import TestimoniesSection from '@/components/indexComponents/TestimoniesSection'
 import SectionLandingHero from '@/components/indexComponents/SectionLandingHero'
 import { PlayPauseIcon } from './podcasts/index'
-import backgroundImage from '@/images/background-newsletter.jpg'
+// import backgroundImage from '@/images/background-newsletter.jpg'
 
 import SocialMediaaHandles, {
   Galery,
@@ -37,18 +37,19 @@ import {
   AudioProvider,
   useAudioPlayer,
 } from '@/components/PodcastComponents/AudioProvider'
-import { AudioPlayer } from '@/components/PodcastComponents/player/AudioPlayer'
+// import { AudioPlayer } from '@/components/PodcastComponents/player/AudioPlayer'
 import { intagramImgs } from '@/components/SocialMediaGallery'
 // import episode from '../../public/ipanema_João_Gilberto_StanGetz.mp3'
 import getSanityFileUrl from '@/lib/getSanityFileUrl'
-import Link from 'next/link'
-import Image from 'next/image'
-import EpisodeBG from '@/images/projectImages/lars_episode_bg.jpg'
-import { PlayButton } from '@/components/PodcastComponents/player/PlayButton'
+// import Link from 'next/link'
+// import Image from 'next/image'
+// import EpisodeBG from '@/images/projectImages/lars_episode_bg.jpg'
+// import { PlayButton } from '@/components/PodcastComponents/player/PlayButton'
 // import channelBanner from '/channels4_banner.jpeg'
-import { CallToAction } from '@/components/next13Components/CallToAction'
+// import { CallToAction } from '@/components/next13Components/CallToAction'
 import { ProjectSection } from '@/components/indexComponents/HomePojectsSection'
 import { keys } from 'keys'
+import Link from 'next/link'
 const projectId = keys.PROJECT_ID
 const dataSet = keys.DATA_SET
 const name = keys.NAME
@@ -183,13 +184,12 @@ export default function Home({ blogs, music, episodes, className }) {
             id="episode-5-title"
             className="ml-24 text-lg font-bold text-slate-400 dark:ml-32 dark:text-slate-300/90 "
           >
-            <a href="/5">Cool mix</a>
-          </h2>{' '}
-          Chill Mix{' '}
+            Cool mix
+          </h2>
+          Chill Mix
           <span aria-hidden="true" className="text-sm font-bold text-slate-300">
             |
-          </span>{' '}
-          17 mins
+          </span>
         </time>
       </>
     )
@@ -197,7 +197,6 @@ export default function Home({ blogs, music, episodes, className }) {
   return (
     <>
       <div className="app-main relative mx-auto w-full ">
-        {/* <AudioProvider> */}
         <Head>
           <title> NasDesign</title>
           <meta
@@ -290,12 +289,12 @@ export default function Home({ blogs, music, episodes, className }) {
             'z-[100] hidden h-[40px] w-full flex-col items-center justify-center bg-gray-100 bg-gradient-to-r from-sky-500 to-indigo-500 py-2 text-base dark:bg-gray-700 sm:flex-row sm:py-0 md:text-lg lg:flex',
           ]}
         >
-          <a
+          <Link
             className="SkipToContent_skipToContentLink__36RIn shared_primaryButton__LUnwD shared_button__RCiD_ shared_baseButton__eS1s3 shared_hairline2__TXZzE shared_resetButton__bYzwJ shared_box__yyOsu shared_borderRadius__c7hZ0 shared_focusOutlineOutside__cqmM7"
             href="/projects"
           >
             The journey
-          </a>
+          </Link>
         </div>
         <AboutSection ref={sectAboutRef} />
 
@@ -325,9 +324,9 @@ export default function Home({ blogs, music, episodes, className }) {
         </CustomizedContainer>
         <div className="announcementBanner_root blue">
           <div className="blue SkipToContent_skipToContent__Rsvqx px-8 text-left lg:px-20">
-            <a className="" href="/projects">
+            <Link className="" href="/projects">
               Projects
-            </a>
+            </Link>
           </div>
         </div>
         <ProjectSection />
@@ -337,9 +336,9 @@ export default function Home({ blogs, music, episodes, className }) {
         <HeroPattern />
         <div className="announcementBanner_root bg-black">
           <div className="px-8 text-left lg:px-20">
-            <a className="" href="/projects">
+            <Link className="" href="/projects">
               Courses
-            </a>
+            </Link>
           </div>
         </div>
         <LearnCodeSection ref={learnCode} />
