@@ -99,7 +99,6 @@ export default function TestimoniesSection() {
         </div>
 
         <div className="relative mx-auto max-w-md px-6 sm:max-w-3xl lg:px-0">
-          {/* Content area */}
           <div className="pt-12 sm:pt-16 lg:pt-20">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               On a mission to empower teams
@@ -149,7 +148,7 @@ export default function TestimoniesSection() {
             </dl>
             <div className="mt-10">
               <Link href="#" className="text-base font-medium text-indigo-600">
-                Learn more about how we`&#39`re changing the world
+                Learn more about how we&#39;re changing the world
                 <span aria-hidden="true"> &rarr;</span>
               </Link>
             </div>

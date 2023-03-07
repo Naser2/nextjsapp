@@ -100,7 +100,7 @@ const AboutSection = forwardRef((props, ref) => {
                 </div>
               </div>
               <div
-                className="relative bg-indigo-800 py-4 px-4 md:hidden  lg:px-20"
+                className="relative bg-indigo-800 py-4 px-4 md:hidden lg:px-20"
                 text="Only writting about what passionates me"
                 bandcolor="main-bg-yellow"
               ></div>
