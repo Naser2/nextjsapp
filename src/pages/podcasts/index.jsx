@@ -20,7 +20,7 @@ import {
 } from '@/components/PodcastComponents/PodcastsPageLayout.jsx'
 import { createClient } from 'next-sanity'
 import getSanityFileUrl from '@/lib/getSanityFileUrl'
-import { keys } from '../../../keys'
+import { keys } from '../../lib/keys'
 const projectId = keys.PROJECT_ID
 const dataSet = keys.DATA_SET
 const name = keys.NAME

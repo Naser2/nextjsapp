@@ -14,8 +14,10 @@
 
 # production
 /build
-./keys.js
-keys.js
+
+/src/lib/keys.js
+
+.gitignore
 # misc
 .DS_Store
 *.pem

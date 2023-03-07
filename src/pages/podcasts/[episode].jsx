@@ -20,7 +20,7 @@ import ImageUrlBuilder from '@sanity/image-url'
 // import cleardot from '@/images/cleardot.gif'
 import { Eyebrow } from '@/components/siteMdxComponents'
 // import { client } from '../../sanityClient'
-import { keys } from '../../../keys'
+import { keys } from '../../lib/keys'
 import Link from 'next/link'
 import blogsJson from '../blogs/blogsJson'
 const languages = ['en', 'fr', 'hn']
