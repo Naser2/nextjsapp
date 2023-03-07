@@ -1,0 +1,17 @@
+.link {
+  color: #ffbd4d;
+}
+.light_blue {
+  color: #61dafb;
+}
+.light-blue a:not(.anchor):not(.gatsby-resp-image-link) {
+  background-color: rgba(187, 239, 253, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  color: #1a1a1a;
+}
+.token.function {
+  color: rgb(121, 182, 242);
+}
+.token.tag {
+  color: rgb(252, 146, 158);
+}

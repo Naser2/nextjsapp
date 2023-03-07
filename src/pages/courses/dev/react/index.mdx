@@ -1,0 +1,105 @@
+import { Guides } from '@/components/Guides'
+import { Resources } from '@/components/Resources'
+import { HeroPattern } from '@/components/HeroPattern'
+import image1 from '@/images/courseIndexImages/awsImage.jpeg'
+
+export const meta = {
+  courseCategory: 'Javascript & jQuery',
+  shortDescription:
+    'React: Interactive Front-End Development, a fully illustrated guide to making your websites more interactive and your interfaces more interesting and intuitive. In the book, you will explore basic programming concepts that assume no prior knowledge of programming beyond an ability to create a web page using HTML & CSS. *',
+  longDscription:
+    'In JavaScript and jQuery: Interactive Front-End Development, a fully illustrated guide to making your websites more interactive and your interfaces more interesting and intuitive. In the book, you will explore basic programming concepts that assume no prior knowledge of programming beyond an ability to create a web page using HTML & CSS.you will use core elements of the JavaScript language so you can learn how to write your own scripts from scratch, as well as jQuery, which will allow you to simplify the process of writing scripts this is introduced half-way through the book once you have a solid understanding of JavaScript.you will also learn to recreate techniques you have seen on other web sites such as sliders, content filters, form validation, Ajax content updates, and much more. Each chapter:Breaks subjects down into bite-sized chunks with a new topic on each page .Contains clear descriptions of syntax, each one demonstrated with illustrative code samplesUses diagrams and photography to explain complex concepts in a visual way By the end of the book, not only will you be able to use the thousands of scripts, JavaScript APIs, and jQuery plugins that are freely available on the web – and be able to customize them – you will also be able to create your own scripts from scratch.',
+
+    ratings: { count: 237, learners: 645 },
+    lastUpdated: '10/2022',
+    language: 'en',
+    quizes: '20',
+    access: 'Free',
+    theme:{text:'text-sky-600', bg:'bg-sky-300'},
+    reviews: {
+      average: 4,
+      featured: [
+        {
+          id: 1,
+          rating: 5,
+          content: `<p>This icon pack is just what I need for my latest project. There's an icon for just about anything I could ever need. Love the playful look!</p>
+          `,
+          date: 'July 16, 2021',
+          dateTime: '2021-07-16',
+          author: 'Emily Selman',
+          avatarSrc:
+            'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
+        },
+        {
+          id: 2,
+          rating: 5,
+          content: `
+            <p>Blown away by how polished this icon pack is. Everything looks so consistent and each SVG is optimized out of the box so I can use it directly with confidence. It would take me several hours to create a single icon this good, so it's a steal at this price.</p>
+            `,
+          date: 'July 12, 2021',
+          dateTime: '2021-07-12',
+          author: 'Hector Gibbons',
+          avatarSrc:
+            'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
+        },
+      ],
+    }
+
+}
+export const metadataClosed = 'true'
+
+export const description =
+  'React and jQuery: Interactive Front-End Development*'
+
+export const sections = [{ title: 'React', id: 'react' }]
+
+export const navigation = [
+  {
+    title:'React',
+    chapters:[
+      { title: 'Introduction', href: '/' },
+      { title: 'Quickstart', href: '/quickstart' },
+      { title: 'SDKs', href: '/sdks' },
+      { title: 'Authentication', href: '/authentication' },
+      { title: 'Pagination', href: '/pagination' },
+      { title: 'Errors', href: '/errors' },
+      { title: 'Webhooks', href: '/webhooks' },
+      { title: 'Contacts', href: '/contacts' },
+      { title: 'Conversations', href: '/conversations' },
+      { title: 'Messages', href: '/messages' },
+      { title: 'Groups', href: '/groups' },
+      { title: 'Attachments', href: '/attachments' },
+
+      ]
+
+}
+
+]
+
+<HeroPattern />
+
+# React Introduction {{ className: 'course-title' }}
+
+Introduction to React this is the Index API to access contacts, conversations, group messages, and more and seamlessly integrate your product into the workflows of dozens of devoted Protocol users. {{ className: 'lead' }}
+
+<div className="not-prose mb-16 mt-6 flex gap-3">
+  <Button href="/quickstart" arrow="right" children="Quickstart" />
+  <Button href="/sdks" variant="outline" children="Explore SDKs" />
+</div>
+
+## Javascript {{ anchor: false }}
+
+To get started, create a new application in your [developer settings](#), then read about how to make requests for the resources you need to access using our HTTP APIs or dedicated client SDKs. When your integration is ready to go live, publish it to our [integrations directory](#) to reach the Protocol community. {{ className: 'lead' }}
+
+<div className="not-prose">
+  <Button
+    href="/sdks"
+    variant="text"
+    arrow="right"
+    children="Get your API key"
+  />
+</div>
+
+<Guides />
+
+<Resources />
