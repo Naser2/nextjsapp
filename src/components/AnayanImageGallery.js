@@ -103,8 +103,8 @@ export default function Example() {
         This example requires updating your template:
 
         ```
-        <html class="h-full bg-gray-50">
-        <body class="h-full overflow-hidden">
+        <html className="h-full bg-gray-50">
+        <body className="h-full overflow-hidden">
         ```
       */}
       <div className="flex h-full">
@@ -124,14 +124,18 @@ export default function Example() {
                   key={item.name}
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-indigo-800 text-white' : 'text-indigo-100 hover:bg-indigo-800 hover:text-white',
-                    'group w-full p-3 rounded-md flex flex-col items-center text-xs font-medium'
+                    item.current
+                      ? 'bg-indigo-800 text-white'
+                      : 'text-indigo-100 hover:bg-indigo-800 hover:text-white',
+                    'group flex w-full flex-col items-center rounded-md p-3 text-xs font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}
                 >
                   <item.icon
                     className={classNames(
-                      item.current ? 'text-white' : 'text-indigo-300 group-hover:text-white',
+                      item.current
+                        ? 'text-white'
+                        : 'text-indigo-300 group-hover:text-white',
                       'h-6 w-6'
                     )}
                     aria-hidden="true"
@@ -145,7 +149,11 @@ export default function Example() {
 
         {/* Mobile menu */}
         <Transition.Root show={mobileMenuOpen} as={Fragment}>
-          <Dialog as="div" className="relative z-40 md:hidden" onClose={setMobileMenuOpen}>
+          <Dialog
+            as="div"
+            className="relative z-40 md:hidden"
+            onClose={setMobileMenuOpen}
+          >
             <Transition.Child
               as={Fragment}
               enter="transition-opacity ease-linear duration-300"
@@ -184,7 +192,10 @@ export default function Example() {
                         className="flex h-12 w-12 items-center justify-center rounded-full focus:outline-none focus:ring-2 focus:ring-white"
                         onClick={() => setMobileMenuOpen(false)}
                       >
-                        <XMarkIcon className="h-6 w-6 text-white" aria-hidden="true" />
+                        <XMarkIcon
+                          className="h-6 w-6 text-white"
+                          aria-hidden="true"
+                        />
                         <span className="sr-only">Close sidebar</span>
                       </button>
                     </div>
@@ -207,13 +218,15 @@ export default function Example() {
                               item.current
                                 ? 'bg-indigo-800 text-white'
                                 : 'text-indigo-100 hover:bg-indigo-800 hover:text-white',
-                              'group py-2 px-3 rounded-md flex items-center text-sm font-medium'
+                              'group flex items-center rounded-md py-2 px-3 text-sm font-medium'
                             )}
                             aria-current={item.current ? 'page' : undefined}
                           >
                             <item.icon
                               className={classNames(
-                                item.current ? 'text-white' : 'text-indigo-300 group-hover:text-white',
+                                item.current
+                                  ? 'text-white'
+                                  : 'text-indigo-300 group-hover:text-white',
                                 'mr-3 h-6 w-6'
                               )}
                               aria-hidden="true"
@@ -256,7 +269,10 @@ export default function Example() {
                     </label>
                     <div className="relative w-full text-gray-400 focus-within:text-gray-600">
                       <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center">
-                        <MagnifyingGlassIcon className="h-5 w-5 flex-shrink-0" aria-hidden="true" />
+                        <MagnifyingGlassIcon
+                          className="h-5 w-5 flex-shrink-0"
+                          aria-hidden="true"
+                        />
                       </div>
                       <input
                         name="mobile-search-field"
@@ -334,7 +350,9 @@ export default function Example() {
             <main className="flex-1 overflow-y-auto">
               <div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
                 <div className="flex">
-                  <h1 className="flex-1 text-2xl font-bold text-gray-900">Photos</h1>
+                  <h1 className="flex-1 text-2xl font-bold text-gray-900">
+                    Photos
+                  </h1>
                   <div className="ml-6 flex items-center rounded-lg bg-gray-100 p-0.5 sm:hidden">
                     <button
                       type="button"
@@ -347,7 +365,10 @@ export default function Example() {
                       type="button"
                       className="ml-0.5 rounded-md bg-white p-1.5 text-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
                     >
-                      <Squares2X2IconMini className="h-5 w-5" aria-hidden="true" />
+                      <Squares2X2IconMini
+                        className="h-5 w-5"
+                        aria-hidden="true"
+                      />
                       <span className="sr-only">Use grid view</span>
                     </button>
                   </div>
@@ -373,7 +394,10 @@ export default function Example() {
                   </div>
                   <div className="hidden sm:block">
                     <div className="flex items-center border-b border-gray-200">
-                      <nav className="-mb-px flex flex-1 space-x-6 xl:space-x-8" aria-label="Tabs">
+                      <nav
+                        className="-mb-px flex flex-1 space-x-6 xl:space-x-8"
+                        aria-label="Tabs"
+                      >
                         {tabs.map((tab) => (
                           <a
                             key={tab.name}
@@ -382,8 +406,8 @@ export default function Example() {
                             className={classNames(
                               tab.current
                                 ? 'border-indigo-500 text-indigo-600'
-                                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300',
-                              'whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm'
+                                : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700',
+                              'whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium'
                             )}
                           >
                             {tab.name}
@@ -402,7 +426,10 @@ export default function Example() {
                           type="button"
                           className="ml-0.5 rounded-md bg-white p-1.5 text-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
                         >
-                          <Squares2X2IconMini className="h-5 w-5" aria-hidden="true" />
+                          <Squares2X2IconMini
+                            className="h-5 w-5"
+                            aria-hidden="true"
+                          />
                           <span className="sr-only">Use grid view</span>
                         </button>
                       </div>
@@ -411,7 +438,10 @@ export default function Example() {
                 </div>
 
                 {/* Gallery */}
-                <section className="mt-8 pb-16" aria-labelledby="gallery-heading">
+                <section
+                  className="mt-8 pb-16"
+                  aria-labelledby="gallery-heading"
+                >
                   <h2 id="gallery-heading" className="sr-only">
                     Recently viewed
                   </h2>
@@ -424,9 +454,9 @@ export default function Example() {
                         <div
                           className={classNames(
                             file.current
-                              ? 'ring-2 ring-offset-2 ring-indigo-500'
-                              : 'focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-offset-gray-100 focus-within:ring-indigo-500',
-                            'group block w-full aspect-w-10 aspect-h-7 rounded-lg bg-gray-100 overflow-hidden'
+                              ? 'ring-2 ring-indigo-500 ring-offset-2'
+                              : 'focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100',
+                            'group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100'
                           )}
                         >
                           <img
@@ -434,17 +464,24 @@ export default function Example() {
                             alt=""
                             className={classNames(
                               file.current ? '' : 'group-hover:opacity-75',
-                              'object-cover pointer-events-none'
+                              'pointer-events-none object-cover'
                             )}
                           />
-                          <button type="button" className="absolute inset-0 focus:outline-none">
-                            <span className="sr-only">View details for {file.name}</span>
+                          <button
+                            type="button"
+                            className="absolute inset-0 focus:outline-none"
+                          >
+                            <span className="sr-only">
+                              View details for {file.name}
+                            </span>
                           </button>
                         </div>
                         <p className="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900">
                           {file.name}
                         </p>
-                        <p className="pointer-events-none block text-sm font-medium text-gray-500">{file.size}</p>
+                        <p className="pointer-events-none block text-sm font-medium text-gray-500">
+                          {file.size}
+                        </p>
                       </li>
                     ))}
                   </ul>
@@ -457,7 +494,11 @@ export default function Example() {
               <div className="space-y-6 pb-16">
                 <div>
                   <div className="aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg">
-                    <img src={currentFile.source} alt="" className="object-cover" />
+                    <img
+                      src={currentFile.source}
+                      alt=""
+                      className="object-cover"
+                    />
                   </div>
                   <div className="mt-4 flex items-start justify-between">
                     <div>
@@ -465,7 +506,9 @@ export default function Example() {
                         <span className="sr-only">Details for </span>
                         {currentFile.name}
                       </h2>
-                      <p className="text-sm font-medium text-gray-500">{currentFile.size}</p>
+                      <p className="text-sm font-medium text-gray-500">
+                        {currentFile.size}
+                      </p>
                     </div>
                     <button
                       type="button"
@@ -480,9 +523,14 @@ export default function Example() {
                   <h3 className="font-medium text-gray-900">Information</h3>
                   <dl className="mt-2 divide-y divide-gray-200 border-t border-b border-gray-200">
                     {Object.keys(currentFile.information).map((key) => (
-                      <div key={key} className="flex justify-between py-3 text-sm font-medium">
+                      <div
+                        key={key}
+                        className="flex justify-between py-3 text-sm font-medium"
+                      >
                         <dt className="text-gray-500">{key}</dt>
-                        <dd className="whitespace-nowrap text-gray-900">{currentFile.information[key]}</dd>
+                        <dd className="whitespace-nowrap text-gray-900">
+                          {currentFile.information[key]}
+                        </dd>
                       </div>
                     ))}
                   </dl>
@@ -490,7 +538,9 @@ export default function Example() {
                 <div>
                   <h3 className="font-medium text-gray-900">Description</h3>
                   <div className="mt-2 flex items-center justify-between">
-                    <p className="text-sm italic text-gray-500">Add a description to this image.</p>
+                    <p className="text-sm italic text-gray-500">
+                      Add a description to this image.
+                    </p>
                     <button
                       type="button"
                       className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
@@ -502,12 +552,24 @@ export default function Example() {
                 </div>
                 <div>
                   <h3 className="font-medium text-gray-900">Shared with</h3>
-                  <ul role="list" className="mt-2 divide-y divide-gray-200 border-t border-b border-gray-200">
+                  <ul
+                    role="list"
+                    className="mt-2 divide-y divide-gray-200 border-t border-b border-gray-200"
+                  >
                     {currentFile.sharedWith.map((person) => (
-                      <li key={person.id} className="flex items-center justify-between py-3">
+                      <li
+                        key={person.id}
+                        className="flex items-center justify-between py-3"
+                      >
                         <div className="flex items-center">
-                          <img src={person.imageUrl} alt="" className="h-8 w-8 rounded-full" />
-                          <p className="ml-4 text-sm font-medium text-gray-900">{person.name}</p>
+                          <img
+                            src={person.imageUrl}
+                            alt=""
+                            className="h-8 w-8 rounded-full"
+                          />
+                          <p className="ml-4 text-sm font-medium text-gray-900">
+                            {person.name}
+                          </p>
                         </div>
                         <button
                           type="button"
@@ -523,7 +585,10 @@ export default function Example() {
                         className="group -ml-1 flex items-center rounded-md bg-white p-1 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                       >
                         <span className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-dashed border-gray-300 text-gray-400">
-                          <PlusIconMini className="h-5 w-5" aria-hidden="true" />
+                          <PlusIconMini
+                            className="h-5 w-5"
+                            aria-hidden="true"
+                          />
                         </span>
                         <span className="ml-4 text-sm font-medium text-indigo-600 group-hover:text-indigo-500">
                           Share

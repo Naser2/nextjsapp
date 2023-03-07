@@ -21,14 +21,18 @@ export default function SocialMediaHandle({ className }) {
       id="social-media-handles"
       className=" px-auto xl:items-left lg:pt-1g:px-28 relative flex flex items-center items-center items-center items-center gap-4 gap-4 px-8 px-8 pt-0 lg:px-28 lg:pt-1"
     >
-      <p class="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-        <svg viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6 flex-none">
+      <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          className="h-6 w-6 flex-none"
+        >
           <path
             d="M15.712 11.823a.75.75 0 1 0 1.06 1.06l-1.06-1.06Zm-4.95 1.768a.75.75 0 0 0 1.06-1.06l-1.06 1.06Zm-2.475-1.414a.75.75 0 1 0-1.06-1.06l1.06 1.06Zm4.95-1.768a.75.75 0 1 0-1.06 1.06l1.06-1.06Zm3.359.53-.884.884 1.06 1.06.885-.883-1.061-1.06Zm-4.95-2.12 1.414-1.415L12 6.344l-1.415 1.413 1.061 1.061Zm0 3.535a2.5 2.5 0 0 1 0-3.536l-1.06-1.06a4 4 0 0 0 0 5.656l1.06-1.06Zm4.95-4.95a2.5 2.5 0 0 1 0 3.535L17.656 12a4 4 0 0 0 0-5.657l-1.06 1.06Zm1.06-1.06a4 4 0 0 0-5.656 0l1.06 1.06a2.5 2.5 0 0 1 3.536 0l1.06-1.06Zm-7.07 7.07.176.177 1.06-1.06-.176-.177-1.06 1.06Zm-3.183-.353.884-.884-1.06-1.06-.884.883 1.06 1.06Zm4.95 2.121-1.414 1.414 1.06 1.06 1.415-1.413-1.06-1.061Zm0-3.536a2.5 2.5 0 0 1 0 3.536l1.06 1.06a4 4 0 0 0 0-5.656l-1.06 1.06Zm-4.95 4.95a2.5 2.5 0 0 1 0-3.535L6.344 12a4 4 0 0 0 0 5.656l1.06-1.06Zm-1.06 1.06a4 4 0 0 0 5.657 0l-1.061-1.06a2.5 2.5 0 0 1-3.535 0l-1.061 1.06Zm7.07-7.07-.176-.177-1.06 1.06.176.178 1.06-1.061Z"
             fill="currentColor"
           ></path>
         </svg>
-        <span class="ml-2">
+        <span className="ml-2">
           {' '}
           <ul role="list" className=" flex items-center space-x-6">
             <li>
@@ -135,18 +139,18 @@ export function WorkStatus({ ...props }) {
           viewBox="0 0 24 24"
           fill="none"
           strokeWidth="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           aria-hidden="true"
-          class="h-6 w-6 flex-none"
+          className="h-6 w-6 flex-none"
         >
           <path
             d="M2.75 9.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-            class="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
+            className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
           ></path>
           <path
             d="M3 14.25h6.249c.484 0 .952-.002 1.316.319l.777.682a.996.996 0 0 0 1.316 0l.777-.682c.364-.32.832-.319 1.316-.319H21M8.75 6.5V4.75a2 2 0 0 1 2-2h2.5a2 2 0 0 1 2 2V6.5"
-            class="stroke-zinc-400 dark:stroke-zinc-500"
+            className="stroke-zinc-400 dark:stroke-zinc-500"
           ></path>
         </svg>
         <p className="-ml-10 text-sm font-medium text-gray-500">
@@ -302,14 +306,14 @@ export const Galery = (
         {/* <LandingHeroTabs {...props}/> */}
         {/* <div>
           <img
-            class="h-32 w-full object-cover lg:h-48"
+            className="h-32 w-full object-cover lg:h-48"
             src="https://images.unsplash.com/photo-1444628838545-ac4016a5418a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80"
             alt=""
           />
         </div> */}
         <div className="max-w-10xl mx-3 lg:my-4 lg:mt-8  lg:pb-12 ">
           {/* <div
-            class="wax-w-2xl absolute -z-10 ml-10 w-[200%] skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-inset ring-white md:left-1/2 md:ml-20 md:ml-36 lg:-inset-y-px"
+            className="wax-w-2xl absolute -z-10 ml-10 w-[200%] skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-inset ring-white md:left-1/2 md:ml-20 md:ml-36 lg:-inset-y-px"
             aria-hidden="true"
           ></div> */}
           {/* <div className="OTHE">OTHER CONTENT </div> */}
@@ -400,19 +404,19 @@ export const Podcast = (props) => {
                 id="iphone-video"
                 className="podcast-details max-w-xl lg:pr-8"
               >
-                <div class="xl:py-34 px-6 py-10  lg:px-0  lg:py-20  ">
-                  <p class="eyebrow-red  mt-2 mb-4">Podcast App</p>
-                  <h2 class="headline typography-headline dark:text-slate-100">
+                <div className="xl:py-34 px-6 py-10  lg:px-0  lg:py-20  ">
+                  <p className="eyebrow-red  mt-2 mb-4">Podcast App</p>
+                  <h2 className="headline typography-headline dark:text-slate-100">
                     {' '}
                     Bulding a Podcast App
                     <br className="small text-sky-500" /> With React.
                   </h2>
-                  <p class="typography-news-copy pt-4 dark:text-slate-300/50">
+                  <p className="typography-news-copy pt-4 dark:text-slate-300/50">
                     When you’re building a website for a company as ambitious as
                     NasDesign you ne was written in Go. Go is a wonderful
                     program...
                   </p>
-                  <p class="read-time blue-3 mt-4">
+                  <p className="read-time blue-3 mt-4">
                     Read more in projects section
                   </p>
                 </div>

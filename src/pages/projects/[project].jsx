@@ -63,7 +63,7 @@ const Project = function ({ products }) {
               </dl>
               <p className="mt-6 font-medium text-gray-900 md:mt-10">
                 {product.status} on{' '}
-                <time dateTime={product.datetime}>{product.date}</time>
+                <time dateTime={product.dateTime}>{product.date}</time>
               </p>
               <div className="mt-6">
                 <div className="overflow-hidden rounded-full bg-gray-200">

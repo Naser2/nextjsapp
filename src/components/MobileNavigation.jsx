@@ -143,17 +143,17 @@ export function MobileNavigation(props) {
                   layoutScroll
                   className="ring-zinc-900/7.5 fixed left-0 top-14 bottom-0 w-full overflow-y-auto bg-white  pb-4 shadow-lg shadow-zinc-900/10 ring-1 dark:bg-zinc-900 dark:ring-zinc-800 min-[416px]:max-w-sm sm:px-6 sm:pb-10"
                 >
-                  <div class="flex items-center gap-4  p-4 ">
+                  <div className="flex items-center gap-4  p-4 ">
                     <img
-                      class="h-12 w-12 rounded-full"
+                      className="h-12 w-12 rounded-full"
                       src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80"
                     />
-                    <strong class="text-sm font-medium text-slate-900 dark:text-slate-200">
+                    <strong className="text-sm font-medium text-slate-900 dark:text-slate-200">
                       User.name
                     </strong>
                   </div>
                   {router.pathname.includes(['/dev/']) && (
-                    <div class="black-2-bg flex items-center gap-4 p-4">
+                    <div className="black-2-bg flex items-center gap-4 p-4">
                       {shortCuts.map((shortcut) => (
                         <Link
                           href={shortcut.href}
@@ -165,7 +165,7 @@ export function MobileNavigation(props) {
                           ]}
                         >
                           {isCurrentRoute(shortcut.href) && (
-                            <div class="mr-1 h-2.5 w-2.5 rounded-full bg-sky-400"></div>
+                            <div className="mr-1 h-2.5 w-2.5 rounded-full bg-sky-400"></div>
                           )}
 
                           {shortcut.title}

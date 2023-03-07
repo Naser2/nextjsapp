@@ -167,21 +167,21 @@ function BlogPattern({ mouseX, mouseY, ...gridProps }) {
 function MobileBlog({ sample }) {
   return (
     <article
-      class="person-preview CommunityPersonPreview_twoColumn__Qwbfa relative  mx-4 my-2 flex rounded-md bg-white "
+      className="person-preview CommunityPersonPreview_twoColumn__Qwbfa relative  mx-4 my-2 flex rounded-md bg-white "
       data-focused="false"
     >
-      <div class="CommunityPersonPreview_info__DL5Hv most_read_blog_mobile_content relative mt-0 ">
-        <h3 class="CommunityPersonPreview_name__RPUqp shared_fg1__gLzCo shared_header6__Hr7DT shared_header__9ehtA lg:not-truncate truncate">
+      <div className="CommunityPersonPreview_info__DL5Hv most_read_blog_mobile_content relative mt-0 ">
+        <h3 className="CommunityPersonPreview_name__RPUqp shared_fg1__gLzCo shared_header6__Hr7DT shared_header__9ehtA lg:not-truncate truncate">
           {sample.title}
         </h3>
-        {/* <h3 class="CommunityPersonPreview_name__RPUqp shared_fg1__gLzCo shared_header6__Hr7DT shared_header__9ehtA hidden overflow-hidden lg:flex">
+        {/* <h3 className="CommunityPersonPreview_name__RPUqp shared_fg1__gLzCo shared_header6__Hr7DT shared_header__9ehtA hidden overflow-hidden lg:flex">
           {sample.title}
         </h3> */}
-        <p class="CommunityPersonPreview_headline__snZaD shared_text3__svfyZ shared_fg2__lqk6z -mt-2 truncate ">
+        <p className="CommunityPersonPreview_headline__snZaD shared_text3__svfyZ shared_fg2__lqk6z -mt-2 truncate ">
           {sample.description}
         </p>
         <div>
-          <div class="CommunityPersonPreview_location__cdE2S">
+          <div className="CommunityPersonPreview_location__cdE2S">
             {/* <svg
               data-sanity-icon="pin"
               width="1em"
@@ -201,14 +201,14 @@ function MobileBlog({ sample }) {
                 strokeWidth="1.2"
               ></path>
             </svg> */}
-            <span class="visually-hidden mb-2 -mt-2 ">{sample.date}</span>{' '}
+            <span className="visually-hidden mb-2 -mt-2 ">{sample.date}</span>{' '}
             {sample.readingTime}
           </div>
         </div>
       </div>
-      <div class="CommunityPersonPreview_photoWrapper__LN7Ly">
+      <div className="CommunityPersonPreview_photoWrapper__LN7Ly">
         <div
-          class="CommunityPersonPreview_photo__ztqTs Image_root__GJXWR  rounded-lg"
+          className="CommunityPersonPreview_photo__ztqTs Image_root__GJXWR  rounded-lg"
           data-has-aspect="true"
           className="--aspect-ratio:1; --source-width:1200px;"
         >
@@ -230,7 +230,7 @@ function MobileBlog({ sample }) {
         className="CommunityPersonPreview_link__vTot1 sr-only"
         href="/exchange/community/kmelve"
       >
-        <span class="visually-hidden">Visit author's profile</span>{' '}
+        <span className="visually-hidden">Visit author's profile</span>{' '}
       </a>
     </article>
   )
@@ -351,7 +351,7 @@ function Blog({ sample }) {
               </a>
             </p>
             <div className="flex space-x-1 text-sm text-gray-500">
-              <time dateTime={sample.datetime}>{sample.date}</time>
+              <time dateTime={sample.dateTime}>{sample.date}</time>
               <span aria-hidden="true">&middot;</span>
               <span>{sample.readingTime} read</span>
             </div>
@@ -457,7 +457,7 @@ const BlogsSample = forwardRef((props, ref) => {
             ))}
           </div>
           <p
-            class="font-display underline-red-500  my-4 border-b border-red-500 border-indigo-500 text-center text-3xl  font-medium  tracking-tighter text-slate-700
+            className="font-display underline-red-500  my-4 border-b border-red-500 border-indigo-500 text-center text-3xl  font-medium  tracking-tighter text-slate-700
           text-black  dark:text-slate-800 sm:text-5xl xl:pb-4"
           >
             Most read

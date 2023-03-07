@@ -75,8 +75,8 @@ export function ArticleLayout({
                     d=" M28.781600952148438,51.62379837036133 C28.781600952148438,51.62379837036133 0.5506290197372437,51.931400299072266 0.5506290197372437,51.931400299072266 C0.5506290197372437,51.931400299072266 0,0.560791015625 0,0.560791015625 C0,0.560791015625 51.370399475097656,0 51.370399475097656,0 C51.370399475097656,0 51.92070007324219,51.32809829711914 51.92070007324219,51.32809829711914 C51.92070007324219,51.32809829711914 51.92559814453125,51.32809829711914 51.92559814453125,51.32809829711914 C52.23210144042969,79.65989685058594 29.49090003967285,102.88400268554688 1.1059000492095947,103.26000213623047 C1.1059000492095947,103.26000213623047 0.8561099767684937,80.1720962524414 0.8561099767684937,80.1720962524414 C16.443599700927734,79.93509674072266 28.925500869750977,67.18409729003906 28.781600952148438,51.62379837036133z"
                   ></path>
                   <path
-                    stroke-linecap="square"
-                    stroke-linejoin="miter"
+                    strokeLinecap="square"
+                    strokeLinejoin="miter"
                     fill-opacity="0"
                     stroke-miterlimit="1"
                     stroke="rgb(0,0,0)"
@@ -98,8 +98,8 @@ export function ArticleLayout({
                     d=" M51.37919998168945,51.331298828125 C51.37919998168945,79.66470336914062 28.38800048828125,102.64099884033203 0.0006453570094890893,102.70999908447266 C0.0006453570094890893,102.70999908447266 0.0006433380185626447,79.62100219726562 0.0006433380185626447,79.62100219726562 C15.589900016784668,79.55280303955078 28.2091007232666,66.9375 28.233400344848633,51.37630081176758 C28.233400344848633,51.37630081176758 0.0004882809880655259,51.378299713134766 0.0004882809880655259,51.378299713134766 C0.0004882809880655259,51.378299713134766 0.0056412601843476295,0.004788119811564684 0.0056412601843476295,0.004788119811564684 C0.0056412601843476295,0.004788119811564684 51.37910079956055,-0.00024414100334979594 51.37910079956055,-0.00024414100334979594 C51.37910079956055,-0.00024414100334979594 51.374000549316406,51.331298828125 51.374000549316406,51.331298828125 C51.374000549316406,51.331298828125 51.37919998168945,51.331298828125 51.37919998168945,51.331298828125z"
                   ></path>
                   <path
-                    stroke-linecap="square"
-                    stroke-linejoin="miter"
+                    strokeLinecap="square"
+                    strokeLinejoin="miter"
                     fill-opacity="0"
                     stroke-miterlimit="1"
                     stroke="rgb(0,0,0)"
@@ -209,17 +209,17 @@ export function ArticleLayout({
                 <div className="large-10 large-centered medium-12">
                   <div
                     id="blog-page-tag"
-                    class="mx-auto max-w-7xl sm:px-6 md:px-8"
+                    className="mx-auto max-w-7xl sm:px-6 md:px-8"
                   >
                     <a
-                      class={clsx(
+                      className={clsx(
                         meta.theme.tag ?? 'dark:yellow-bg',
                         'eyebrow blog_list_card_tag group mb-4 inline-flex h-6 items-center whitespace-nowrap rounded-xl bg-transparent px-3 text-sm font-semibold text-black shadow-sm shadow-slate-300 hover:bg-slate-600/90 hover:text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:text-slate-900 dark:hover:bg-slate-900 dark:hover:text-white dark:focus:ring-slate-500'
                       )}
                       href={`/blogs/${meta.tag && meta.tag}`}
                     >
                       {meta.tag && meta.tag}
-                      <span class="sr-only">blog tag</span>
+                      <span className="sr-only">blog tag</span>
                     </a>
                   </div>
                   {/* <h5 className="bg-white px-2 py-1 text-black">
@@ -307,7 +307,7 @@ export function ArticleLayout({
                 <div className=" col-span-2 w-full max-w-sm lg:flex lg:max-w-full">
                   <div
                     classname="col-span-2  gap-8"
-                    datetime="replace-the-p-tag"
+                    dateTime="replace-the-p-tag"
                   >
                     <header className="flex flex-col lg:pr-8">
                       {/* <h1 className="story-card__name text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl lg:mt-6">
@@ -335,7 +335,7 @@ export function ArticleLayout({
                       height={100}
                     />
                     {/* <time
-                      datetime="2022-12-05T23:00:00.000Z"
+                      dateTime="2022-12-05T23:00:00.000Z"
                       className="figma-7kyli6 text-center dark:text-white"
                     >
                     {formatDate(meta.date)}
@@ -378,7 +378,7 @@ export function ArticleLayout({
                   <a href="#">{'Likes'}</a>
                 </p>
                 <div className="flex space-x-1 text-sm text-gray-500">
-                  <time datetime="2020-03-10">{'Comments'}</time>
+                  <time dateTime="2020-03-10">{'Comments'}</time>
                   <span aria-hidden="true">·</span>
                   <span>4 min read</span>
                 </div>

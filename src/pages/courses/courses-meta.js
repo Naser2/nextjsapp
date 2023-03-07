@@ -259,7 +259,7 @@ export const coursesMeta = [
           `,
           author: 'Risako M',
           date: 'May 16, 2021',
-          datetime: '2021-01-06',
+          dateTime: '2021-01-06',
           avatarSrc:
             'https://tailwindui.com/img/ecommerce-images/product-page-01-featured-product-shot.jpg',
         },

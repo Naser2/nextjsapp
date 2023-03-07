@@ -68,10 +68,13 @@ const LearnCodeSection = forwardRef((props, ref) => {
               id="sectio-title-text"
               className="h-4 px-4  py-10 text-3xl  leading-7 lg:mb-10 lg:px-28 lg:py-8 xl:px-24 "
             >
-              <p id="slogan" class="-mt-1 pl-1 text-sm dark:text-yellow-400">
+              <p
+                id="slogan"
+                className="-mt-1 pl-1 text-sm dark:text-yellow-400"
+              >
                 section
               </p>
-              <h2 class="font-semibold text-black dark:text-white lg:dark:bg-transparent">
+              <h2 className="font-semibold text-black dark:text-white lg:dark:bg-transparent">
                 Coding Site
               </h2>
             </div>
@@ -124,7 +127,7 @@ const LearnCodeSection = forwardRef((props, ref) => {
                 </time>
               </div>
               <div id="learn-to-code-body-mopbile-text" className="">
-                <h2 class="headline typography-headline px-4 pt-10 dark:text-slate-100 lg:pt-0 ">
+                <h2 className="headline typography-headline px-4 pt-10 dark:text-slate-100 lg:pt-0 ">
                   Learn to code
                   {/* <span className="pl-2 text-sky-600 ">Free</span> */}
                 </h2>
@@ -135,25 +138,25 @@ const LearnCodeSection = forwardRef((props, ref) => {
                   A collection of well orginized and simplified courses to get
                   you zéro to hero.
                 </div>
-                {/* <div class="pointer-events-none relative z-10  my-4 flex justify-center">
+                {/* <div className="pointer-events-none relative z-10  my-4 flex justify-center">
                     <a
-                      class="pointer-events-auto inline-flex justify-center rounded-lg bg-black py-3 px-4 text-sm font-semibold text-white hover:bg-slate-700 dark:bg-white dark:text-black"
+                      className="pointer-events-auto inline-flex justify-center rounded-lg bg-black py-3 px-4 text-sm font-semibold text-white hover:bg-slate-700 dark:bg-white dark:text-black"
                       href="/components/#product-application-ui"
                     >
                       <span>
-                        Show more<span class="sr-only">, Application UI</span>
+                        Show more<span className="sr-only">, Application UI</span>
                       </span>
                     </a>
                   </div> */}
                 <Link
-                  class="my-4 mx-4 inline-flex justify-center rounded-lg bg-black px-8 py-3  text-sm font-semibold text-white hover:bg-slate-700 dark:bg-white dark:text-black"
+                  className="my-4 mx-4 inline-flex justify-center rounded-lg bg-black px-8 py-3  text-sm font-semibold text-white hover:bg-slate-700 dark:bg-white dark:text-black"
                   href="/courses"
                 >
                   <span>
                     Browse Courses Now
                     <span
                       aria-hidden="true"
-                      class="hidden text-slate-400 sm:inline"
+                      className="hidden text-slate-400 sm:inline"
                     >
                       →
                     </span>

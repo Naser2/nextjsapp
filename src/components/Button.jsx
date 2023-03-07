@@ -98,29 +98,31 @@ export function CommomButtonMd({ href, className, ...props }) {
             viewBox="0 0 20 20"
             fill="none"
             aria-hidden="true"
-            class="mt-0.5 -ml-1 h-5 w-5 rotate-180"
+            className="mt-0.5 -ml-1 h-5 w-5 rotate-180"
           >
             <path
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               d="m11.5 6.5 3 3.5m0 0-3 3.5m3-3.5h-9"
             ></path>
           </svg>
         )}
         {props.text}
-        <span class="sr-only">{props.srText ? props.srText : 'a button'}</span>
+        <span className="sr-only">
+          {props.srText ? props.srText : 'a button'}
+        </span>
         {props.arrow == 'right' && (
           <svg
-            class="ml-3 overflow-visible text-pink-300 group-hover:text-pink-400 dark:text-slate-500 dark:group-hover:text-slate-400"
+            className="ml-3 overflow-visible text-pink-300 group-hover:text-pink-400 dark:text-slate-500 dark:group-hover:text-slate-400"
             width="3"
             height="6"
             viewBox="0 0 3 6"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
             <path d="M0 0L3 3L0 6"></path>
           </svg>

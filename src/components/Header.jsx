@@ -14,11 +14,10 @@ import { ModeToggle } from '@/components/ModeToggle'
 import { MobileSearch, Search } from '@/components/Search'
 import { CompanyLogo } from './CompanyLogo'
 
-function TopLevelNavItem({ href, key, children }) {
+function TopLevelNavItem({ href, children }) {
   return (
     <li>
       <Link
-        key={key}
         href={href}
         className="text-sm font-semibold leading-6 text-slate-700 dark:text-slate-200"
       >

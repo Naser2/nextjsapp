@@ -22,10 +22,10 @@ const AboutSection = forwardRef((props, ref) => {
           id="sectio-title-text"
           className="mb-24  h-4 px-4  pt-8  text-3xl leading-7 lg:mb-10 lg:py-4  lg:py-8 lg:py-8"
         >
-          <p id="slogan" class="-mt-1 pl-1 text-sm dark:text-yellow-400">
+          <p id="slogan" className="-mt-1 pl-1 text-sm dark:text-yellow-400">
             section
           </p>
-          <h2 class="font-semibold text-sky-500 lg:dark:bg-transparent">
+          <h2 className="font-semibold text-sky-500 lg:dark:bg-transparent">
             About
           </h2>
         </div>
@@ -119,7 +119,7 @@ const AboutSection = forwardRef((props, ref) => {
                 </div>
               </div>
               <div
-                class="relative bg-indigo-800 py-4 px-4 md:hidden  lg:px-20"
+                className="relative bg-indigo-800 py-4 px-4 md:hidden  lg:px-20"
                 text="Only writting about what passionates me"
                 bandcolor="main-bg-yellow"
               ></div>
@@ -138,7 +138,7 @@ const AboutSection = forwardRef((props, ref) => {
         </div>
       </CustomizedContainer>
       <div
-        class="relative bg-indigo-600 py-4  px-4 text-white dark:bg-black lg:px-20"
+        className="relative bg-indigo-600 py-4  px-4 text-white dark:bg-black lg:px-20"
         text="Only writting about what passionates me"
         bandcolor="main-bg-yellow"
       >
@@ -149,8 +149,8 @@ const AboutSection = forwardRef((props, ref) => {
           aria-label="A list of great blogs to read"
         >
           Music and art has always been part of my life.{' '}
-          <span class=" ">
-            <span class="footnote footnote-supglyph">
+          <span className=" ">
+            <span className="footnote footnote-supglyph">
               {' '}
               watch some of my music{' '}
               <a href="#footnote-1" aria-label="Footnote * symbol">

@@ -194,7 +194,7 @@ export default function SectionLandingHero() {
         <div id="landing-hero-background lg:h-74">
           {/* <div className="indigo-band">
             <div
-              class="relative bg-indigo-800 py-0.5 px-4 lg:px-20"
+              className="relative bg-indigo-800 py-0.5 px-4 lg:px-20"
               text="Only writting about what passionates me"
               bandcolor="main-bg-yellow"
             ></div>
@@ -207,14 +207,14 @@ export default function SectionLandingHero() {
           />
           {/* <div className="black-band">
             <div
-              class="relative bg-indigo-800 py-0.5 px-4 lg:px-20"
+              className="relative bg-indigo-800 py-0.5 px-4 lg:px-20"
               text="Only writting about what passionates me"
               bandcolor="main-bg-yellow"
             ></div>
           </div> */}
           <div className="black-band">
             <div
-              class="relative bg-orange-400 py-0.5 px-4 lg:px-20"
+              className="relative bg-orange-400 py-0.5 px-4 lg:px-20"
               text="Only writting about what passionates me"
               bandcolor="main-bg-yellow"
             ></div>

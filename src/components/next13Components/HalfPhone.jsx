@@ -290,16 +290,16 @@ function PodcastUserProfileScreen({ custom, animated = false }) {
           Get a <span className="text-indigo-100">consultation</span> for your project
         </PodcastAppScreen.Subtitle> */}
         {/* <PodcastAppScreen.ProfileImage /> */}
-        <div class="mt-2 flex lg:mt-0">
-          <div class="max-w-6xl  lg:px-8">
-            <div class="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-2 sm:space-x-5 ">
-              <div class="flex">
-                <div class="top-[var(--avatar-top,theme(spacing.3))] flex w-full items-center space-x-2 ">
-                  <div class="pointer-events-auto relative h-24  w-24 rounded-full ring-indigo-300 sm:h-32 sm:w-32">
+        <div className="mt-2 flex lg:mt-0">
+          <div className="max-w-6xl  lg:px-8">
+            <div className="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-2 sm:space-x-5 ">
+              <div className="flex">
+                <div className="top-[var(--avatar-top,theme(spacing.3))] flex w-full items-center space-x-2 ">
+                  <div className="pointer-events-auto relative h-24  w-24 rounded-full ring-indigo-300 sm:h-32 sm:w-32">
                     <Image
                       alt="Avatar Image"
                       src={podcastUserProfileImg}
-                      class="h-16 h-24  w-16 w-24  rounded-full bg-zinc-100 object-cover ring-4 ring-orange-400 dark:bg-zinc-800 sm:h-32 sm:h-32  sm:w-32 sm:w-32 "
+                      className="h-16 h-24  w-16 w-24  rounded-full bg-zinc-100 object-cover ring-4 ring-orange-400 dark:bg-zinc-800 sm:h-32 sm:h-32  sm:w-32 sm:w-32 "
                     />
                   </div>
                 </div>
@@ -309,17 +309,17 @@ function PodcastUserProfileScreen({ custom, animated = false }) {
         </div>
         <div
           id="podcast-user-profile-detail"
-          class="max-w-64 my-1 ml-1 lg:-ml-4 lg:pb-0"
+          className="max-w-64 my-1 ml-1 lg:-ml-4 lg:pb-0"
         >
-          <div class="max-w-2l my-0 ml-4 lg:ml-6">
-            <div class="mt-0 sm:flex sm:min-w-0 sm:flex-1 sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
-              <div class="min-w-0 flex-1 sm:hidden md:block">
-                <div class="flex text-gray-500 sm:mr-6 md:mt-0 ">
-                  <h1 class="truncate pr-1 text-2xl font-bold text-white text-gray-900 dark:text-slate-100">
+          <div className="max-w-2l my-0 ml-4 lg:ml-6">
+            <div className="mt-0 sm:flex sm:min-w-0 sm:flex-1 sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
+              <div className="min-w-0 flex-1 sm:hidden md:block">
+                <div className="flex text-gray-500 sm:mr-6 md:mt-0 ">
+                  <h1 className="truncate pr-1 text-2xl font-bold text-white text-gray-900 dark:text-slate-100">
                     Cynthia Jakson{' '}
                   </h1>
                   <svg
-                    class="mr-1.5 mt-2 h-5 w-5 flex-shrink-0 text-blue-400"
+                    className="mr-1.5 mt-2 h-5 w-5 flex-shrink-0 text-blue-400"
                     x-description="Heroicon name: mini/check-circle"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -335,16 +335,16 @@ function PodcastUserProfileScreen({ custom, animated = false }) {
                 </div>
               </div>
             </div>
-            <div class="flex  border-gray-100">
+            <div className="flex  border-gray-100">
               <span className="pr-2 text-slate-400">Read</span>{' '}
-              <span class="text-sm font-semibold text-slate-300">
+              <span className="text-sm font-semibold text-slate-300">
                 167 Books
               </span>{' '}
             </div>
 
-            <div class="flex  border-gray-100 pb-2">
+            <div className="flex  border-gray-100 pb-2">
               <span className="pr-2 text-slate-400">Released</span>{' '}
-              <span class="text-sm font-semibold text-slate-300">
+              <span className="text-sm font-semibold text-slate-300">
                 84 podcasts
               </span>{' '}
             </div>
@@ -378,12 +378,12 @@ function PodcastUserProfileScreen({ custom, animated = false }) {
             ].map((field) => (   
          
               <div key={field.label}   className="flex justify-between border-b border-gray-100 pb-4">
-                         <div class="flex justify-between border-b border-gray-100 pb-4">
-                          <div class="text-sm text-white">Released</div><div class="text-sm font-semibold text-white">84 podcasts</div>
+                         <div className="flex justify-between border-b border-gray-100 pb-4">
+                          <div className="text-sm text-white">Released</div><div className="text-sm font-semibold text-white">84 podcasts</div>
                           </div>
-                <div class="text-sm text-gray-500">{field.label}</div>
+                <div className="text-sm text-gray-500">{field.label}</div>
 
-                <div class="text-sm font-semibold text-gray-900">{field.value}</div>
+                <div className="text-sm font-semibold text-gray-900">{field.value}</div>
               </div>
   
             ))} */}
@@ -513,7 +513,7 @@ function PodcastLisScreen({ custom, animated = false }) {
                   >
                     <path
                       d="M19 12C19 12.3557 18.8111 12.6846 18.5039 12.8638L6.50387 19.8638C6.19458 20.0442 5.81243 20.0455 5.50194 19.8671C5.19145 19.6888 5 19.3581 5 19L5 5C5 4.64193 5.19145 4.3112 5.50194 4.13286C5.81243 3.95452 6.19458 3.9558 6.50387 4.13622L18.5039 11.1362C18.8111 11.3154 19 11.6443 19 12Z"
-                      class="fill"
+                      className="fill"
                     ></path>
                   </svg>
                 </button>
@@ -702,17 +702,17 @@ function ProjectConsultationServiceScreen({ custom, animated = false }) {
               {showSendingBtn && (
                 <button
                   type="button"
-                  class=" max-w-64 flex items-center  justify-center rounded-md bg-slate-700 px-4 py-2 text-sm font-semibold leading-6 text-white shadow hover:bg-slate-900"
+                  className=" max-w-64 flex items-center  justify-center rounded-md bg-slate-700 px-4 py-2 text-sm font-semibold leading-6 text-white shadow hover:bg-slate-900"
                   disabled=""
                 >
                   <svg
-                    class="-ml-1 mr-3 h-5 w-5 animate-spin text-white motion-reduce:hidden"
+                    className="-ml-1 mr-3 h-5 w-5 animate-spin text-white motion-reduce:hidden"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                   >
                     <circle
-                      class="opacity-25"
+                      className="opacity-25"
                       cx="12"
                       cy="12"
                       r="10"
@@ -720,7 +720,7 @@ function ProjectConsultationServiceScreen({ custom, animated = false }) {
                       strokeWidth="4"
                     ></circle>
                     <path
-                      class="opacity-75"
+                      className="opacity-75"
                       fill="currentColor"
                       d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                     ></path>

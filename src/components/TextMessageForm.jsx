@@ -123,7 +123,7 @@ export const TextMessageForm = ({ toggleModal }) => {
         <label className="sr-only md:not-sr-only md:mx-4 md:mt-4 md:block md:text-sm md:text-gray-500">
           Time Sensitivity
         </label>
-        <div class="sr-only flex justify-center md:not-sr-only md:mt-2">
+        <div className="sr-only flex justify-center md:not-sr-only md:mt-2">
           <label className="inline-block text-slate-800">
             <input
               className="mt-4 mr-1 text-slate-800"
@@ -154,8 +154,8 @@ export const TextMessageForm = ({ toggleModal }) => {
               {errors.jobtype.message}
             </div>
           )} */}
-        {/* <div class="rounded-lg   bg-black mt-8 text-center mx-2"> */}
-        <div class="mt-6 flex items-center justify-center">
+        {/* <div className="rounded-lg   bg-black mt-8 text-center mx-2"> */}
+        <div className="mt-6 flex items-center justify-center">
           {!showSendingBtn && (
             <button
               type="button"
@@ -169,17 +169,17 @@ export const TextMessageForm = ({ toggleModal }) => {
           {showSendingBtn && (
             <button
               type="button"
-              class="inline-flex items-center rounded-md bg-slate-700 px-4 py-2 text-sm font-semibold leading-6 text-white shadow hover:bg-slate-900"
+              className="inline-flex items-center rounded-md bg-slate-700 px-4 py-2 text-sm font-semibold leading-6 text-white shadow hover:bg-slate-900"
               disabled={true}
             >
               <svg
-                class="-ml-1 mr-3 h-5 w-5 animate-spin text-orange-400 motion-reduce:hidden"
+                className="-ml-1 mr-3 h-5 w-5 animate-spin text-orange-400 motion-reduce:hidden"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
               >
                 <circle
-                  class="opacity-25"
+                  className="opacity-25"
                   cx="12"
                   cy="12"
                   r="10"
@@ -187,7 +187,7 @@ export const TextMessageForm = ({ toggleModal }) => {
                   strokeWidth="4"
                 ></circle>
                 <path
-                  class="opacity-75"
+                  className="opacity-75"
                   fill="currentColor"
                   d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                 ></path>
@@ -198,7 +198,7 @@ export const TextMessageForm = ({ toggleModal }) => {
           )}
         </div>
         {/* <div className="flex justify-center">   
-             <button type="button" class="text-center inline-flex bg-black hover:bg-slate-700 py-2 px-3 text-center text-sm font-semibold text-white" type="submit" onClick={handleSubmit}>
+             <button type="button" className="text-center inline-flex bg-black hover:bg-slate-700 py-2 px-3 text-center text-sm font-semibold text-white" type="submit" onClick={handleSubmit}>
             Send  <span classname="px-4 py-0"></span></button>
            
              </div> */}

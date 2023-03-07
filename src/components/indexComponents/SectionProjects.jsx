@@ -75,7 +75,7 @@ Project.Heading = function Project({ children, ...props }) {
       >
         {props.projectCategory}{' '}
         {/* {props.activeProject === props.projectname && (
-          <span class="px1 rounded-full bg-sky-500 py-1">.</span>
+          <span className="px1 rounded-full bg-sky-500 py-1">.</span>
         )} */}
       </p>
       <p
@@ -175,7 +175,7 @@ const SectionProjects = forwardRef(
                 >
                   See more projects
                 </Link>
-                <span class="ml-1 w-3/5 justify-center  rounded-full bg-gray-800 px-3 py-2  py-4 text-center text-sm font-medium leading-5 text-sky-500 dark:text-sky-400 md:sr-only">
+                <span className="ml-1 w-3/5 justify-center  rounded-full bg-gray-800 px-3 py-2  py-4 text-center text-sm font-medium leading-5 text-sky-500 dark:text-sky-400 md:sr-only">
                   <Link href="/projects"> See more projects</Link>
                 </span>
               </h2>

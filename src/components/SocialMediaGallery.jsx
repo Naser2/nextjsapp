@@ -90,7 +90,7 @@ export const intagramImgs = [
 //         {/* <LandingHeroTabs {...props}/> */}
 //         <div role="list" className="dark:highlight-white/10 rounded-t-xl">
 //           {/* dark:border-indigo-500/20 */}
-//           <div class="text-md mb-2 border-b border-indigo-500 py-1 pr-1">
+//           <div className="text-md mb-2 border-b border-indigo-500 py-1 pr-1">
 //             {galleryTitle}
 //           </div>
 //           <ul role="list" className="grid grid-cols-3 gap-x-1 gap-y-1 ">
@@ -235,7 +235,7 @@ const SocialMediaGallery = React.forwardRef(
             </ul>
           </div>
           {galleryMessage && (
-            <p class="sr-only tracking-tight text-black dark:text-slate-300 md:not-sr-only md:mt-4 md:px-4 md:pb-4 md:pb-0  md:text-lg xl:hidden">
+            <p className="sr-only tracking-tight text-black dark:text-slate-300 md:not-sr-only md:mt-4 md:px-4 md:pb-4 md:pb-0  md:text-lg xl:hidden">
               {galleryMessage}
             </p>
           )}

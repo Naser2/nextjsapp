@@ -86,18 +86,18 @@ function EpisodeEntry({
             sizes="(max-height: 324px) 20rem, (max-width: 1040px)"
             priority
           />
-          <div class="sm:pb-30 bg-black pt-4 pb-4 lg:pt-10">
-            <div id="PODCASTS-PAGE-TITLE" class="lg:px-8">
-              <div class="lg:max-w-6xl">
+          <div className="sm:pb-30 bg-black pt-4 pb-4 lg:pt-10">
+            <div id="PODCASTS-PAGE-TITLE" className="lg:px-8">
+              <div className="lg:max-w-6xl">
                 <div
                   id="PODCAST-LAYOUT-CHILDREN"
-                  class="mx-auto px-4 px-4 sm:px-6 md:max-w-2xl md:px-4 lg:px-0"
+                  className="mx-auto px-4 px-4 sm:px-6 md:max-w-2xl md:px-4 lg:px-0"
                 >
                   <div className="btn-and-title flex px-2">
                     <button
                       id="play-btn-Glodal"
                       type="button"
-                      class="group relative flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full bg-slate-700 hover:bg-slate-900 focus:outline-none focus:ring focus:ring-slate-700 focus:ring-offset-4"
+                      className="group relative flex h-20 w-20 flex-shrink-0 items-center justify-center rounded-full bg-slate-700 hover:bg-slate-900 focus:outline-none focus:ring focus:ring-slate-700 focus:ring-offset-4"
                       aria-label="Play"
                     >
                       <PlayPauseIcon
@@ -106,7 +106,7 @@ function EpisodeEntry({
                         className={['h-6 w-6 fill-white']}
                       />{' '}
                     </button>
-                    <h1 class="md:ml-6text-lg ml-4 font-bold leading-7 text-slate-100 dark:text-white lg:text-5xl ">
+                    <h1 className="md:ml-6text-lg ml-4 font-bold leading-7 text-slate-100 dark:text-white lg:text-5xl ">
                       <Link href={`/podcasts/episode/2`}>
                         Lars and Gang lashes back at Rupi Kaur after comments
                         she made.
@@ -129,14 +129,14 @@ function EpisodeEntry({
         //     sizes="(min-width: 1024px) 20rem, (min-width: 640px) 16rem, 12rem"
         //     priority
         //   />
-        //   <div class="sm:pb-30 pt-24 pb-12 lg:pt-40">
-        //     <div id="PODCASTS-PAGE-TITLE" class="lg:px-8">
-        //       <div class="lg:max-w-6xl">
+        //   <div className="sm:pb-30 pt-24 pb-12 lg:pt-40">
+        //     <div id="PODCASTS-PAGE-TITLE" className="lg:px-8">
+        //       <div className="lg:max-w-6xl">
         //         <div
         //           id="PODCAST-LAYOUT-CHILDREN"
-        //           class="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:px-0"
+        //           className="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:px-0"
         //         >
-        //           <h1 class="text-lg font-bold leading-7 text-slate-900 dark:text-white lg:text-5xl ">
+        //           <h1 className="text-lg font-bold leading-7 text-slate-900 dark:text-white lg:text-5xl ">
         //             <Link href={`/podcasts/${episode.id}`}>
         //               {episode.title}
         //             </Link>

@@ -25,26 +25,29 @@ export const SuperChagedCodeblock = () => {
             </div>
           </div>
           <div className="px-6 pt-6 pb-14">
-            <div class="px-6 pt-6 pb-14">
+            <div className="px-6 pt-6 pb-14">
               {/* <x-placeholder message="Your code example"> */}
-              <pre class="text-[0.8125rem] leading-6 text-gray-300">
+              <pre className="text-[0.8125rem] leading-6 text-gray-300">
                 <code>
-                  import {<span class="text-[#7dd3fc]">useState</span>} from{' '}
-                  <span class="text-emerald-300">'react'</span>
+                  import {<span className="text-[#7dd3fc]">useState</span>} from{' '}
+                  <span className="text-emerald-300">'react'</span>
                   <br />
-                  import {<span class="text-[#7dd3fc]">Switch</span>} from{' '}
-                  <span class="text-emerald-300">'@headlessui/react'</span>
+                  import {
+                    <span className="text-[#7dd3fc]">Switch</span>
+                  } from{' '}
+                  <span className="text-emerald-300">'@headlessui/react'</span>
                   <br />
-                  <span class="text-sky-500">function </span>
-                  <span class="text-indigo-400">CongratulateMembers</span>
-                  <span class="text-white">()</span>
+                  <span className="text-sky-500">function </span>
+                  <span className="text-indigo-400">CongratulateMembers</span>
+                  <span className="text-white">()</span>
                   <span className="sp-syntax-punctuation pl-2">{'{'}</span>
                   <br />
                   <br />
                   <span className="sp-syntax-punctuation pl-10">const </span>[
-                  <span class="text-[#7dd3fc]">enabled</span>,
-                  <span class="text-[#7dd3fc]"> setEnabled</span>] = useState(
-                  <span class="text-[#7dd3fc]">true</span>)
+                  <span className="text-[#7dd3fc]">enabled</span>,
+                  <span className="text-[#7dd3fc]"> setEnabled</span>] =
+                  useState(
+                  <span className="text-[#7dd3fc]">true</span>)
                   <div className="cm-line">
                     <span className="sp-syntax-punctuation">
                       <div className="cm-line ">
@@ -98,35 +101,39 @@ export const SuperChagedCodeblock = () => {
                       </div>
                     </span>
                   </div>
-                  <span class="[text-[#7dd3fc]]">return (</span>
-                  &lt;<span class="text-indigo-400">form</span> action=&quot;/
-                  <span class="text-emerald-300">notification-settings</span>
+                  <span className="[text-[#7dd3fc]]">return (</span>
+                  &lt;<span className="text-indigo-400">form</span>{' '}
+                  action=&quot;/
+                  <span className="text-emerald-300">
+                    notification-settings
+                  </span>
                   &quot; method=&quot;
-                  <span class="code-yellow">POST</span>&quot; <br />
-                  <span class="text-white">&lt;</span>
-                  <span class="text-indigo-400">Switch </span>checked=
-                  {<span class="text-[#7dd3fc]">enabled</span>} onChange=
-                  {<span class="text-[#7dd3fc]">setEnabled</span>} name=&quot;
-                  <span class="text-emerald-300">notifications</span>&quot;
+                  <span className="code-yellow">POST</span>&quot; <br />
+                  <span className="text-white">&lt;</span>
+                  <span className="text-indigo-400">Switch </span>checked=
+                  {<span className="text-[#7dd3fc]">enabled</span>} onChange=
+                  {<span className="text-[#7dd3fc]">setEnabled</span>}{' '}
+                  name=&quot;
+                  <span className="text-emerald-300">notifications</span>&quot;
                   <br />
                   {
-                    <span class="text-gray-500">
-                      &quot;/* .<span class="text-yellow-200/60">...</span>
+                    <span className="text-gray-500">
+                      &quot;/* .<span className="text-yellow-200/60">...</span>
                       ..*/&quot;
                     </span>
                   }
                   <br />
                   &lt;/
-                  <span class="text-indigo-400">Switch</span>&gt; &lt;
-                  <span class="text-red-400">button&gt;</span>
-                  &gt;<span class="text-yellow-400">Submit</span>&lt;/
-                  <span class="text-red-400">button</span>&gt; &lt;/
-                  <span class="text-indigo-400">
-                    <span class="sp-syntax-punctuation">&lt; &lt;</span>form
+                  <span className="text-indigo-400">Switch</span>&gt; &lt;
+                  <span className="text-red-400">button&gt;</span>
+                  &gt;<span className="text-yellow-400">Submit</span>&lt;/
+                  <span className="text-red-400">button</span>&gt; &lt;/
+                  <span className="text-indigo-400">
+                    <span className="sp-syntax-punctuation">&lt; &lt;</span>form
                   </span>
                   &gt;)
                   <br />
-                  <span class="text-indigo-400"></span>
+                  <span className="text-indigo-400"></span>
                 </code>
               </pre>
             </div>

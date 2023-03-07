@@ -28,7 +28,7 @@ export default {
     },
     {
       name: 'schedule',
-      type: 'datetime',
+      type: 'dateTime',
       title: 'Publish schedule',
     },
     {

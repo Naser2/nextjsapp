@@ -2369,7 +2369,7 @@ a {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 0.375rem;
-  /* background-image: url(data:image/svg+xml,%3Csvg width='12' height='12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.75 1v10M8.25 1v10M1 3.75h10M1 8.25h10' stroke='%2394A3B8' strokeWidth='1.5' stroke-linecap='round'/%3E%3C/svg%3E); */
+  /* background-image: url(data:image/svg+xml,%3Csvg width='12' height='12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.75 1v10M8.25 1v10M1 3.75h10M1 8.25h10' stroke='%2394A3B8' strokeWidth='1.5' strokeLinecap='round'/%3E%3C/svg%3E); */
   background-repeat: no-repeat;
   background-position: 50%;
   --tw-bg-opacity: 1;

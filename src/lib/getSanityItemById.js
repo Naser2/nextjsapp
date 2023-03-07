@@ -1,11 +1,12 @@
 const returnPlayableUrl = function (file, options) {
   const audioField = file.asset._ref.split('-')
-  // console.log('AUDIO FILE', audioField)
+  console.log('AUDIO OPTIONS IN GET BY ID ', options)
+  // console.log('AUDIO OPTIONS IN GET BY ID ', audioField)
   const audioUrl = `${
     'https://cdn.sanity.io/files/' +
-    options.PROJECT_ID +
+    options.projectId +
     '/' +
-    options.DATA_SET +
+    options.dataSet +
     '/' +
     audioField[1] +
     '.' +
@@ -21,9 +22,9 @@ const returnCoverArtUrl = function (coverArtDoc, options) {
   console.log('COVER DOC', coverArtDoc)
   const coverUrl = `${
     'https://cdn.sanity.io/images/' +
-    options.PROJECT_ID +
+    options.projectId +
     '/' +
-    options.DATA_SET +
+    options.dataSet +
     '/' +
     coverField[0] +
     '-' +

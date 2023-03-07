@@ -10,7 +10,7 @@ import Newsletter from '@/components/NewsLetter'
 import { HeroPattern } from '@/components/HeroPattern'
 // import TestimoniesSection from '@/components/indexComponents/TestimoniesSection'
 import SectionLandingHero from '@/components/indexComponents/SectionLandingHero'
-import { PlayPauseIcon } from './podcasts/old_index'
+import { PlayPauseIcon } from './podcasts/index'
 import backgroundImage from '@/images/background-newsletter.jpg'
 
 import SocialMediaaHandles, {
@@ -134,7 +134,7 @@ export default function Home({ blogs, music, episodes, className }) {
   const HomeMusicPlayer = () => {
     return (
       <>
-        <div class="px-auto xl:items-left relative mt-4 flex flex items-center items-center items-center gap-4 gap-4 px-8 pt-4 lg:px-28 lg:pt-1"></div>
+        <div className="px-auto xl:items-left relative mt-4 flex flex items-center items-center items-center gap-4 gap-4 px-8 pt-4 lg:px-28 lg:pt-1"></div>
         <div className="px-auto xl:items-left relative flex items-center items-center gap-4 px-8 pt-0 lg:px-28 lg:pt-1">
           <button
             type="button"
@@ -161,13 +161,13 @@ export default function Home({ blogs, music, episodes, className }) {
             >
               PLAY
             </span>
-            <div class="flex flex-col items-start"></div>
+            <div className="flex flex-col items-start"></div>
           </button>
-          <span aria-hidden="true" class="text-sm font-bold text-slate-300">
+          <span aria-hidden="true" className="text-sm font-bold text-slate-300">
             |
           </span>
           <span
-            class="flex items-center text-sm  font-bold leading-6 text-black hover:text-red-700 active:text-blue-500 dark:text-sky-500 dark:hover:text-indigo-400 "
+            className="flex items-center text-sm  font-bold leading-6 text-black hover:text-red-700 active:text-blue-500 dark:text-sky-500 dark:hover:text-indigo-400 "
             aria-label="Show notes for episode 5: Bill Lumbergh"
             href="/podcasts/5"
           >
@@ -176,17 +176,17 @@ export default function Home({ blogs, music, episodes, className }) {
         </div>
 
         <time
-          datetime="2022-02-24T00:00:00.000Z"
-          class="relative  order-first -mt-6 flex items-center items-center gap-x-4 px-10 px-8 pb-4 text-sm font-medium italic leading-7 text-slate-500 dark:mt-0 lg:mx-4 lg:px-24 lg:pt-1 "
+          dateTime="2022-02-24T00:00:00.000Z"
+          className="relative  order-first -mt-6 flex items-center items-center gap-x-4 px-10 px-8 pb-4 text-sm font-medium italic leading-7 text-slate-500 dark:mt-0 lg:mx-4 lg:px-24 lg:pt-1 "
         >
           <h2
             id="episode-5-title"
-            class="ml-24 text-lg font-bold text-slate-400 dark:ml-32 dark:text-slate-300/90 "
+            className="ml-24 text-lg font-bold text-slate-400 dark:ml-32 dark:text-slate-300/90 "
           >
             <a href="/5">Cool mix</a>
           </h2>{' '}
           Chill Mix{' '}
-          <span aria-hidden="true" class="text-sm font-bold text-slate-300">
+          <span aria-hidden="true" className="text-sm font-bold text-slate-300">
             |
           </span>{' '}
           17 mins
@@ -285,13 +285,13 @@ export default function Home({ blogs, music, episodes, className }) {
         />
 
         <div
-          class={[
+          className={[
             skyToIndigo,
             'z-[100] hidden h-[40px] w-full flex-col items-center justify-center bg-gray-100 bg-gradient-to-r from-sky-500 to-indigo-500 py-2 text-base dark:bg-gray-700 sm:flex-row sm:py-0 md:text-lg lg:flex',
           ]}
         >
           <a
-            class="SkipToContent_skipToContentLink__36RIn shared_primaryButton__LUnwD shared_button__RCiD_ shared_baseButton__eS1s3 shared_hairline2__TXZzE shared_resetButton__bYzwJ shared_box__yyOsu shared_borderRadius__c7hZ0 shared_focusOutlineOutside__cqmM7"
+            className="SkipToContent_skipToContentLink__36RIn shared_primaryButton__LUnwD shared_button__RCiD_ shared_baseButton__eS1s3 shared_hairline2__TXZzE shared_resetButton__bYzwJ shared_box__yyOsu shared_borderRadius__c7hZ0 shared_focusOutlineOutside__cqmM7"
             href="/projects"
           >
             The journey
@@ -325,7 +325,7 @@ export default function Home({ blogs, music, episodes, className }) {
         </CustomizedContainer>
         <div className="announcementBanner_root blue">
           <div className="blue SkipToContent_skipToContent__Rsvqx px-8 text-left lg:px-20">
-            <a class="" href="/projects">
+            <a className="" href="/projects">
               Projects
             </a>
           </div>
@@ -336,8 +336,8 @@ export default function Home({ blogs, music, episodes, className }) {
         {/* <CallToAction /> */}
         <HeroPattern />
         <div className="announcementBanner_root bg-black">
-          <div class="px-8 text-left lg:px-20">
-            <a class="" href="/projects">
+          <div className="px-8 text-left lg:px-20">
+            <a className="" href="/projects">
               Courses
             </a>
           </div>
@@ -345,13 +345,13 @@ export default function Home({ blogs, music, episodes, className }) {
         <LearnCodeSection ref={learnCode} />
 
         <div
-          class={[
+          className={[
             'bg-white',
             lightGreenToBlueClass,
             'z-[100] hidden h-[40px] w-full flex-col items-center justify-center bg-gray-100 bg-gradient-to-r from-sky-500 to-indigo-500 py-2 text-base dark:bg-gray-700 sm:flex-row sm:py-0 md:text-lg lg:flex',
           ]}
         >
-          <div class="hidden sm:block">Keep in touch </div>
+          <div className="hidden sm:block">Keep in touch </div>
         </div>
         <div
           id="contact"

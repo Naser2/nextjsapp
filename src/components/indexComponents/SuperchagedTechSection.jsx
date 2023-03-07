@@ -79,7 +79,7 @@ export default function SuperchagedTechSection() {
                     className="absolute -inset-y-px left-1/2 -z-10 ml-10 w-[200%] skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-inset ring-white md:ml-20 lg:ml-36"
                     aria-hidden="true"
                   /> */}
-                  <h1 class="sm:text-6xlxl mt-6 bg-black px-12 pb-10 pt-4 text-6xl font-bold tracking-tight text-white">
+                  <h1 className="sm:text-6xlxl mt-6 bg-black px-12 pb-10 pt-4 text-6xl font-bold tracking-tight text-white">
                     Modular and Reusable code
                   </h1>
                   <div
@@ -166,7 +166,7 @@ export const SuperChargedHalhPhone = ({ className }) => {
             className="absolute -inset-y-px left-1/2 -z-10 ml-10 w-[200%] skew-x-[-30deg] bg-indigo-100 opacity-20 ring-1 ring-inset ring-white md:ml-20 lg:ml-36"
             aria-hidden="true"
           /> */}
-              <h1 class="sm:text-6xlxl mt-6 bg-black px-12 pb-10 pt-4 text-6xl font-bold tracking-tight text-white">
+              <h1 className="sm:text-6xlxl mt-6 bg-black px-12 pb-10 pt-4 text-6xl font-bold tracking-tight text-white">
                 Modular and Reusable code
               </h1>
               <div

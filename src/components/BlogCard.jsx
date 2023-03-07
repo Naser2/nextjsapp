@@ -47,14 +47,17 @@ export function BlogCard({ blog }) {
                 <div className="section-content ">
                   <div className="column  large-5 large-offset-1 small-12 small-offset-0">
                     <div className="relative ml-2 px-2 ">
-                      <div id="tag" class="mx-auto max-w-7xl sm:px-6 md:px-8">
+                      <div
+                        id="tag"
+                        className="mx-auto max-w-7xl sm:px-6 md:px-8"
+                      >
                         <a
-                          class="eyebrow blog_list_card_tag  dark:yellow-bg ] group mb-4  inline-flex h-6 items-center whitespace-nowrap rounded-xl bg-transparent px-3 text-sm font-semibold text-black
+                          className="eyebrow blog_list_card_tag  dark:yellow-bg ] group mb-4  inline-flex h-6 items-center whitespace-nowrap rounded-xl bg-transparent px-3 text-sm font-semibold text-black
                            hover:bg-blue-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:text-slate-900 dark:hover:bg-slate-600 dark:hover:text-white dark:focus:ring-slate-500"
                           href="/docs/hover-focus-and-other-states"
                         >
                           {blog.category}
-                          <span class="sr-only">blog tag</span>
+                          <span className="sr-only">blog tag</span>
                         </a>
                       </div>
                       {/* <p

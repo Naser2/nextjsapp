@@ -44,11 +44,11 @@ const ProjectSection = forwardRef((props, ref) => {
           nameClass="text-white"
         />
         <a
-          class="md:-pt-10  mx-12 pt-10  text-sky-500 dark:hover:text-sky-400 md:mx-6 md:ml-20"
+          className="md:-pt-10  mx-12 pt-10  text-sky-500 dark:hover:text-sky-400 md:mx-6 md:ml-20"
           href="/showcase"
         >
           Desktop / mobile
-          <span class="ml-2 rounded-full bg-sky-600 px-2 py-0.5 text-xs font-medium leading-5 text-sky-600 dark:text-sky-100">
+          <span className="ml-2 rounded-full bg-sky-600 px-2 py-0.5 text-xs font-medium leading-5 text-sky-600 dark:text-sky-100">
             react-native{' '}
           </span>
         </a>

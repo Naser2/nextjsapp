@@ -57,7 +57,7 @@ const Project = function ({}) {
               </dl>
               <p className="mt-6 font-medium text-gray-900 md:mt-10">
                 {product.status} on{' '}
-                <time dateTime={product.datetime}>{product.date}</time>
+                <time dateTime={product.dateTime}>{product.date}</time>
               </p>
               <div className="mt-6">
                 <div className="overflow-hidden rounded-full bg-gray-200">
@@ -118,7 +118,7 @@ const products = [
     status: 'Completed',
     step: 5,
     date: 'March 24, 2021',
-    datetime: '2021-03-24',
+    dateTime: '2021-03-24',
     imageSrc:
       'https://tailwindui.com/img/ecommerce-images/confirmation-page-04-product-01.jpg',
     imageAlt:
