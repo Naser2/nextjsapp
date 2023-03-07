@@ -18,7 +18,7 @@ const features = [
   {
     name: 'Trade in real-time',
     description:
-      'Get insider tips on big stock moves and act on them within seconds.',
+      'Get insider tips on big investment moves and act on them within seconds.',
     icon: DeviceClockIcon,
   },
   {

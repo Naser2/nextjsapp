@@ -56,12 +56,6 @@ function EpisodeEntry({ episode }) {
     [episode]
   )
   let player = useAudioPlayer(audioPlayerData)
-  // console.log(
-  //   'PLAYER_META_TITLWå ',
-  //   player.meta && player.meta.title,
-  //   'PLAYER_PlayerData_title ',
-  //   audioPlayerData.title
-  // )
 
   return (
     <article

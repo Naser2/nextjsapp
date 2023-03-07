@@ -60,7 +60,7 @@ const SectionCodeBlock = () => {
                 <span className="text-orange-300">
                   mopdules<span className="">.</span>
                 </span>
-                tailwindCustomstyles
+                nasDeignCustomstyles
               </span>
               <span className="sp-syntax-punctuation">;</span>
               <br />

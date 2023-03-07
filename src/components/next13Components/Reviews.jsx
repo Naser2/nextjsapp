@@ -20,13 +20,13 @@ const reviews = [
   },
   {
     title: 'You need this app.',
-    body: 'I didn’t understand the stock market at all before Pocket. I still don’t, but at least I’m rich now.',
+    body: 'I didn’t understand the investment market at all before Pocket. I still don’t, but at least I’m rich now.',
     author: 'CluelessButRich',
     rating: 5,
   },
   {
     title: 'This shouldn’t be legal.',
-    body: 'Pocket makes it so easy to win big in the stock market that I can’t believe it’s actually legal.',
+    body: 'Pocket makes it so easy to win big in the investment market that I can’t believe it’s actually legal.',
     author: 'LivingDaDream',
     rating: 5,
   },
@@ -86,7 +86,7 @@ const reviews = [
   },
   {
     title: 'Quit my job.',
-    body: 'I downloaded Pocket three days ago and quit my job today. I can’t believe no one else thought to build a stock trading app that works this way!',
+    body: 'I downloaded Pocket three days ago and quit my job today. I can’t believe no one else thought to build a investment trading app that works this way!',
     author: 'GeorgeCostanza',
     rating: 5,
   },

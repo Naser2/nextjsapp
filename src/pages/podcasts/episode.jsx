@@ -134,30 +134,6 @@ export default function Episode({ episode, togglePartial }) {
                   </div>
                 </div>
               </>
-              {/* <div class="text-red-400">
-                <div id="heading" className="flex flex-col">
-                  <div className="flex gap-6">
-                    <PlayButton
-                      id="podcasts/PODCAST-PLAY_BUTTON"
-                      player={player}
-                      size="large"
-                    />
-                    <div id="podcast-title" className="flex flex-col">
-                      <h1 className="mt-2 text-xl font-bold  text-white md:text-xl lg:text-4xl xl:text-6xl">
-                        {episode.title}
-                      </h1>
-                      <FormattedDate
-                        date={date}
-                        className="order-first font-mono text-sm leading-7 text-slate-400"
-                      />
-                    </div>
-                  </div>
-                  <p className="lg:text-1xl ml-24 mt-3  font-medium leading-8 text-slate-300">
-                    {episode.description}
-                  </p>
-                </div>
-              </div> */}
-              {/* <div class="col-span-2 row-span-2 text-teal-400">03</div> */}
             </div>
           </header>
 
@@ -232,60 +208,3 @@ export default function Episode({ episode, togglePartial }) {
     </>
   )
 }
-
-// export async function getStaticProps({ params }) {
-//   const client = createClient({
-//     name: 'default',
-//     title: 'sanity-backend',
-//     projectId: PROJECT_ID,
-//     dataset: DATA_SET,
-//   })
-
-//   let options = { PROJECT_ID, DATA_SET }
-//   const music = await client.fetch(`*[_type == "music"]`)
-//   let organizedData = await getSanityFileUrl(music, options)
-//   console.log('ORGANIZED', organizedData)
-
-//   console.log('ORGANIZED-DATA_ID__>', organizedData[0].itemId)
-//   console.log('PARAMS-ID-->', params.episode)
-//   console.log(
-//     'CORRECT ID > ',
-//     organizedData.find(({ itemId }) => itemId === params.episode)
-//   )
-//   let paramsId = params.episode
-//   let episode = await getSanityItemById(music, paramsId, options)
-
-//   if (!episode) {
-//     return {
-//       notFound: true,
-//     }
-//   }
-
-//   return {
-//     props: {
-//       episode,
-//     },
-//     revalidate: 10,
-//   }
-// }
-
-// export async function getStaticPaths() {
-//   const client = createClient({
-//     name: 'default',
-//     title: 'sanity-backend',
-//     projectId: PROJECT_ID,
-//     dataset: DATA_SET,
-//   })
-//   const music = await client.fetch(`*[_type == "music"]`)
-//   music.map(({ id }) => {
-//     console.log('ID_____>', id)
-//   })
-//   return {
-//     paths: music.map(({ id }) => ({
-//       params: {
-//         episode: id.toString(),
-//       },
-//     })),
-//     fallback: 'blocking',
-//   }
-// }

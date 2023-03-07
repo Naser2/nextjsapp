@@ -31,7 +31,7 @@ import {
   StaticKitLogo,
   TransistorLogo,
   TupleLogo,
-} from './StockLogos'
+} from './ObjLogos'
 import dynamic from 'next/dynamic'
 import Modal from '../Modal'
 import { set } from 'react-hook-form'

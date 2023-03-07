@@ -125,5 +125,3 @@ This Agreement is governed by the laws of the Province of Ontario and the applic
 ## Questions?
 
 Unsure which license you need, or unsure if your use case is covered by our licenses?
-
-Email us at [support@tailwindui.com](mailto:support@tailwindui.com) with your questions.

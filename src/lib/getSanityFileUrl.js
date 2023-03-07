@@ -1,14 +1,14 @@
 const parseSanityData = async function (data, options) {
   const cleanData = data.map(
     ({ _id, id, title, published, description, file, coverArt }) => {
-      console.log('MusicART', coverArt && coverArt.asset)
+      console.log('Musi_File', file.asset._ref)
       const audioField = file.asset._ref.split('-')
-      // console.log('AUDIO FILE', audioField)
+      console.log('OPTION', options)
       const audioUrl = `${
         'https://cdn.sanity.io/files/' +
-        options.PROJECT_ID +
+        options.projectId +
         '/' +
-        options.DATA_SET +
+        options.dataSet +
         '/' +
         audioField[1] +
         '.' +
@@ -21,9 +21,9 @@ const parseSanityData = async function (data, options) {
       console.log(
         'ART FILE',
         'https://cdn.sanity.io/files/' +
-          options.PROJECT_ID +
+          options.projectId +
           '/' +
-          options.DATA_SET +
+          options.dataSet +
           '/' +
           CovertArtRef[1] +
           '.' +
@@ -33,9 +33,9 @@ const parseSanityData = async function (data, options) {
       )
       const coverArtUrl = `${
         'https://cdn.sanity.io/files/' +
-        options.PROJECT_ID +
+        options.projectId +
         '/' +
-        options.DATA_SET +
+        options.dataSet +
         '/' +
         CovertArtRef[1] +
         '.' +

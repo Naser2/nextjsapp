@@ -22,14 +22,6 @@ import { Eyebrow } from '@/components/siteMdxComponents'
 // import { client } from '../../sanityClient'
 import { keys } from '../../../keys'
 
-// import { useMemo } from 'react'
-// import Head from 'next/head'
-// import { parse } from 'rss-to-json'
-
-// import { useAudioPlayer } from '@/components/AudioProvider'
-// import { Container } from '@/components/Container'
-// import { FormattedDate } from '@/components/FormattedDate'
-// import { PlayButton } from '@/components/player/PlayButton'
 const projectId = keys.PROJECT_ID
 const dataSet = keys.DATA_SET
 const name = keys.NAME
@@ -65,21 +57,6 @@ export default function Episode({ episode, components }, props) {
     projectId: projectId,
     dataset: 'production',
   })
-  // const client = createClient({
-  //   name: 'default',
-  //   title: 'sanity-backend',
-  //   projectId: PROJECT_ID,
-  //   dataset: DATA_SET,
-  // })
-  // const client = createClient({
-  //   name: 'default',
-  //   title: 'sanity-backend',
-  //   projectId: process.env.PROJECT_ID,
-  //   dataset: process.env.DATA_SET,
-  //   //   useCdn: true, // set to `true` to fetch from edge cache
-  //   //   apiVersion: '2023-02-12', // use current date (YYYY-MM-DD) to target the latest API version
-  //   //   // token: process.env.SANITY_SECRET_TOKEN // Only if you want to update content with the client
-  // })
 
   console.log(
     ' PROPSSS->>>',
@@ -103,15 +80,6 @@ export default function Episode({ episode, components }, props) {
   function urlFor(imageSource) {
     return builder.image(imageSource)
   }
-  // const configuredSanityClient = sanityClient({
-  //   projectId: process.env.PROJECT_ID,
-  //   dataset: process.env.DATA_SET,
-  //   useCdn: true,
-  // })
-  // const imageProps = useNextSanityImage(
-  //   configuredSanityClient,
-  //   episode.coverArt.src
-  // )
 
   const router = useRouter()
   let date = new Date(episode.published)
@@ -413,23 +381,4 @@ export async function getStaticPaths() {
     })),
     fallback: 'blocking',
   }
-  // const client = createClient({
-  //   name: 'default',
-  //   title: 'sanity-backend',
-  //   projectId: PROJECT_ID,
-  //   dataset: DATA_SET,
-  // })
-  // const music = await client.fetch(`*[_type == "music"]`)
-  // // let feed = await parse('https://their-side-feed.vercel.app/api/feed')
-  // music.map(({ id }) => {
-  //   console.log('ID_____>', id)
-  // })
-  // return {
-  //   paths: music.map(({ id }) => ({
-  //     params: {
-  //       episode: id.toString(),
-  //     },
-  //   })),
-  //   fallback: 'blocking',
-  // }
 }

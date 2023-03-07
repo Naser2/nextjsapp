@@ -10,7 +10,7 @@ import Newsletter from '@/components/NewsLetter'
 import { HeroPattern } from '@/components/HeroPattern'
 // import TestimoniesSection from '@/components/indexComponents/TestimoniesSection'
 import SectionLandingHero from '@/components/indexComponents/SectionLandingHero'
-import { PlayPauseIcon } from './podcasts/index'
+import { PlayPauseIcon } from './podcasts/old_index'
 import backgroundImage from '@/images/background-newsletter.jpg'
 
 import SocialMediaaHandles, {
@@ -45,7 +45,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import EpisodeBG from '@/images/projectImages/lars_episode_bg.jpg'
 import { PlayButton } from '@/components/PodcastComponents/player/PlayButton'
-import channelBanner from '/channels4_banner.jpeg'
+// import channelBanner from '/channels4_banner.jpeg'
 import { CallToAction } from '@/components/next13Components/CallToAction'
 import { ProjectSection } from '@/components/indexComponents/HomePojectsSection'
 import { keys } from 'keys'
@@ -103,7 +103,7 @@ export default function Home({ blogs, music, episodes, className }) {
   )
   let player = useAudioPlayer(audioData)
 
-  // console.log('audioPlayerData', player)
+  console.log('audioPlayerData', player)
   const Play = () => {
     if (playerRef.current) {
       playerRef.current.play()
@@ -121,7 +121,7 @@ export default function Home({ blogs, music, episodes, className }) {
   const StopPlaying = () => {
     console.log('stopPlaying')
     if (playerRef.current) {
-      // console.log(' playerRef.current.pause()', playerRef.current)
+      console.log(' playerRef.current.pause()', playerRef.current)
       playerRef.current.pause()
     } else {
       // Throw error
@@ -130,7 +130,7 @@ export default function Home({ blogs, music, episodes, className }) {
   // console.log('PLAYINNNNG', musicIsPlaying)
   const lightGreenToBlueClass = 'bg-gradient-to-r from-cyan-500 to-blue-500'
   const skyToIndigo = 'bg-gradient-to-r from-sky-500 to-indigo-500'
-  // console.log('MUSIC IS PLAYING ', musicIsPlaying)
+  console.log('MUSIC IS PLAYING ', musicIsPlaying)
   const HomeMusicPlayer = () => {
     return (
       <>
@@ -298,7 +298,7 @@ export default function Home({ blogs, music, episodes, className }) {
           </a>
         </div>
         <AboutSection ref={sectAboutRef} />
-        {/* <div class="GridLockup_beams-6__gn7xS absolute inset-x-0 top-0 top-0 bg-top bg-no-repeat xl:top-8"></div> */}
+
         <SuperchagedTechSection />
         <div className="pocast-mask mask-image: linear-gradient(to bottom, white, white, transparent);mx-auto xl:max-w-8xl max-w-7xl   sm:px-6 md:px-0">
           <Podcast />
@@ -392,49 +392,16 @@ export default function Home({ blogs, music, episodes, className }) {
 // }
 
 export async function getStaticProps() {
-  // if (process.env.NODE_ENV === 'production') {
-  //   await generateRssFeed()
-  // }
-
-  // const prePopulate = await getSiteData()
-  // const data = await getCourses()
-  // const blogs = await getBlogs()
-  // console.log('BLOGS_INDEX', art)
-
-  // const curriculum = await writeFileAsync(
-  //   data,
-  //   '/curriculum',
-  //   'curriculum.json',
-  //   'utf8'
-  // )
-  // const curriculum = await readFileAsync('/curriculum/curriculum.json', 'utf8')
-  // let feed = await parse('https://their-side-feed.vercel.app/api/feed')
-  // let feed = await 'https://stream.mux.com/A4jUhm72hQqhclA7DIPA5ugqRjWMNBmOW19skl1Ikcs.m3u8'
-
-  // console.log('FEED-->', feed)try {
-
-  // result.filename is the new filename of the transcoded audio.
-  // We can now use node-wav as described above to read the audio
-
-  //   try {
-  //     let feed = await parse('./public/ipanema_João_Gilberto_StanGetz.mp3')
-  //     console.log('PUBLIC FEED-->', feed)
-
-  // } catch {
-  //  console.log('Failed to parse')
-  // }
-
+  const projectId = keys.PROJECT_ID
+  const dataSet = 'production'
+  const name = keys.NAME
+  const title = keys.TITLE
   const client = createClient({
     name: name,
     title: title,
     projectId: projectId,
     dataset: 'production',
   })
-
-  // const music = await client.fetch(`*[_type == "music"]`)
-  // let options = { PROJECT_ID, DATA_SET }
-  // let organizedData = await getSanityFileUrl(music, options)
-  // console.log('MUSIC ON INDEX  ----= ', organizedData)
 
   const music = await client.fetch(`*[_type == "music"]`)
 
@@ -443,27 +410,11 @@ export async function getStaticProps() {
   console.log('SANITY-MUSIC   ----> ', music)
   // console.log('SANITYPODCAST  ----> ', podcasts)
   let organizedData = await getSanityFileUrl(music, options)
-  // let cleanEpisode = await getSanityFileUrl(podcasts, options)
-  // console.log('CLEAN-POD  ----= ', cleanEpisode)
 
   return {
     props: {
       blogs: (await getBlogs()).map(({ component, ...meta }) => meta),
       music: organizedData,
-
-      // episodes: feed.items.map(
-      //   ({ id, title, description, enclosures, published }) => ({
-
-      //     id,
-      //     title: `${id}: ${title}`,
-      //     published,
-      //     description,
-      //     audio: enclosures.map((enclosure) => ({
-      //       src: enclosure.url,
-      //       type: enclosure.type,
-      //     }))[0],
-      //   })
-      // ),
     },
     revalidate: 10,
   }

@@ -12,8 +12,8 @@
 //   let articles = await getAllArticles()
 //   let siteUrl = process.env.NEXT_PUBLIC_SITE_URL
 //   let author = {
-//     name: 'Spencer Sharp',
-//     email: 'spencer@planetaria.tech',
+//     name: 'Nasser Sanou',
+//     email: 'nas@nasdesign.io',
 //   }
 
 //   let feed = new Feed({

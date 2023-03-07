@@ -19,7 +19,7 @@ import {
   StaticKitLogo,
   TransistorLogo,
   TupleLogo,
-} from './StockLogos'
+} from './ObjLogos'
 import dynamic from 'next/dynamic'
 import Modal from '../Modal'
 import { set } from 'react-hook-form'
@@ -315,30 +315,30 @@ function WorkScreen({ custom, animated = false }) {
               color: '#2A5B94',
               logo: TransistorLogo,
             },
-          ].map((stock) => (
-            <div key={stock.name} className="flex items-center gap-4 px-4 py-3">
+          ].map((obj) => (
+            <div key={obj.name} className="flex items-center gap-4 px-4 py-3">
               <div
                 className="flex-none rounded-full"
-                style={{ backgroundColor: stock.color }}
+                style={{ backgroundColor: obj.color }}
               >
-                {/* <stock.logo className="h-10 w-10" /> */}
+                {/* <obj.logo className="h-10 w-10" /> */}
               </div>
               <div className="-mt-4 flex-auto text-sm  text-gray-900">
-                {stock.name}
+                {obj.name}
               </div>
               <div className="flex-none text-right">
                 <div className="text-sm font-medium text-gray-900">
-                  {stock.price}
+                  {obj.price}
                 </div>
                 <div
                   className={clsx(
                     'text-xs leading-5',
-                    stock.change.startsWith('+')
+                    obj.change.startsWith('+')
                       ? 'text-cyan-500'
                       : 'text-gray-500'
                   )}
                 >
-                  {stock.change}
+                  {obj.change}
                 </div>
               </div>
             </div>
