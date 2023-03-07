@@ -192,12 +192,12 @@ const SectionProjects = forwardRef(
               </p>
             </div>
             <div className="basic_highlight dark:basic_highlight mt-6 inline-flex items-center rounded-md px-2 pb-1 text-slate-800  dark:text-slate-100/80 md:ml-4 md:hidden md:pb-0 lg:px-4">
-              <a
+              <Link
                 className="text-base  text-xl font-semibold text-slate-400 hover:text-black"
                 href="/projects"
               >
                 Scrollable bar bellow | See more projects
-              </a>
+              </Link>
               <span
                 aria-hidden="true"
                 className="dark:text-sky400 ml-2 text-sky-500 "

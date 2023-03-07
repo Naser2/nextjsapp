@@ -133,9 +133,9 @@ const AboutSection = forwardRef((props, ref) => {
           <span className=" ">
             <span className="footnote footnote-supglyph">
               watch some of my music
-              <a href="#footnote-1" aria-label="Footnote * symbol">
+              <Link href="#footnote-1" aria-label="Footnote * symbol">
                 *
-              </a>
+              </Link>
             </span>
           </span>
         </button>

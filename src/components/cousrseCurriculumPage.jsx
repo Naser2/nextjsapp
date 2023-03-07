@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export function cousrseCurriculumPage({ course }) {
   console.log('COURSE in COurse List Card', course)
@@ -27,35 +28,41 @@ export function cousrseCurriculumPage({ course }) {
           <div className="flex flex-1 flex-col justify-between bg-white p-6">
             <div className="flex-1">
               <p className="text-sm font-medium text-indigo-600">
-                <a href={courseObj.category.href} className="hover:underline">
+                <Link
+                  href={courseObj.category.href}
+                  className="hover:underline"
+                >
                   {courseObj.category.name}
-                </a>
+                </Link>
               </p>
-              <a href={courseObj.href} className="mt-2 block">
+              <Link href={courseObj.href} className="mt-2 block">
                 <p className="text-xl font-semibold text-gray-900">
                   {courseObj.title}
                 </p>
                 <p className="mt-3 text-base text-gray-500">
                   {courseObj.description}
                 </p>
-              </a>
+              </Link>
             </div>
             <div className="mt-6 flex items-center">
               <div className="flex-shrink-0">
-                <a href={courseObj.author.href}>
+                <Link href={courseObj.author.href}>
                   <span className="sr-only">{courseObj.author.name}</span>
                   <img
                     className="h-10 w-10 rounded-full"
                     src={courseObj.author.imageUrl}
                     alt=""
                   />
-                </a>
+                </Link>
               </div>
               <div className="ml-3">
                 <p className="text-sm font-medium text-gray-900">
-                  <a href={courseObj.author.href} className="hover:underline">
+                  <Link
+                    href={courseObj.author.href}
+                    className="hover:underline"
+                  >
                     {courseObj.author.name}
-                  </a>
+                  </Link>
                 </p>
                 <div className="flex space-x-1 text-sm text-gray-500">
                   <time dateTime={`courseObj.dateTime`}>{courseObj.date}</time>

@@ -28,7 +28,7 @@ const Project = function ({ products }) {
             </div>
             <div className="mt-6 sm:col-span-7 sm:mt-0 md:row-end-1">
               <h3 className="text-lg font-medium text-gray-900">
-                <a href={product.href}>{product.name}</a>
+                <Link href={product.href}>{product.name}</Link>
               </h3>
               <p className="mt-1 font-medium text-gray-900">{product.price}</p>
               <p className="mt-3 text-gray-500">{product.description}</p>

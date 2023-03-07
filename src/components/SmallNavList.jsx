@@ -1,4 +1,5 @@
 import { ArrowRight } from '@/components/icons/Arrows'
+import Link from 'next/link'
 
 export const SmallNavList = () => {
   return (
@@ -9,35 +10,35 @@ export const SmallNavList = () => {
             <ol role="list" className="flex items-center space-x-4">
               <li>
                 <div className="flex">
-                  <a
+                  <Link
                     href="#"
                     className="text-sm font-medium text-gray-400 hover:text-gray-200"
                   >
                     Jobs
-                  </a>
+                  </Link>
                 </div>
               </li>
               <li>
                 <div className="flex items-center">
                   <ArrowRight />
-                  <a
+                  <Link
                     href="#"
                     className="ml-4 text-sm font-medium text-gray-400 hover:text-gray-200"
                   >
                     Engineering
-                  </a>
+                  </Link>
                 </div>
               </li>
               <li>
                 <div className="flex items-center ">
                   <ArrowRight />
-                  <a
+                  <Link
                     href="#"
                     aria-current="page"
                     className="ml-4 text-sm font-medium text-gray-400 hover:text-gray-200"
                   >
                     Back End Developer
-                  </a>
+                  </Link>
                 </div>
               </li>
             </ol>

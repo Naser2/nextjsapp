@@ -136,7 +136,7 @@ export function CourseListCard({ course }) {
         <span className="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl" />
         {/* <span className="relative z-10"> {course.title}</span> */}
 
-        {/* <a
+        {/* <Link
         href={`courses/curriculum&${course.courseSlug.slice(
           course.courseSlug.indexOf('v/') + 2
         )}`}
@@ -181,52 +181,52 @@ export function CourseListCard({ course }) {
                   // )}/curriculum`} */}
           <div className="flex flex-1 flex-col justify-between bg-white p-6">
             <div className="flex-1">
-              {/* <a href={course.href} className="mt-2 block"> */}
+              {/* <Link href={course.href} className="mt-2 block"> */}
               <p className="text-xl font-semibold text-gray-900">
                 {course.title.split('-').join(' ')}
               </p>
               <p className="mt-3 text-base text-gray-500">
                 {course.shortDescription}
               </p>
-              {/* </a> */}
+              {/* </Link> */}
             </div>
             <div className="mt-6 flex items-center">
               {!course.author ? (
                 <div className="flex-shrink-0">
-                  {/* <a href={'#'}> */}
+                  {/* <Link href={'#'}> */}
                   <span className="sr-only">{'NasDesign'}</span>
                   <Image
                     className="h-10 w-10 rounded-full"
                     src={authorPlaceHolderImage}
                     alt="The course author image placeholder"
                   />
-                  {/* </a> */}
+                  {/* </Link> */}
                 </div>
               ) : (
                 <div className="flex-shrink-0">
-                  {/* <a href={course.author.href}> */}
+                  {/* <Link href={course.author.href}> */}
                   <span className="sr-only">{course.author.name}</span>
                   <Image
                     className="h-10 w-10 rounded-full"
                     src={authorPlaceHolderImage}
                     alt="The course author image placeholder"
                   />
-                  {/* </a> */}
+                  {/* </Link> */}
                 </div>
               )}
 
               <div className="ml-3">
                 {!course.author ? (
                   <p className="text-sm font-medium text-gray-900">
-                    {/* <a href={'#'} className="hover:underline">
+                    {/* <Link href={'#'} className="hover:underline">
                       {'NasDesign'}
-                    </a> */}
+                    <Link> */}
                   </p>
                 ) : (
                   <p className="text-sm font-medium text-gray-900">
-                    {/* <a href={course.author.href} className="hover:underline">
+                    {/* <Link href={course.author.href} className="hover:underline">
                       {course.author.name}
-                    </a> */}
+                    </Link> */}
                   </p>
                 )}
                 <div className="flex space-x-1 text-sm text-gray-500">
@@ -239,7 +239,7 @@ export function CourseListCard({ course }) {
           </div>
         </div>
       </Link>
-      {/* </a> */}
+      {/* </Link> */}
     </div>
   )
 }

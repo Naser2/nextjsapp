@@ -7,6 +7,7 @@ import propTypes from 'prop-types'
 // import { Container } from './Container'
 import { ArrowLeftIcon } from '@/components/icons/Arrows.jsx'
 import { ContainerNoPadding } from './Container'
+import Link from 'next/link'
 
 const GoBack = (previousPathname) => {
   return (
@@ -61,7 +62,7 @@ const PageHeader = ({
 const SectionNote = ({ note }) => {
   return (
     <div id="section-note-wrapper">
-      <a href="#" className="inline-flex space-x-6">
+      <Link href="#" className="inline-flex space-x-6">
         <span className="bg-wheat rounded-full px-3 py-1 text-sm font-semibold leading-6 text-black ring-1 ring-inset ring-orange-600/20">
           <h1 className="hero-title typography-body-bold">{note}</h1>
         </span>
@@ -82,7 +83,7 @@ const SectionNote = ({ note }) => {
             ></path>
           </svg>
         </span>
-      </a>
+      </Link>
     </div>
   )
 }
@@ -144,9 +145,9 @@ const Band = ({ children, className, ...props }) => {
         {props.text}
         <span className="display:none ">
           <span className="footnote footnote-supglyph">
-            <a href="#footnote-1" aria-label="Footnote * symbol">
+            <Link href="#footnote-1" aria-label="Footnote * symbol">
               *
-            </a>
+            </Link>
           </span>
         </span>
       </button>

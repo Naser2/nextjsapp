@@ -12,11 +12,11 @@ export function LandingHeroTabs({
   learnToCode,
   podcastRef,
   socialsRef,
-  githubRef
+  githubRef,
 }) {
-
   console.log(
-   "ALL REFS-->", sectionRefs,
+    'ALL REFS-->',
+    sectionRefs,
     'BOGS_REF',
     blogsRef,
     'WABOUT',
@@ -24,8 +24,7 @@ export function LandingHeroTabs({
     'TABSSS PROPS',
     projectsRef,
     'LEARN',
-    learnToCode,
-    
+    learnToCode
   )
   const initialState = {
     tabName: null,
@@ -83,7 +82,7 @@ export function LandingHeroTabs({
     const selectedTabStyle = 'border-sky-500 main-blue dark:text-sky-500'
     // const elementref = useRef(0)
     return tabs.map((tab) => (
-      <a
+      <Link
         onClick={() => handleCurrentTab(tab.name, tab)}
         // onClick={() => tab.ref.current.scrollIntoView({ behavior: 'smooth' })}
         key={tab.name}
@@ -91,25 +90,36 @@ export function LandingHeroTabs({
         // href={tab.href}
         className={classNames(
           currentTab.current === false && tab.name === 'About'
-            ? ' bg-yellow-10 main-blue dark:text-red-400 bg-opacity-30 text-sky-400'
+            ? ' bg-yellow-10 main-blue bg-opacity-30 text-sky-400 dark:text-red-400'
             : tab.name === currentTab.tabName && currentTab.current == true
-            ? selectedTabStyle 
-            : 'border-transparent border-b-2 text-gray-900 hover:border-gray-300',
-          'whitespace-nowrap border-b-2 px-2 lg:px-6  py-4 lg:py-2 text-sm lg:text-xl font-medium dark:text-slate-100 hover:text-indigo-200'
+            ? selectedTabStyle
+            : 'border-b-2 border-transparent text-gray-900 hover:border-gray-300',
+          'whitespace-nowrap border-b-2 px-2 py-4  text-sm font-medium hover:text-indigo-200 dark:text-slate-100 lg:px-6 lg:py-2 lg:text-xl'
         )}
         aria-current={tab.current ? 'page' : undefined}
         overflow-anchor={'false'}
       >
         {tab.name}
-      </a>
+      </Link>
     ))
-  }, [currentTab, projectsRef, aboutRef, blogsRef, learnToCode, podcastRef, socialsRef])
+  }, [
+    currentTab,
+    projectsRef,
+    aboutRef,
+    blogsRef,
+    learnToCode,
+    podcastRef,
+    socialsRef,
+  ])
 
   return (
     <>
-      <div className="mt-4 mx-0 mt-6 max-w-full pl-0 sm:mt-6 lg:mx-0 2xl:mt-10">
-        <div className="border-l-2 lg:border-l-4 border-orange-200 border-l-orange-400  px-2 ">
-          <nav className="flex space-x-3 lg:space-x-8 lg:space-x-8 lg:py-4 lg:px-4 mb-1" aria-label="Tabs">
+      <div className="mx-0 mt-4 mt-6 max-w-full pl-0 sm:mt-6 lg:mx-0 2xl:mt-10">
+        <div className="border-l-2 border-orange-200 border-l-orange-400 px-2  lg:border-l-4 ">
+          <nav
+            className="mb-1 flex space-x-3 lg:space-x-8 lg:space-x-8 lg:py-4 lg:px-4"
+            aria-label="Tabs"
+          >
             {tab}
           </nav>
         </div>

@@ -7,6 +7,7 @@ import { formatDate } from '@/lib/formatDate'
 import Image from 'next/image'
 import Image1 from '@/images/blogsImages/resolution_keep.png'
 import clsx from 'clsx'
+import Link from 'next/link'
 function ArrowLeftIcon(props) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
@@ -120,7 +121,7 @@ export function ArticleLayout({
     return (
       <div className="mt-24 sm:mt-32 lg:mt-16">
         <div className="figma-1k1pkug">
-          <a href="https://twitter.com/AliaFite" className="figma-clygmv ">
+          <Link href="https://twitter.com/AliaFite" className="figma-clygmv ">
             <div className="figma-13icjhm border-lg author-icon-bg rounded-full rounded-full bg-orange-400 px-1 py-1">
               <Image
                 alt="author-image"
@@ -135,7 +136,7 @@ export function ArticleLayout({
                 {meta.author.name.split(' ')[1]}
               </div>
             </div>
-          </a>
+          </Link>
           <div className="ml-12 text-sm text-slate-400">
             {meta.author.proffession ? meta.author.proffession : 'NasDesigns'}
           </div>
@@ -211,7 +212,7 @@ export function ArticleLayout({
                     id="blog-page-tag"
                     className="mx-auto max-w-7xl sm:px-6 md:px-8"
                   >
-                    <a
+                    <Link
                       className={clsx(
                         meta.theme && meta.theme.tag
                           ? meta.theme.tag
@@ -222,7 +223,7 @@ export function ArticleLayout({
                     >
                       {meta.tag && meta.tag}
                       <span className="sr-only">blog tag</span>
-                    </a>
+                    </Link>
                   </div>
                   {/* <h5 className="bg-white px-2 py-1 text-black">
                     {meta.tag && meta.tag}
@@ -377,7 +378,7 @@ export function ArticleLayout({
               </div> */}
               <div className="ml-3">
                 <p className="text-sm font-medium text-gray-900 dark:text-white">
-                  <a href="#">{'Likes'}</a>
+                  <Link href="#">{'Likes'}</Link>
                 </p>
                 <div className="flex space-x-1 text-sm text-gray-500">
                   <time dateTime="2020-03-10">{'Comments'}</time>

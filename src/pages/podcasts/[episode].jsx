@@ -7,26 +7,31 @@ import { Container } from '@/components/PodcastComponents/Container'
 import { FormattedDate } from '@/components/PodcastComponents/FormattedDate'
 import { PlayButton } from '@/components/PodcastComponents/player/PlayButton'
 import { createClient } from 'next-sanity'
-import sanityClient from '@sanity/client'
-import getSanityFileUrl from '@/lib/getSanityFileUrl'
-import { AudioProvider } from '@/components/PodcastComponents/AudioProvider'
+// import sanityClient from '@sanity/client'
+// import getSanityFileUrl from '@/lib/getSanityFileUrl'
+// import { AudioProvider } from '@/components/PodcastComponents/AudioProvider'
 import { useRouter } from 'next/router'
 import getSanityItemById from '@/lib/getSanityItemById'
 import Image from 'next/image'
-import { ArrowLeftIcon } from '@/components/icons/Arrows'
+// import { ArrowLeftIcon } from '@/components/icons/Arrows'
 // import EpisodeBG from '@/images/projectImages/lars_episode_bg.jpg'
-import { useNextSanityImage } from 'next-sanity-image'
+// import { useNextSanityImage } from 'next-sanity-image'
 import ImageUrlBuilder from '@sanity/image-url'
-import cleardot from '@/images/cleardot.gif'
+// import cleardot from '@/images/cleardot.gif'
 import { Eyebrow } from '@/components/siteMdxComponents'
 // import { client } from '../../sanityClient'
 import { keys } from '../../../keys'
-
+import Link from 'next/link'
+import blogsJson from '../blogs/blogsJson'
+const languages = ['en', 'fr', 'hn']
 const projectId = keys.PROJECT_ID
 const dataSet = keys.DATA_SET
 const name = keys.NAME
 const title = keys.TITLE
-export default function Episode({ episode, components }, props) {
+export default function Episode(
+  { episode, components, language = 'en' },
+  props
+) {
   console.log('PROPS EPISODE', components)
 
   console.log('CONTENT EZ:', episode.content)
@@ -73,6 +78,9 @@ export default function Episode({ episode, components }, props) {
     pre
   )
 
+  function voiceToText() {
+    console.log('AI Text')
+  }
   let imageSource = episode.coverArt.asset._ref
 
   const builder = ImageUrlBuilder(client)
@@ -108,7 +116,6 @@ export default function Episode({ episode, components }, props) {
         </Head>
         <article className="lg:border-t-0-16  mt-14 border-t border-b  border-slate-500 md:border-t md:py-0 ">
           <div className="to-blue-500,z-[100]  h-[40px] w-full flex-col items-center  bg-gray-100 bg-gradient-to-r bg-gradient-to-r from-cyan-500 from-sky-500 to-indigo-500  text-base dark:bg-gray-700 sm:flex-row sm:py-0 md:text-lg lg:flex">
-            {/* <div className="inline flex"> */}
             <button
               onClick={() => router.back()}
               id="podcast-go-back"
@@ -131,7 +138,6 @@ export default function Episode({ episode, components }, props) {
               </svg>
               Back
             </button>
-            {/* </div> */}
           </div>
 
           <Image
@@ -173,13 +179,13 @@ export default function Episode({ episode, components }, props) {
                 </div>
               </div>
               <div className="not-prose  mx-8 mb-16 mt-6 flex gap-3">
-                <Button href="/quickstart" arrow="right">
+                <Button onClick={() => voiceToText(true)} arrow="right">
                   Read this
                 </Button>
                 <Button
                   className="px-4"
-                  rounder="rounded-md "
-                  href="/sdks"
+                  rounder="rounded-md"
+                  href={`${languages[language]}/${episode.id}`}
                   variant="outline"
                 >
                   Translate this poadcast
@@ -195,9 +201,9 @@ export default function Episode({ episode, components }, props) {
               </ul>
               <h2 id="sponsors">Sponsors</h2>
               <ul>
-                {episode.sponsors &&
+                {/* {episode.sponsors &&
                   episode.sponsors.map((sponsor) => (
-                    <a href="#" key={sponsor}>
+                    <Link href={episode.id} key={sponsor}>
                       <li>
                         <Eyebrow
                           color={'text-indigo-400'}
@@ -205,20 +211,24 @@ export default function Episode({ episode, components }, props) {
                           label={sponsor}
                         />
                       </li>
-                    </a>
-                  ))}
+                    </Link>
+                  ))} */}
 
                 <li>
-                  <a href="#">Real Corporation</a> — is has been a longtime
-                  partner and is currently sponsoring our...
+                  <Link href="#">Real Corporation</Link> — is has been a
+                  longtime partner and is currently sponsoring our...
                 </li>
               </ul>
-              {episode.links.length >= 1 && <h2 id="links">Links</h2>}
+              {episode.links.length >= 2 ? (
+                <h2 id="links">Links</h2>
+              ) : (
+                <h2 id="links">Link</h2>
+              )}
               <ul>
-                {episode.links &&
+                {episode.links && episode.links.length >= 2 ? (
                   episode.links.map((link) => (
                     <li key={link.split('#')[0]}>
-                      <a
+                      <Link
                         className="inline-flex justify-center gap-0.5 overflow-hidden text-sm font-medium text-blue-500 transition hover:text-emerald-600 dark:text-emerald-400 dark:hover:text-emerald-500"
                         href={link.split('#')[1]}
                       >
@@ -236,9 +246,24 @@ export default function Episode({ episode, components }, props) {
                             d="m11.5 6.5 3 3.5m0 0-3 3.5m3-3.5h-9"
                           ></path>
                         </svg>
-                      </a>
+                      </Link>
                     </li>
-                  ))}
+                  ))
+                ) : episode.links.length >= 1 ? (
+                  <h2
+                    className="dark:text-slate-300-400 inline-flex  justify-center  overflow-hidden text-sm  font-medium  text-blue-500"
+                    id="links"
+                  >
+                    {episode.links[0]}
+                  </h2>
+                ) : (
+                  <h2
+                    className="justify-center  overflow-hidden text-sm font-medium text-blue-500  dark:text-emerald-400 dark:hover:text-emerald-500"
+                    id="links"
+                  >
+                    No links for this episode
+                  </h2>
+                )}
               </ul>
             </div>
             <Note>{episode.note}</Note>

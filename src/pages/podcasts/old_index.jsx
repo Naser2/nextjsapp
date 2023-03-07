@@ -10,13 +10,13 @@ import { Container } from '@/components/PodcastComponents/Container'
 import { FormattedDate } from '@/components/PodcastComponents/FormattedDate'
 import { PodcastsPageLayout } from '@/components/PodcastComponents/PodcastsPageLayout.jsx'
 import Episode from './Episode'
-import episode from 'sanity-backend/schemas/episode'
+// import episode from 'sanity-backend/schemas/episode'
 import clsx from 'clsx'
 import { ContainerNoPadding } from '@/components/Container'
-import { createClient } from 'next-sanity'
+// import { createClient } from 'next-sanity'
 import getSanityFileUrl from '@/lib/getSanityFileUrl'
-import EpisodeBG from '@/images/projectImages/lars_episode_bg.jpg'
-import Image from 'next/image'
+// import EpisodeBG from '@/images/projectImages/lars_episode_bg.jpg'
+// import Image from 'next/image'
 export function PlayPauseIcon({ playing, ...props }) {
   return (
     <svg aria-hidden="true" viewBox="0 0 10 10" fill="none" {...props}>

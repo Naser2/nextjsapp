@@ -139,14 +139,14 @@ const LearnCodeSection = forwardRef((props, ref) => {
                   you zéro to hero.
                 </div>
                 {/* <div className="pointer-events-none relative z-10  my-4 flex justify-center">
-                    <a
+                    <Link
                       className="pointer-events-auto inline-flex justify-center rounded-lg bg-black py-3 px-4 text-sm font-semibold text-white hover:bg-slate-700 dark:bg-white dark:text-black"
                       href="/components/#product-application-ui"
                     >
                       <span>
                         Show more<span className="sr-only">, Application UI</span>
                       </span>
-                    </a>
+                    <Link>
                   </div> */}
                 <Link
                   className="my-4 mx-4 inline-flex justify-center rounded-lg bg-black px-8 py-3  text-sm font-semibold text-white hover:bg-slate-700 dark:bg-white dark:text-black"
@@ -275,13 +275,13 @@ const LearnCodeSection = forwardRef((props, ref) => {
                 id="favorites-heading"
                 className="text-2xl font-bold tracking-tight text-gray-900"
               ></h2>
-              <a
+              <Link
                 href="#"
                 className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block"
               >
                 Browse all favorites
                 <span aria-hidden="true"> &rarr;</span>
-              </a>
+              <Link>
             </div>
 
             <div className="mt-6 grid grid-cols-1 gap-y-10 sm:grid-cols-3 sm:gap-y-0 sm:gap-x-6 lg:gap-x-8">
@@ -295,10 +295,10 @@ const LearnCodeSection = forwardRef((props, ref) => {
                     />
                   </div>
                   <h3 className="mt-4 text-base font-semibold text-gray-900">
-                    <a href={favorite.href}>
+                    <Link href={favorite.href}>
                       <span className="absolute inset-0" />
                       {favorite.name}
-                    </a>
+                    <Link>
                   </h3>
                   <p className="mt-1 text-sm text-gray-500">{favorite.price}</p>
                 </div>
@@ -306,13 +306,13 @@ const LearnCodeSection = forwardRef((props, ref) => {
             </div>
 
             <div className="mt-6 sm:hidden">
-              <a
+              <Link
                 href="#"
                 className="block text-sm font-semibold text-indigo-600 hover:text-indigo-500"
               >
                 Browse all favorites
                 <span aria-hidden="true"> &rarr;</span>
-              </a>
+              <Link>
             </div>
           </div>
         </section> */}

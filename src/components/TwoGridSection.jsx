@@ -8,6 +8,7 @@ import { Heading } from './Heading'
 import { getFirstWord } from '@/lib/returnFirstWord'
 import { cousrseCurriculumPage } from './cousrseCurriculumPage'
 import { StarRating } from './StarRating'
+import Link from 'next/link'
 const uiUxImages = [
   {
     src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg',
@@ -98,12 +99,12 @@ export function TwoGridSection({ course }) {
             >
               <li>
                 <div className="flex items-center">
-                  <a
+                  <Link
                     href="#"
                     className="mr-2 text-sm font-medium text-gray-900"
                   >
                     {tag}
-                  </a>
+                  </Link>
                   <svg
                     width="16"
                     height="20"
@@ -120,12 +121,12 @@ export function TwoGridSection({ course }) {
 
               <li>
                 <div className="flex items-center">
-                  <a
+                  <Link
                     href="#"
                     className="mr-2 text-sm font-medium text-gray-900"
                   >
                     {itemKind}
-                  </a>
+                  </Link>
                   <svg
                     width="16"
                     height="20"
@@ -141,13 +142,13 @@ export function TwoGridSection({ course }) {
               </li>
 
               <li className="text-sm">
-                <a
+                <Link
                   href="#"
                   aria-current="page"
                   className="font-medium text-gray-500 hover:text-gray-600"
                 >
                   {specifics}
-                </a>
+                </Link>
               </li>
             </ol>
           </nav>

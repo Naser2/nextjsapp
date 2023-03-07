@@ -229,38 +229,38 @@ export default function Home({ blogs, music, episodes, className }) {
                 <div id="blog-card-body" className="bg-white px-6 py-4">
                   <div className="flex-1">
                     <p className="text-sm font-medium text-indigo-600">
-                      <a href={'sample.href'} className="hover:underline">
+                      <Link href={'sample.href'} className="hover:underline">
                         {'sample.name'}
-                      </a>
+                      </Link>
                     </p>
-                    <a href={'sample.href'} className="mt-2 block">
+                    <Link href={'sample.href'} className="mt-2 block">
                       <p className="commom-blog-card-title-typography text-xl font-semibold text-gray-900 ">
                         {'sample.title'}
                       </p>
-                    </a>
+                    </Link>
                   </div>
                 </div>
 
                 <div className="mt-0 flex items-center bg-gray-100 px-6 py-4">
                   <div className="flex-shrink-0">
-                    <a href={'sample.author.href'}>
+                    <Link href={'sample.author.href'}>
                       <span className="sr-only">{'sample.author.name'}</span>
                       {/* <Image
                     className="h-10 w-10 rounded-full md:rounded-sm"
                     src={'sample.author.image'}
                     alt="the author image"
                   />
-                    </a>
+                    </Link>
                   </div>
 
                   <div className="ml-3">
                     <p className="text-sm font-medium text-gray-900">
-                      <a
+                      <Link
                         href={'sample.author.href'}
                         className="hover:underline"
                       >
                         author Name
-                      </a>
+                      </Link>
                     </p>
                   </div>
                 </div>

@@ -8,7 +8,7 @@ export function SimpleLayout({ title, intro, children }) {
         <div className="hero-top-content section-content">
           <header className="max-w-4xl">
             <div className="mt-24 sm:mt-32 lg:mt-16">
-              <a href="#" className="inline-flex space-x-6">
+              <Link href="#" className="inline-flex space-x-6">
                 <span className="bg-wheat rounded-full px-3 py-1 text-sm font-semibold leading-6 text-black ring-1 ring-inset ring-orange-600/20">
                   <h1 className="hero-title typography-body-bold">
                     Nase&nbsp;Design
@@ -31,7 +31,7 @@ export function SimpleLayout({ title, intro, children }) {
                     ></path>
                   </svg>
                 </span>
-              </a>
+              </Link>
             </div>
             <div className="large-10 large-centered medium-12">
               <figure
@@ -55,9 +55,9 @@ export function SimpleLayout({ title, intro, children }) {
                 Only writting about what passionates me
                 <span className="display:none">
                   <span className="footnote footnote-supglyph">
-                    <a href="#footnote-1" aria-label="Footnote * symbol">
+                    <Link href="#footnote-1" aria-label="Footnote * symbol">
                       *
-                    </a>
+                    </Link>
                   </span>
                 </span>
               </button>

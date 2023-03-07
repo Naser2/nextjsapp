@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export function ProductPage({ tag, itemKind, specifics, title, description }) {
   return (
     <>
@@ -10,12 +12,12 @@ export function ProductPage({ tag, itemKind, specifics, title, description }) {
             >
               <li>
                 <div className="flex items-center">
-                  <a
+                  <Link
                     href="#"
                     className="mr-2 text-sm font-medium text-gray-900"
                   >
                     {tag}
-                  </a>
+                  </Link>
                   <svg
                     width="16"
                     height="20"
@@ -32,12 +34,12 @@ export function ProductPage({ tag, itemKind, specifics, title, description }) {
 
               <li>
                 <div className="flex items-center">
-                  <a
+                  <Link
                     href="#"
                     className="mr-2 text-sm font-medium text-gray-900"
                   >
                     {itemKind}
-                  </a>
+                  </Link>
                   <svg
                     width="16"
                     height="20"
@@ -53,13 +55,13 @@ export function ProductPage({ tag, itemKind, specifics, title, description }) {
               </li>
 
               <li className="text-sm">
-                <a
+                <Link
                   href="#"
                   aria-current="page"
                   className="font-medium text-gray-500 hover:text-gray-600"
                 >
                   {specifics}
-                </a>
+                </Link>
               </li>
             </ol>
           </nav>
@@ -182,12 +184,12 @@ export function ProductPage({ tag, itemKind, specifics, title, description }) {
                     </svg>
                   </div>
                   <p className="sr-only">4 out of 5 stars</p>
-                  <a
+                  <Link
                     href="#"
                     className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500"
                   >
                     117 reviews
-                  </a>
+                  </Link>
                 </div>
               </div>
 
@@ -240,12 +242,12 @@ export function ProductPage({ tag, itemKind, specifics, title, description }) {
                 <div className="mt-10">
                   <div className="flex items-center justify-between">
                     <h3 className="text-sm font-medium text-gray-900">Size</h3>
-                    <a
+                    <Link
                       href="#"
                       className="text-sm font-medium text-indigo-600 hover:text-indigo-500"
                     >
                       Size guide
-                    </a>
+                    </Link>
                   </div>
 
                   <fieldset className="mt-4">

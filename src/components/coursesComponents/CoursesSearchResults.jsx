@@ -1,3 +1,5 @@
+const { default: Link } = require('next/link')
+
 searchResults = {
   result: 'Ring Offset Color',
   resultRelatedSugestions: [
@@ -22,7 +24,7 @@ const coursesSearchResults = (selected = true) => {
         role="option"
         aria-selected={selected}
       >
-        <a
+        <Link
           className="DocSearch-Hit--Result"
           href="/docs/ring-offset-color#changing-the-opacity"
         >
@@ -67,7 +69,7 @@ const coursesSearchResults = (selected = true) => {
               </svg>
             </div>
           </div>
-        </a>
+        </Link>
       </li>
       <section className="DocSearch-Hits relative">
         <div className="DocSearch-Hit-source">Installation</div>
@@ -82,7 +84,7 @@ const coursesSearchResults = (selected = true) => {
             role="option"
             aria-selected="false"
           >
-            <a
+            <Link
               className="DocSearch-Hit--Result DocSearch-Hit--Parent"
               href="/docs/installation/using-postcss"
             >
@@ -123,7 +125,7 @@ const coursesSearchResults = (selected = true) => {
                   </svg>
                 </div>
               </div>
-            </a>
+            </Link>
           </li>
           <li
             className="DocSearch-Hit"
@@ -131,7 +133,7 @@ const coursesSearchResults = (selected = true) => {
             role="option"
             aria-selected="false"
           >
-            <a
+            <Link
               className="DocSearch-Hit--Result DocSearch-Hit--FirstChild"
               href="/docs/installation/play-cdn"
             >
@@ -172,7 +174,7 @@ const coursesSearchResults = (selected = true) => {
                   </svg>
                 </div>
               </div>
-            </a>
+            </Link>
           </li>
           <li
             className="DocSearch-Hit"
@@ -180,7 +182,7 @@ const coursesSearchResults = (selected = true) => {
             role="option"
             aria-selected="false"
           >
-            <a
+            <Link
               className="DocSearch-Hit--Result"
               href="/docs/installation/framework-guides"
             >
@@ -221,7 +223,7 @@ const coursesSearchResults = (selected = true) => {
                   </svg>
                 </div>
               </div>
-            </a>
+            </Link>
           </li>
           <li
             className="DocSearch-Hit"
@@ -229,7 +231,7 @@ const coursesSearchResults = (selected = true) => {
             role="option"
             aria-selected="false"
           >
-            <a
+            <Link
               className="DocSearch-Hit--Result DocSearch-Hit--LastChild"
               href="/docs/installation"
             >
@@ -270,7 +272,7 @@ const coursesSearchResults = (selected = true) => {
                   </svg>
                 </div>
               </div>
-            </a>
+            </Link>
           </li>
         </ul>
       </section>

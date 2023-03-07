@@ -51,14 +51,14 @@ export function BlogCard({ blog }) {
                         id="tag"
                         className="mx-auto max-w-7xl sm:px-6 md:px-8"
                       >
-                        <a
+                        <Link
                           className="eyebrow blog_list_card_tag  dark:yellow-bg ] group mb-4  inline-flex h-6 items-center whitespace-nowrap rounded-xl bg-transparent px-3 text-sm font-semibold text-black
                            hover:bg-blue-100 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:text-slate-900 dark:hover:bg-slate-600 dark:hover:text-white dark:focus:ring-slate-500"
                           href="/docs/hover-focus-and-other-states"
                         >
                           {blog.category}
                           <span className="sr-only">blog tag</span>
-                        </a>
+                        </Link>
                       </div>
                       {/* <p
                         className={clsx([

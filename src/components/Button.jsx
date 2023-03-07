@@ -85,7 +85,7 @@ export function CommomButtonMd({ href, className, ...props }) {
       id={`${props.text}` ?? 'action-btn'}
       className={clsx(className, 'px-2')}
     >
-      <a
+      <Link
         className={clsx(
           props.theme.bg ?? variantStyles.primary,
           props.theme.text ?? 'text-pink-600',
@@ -127,7 +127,7 @@ export function CommomButtonMd({ href, className, ...props }) {
             <path d="M0 0L3 3L0 6"></path>
           </svg>
         )}
-      </a>
+      </Link>
     </div>
   )
 }

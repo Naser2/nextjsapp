@@ -60,33 +60,33 @@ export function StayAmazing() {
             <div className="items-center"></div>
 
             <div className="main-bg-blue mt-10 flex items-center gap-x-6 ">
-              <a
+              <Link
                 href={'#'}
                 className="bg-white bg-indigo-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Get started
-              </a>
-              <a
+              </Link>
+              <Link
                 href={'#'}
                 className="text-base font-semibold leading-7 text-white text-gray-900"
               >
                 Learn more <span aria-hidden="true">→</span>
-              </a>
+              </Link>
             </div>
             <div className="mt-1 flex w-4/5 items-center gap-x-6 bg-yellow-500">
-              <a
+              <Link
                 href="#"
                 className=" bg-orange-400  px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Get started
-              </a>
+              </Link>
               <div className="">
-                <a
+                <Link
                   href={'#'}
                   className="text-base font-semibold leading-7 text-white text-gray-900"
                 >
                   More <span aria-hidden="true">→</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div> */}

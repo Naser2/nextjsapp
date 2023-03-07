@@ -7,6 +7,7 @@ import { getBlogs } from '@/lib/getBlogs'
 import blogsJson from './blogsJson'
 import { BlogsSample } from '../sampleBlogs'
 import { ContainerNoPadding } from '@/components/Container'
+import Link from 'next/link'
 export default function ArticlesList({ blogs }) {
   const reversedBlogs = blogsJson.reverse()
   console.log(' REVERSED: ' + reversedBlogs[0])
@@ -49,15 +50,15 @@ export default function ArticlesList({ blogs }) {
                       // data-g-module_name="Doorway Tile"
                       // data-g-module_id="unlocking-opportunity"
                       >
-                        <a
-                        // href="./commitments/#expanding_opportunity"
-                        // target="_self"
-                        // data-g-cta_type="module"
-                        // data-g-cta_url="./commitments/#expanding_opportunity"
-                        // data-g-cta_text="Learn more"
-                        // data-g-alt_text="A hairdresser smiles while she uses a laptop on a small table in the salon."
-                        // className="modules-lib__doorway-tile__link"
-                        // data-g-module_position="2/3"
+                        <Link
+                          href={blog.href}
+                          // target="_self"
+                          // data-g-cta_type="module"
+                          // data-g-cta_url="./commitments/#expanding_opportunity"
+                          // data-g-cta_text="Learn more"
+                          // data-g-alt_text="A hairdresser smiles while she uses a laptop on a small table in the salon."
+                          // className="modules-lib__doorway-tile__link"
+                          // data-g-module_position="2/3"
                         >
                           <div
                           // className="modules-lib__doorway-tile__body"
@@ -89,7 +90,7 @@ export default function ArticlesList({ blogs }) {
                               Read more
                             </p>
                           </div>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   )

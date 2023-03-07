@@ -10,6 +10,7 @@ import Image from 'next/image'
 import nasSings from '@/images/nas_singing.jpeg'
 import { Intro } from '../Intro'
 import { SectionProjects } from './SectionProjects'
+import Link from 'next/link'
 
 const ProjectSection = forwardRef((props, ref) => {
   const introContent = {
@@ -43,7 +44,7 @@ const ProjectSection = forwardRef((props, ref) => {
           name="Miras Project"
           nameClass="text-white"
         />
-        <a
+        <Link
           className="md:-pt-10  mx-12 pt-10  text-sky-500 dark:hover:text-sky-400 md:mx-6 md:ml-20"
           href="/showcase"
         >
@@ -51,7 +52,7 @@ const ProjectSection = forwardRef((props, ref) => {
           <span className="ml-2 rounded-full bg-sky-600 px-2 py-0.5 text-xs font-medium leading-5 text-sky-600 dark:text-sky-100">
             react-native{' '}
           </span>
-        </a>
+        </Link>
         <div className="mt-16 md:hidden">
           <FeaturesMobile />
         </div>

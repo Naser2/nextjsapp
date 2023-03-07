@@ -41,6 +41,7 @@ import podcastUserProfileImg from '@/images/projectImages/child-portarait.png'
 import Image from 'next/image'
 import SocialMediaGallery from '@/components/SocialMediaGallery'
 import { AudioListComponent } from '@/components/AudioListComponent'
+import Link from 'next/link'
 const MotionPodcastAppScreenHeader = motion(PodcastAppScreen.Header)
 const MotionPodcastAppScreenBody = motion(PodcastAppScreen.Body)
 
@@ -912,7 +913,7 @@ export function FeaturesMobile() {
 
               <div className="lg:bg-indigo-custom half-phone-blur-bg halfPhone-paragraph absolute w-full  bg-transparent py-6 backdrop-blur ">
                 <div className="mx-0 mt-0 justify-center px-4 sm:mt-8 lg:my-2 lg:px-4">
-                  <a href="#" className="inline-flex space-x-2 lg:space-x-6">
+                  <Link href="#" className="inline-flex space-x-2 lg:space-x-6">
                     <span className="black-2-bg inline-flex items-center space-x-2 rounded-lg py-1 px-4 text-sm font-medium leading-6 text-gray-100 lg:rounded-full">
                       Profile
                     </span>
@@ -927,7 +928,7 @@ export function FeaturesMobile() {
                     <span className="black-2-bg inline-flex items-center space-x-2 rounded-lg py-1 px-4 text-sm font-medium leading-6 text-gray-100 lg:rounded-full">
                       <span>Reviews</span>
                     </span>
-                  </a>{' '}
+                  </Link>
                   <h1 className="mt-6 text-3xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
                     {feature.name}
                   </h1>

@@ -9,6 +9,7 @@ import { HalfPhone } from '../next13Components/HalfPhone'
 import { SuperChagedCodeblock } from '@/components/codeblocks'
 import { Intro } from '@/components/Intro'
 import clsx from 'clsx'
+import Link from 'next/link'
 export default function SuperchagedTechSection() {
   const introContent = {
     h1: 'Build for everyone.',
@@ -88,18 +89,18 @@ export default function SuperchagedTechSection() {
                   >
                     <SuperChagedCodeblock />
                     <div className="flex gap-x-6 pt-4 pb-6 pr-2 lg:mt-4">
-                      <a
+                      <Link
                         href="#"
                         className="rounded-md bg-black px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                       >
                         Documentation
-                      </a>
-                      <a
+                      </Link>
+                      <Link
                         href="#"
                         className="text-base font-semibold leading-7 text-gray-900"
                       >
                         View on GitHub <span aria-hidden="true">→</span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -175,18 +176,18 @@ export const SuperChargedHalhPhone = ({ className }) => {
               >
                 <SuperChagedCodeblock />
                 <div className="flex gap-x-6 pt-4 pb-6 pr-2 lg:mt-4">
-                  <a
+                  <Link
                     href="#"
                     className="rounded-md bg-black px-3.5 py-1.5 text-base font-semibold leading-7 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
                     Documentation
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="#"
                     className="text-base font-semibold leading-7 text-gray-900"
                   >
                     View on GitHub <span aria-hidden="true">→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
