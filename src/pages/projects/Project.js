@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+
 const { default: Link } = require('next/link')
 
 const Project = function ({}) {
