@@ -403,8 +403,14 @@ export const coursesMeta = [
 
 export async function getCourseMeta(slug) {
   console.log('Getting-Slugg-In-GET-Course-Meta', slug)
-  const matchCourseLug = slug.split('&')[1]
-  console.log('SPLITTIMNG-Slugg-In-GET-Course-Meta', slug.split('&')[1])
+  ProdSlug = 'dev/aws-and-the-cloud'
+  const splitSlug = slug.split('/')
+  const partOfSlugNeeded = splitSlug[1]
+
+  console.log('SPLITTIMNG-Slugg-In-GET-Course-Meta', partOfSlugNeeded)
+
+  // SPLITTIMNG-Slugg-In-GET-Course-Meta undefined
+
   try {
     let courseData = coursesMeta
       .map(
@@ -444,7 +450,7 @@ export async function getCourseMeta(slug) {
           reviews,
         })
       )
-      .find(({ courseSlug }) => courseSlug.toLowerCase() === slug)
+      .find(({ courseSlug }) => courseSlug.toLowerCase() === partOfSlugNeeded)
     console.log('Course-META-2', courseData)
 
     return courseData

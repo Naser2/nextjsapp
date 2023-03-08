@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export function cousrseCurriculumPage({ course }) {
-  console.log('COURSE in COurse List Card', course)
+  // console.log('COURSE in COurse List Card', course)
   // let
   // console.log('COURSE CHAPTERS', course[0].chapters)
   // course.chapters.map((chapter) =>

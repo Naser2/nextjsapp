@@ -118,7 +118,7 @@ export function CourseListCardImages() {
 }
 
 export function CourseListCard({ course }) {
-  console.log('COURSE in COurse List Card', course)
+  // console.log('COURSE in COurse List Card', course)
   // let
   // console.log('COURSE CHAPTERS', course[0].chapters)
   // course.chapters.map((chapter) =>
@@ -148,7 +148,7 @@ export function CourseListCard({ course }) {
           <div className="flex-shrink-0">
             {courseListCardImages.map((obj) => {
               if (course.title.toLowerCase() === obj.name.toLowerCase()) {
-                console.log('IMAGE MATCHES', obj)
+                // console.log('IMAGE MATCHES', obj)
                 return (
                   <Image
                     // href={course.courseSlug}

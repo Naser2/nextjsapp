@@ -141,8 +141,8 @@ export default function LandingPageMusic({ Component, pageProps }) {
 }
 
 export async function getStaticProps() {
-  let feed = await parse('https://their-side-feed.vercel.app/api/feed')
-  console.log('FEED', feed)
+  // let feed = await parse('https://their-side-feed.vercel.app/api/feed')
+  // console.log('FEED', feed)
   return {
     props: {
       episodes: feed.items.map(
