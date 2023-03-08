@@ -524,7 +524,7 @@ export default async function concurrentPromise() {
       let filteredResponse // console.log('VALUES Are OK.. Log Object further if need ', response)
       filteredResponse = response.filter((value) => value !== undefined)
       const coursesMeta = filteredResponse.flat()
-      console.log('SUCCESS GETTING COYRSES', coursesMeta)
+      // console.log('SUCCESS GETTING COURSES', coursesMeta)
       return coursesMeta
     })
     .catch((err) => {

@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react'
 import propTypes from 'prop-types'
 
 const Star = ({ idx, style, onRating }) => {
-  console.log('STYLE', style)
+  // console.log('STYLE', style)
   return (
     <>
       <svg
