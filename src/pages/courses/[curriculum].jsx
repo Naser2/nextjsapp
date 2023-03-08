@@ -810,6 +810,10 @@ export async function getStaticProps({ params }) {
 
   let paramsSplit = params.curriculum.split('&')[1]
   console.log('PARAMS', params.curriculum)
+  console.log(
+    'PARAMS-params.curriculum.split(' & ')[1]??',
+    params.curriculum.split('&')[1]
+  )
   console.log('PARAMS_SPLIT', paramsSplit)
   const slittedSlugToMatchPaths = (courseSlug) => {
     // console.log('slittedSlugToMatchPaths', courseSlug.split('/')[1])
