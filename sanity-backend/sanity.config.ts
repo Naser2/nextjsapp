@@ -2,12 +2,14 @@ import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
-import {keys} from '../src/lib/keys'
+import KeysProvider from '../src/lib/keys'
+const {PROJECT_ID, DATA_SET} = KeysProvider()
+
 export default defineConfig({
   name: 'default',
   title: 'sanity-backend',
-  projectId: keys.PROJECT_ID,
-  dataset: keys.DATA_SET,
+  projectId: PROJECT_ID,
+  dataset: DATA_SET,
 
   plugins: [deskTool(), visionTool()],
 

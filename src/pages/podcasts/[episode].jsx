@@ -7,76 +7,77 @@ import { Container } from '@/components/PodcastComponents/Container'
 import { FormattedDate } from '@/components/PodcastComponents/FormattedDate'
 import { PlayButton } from '@/components/PodcastComponents/player/PlayButton'
 import { createClient } from 'next-sanity'
-// import sanityClient from '@sanity/client'
-// import getSanityFileUrl from '@/lib/getSanityFileUrl'
-// import { AudioProvider } from '@/components/PodcastComponents/AudioProvider'
+
 import { useRouter } from 'next/router'
 import getSanityItemById from '@/lib/getSanityItemById'
 import Image from 'next/image'
-// import { ArrowLeftIcon } from '@/components/icons/Arrows'
-// import EpisodeBG from '@/images/projectImages/lars_episode_bg.jpg'
-// import { useNextSanityImage } from 'next-sanity-image'
+
 import ImageUrlBuilder from '@sanity/image-url'
 // import cleardot from '@/images/cleardot.gif'
 import { Eyebrow } from '@/components/siteMdxComponents'
-// import { client } from '../../sanityClient'
-import { keys } from '@/lib/keys'
+
+import KeysProvider from '@/lib/keys'
 import Link from 'next/link'
 import blogsJson from '../blogs/blogsJson'
 const languages = ['en', 'fr', 'hn']
-const projectId = keys.PROJECT_ID
-const dataSet = keys.DATA_SET
-const name = keys.NAME
-const title = keys.TITLE
+const { PROJECT_ID, TITLE, NAME, DATA_SET } = KeysProvider()
+
+console.log('PROJECT_ID_KEYZ-[EPISODE]', PROJECT_ID, TITLE, NAME, DATA_SET)
+// const projectId = keys.PROJECT_ID
+// const dataSet = keys.DATA_SET
+// const name = keys.NAME
+// const title = keys.TITLE
 export default function Episode(
-  { episode, components, language = 'en' },
+  { episode, components, language = 'en', clientKeys },
   props
 ) {
-  console.log('PROPS EPISODE', components)
+  console.log('CLIENT-KEYYS', clientKeys)
 
   console.log('CONTENT EZ:', episode.content)
-  const contentText = episode.content[0].children.map((child) => {
-    return child.text
-    console.log('CHILD', child.text)
-    // child.map((text) => {
-    //   console.log('CHILD_TEXT', text)
-    // })
-  })
-  const {
-    Button,
-    CodeGroup,
-    Col,
-    Heading,
-    Note,
-    Properties,
-    Property,
-    Row,
-    a,
-    code,
-    h2,
-    pre,
-  } = components
-  const client = createClient({
-    name: name,
-    title: title,
-    projectId: projectId,
-    dataset: 'production',
-  })
+  // const contentText = episode.content[0].children.map((child) => {
+  //   return child.text
+  //   console.log('CHILD', child.text)
+  // child.map((text) => {
+  //   console.log('CHILD_TEXT', text)
+  // })
+  // })
+  const { PROJECT_ID, TITLE, NAME, DATA_SET } = KeysProvider()
+  console.log('PROJECT_ID_EPISODE_COMPONENT', PROJECT_ID, TITLE, NAME, DATA_SET)
+  // const projectId = PROJECT_ID
+  // const dataSet = 'production'
+  // const name = NAME
+  // const title = TITLE
 
-  console.log(
-    ' PROPSSS->>>',
-    CodeGroup,
-    Col,
-    Heading,
-    Note,
-    Properties,
-    Property,
-    Row,
-    a,
-    code,
-    h2,
-    pre
-  )
+  const client = createClient(clientKeys)
+  // const {
+  //   Button,
+  //   CodeGroup,
+  //   Col,
+  //   Heading,
+  //   Note,
+  //   Properties,
+  //   Property,
+  //   Row,
+  //   a,
+  //   code,
+  //   h2,
+  //   pre,
+  // } = components
+
+  // console.log(
+  //   ' PROPSSS->>>',
+  //   CodeGroup,
+  //   Col,
+  //   Heading,
+  //   Note,
+  //   Properties,
+  //   Property,
+  //   Row,
+  //   a,
+  //   code,
+  //   h2,
+  //   pre
+  // )
 
   function voiceToText() {
     console.log('AI Text')
@@ -86,7 +87,7 @@ export default function Episode(
   const builder = ImageUrlBuilder(client)
 
   function urlFor(imageSource) {
-    return builder.image(imageSource)
+    return builder.image(episode.coverArt.asset._ref)
   }
 
   console.log('[Episde].jsx', episode)
@@ -167,9 +168,9 @@ export default function Episode(
             <header className="flex-col">
               <div className="flex items-center gap-6  px-4 md:px-6 lg:px-8">
                 <div className="flex flex-col">
-                  <Heading level={1} id="sponsor">
+                  {/* <Heading level={1} id="sponsor">
                     Sponsors
-                  </Heading>
+                  </Heading> */}
                   <h1 className="mt-2 text-4xl font-bold text-slate-900 dark:text-slate-200">
                     Summary
                   </h1>
@@ -179,7 +180,7 @@ export default function Episode(
                 </div>
               </div>
               <div className="not-prose  mx-8 mb-16 mt-6 flex gap-3">
-                <Button onClick={() => voiceToText(true)} arrow="right">
+                {/* <Button onClick={() => voiceToText(true)} arrow="right">
                   Read this
                 </Button>
                 <Button
@@ -189,7 +190,7 @@ export default function Episode(
                   variant="outline"
                 >
                   Translate this poadcast
-                </Button>
+                </Button> */}
               </div>
             </header>
             <hr className="my-12 border-gray-200" />
@@ -266,7 +267,7 @@ export default function Episode(
                 )}
               </ul>
             </div>
-            <Note>{episode.note}</Note>
+            {/* <Note>{episode.note}</Note> */}
           </Container>
         </article>
       </PodcastsPageLayout>
@@ -275,11 +276,10 @@ export default function Episode(
 }
 
 export async function getStaticProps({ params }) {
-  const projectId = keys.PROJECT_ID
-  const dataSet = keys.DATA_SET
-  const name = keys.NAME
-  const title = keys.TITLE
-  console.log('PROJECT_ID', keys.PROJECT_ID)
+  const projectId = PROJECT_ID
+  const dataSet = 'production'
+  const name = NAME
+  const title = TITLE
   const client = createClient({
     name: name,
     title: title,
@@ -287,6 +287,7 @@ export async function getStaticProps({ params }) {
     dataset: 'production',
   })
 
+  // const clientKeys = { name, PROJECT_ID, title, dataSet }
   let options = { projectId, dataSet }
   const episodes = await client.fetch(`*[_type == "episode"]`)
 
@@ -300,6 +301,7 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       episode,
+      clientKeys: { name, projectId, title, dataSet },
     },
     revalidate: 10,
   }

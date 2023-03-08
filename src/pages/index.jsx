@@ -49,11 +49,15 @@ import getSanityFileUrl from '@/lib/getSanityFileUrl'
 // import { CallToAction } from '@/components/next13Components/CallToAction'
 import { ProjectSection } from '@/components/indexComponents/HomePojectsSection'
 import { keys } from '@/lib/keys'
+import KeysProvider from '@/lib/keys'
 import Link from 'next/link'
-const projectId = keys.PROJECT_ID
-const dataSet = keys.DATA_SET
-const name = keys.NAME
-const title = keys.TITLE
+
+// const projectId = keys.PROJECT_ID
+// const dataSet = keys.DATA_SET
+// const name = keys.NAME
+// const title = keys.TITLE
+const { PROJECT_ID, TITLE, NAME, DATA_SET } = KeysProvider()
+console.log('PROJECT_ID_KEYZ', PROJECT_ID, TITLE, NAME, DATA_SET)
 
 export default function Home({ blogs, music, episodes, className }) {
   console.log('MUSIC[0]', music)
@@ -391,10 +395,10 @@ export default function Home({ blogs, music, episodes, className }) {
 // }
 
 export async function getStaticProps() {
-  const projectId = keys.PROJECT_ID
+  const projectId = PROJECT_ID
   const dataSet = 'production'
-  const name = keys.NAME
-  const title = keys.TITLE
+  const name = NAME
+  const title = TITLE
   const client = createClient({
     name: name,
     title: title,

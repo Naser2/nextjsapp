@@ -110,3 +110,4 @@ const Project = function ({ products }) {
     </section>
   )
 }
+export default Project

@@ -20,11 +20,15 @@ import {
 } from '@/components/PodcastComponents/PodcastsPageLayout.jsx'
 import { createClient } from 'next-sanity'
 import getSanityFileUrl from '@/lib/getSanityFileUrl'
-import { keys } from '@/lib/keys'
-const projectId = keys.PROJECT_ID
-const dataSet = keys.DATA_SET
-const name = keys.NAME
-const title = keys.TITLE
+import KeysProvider from '@/lib/keys'
+
+const { PROJECT_ID, TITLE, NAME, DATA_SET } = KeysProvider()
+console.log('PROJECT_ID_KEYZ-EPISODES', PROJECT_ID, TITLE, NAME, DATA_SET)
+// import { keys } from '@/lib/keys'
+const projectId = PROJECT_ID
+const dataSet = DATA_SET
+const name = NAME
+const title = TITLE
 export function PlayPauseIcon({ playing, ...props }) {
   return (
     <svg aria-hidden="true" viewBox="0 0 10 10" fill="none" {...props}>
@@ -195,6 +199,13 @@ function PodacstIndex({ episodes }) {
 }
 
 export default function PodcastSiteWrapper({ Component, pageProps, episodes }) {
+  console.log(
+    'PROJECT_ID_KEYZ-PRODCAST_WRAPPEPR',
+    PROJECT_ID,
+    TITLE,
+    NAME,
+    DATA_SET
+  )
   return (
     // <AudioProvider>
     <PodcastsPageLayout>
@@ -210,17 +221,17 @@ export default function PodcastSiteWrapper({ Component, pageProps, episodes }) {
 }
 export async function getStaticProps() {
   const client = createClient({
-    name: name,
-    title: title,
-    projectId: projectId,
+    name: NAME,
+    title: TITLE,
+    projectId: PROJECT_ID,
     dataset: 'production',
   })
 
   // const music = await client.fetch(`*[_type == "music"]`)
-  let options = { projectId, dataSet }
+  let options = { PROJECT_ID, DATA_SET }
   const podcasts = await client.fetch(`*[_type == "episode"]`)
   // console.log('SANITY-MUSIC   ----> ', music)
-  console.log('SANITYPODCAST  ----> ', podcasts)
+  console.log('SANITYPODCASTS  ----> ', podcasts)
   // let organizedData = await getSanityFileUrl(music, options)
   let cleanEpisodes = await getSanityFileUrl(podcasts, options)
   console.log('CLEAN-POD  ----= ', cleanEpisodes)

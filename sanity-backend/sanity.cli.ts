@@ -1,9 +1,10 @@
 import {defineCliConfig} from 'sanity/cli'
 
-import {keys} from '../src/lib/keys'
+import KeysProvider from '../src/lib/keys'
+const {PROJECT_ID, DATA_SET} = KeysProvider()
 export default defineCliConfig({
   api: {
-    projectId: keys.PROJECT_ID,
-    dataset: keys.DATA_SET,
+    projectId: PROJECT_ID,
+    dataset: DATA_SET,
   },
 })
