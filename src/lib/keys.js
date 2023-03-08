@@ -19,7 +19,7 @@ const KeysProvider = () => {
   } else {
     console.log('isProduction:', isProduction)
 
-    console.log('Production Keys:', keys)
+    // console.log('Production Keys:', keys)
     let NAME = process.env.NAME
     let TITLE = process.env.TITLE
     let PROJECT_ID = process.env.PROJECT_ID
