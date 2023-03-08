@@ -402,6 +402,9 @@ export const coursesMeta = [
 ]
 
 export async function getCourseMeta(slug) {
+  console.log('Getting-Slugg-In-GET-Course-Meta', slug)
+  const matchCourseLug = slug.split('&')[1]
+  console.log('SPLITTIMNG-Slugg-In-GET-Course-Meta', slug.split('&')[1])
   try {
     let courseData = coursesMeta
       .map(

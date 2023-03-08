@@ -288,8 +288,8 @@ export async function getStaticProps({ params }) {
   let options = { projectId, dataSet }
   const episodes = await client.fetch(`*[_type == "episode"]`)
 
-  console.log('EPISODES', episodes)
-  console.log('PARAMS', params.episode)
+  console.log('EPISODES-IN-[EPISODE]', episodes)
+  console.log('PARAMS-IN-[EPISODE]', params.episode)
   let paramsId = params.episode
   let episode = await getSanityItemById(episodes, paramsId, options)
 

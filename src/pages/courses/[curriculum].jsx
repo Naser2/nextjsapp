@@ -812,7 +812,7 @@ export async function getStaticProps({ params }) {
   console.log('PARAMS-IN-CURRICULUM', params.curriculum)
   console.log(
     'PARAMS-params.curriculum.split(' & ')[1]??',
-    params.curriculum.split('&')[1]
+    params.curriculum.split('&')
   )
   console.log('PARAMS_SPLIT', paramsSplit)
   const slittedSlugToMatchPaths = (courseSlug) => {
@@ -823,7 +823,7 @@ export async function getStaticProps({ params }) {
     )
     return courseSlug.split('/')[1]
   }
-  const courseData = await getCourseMeta(params.curriculum.split('&')[1])
+  const courseData = await getCourseMeta(params.curriculum)
   console.log('STATIC_PROPS_COURSE_DATA', courseData)
   // console.log('courseMeta- -->', courseData)
   // try {
