@@ -15,11 +15,9 @@ const KeysProvider = () => {
     let PROJECT_ID = process.env.PROJECT_ID
     let DATA_SET = process.env.DATA_SET
     return { PROJECT_ID, TITLE, NAME, DATA_SET }
-    // console.log('Development Keys:')
   } else {
     console.log('isProduction:', isProduction)
 
-    // console.log('Production Keys:', keys)
     let NAME = process.env.NAME
     let TITLE = process.env.TITLE
     let PROJECT_ID = process.env.PROJECT_ID

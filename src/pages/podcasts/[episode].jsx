@@ -23,10 +23,7 @@ const languages = ['en', 'fr', 'hn']
 const { PROJECT_ID, TITLE, NAME, DATA_SET } = KeysProvider()
 
 console.log('PROJECT_ID_KEYZ-[EPISODE]', PROJECT_ID, TITLE, NAME, DATA_SET)
-// const projectId = keys.PROJECT_ID
-// const dataSet = keys.DATA_SET
-// const name = keys.NAME
-// const title = keys.TITLE
+
 export default function Episode(
   { episode, components, language = 'en', clientKeys },
   props

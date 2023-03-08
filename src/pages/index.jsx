@@ -52,10 +52,6 @@ import { ProjectSection } from '@/components/indexComponents/HomePojectsSection'
 import KeysProvider from '@/lib/keys'
 import Link from 'next/link'
 
-// const projectId = keys.PROJECT_ID
-// const dataSet = keys.DATA_SET
-// const name = keys.NAME
-// const title = keys.TITLE
 const { PROJECT_ID, TITLE, NAME, DATA_SET } = KeysProvider()
 console.log('PROJECT_ID_KEYZ', PROJECT_ID, TITLE, NAME, DATA_SET)
 
