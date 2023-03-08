@@ -374,10 +374,10 @@ function MainBlog() {
   )
 }
 
-const BlogsSample = (props, ref) => {
+const BlogsSample = (props) => {
   // console.log('ARTICLE REF: ' + ref)
   return (
-    <section ref={ref} className="bg-slate overflow-hidden bg-black ">
+    <section className="bg-slate overflow-hidden bg-black ">
       {/* <HeroPattern/> */}
       <div className="my-0 md:my-4 xl:max-w-none">
         <div className="max-w-10xl xl:px-34 md:px-10 ">
