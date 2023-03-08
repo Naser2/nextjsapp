@@ -402,13 +402,16 @@ export const coursesMeta = [
 ]
 
 export async function getCourseMeta(slug) {
-  console.log('Getting-Slugg-In-GET-Course-Meta', slug)
+  console.log('COURSE_DATA_SLUG', slug)
   ProdSlug = 'dev/aws-and-the-cloud'
   const splitSlug = slug.split('/')
   const partOfSlugNeeded = splitSlug[1]
+  console.log('COURSE_DATA_SLUG-PART_NEEDED', partOfSlugNeeded)
 
-  console.log('SPLITTIMNG-Slugg-In-GET-Course-Meta', partOfSlugNeeded)
+  // PARAMS-IN-CURRICULUM dev/aws-and-the-cloud
+  // 0 [ 'dev/aws-and-the-cloud' ]
 
+  // Getting-Slugg-In-GET-Course-Meta dev/aws-and-the-cloud
   // SPLITTIMNG-Slugg-In-GET-Course-Meta undefined
 
   try {
@@ -460,53 +463,4 @@ export async function getCourseMeta(slug) {
       ? new Error("Couldn't create the file", e)
       : { message: 'Problem here in meta.', e }
   }
-  // let courseData = coursesMeta
-  //   .map(
-  //     ({
-  //       author,
-  //       courseSlug,
-  //       courseCategory,
-  //       image,
-  //       shortDescription,
-  //       longDscription,
-  //       ratings,
-  //       lastUpdated,
-  //       language,
-  //       quizes,
-  //       access,
-  //       theme,
-  //       topicsCovered,
-  //       reviews,
-  //     }) => ({
-  //       author,
-  //       courseSlug,
-  //       image,
-  //       courseCategory,
-  //       shortDescription,
-  //       longDscription,
-  //       ratings,
-  //       lastUpdated,
-  //       language,
-  //       quizes,
-  //       access,
-  //       theme,
-  //       topicsCovered,
-  //       reviews,
-  //     })
-  //   )
-  //   .find(({ courseSlug }) => courseSlug === slug)
-  //   console.log('Course-META-2', courseMeta)
-  //   let courseMeta = coursesMeta.map(({ courseSlug }) => {
-  //     courseSlug, console.log('Course-META-2', courseSlug, 'Slug', slug)
-  //   })
-  //   let item = coursesMeta
-  //     .map(({ courseSlug }) => ({ courseSlug }))
-  //     .find(({ courseSlug }) => courseSlug === slug)
-  //   console.log('Course-META-2', item)
-  return courseData
 }
-// const getSanityItemById = async function (data, paramsId, options) {
-
-//   console.log('ITEM --->', item)
-//   return item
-// }

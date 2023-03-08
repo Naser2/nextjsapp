@@ -28,11 +28,11 @@ function TopLevelNavItem({ href, children }) {
 }
 
 export const Header = forwardRef(function Header({ className, ...props }, ref) {
-  console.log('SPOTILIGHT_HEADER_PROPS', props.siteNavigation)
+  // console.log('SPOTILIGHT_HEADER_PROPS', props.siteNavigation)
   const router = useRouter()
   const coursePath = ['/courses/dev']
   const isCoursePage = router.pathname.includes(coursePath)
-  console.log('IS COURSES PATH?:', isCoursePage)
+  // console.log('IS COURSES PATH?:', isCoursePage)
   const homeNavLglementsStyle =
     'fixed inset-x-0 top-0 z-50 flex h-14 items-center justify-between gap-12 px-4 transition sm:px-6 lg:z-30 backdrop-blur-sm dark:backdrop-blur bg-white/[var(--bg-opacity-light)] dark:bg-zinc-900/[var(--bg-opacity-dark)]'
   const coursesNavLGlementsStyle =

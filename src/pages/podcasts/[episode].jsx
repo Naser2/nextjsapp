@@ -291,7 +291,7 @@ export async function getStaticProps({ params }) {
   console.log('EPISODES-IN-[EPISODE]', episodes)
   console.log('PARAMS-IN-[EPISODE]', params.episode)
   let paramsId = params.episode
-  let episode = await getSanityItemById(episodes, paramsId, options)
+  let episode = await getSanityItemById(episodes, params.episode, options)
 
   console.log('EPISODE', episode)
 

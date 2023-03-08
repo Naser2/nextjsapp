@@ -808,11 +808,11 @@ export default function Curriculum({ course, components }, props) {
 export async function getStaticProps({ params }) {
   const courses = await getCourses()
 
-  let paramsSplit = params.curriculum.split('&')[1]
+  let paramsSplit = params.curriculum.split('/')[1]
   console.log('PARAMS-IN-CURRICULUM', params.curriculum)
   console.log(
     'PARAMS-params.curriculum.split(' & ')[1]??',
-    params.curriculum.split('&')
+    params.curriculum.split('/')
   )
   console.log('PARAMS_SPLIT', paramsSplit)
   const slittedSlugToMatchPaths = (courseSlug) => {
