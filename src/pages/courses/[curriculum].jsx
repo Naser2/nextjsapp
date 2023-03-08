@@ -234,7 +234,11 @@ const CoursePageContentNav = ({ tags, specifics, courseCategory, theme }) => {
 export default function Curriculum({ course, components }, props) {
   const [rating, setRating] = useState(2)
   console.log('CURRICULLUM COURSE', course.data)
-  console.log('COURSE-MATTER', typeof content)
+  console.log('COURSE-SULG', course.courseSlug)
+  console.log(
+    'COURSE-PATH-/courses/${course.courseSlug}',
+    `/courses/${course.courseSlug}`
+  )
 
   let { tags, specifics, title, description, chapters } = course
   let {
@@ -809,7 +813,10 @@ export async function getStaticProps({ params }) {
   console.log('PARAMS_SPLIT', paramsSplit)
   const slittedSlugToMatchPaths = (courseSlug) => {
     // console.log('slittedSlugToMatchPaths', courseSlug.split('/')[1])
-    console.log('STATIC_PROPS_SlittedSlug', courseSlug.split('/')[1])
+    console.log(
+      'STATIC_PROPS_SPLITTED-SlugToMatchPaths',
+      courseSlug.split('/')[1]
+    )
     return courseSlug.split('/')[1]
   }
   const courseData = await getCourseMeta(params.curriculum.split('&')[1])
