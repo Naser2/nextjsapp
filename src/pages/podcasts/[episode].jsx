@@ -305,12 +305,23 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  let feed = await parse('https://their-side-feed.vercel.app/api/feed')
+  const projectId = PROJECT_ID
+  const dataSet = 'production'
+  const name = NAME
+  const title = TITLE
+  const client = createClient({
+    name: name,
+    title: title,
+    projectId: projectId,
+    dataset: 'production',
+  })
+  let episodes = await client.fetch(`*[_type == "episode"]`)
+  // let feed = await parse('https://their-side-feed.vercel.app/api/feed')
 
   return {
-    paths: feed.items.map(({ id }) => ({
+    paths: episodes.map(({ _id }) => ({
       params: {
-        episode: id.toString(),
+        episode: _id.toString(),
       },
     })),
     fallback: 'blocking',

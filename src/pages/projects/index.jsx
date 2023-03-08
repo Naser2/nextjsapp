@@ -182,7 +182,7 @@ export default function Projects() {
   )
 }
 
-const ProjectsIndex = function (projects) {
+const ProjectsIndex = function () {
   return (
     <>
       {projectJson.map((project) => {
