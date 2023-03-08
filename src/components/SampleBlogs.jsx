@@ -374,7 +374,7 @@ function MainBlog() {
   )
 }
 
-const BlogsSample = forwardRef((props, ref) => {
+const BlogsSample = (props, ref) => {
   // console.log('ARTICLE REF: ' + ref)
   return (
     <section ref={ref} className="bg-slate overflow-hidden bg-black ">
@@ -407,7 +407,7 @@ const BlogsSample = forwardRef((props, ref) => {
       </div>
     </section>
   )
-})
+}
 
 // export async function getStaticProps() {
 //   return {
@@ -416,5 +416,5 @@ const BlogsSample = forwardRef((props, ref) => {
 //     },
 //   }
 // }
-BlogsSample.displayName = BlogsSample
+// BlogsSample.displayName = BlogsSample
 export default BlogsSample

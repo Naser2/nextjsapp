@@ -31,7 +31,7 @@ import Head from 'next/head'
 
 import { getBlogs } from '@/lib/getBlogs'
 import blogsJson from '../lib/blogsJson'
-import BlogsSample from './SampleBlogs'
+import BlogsSample from '@/components/SampleBlogs'
 import { CustomizedContainer } from '@/components/CustomizedContainer'
 import {
   AudioProvider,
