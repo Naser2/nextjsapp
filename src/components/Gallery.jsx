@@ -10,7 +10,7 @@ import istaImg5 from '@/images/social/instagram-5.jpeg'
 import istaImg6 from '@/images/social/instagram-6.avif'
 import Image from 'next/image'
 import phoneImage from '@/images/projectImages/phone/iphone_personalization__4300bh645z62_large_2x.jpeg'
-import phoneVid from '@/images/projectImages/phone/iphone_video_cropd_gif.gif'
+// import phoneVid from '@/images/projectImages/phone/iphone_video_cropd_gif.gif'
 import { LandingHeroTabs } from './indexComponents/LandingHeroTabs'
 import scrollToSection from '@/lib/scrollToSection'
 // import { SocialMediaGalery } from './SocialMediaGalery'
@@ -164,16 +164,16 @@ export function WorkStatus({ ...props }) {
   )
 }
 const PodcastImage = () => {
-  const podcastImg = [
-    {
-      id: 9,
-      name: 'Podcast',
-      href: '#',
-      source: phoneVid,
-      imageAlt: 'A podcast desgined for my daugther.',
-    },
-    // More products...
-  ]
+  // const podcastImg = [
+  //   {
+  //     id: 9,
+  //     name: 'Podcast',
+  //     href: '#',
+  //     source: phoneVid,
+  //     imageAlt: 'A podcast desgined for my daugther.',
+  //   },
+  // More products...
+  // ]
   const podcstAspectRatio = 'aspect-w-20 aspect-h-14'
   return (
     <div className="podcast-solo-img">
@@ -361,7 +361,7 @@ export const Galery = (
               })}
             </ul>
             {/* <SocialMediaGalery/> */}
-            {/* <PodcastImage/> */}
+            {/* <PodcastImage /> */}
           </div>
         </div>
       </section>
@@ -377,13 +377,13 @@ const podcast = [
     desctription:
       'I build this podcast app for my dauter to connect with friends and share stories',
   },
-  {
-    id: 7,
-    name: 'Podcast',
-    href: '#',
-    source: phoneVid,
-    imageAlt: 'A podcast desgined for my daugther.',
-  },
+  // {
+  //   id: 7,
+  //   name: 'Podcast',
+  //   href: '#',
+  //   source: phoneVid,
+  //   imageAlt: 'A podcast desgined for my daugther.',
+  // },
   // More products...
 ]
 export const Podcast = (props) => {
@@ -405,7 +405,6 @@ export const Podcast = (props) => {
                 <div className="xl:py-34 px-6 py-10  lg:px-0  lg:py-20  ">
                   <p className="eyebrow-red  mt-2 mb-4">Podcast App</p>
                   <h2 className="headline typography-headline dark:text-slate-100">
-                    {' '}
                     Bulding a Podcast App
                     <br className="small text-sky-500" /> With React.
                   </h2>

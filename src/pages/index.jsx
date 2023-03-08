@@ -31,7 +31,7 @@ import Head from 'next/head'
 
 import { getBlogs } from '@/lib/getBlogs'
 import blogsJson from '../lib/blogsJson'
-import { BlogsSample } from './SampleBlogs'
+import BlogsSample from './SampleBlogs'
 import { CustomizedContainer } from '@/components/CustomizedContainer'
 import {
   AudioProvider,
@@ -47,7 +47,7 @@ import getSanityFileUrl from '@/lib/getSanityFileUrl'
 // import { PlayButton } from '@/components/PodcastComponents/player/PlayButton'
 // import channelBanner from '/channels4_banner.jpeg'
 // import { CallToAction } from '@/components/next13Components/CallToAction'
-import { ProjectSection } from '@/components/indexComponents/HomePojectsSection'
+import ProjectSection from '@/components/indexComponents/HomePojectsSection'
 
 import KeysProvider from '@/lib/keys'
 import Link from 'next/link'
