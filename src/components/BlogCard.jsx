@@ -4,7 +4,7 @@ import Link from 'next/link'
 import newyearresolution1 from '@/images/blogsImages/resolution_keep.png'
 import clsx from 'clsx'
 import { formatDate } from '@/lib/formatDate'
-import blogsJson from '@/pages/blogs/blogsJson'
+import blogsJson from '@/lib/blogsJson'
 
 export function BlogCard({ blog }) {
   function BlogCardMobile({ className, ...props }) {

@@ -417,4 +417,4 @@ const BlogsSample = forwardRef((props, ref) => {
 //   }
 // }
 BlogsSample.displayName = BlogsSample
-export { BlogsSample }
+export default BlogsSample

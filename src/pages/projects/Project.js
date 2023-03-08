@@ -128,3 +128,5 @@ const products = [
   },
   // More products...
 ]
+
+export default Project

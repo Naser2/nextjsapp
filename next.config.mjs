@@ -24,7 +24,7 @@ const nextConfig = {
     scrollRestoration: true,
   },
 
-  // distDir: 'build',
+  distDir: 'build',
   // content: ['./src/**/*.{js,jsx}'],
   images: {
     domains: ['cdn.sanity.io', 'tailwindui.com', 'images.unsplash.com'],

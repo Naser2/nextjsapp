@@ -18,7 +18,7 @@ import { Eyebrow } from '@/components/siteMdxComponents'
 
 import KeysProvider from '@/lib/keys'
 import Link from 'next/link'
-import blogsJson from '../blogs/blogsJson'
+import blogsJson from '../../lib/blogsJson'
 const languages = ['en', 'fr', 'hn']
 const { PROJECT_ID, TITLE, NAME, DATA_SET } = KeysProvider()
 

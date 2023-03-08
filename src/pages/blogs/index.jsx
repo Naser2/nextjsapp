@@ -4,8 +4,8 @@ import { BlogListLayout } from '@/components/BlogListLayout'
 
 import { BlogCard } from '@/components/BlogCard'
 import { getBlogs } from '@/lib/getBlogs'
-import blogsJson from './blogsJson'
-import { BlogsSample } from '../sampleBlogs'
+import blogsJson from '../../lib/blogsJson'
+// import { BlogsSample } from '../SampleBlogs'
 import { ContainerNoPadding } from '@/components/Container'
 import Link from 'next/link'
 export default function ArticlesList({ blogs }) {

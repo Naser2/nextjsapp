@@ -30,8 +30,8 @@ import { createClient } from 'next-sanity'
 import Head from 'next/head'
 
 import { getBlogs } from '@/lib/getBlogs'
-import blogsJson from './blogs/blogsJson'
-import { BlogsSample } from './sampleBlogs'
+import blogsJson from '../lib/blogsJson'
+import { BlogsSample } from './SampleBlogs'
 import { CustomizedContainer } from '@/components/CustomizedContainer'
 import {
   AudioProvider,

@@ -20,7 +20,7 @@ import getCourses from '@/lib/getCourses'
 // import { Eyebrow } from '@/components/siteMdxComponents'
 // import { client } from '../../sanityClient'
 // import { useRouter } from 'next/router'
-import { getCourseMeta } from './courses-meta'
+import { getCourseMeta } from '../../lib/courses-meta'
 
 // import { useMemo } from 'react'
 // import Head from 'next/head'

@@ -9,7 +9,7 @@ import SuperchagedTechSection, {
 } from '@/components/indexComponents/SuperchagedTechSection'
 import clsx from 'clsx'
 
-import projectJson from './projectsJson'
+import projectJson from '../../lib/projectsJson'
 import Image from 'next/image'
 import Link from 'next/link'
 function SpeakingSection({ children, ...props }) {

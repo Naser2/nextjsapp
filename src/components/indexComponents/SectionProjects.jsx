@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 import { forwardRef } from 'react'
 import Link from 'next/link'
-import projectsList from '../../pages/projects/projectsJson'
+import projectsList from '../../lib/projectsJson'
 
 export function Project({
   as: Component = 'div',
