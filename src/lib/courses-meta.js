@@ -315,7 +315,7 @@ export const coursesMeta = [
       'Shadow DOM',
       'The React Libraries',
       'Classes and Stateless Components',
-      'Suspenses & error handling',
+      'Suspenses and error handling',
       'Data Fetching',
       'ServerSide rendering',
       'UseMemo and UseEffect',
