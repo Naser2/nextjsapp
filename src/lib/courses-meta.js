@@ -402,11 +402,11 @@ export const coursesMeta = [
 ]
 
 export async function getCourseMeta(paramsSplit) {
-  console.log('COURSE_DATA_SLUG', slug)
-  ProdSlug = 'dev/aws-and-the-cloud'
-  const splitSlug = slug.split('/')
-  const partOfSlugNeeded = splitSlug[1]
-  console.log('COURSE_DATA_SLUG-PART_NEEDED', partOfSlugNeeded)
+  console.log('COURSE_DATA_SLUG', paramsSplit)
+  // ProdSlug = 'dev/aws-and-the-cloud'
+  // const splitSlug = slug.split('/')
+  // const partOfSlugNeeded = splitSlug[1]
+  // console.log('COURSE_DATA_SLUG-PART_NEEDED', partOfSlugNeeded)
 
   // PARAMS-IN-CURRICULUM dev/aws-and-the-cloud
   // 0 [ 'dev/aws-and-the-cloud' ]
