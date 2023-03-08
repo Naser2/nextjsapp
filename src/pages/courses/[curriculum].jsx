@@ -806,43 +806,45 @@ export async function getStaticProps({ params }) {
 
   let paramsSplit = params.curriculum.split('&')[1]
   console.log('PARAMS', params.curriculum)
+  console.log('PARAMS_SPLIT', paramsSplit)
   const slittedSlugToMatchPaths = (courseSlug) => {
     // console.log('slittedSlugToMatchPaths', courseSlug.split('/')[1])
+    console.log('STATIC_PROPS_SlittedSlug', courseSlug.split('/')[1])
     return courseSlug.split('/')[1]
   }
   const courseData = await getCourseMeta(params.curriculum.split('&')[1])
-
-  console.log('courseMeta- -->', courseData)
-  try {
-    let course = await courses
-      .map(
-        ({
-          chapters,
-          meta,
-          numberOfChapters,
-          title,
-          courseSlug,
-          shortDescription,
-        }) => ({
-          chapters,
-          meta,
-          numberOfChapters,
-          title,
-          courseSlug,
-          shortDescription,
-          data: courseData,
-          pathithizedSlug: slittedSlugToMatchPaths(courseSlug),
-        })
-      )
-      .find(({ pathithizedSlug }) => pathithizedSlug === paramsSplit)
-    console.log('TRY CATCH course', course)
-  } catch (e) {
-    course = new Error("Couldn't create the file", e)
-    console.log('EROR IN GETTING COURSE META', e)
-    return course
-      ? new Error("Couldn't create the file", e)
-      : { message: 'Problem here in meta.', e }
-  }
+  console.log('STATIC_PROPS_COURSE_DATA', courseData)
+  // console.log('courseMeta- -->', courseData)
+  // try {
+  //   let course = await courses
+  //     .map(
+  //       ({
+  //         chapters,
+  //         meta,
+  //         numberOfChapters,
+  //         title,
+  //         courseSlug,
+  //         shortDescription,
+  //       }) => ({
+  //         chapters,
+  //         meta,
+  //         numberOfChapters,
+  //         title,
+  //         courseSlug,
+  //         shortDescription,
+  //         data: courseData,
+  //         pathithizedSlug: slittedSlugToMatchPaths(courseSlug),
+  //       })
+  //     )
+  //     .find(({ pathithizedSlug }) => pathithizedSlug === paramsSplit)
+  //   console.log('TRY CATCH course', course)
+  // } catch (e) {
+  //   course = new Error("Couldn't create the file", e)
+  //   console.log('EROR IN GETTING COURSE META', e)
+  //   return course
+  //     ? new Error("Couldn't create the file", e)
+  //     : { message: 'Problem here in meta.', e }
+  // }
 
   // const { content } = matter(course.meta)
   // console.log('content', typeof content)

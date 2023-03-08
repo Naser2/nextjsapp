@@ -130,12 +130,22 @@ export function ArticleLayout({
                         "
               />
             </div>
-            <div className="contributor ml-4  text-black  dark:text-white">
-              {meta.author.name.split(' ')[0]}
-              <div className="author--position figma-p7oszx">
-                {meta.author.name.split(' ')[1]}
+            {meta.author && meta.author.name && (
+              <div className="contributor ml-4  text-black  dark:text-white">
+                {meta.author.name.split(' ')[0]}
+                <div className="author--position figma-p7oszx">
+                  {meta.author.name.split(' ')[1]}
+                </div>
               </div>
-            </div>
+            )}
+            {meta.author && !meta.author.name && (
+              <div className="contributor ml-4  text-black  dark:text-white">
+                {meta.author}
+                {/* <div className="author--position figma-p7oszx">
+                  {meta.author.name.split(' ')[1]}
+                </div> */}
+              </div>
+            )}
           </Link>
           <div className="ml-12 text-sm text-slate-400">
             {meta.author.proffession ? meta.author.proffession : 'NasDesigns'}
