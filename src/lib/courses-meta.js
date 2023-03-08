@@ -401,7 +401,7 @@ export const coursesMeta = [
   },
 ]
 
-export async function getCourseMeta(slug) {
+export async function getCourseMeta(paramsSplit) {
   console.log('COURSE_DATA_SLUG', slug)
   ProdSlug = 'dev/aws-and-the-cloud'
   const splitSlug = slug.split('/')
@@ -453,7 +453,7 @@ export async function getCourseMeta(slug) {
           reviews,
         })
       )
-      .find(({ courseSlug }) => courseSlug.toLowerCase() === partOfSlugNeeded)
+      .find(({ courseSlug }) => courseSlug.toLowerCase() === paramsSplit)
     console.log('Course-META-2', courseData)
 
     return courseData

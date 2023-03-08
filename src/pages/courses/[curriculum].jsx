@@ -823,7 +823,7 @@ export async function getStaticProps({ params }) {
     )
     return courseSlug.split('/')[1]
   }
-  const courseData = await getCourseMeta(params.curriculum)
+  const courseData = await getCourseMeta(paramsSplit)
   console.log('STATIC_PROPS_COURSE_DATA', courseData)
   // console.log('courseMeta- -->', courseData)
   // try {
