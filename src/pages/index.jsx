@@ -48,7 +48,7 @@ import getSanityFileUrl from '@/lib/getSanityFileUrl'
 // import channelBanner from '/channels4_banner.jpeg'
 // import { CallToAction } from '@/components/next13Components/CallToAction'
 import { ProjectSection } from '@/components/indexComponents/HomePojectsSection'
-import { keys } from '@/lib/keys'
+
 import KeysProvider from '@/lib/keys'
 import Link from 'next/link'
 
