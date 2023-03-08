@@ -809,7 +809,7 @@ export async function getStaticProps({ params }) {
   const courses = await getCourses()
 
   let paramsSplit = params.curriculum.split('&')[1]
-  console.log('PARAMS', params.curriculum)
+  console.log('PARAMS-IN-CURRICULUM', params.curriculum)
   console.log(
     'PARAMS-params.curriculum.split(' & ')[1]??',
     params.curriculum.split('&')[1]
