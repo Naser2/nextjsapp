@@ -201,7 +201,10 @@ const CoursePageContentNav = ({ tags, specifics, courseCategory, theme }) => {
 
         <li>
           <div className="flex items-center">
-            <Link href="#" className="mr-2 text-sm font-medium text-gray-900">
+            <Link
+              href={`/courses/${course.courseSlug}`}
+              className="mr-2 text-sm font-medium text-gray-900"
+            >
               {courseCategory}
             </Link>
             <svg
@@ -344,7 +347,7 @@ export default function Curriculum({ course, components }, props) {
                       courseCategory={courseCategory}
                     />
                   </>
-                )}{' '}
+                )}
               </div>
             </div>
 
@@ -358,7 +361,7 @@ export default function Curriculum({ course, components }, props) {
                   {title}
                 </h1>
                 <h3 className="my-4 text-lg font-medium  text-gray-900  dark:text-slate-200 ">
-                  <Link href="#">
+                  <Link href={`/courses/${course.courseSlug}`}>
                     Officially crafted course in collabortion with brave
                     Mountains and nas design
                   </Link>
@@ -420,7 +423,7 @@ export default function Curriculum({ course, components }, props) {
                     {access}
                   </span>
                   <span
-                    className={` border border-${theme.text} absolute bottom-1  ml-2 inline-flex rounded-full bg-white px-2 text-xs font-semibold leading-5 text-slate-800 lg:ml-4`}
+                    className={`border border-${theme.text} absolute bottom-1  ml-2 inline-flex rounded-full bg-white px-2 text-xs font-semibold leading-5 text-slate-800 lg:ml-4`}
                   >
                     New
                   </span>
@@ -464,7 +467,6 @@ export default function Curriculum({ course, components }, props) {
                     </svg>
                     Last updated
                     <span className="ml-2 text-slate-600  dark:text-slate-400">
-                      {' '}
                       {lastUpdated}
                     </span>
                   </p>
@@ -524,7 +526,7 @@ export default function Curriculum({ course, components }, props) {
                         focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-white dark:text-black `,
                     ]}
                   >
-                    Start {course.courseSlug}
+                    Start
                   </Link>
                 </form>
               </div>
