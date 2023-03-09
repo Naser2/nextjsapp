@@ -403,6 +403,13 @@ export const coursesMeta = [
 
 export async function getCourseMeta(params) {
   console.log('COURSE_DATA_SLUG', params)
+  // COURSE_DATA_SLUG dev/aws-and-the-cloud
+  let slug
+  if (params.startswith('dev')) {
+    slug = params.split('/')[1]
+  } else {
+    slug = params
+  }
   // ProdSlug = 'dev/aws-and-the-cloud'
   // const splitSlug = slug.split('/')
   // const partOfSlugNeeded = splitSlug[1]
@@ -453,7 +460,7 @@ export async function getCourseMeta(params) {
           reviews,
         })
       )
-      .find(({ courseSlug }) => courseSlug.toLowerCase() === params)
+      .find(({ courseSlug }) => courseSlug.toLowerCase() === slug)
     // console.log('Course-META-2', courseData)
 
     return courseData
