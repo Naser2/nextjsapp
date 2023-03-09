@@ -129,7 +129,7 @@ export function CourseListCard({ course }) {
   return (
     <div className="dark:text-zink-400 relative text-black">
       <Link
-        href={`courses/curriculum&${course.courseSlug.slice(
+        href={`courses/${course.courseSlug.slice(
           course.courseSlug.indexOf('v/') + 2
         )}`}
       >
@@ -165,11 +165,14 @@ export function CourseListCard({ course }) {
             <p className="text-medium relative rounded-sm bg-yellow-100 py-0 px-4 font-medium font-medium text-slate-900 ">
               <span
                 className="absolute -top-4 -ml-4  h-8 bg-sky-200 px-3 "
-                href={`courses/curriculum&${course.courseSlug.slice(
+                href={`courses/${course.courseSlug.slice(
                   course.courseSlug.indexOf('v/') + 2
                 )}`}
               >
-                {course.title}
+                {/* {course.title} */}
+                {`courses/${course.courseSlug.slice(
+                  course.courseSlug.indexOf('v/') + 2
+                )}`}
               </span>
             </p>
             <p className="text-medium rounded-sm bg-yellow-100 px-4  py-2 font-medium font-medium text-yellow-600 "></p>

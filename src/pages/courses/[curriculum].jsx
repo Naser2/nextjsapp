@@ -811,17 +811,17 @@ export async function getStaticProps({ params }) {
   // let paramsSplit = params.curriculum.split('&')[1]
   let paramsSplit
   console.log('PARAMS-IN-CURRICULUM', params.curriculum)
-  if (process.env.NODE_ENV !== 'production') {
-    paramsSplit = params.curriculum.split('&')[1]
-  } else {
-    paramsSplit = params.curriculum.split('/')[1]
-  }
+  // if (process.env.NODE_ENV !== 'production') {
+  //   paramsSplit = params.curriculum.split('&')[1]
+  // } else {
+  //   paramsSplit = params.curriculum.split('/')[1]
+  // }
   // console.log(
   //   'PARAMS-params.curriculum.split(' & ')[1]??',
   //   params.curriculum.split('/')
   // )
   console.log('PARAMS_SPLIT', paramsSplit)
-  const slittedSlugToMatchPaths = (courseSlug) => {
+  const splittedSlugToMatchPaths = (courseSlug) => {
     // console.log('slittedSlugToMatchPaths', courseSlug.split('/')[1])
     console.log(
       'STATIC_PROPS_SPLITTED-SlugToMatchPaths',
@@ -829,7 +829,7 @@ export async function getStaticProps({ params }) {
     )
     return courseSlug.split('/')[1]
   }
-  const courseData = await getCourseMeta(paramsSplit)
+  const courseData = await getCourseMeta(params.curriculum)
   console.log('STATIC_PROPS_COURSE_DATA', courseData)
   // console.log('courseMeta- -->', courseData)
   // try {
@@ -887,6 +887,7 @@ export async function getStaticProps({ params }) {
 
   return {
     props: {
+      // course: await getCourseMeta(params.curriculum),
       course: await courses
         .map(
           ({
@@ -904,10 +905,10 @@ export async function getStaticProps({ params }) {
             courseSlug,
             shortDescription,
             data: courseData,
-            pathithizedSlug: slittedSlugToMatchPaths(courseSlug),
+            pathithizedSlug: splittedSlugToMatchPaths(courseSlug),
           })
         )
-        .find(({ pathithizedSlug }) => pathithizedSlug === paramsSplit),
+        .find(({ pathithizedSlug }) => pathithizedSlug === params.curriculum),
     },
     revalidate: 10,
   }

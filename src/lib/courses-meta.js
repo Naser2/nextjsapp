@@ -401,8 +401,8 @@ export const coursesMeta = [
   },
 ]
 
-export async function getCourseMeta(paramsSplit) {
-  console.log('COURSE_DATA_SLUG', paramsSplit)
+export async function getCourseMeta(params) {
+  console.log('COURSE_DATA_SLUG', params)
   // ProdSlug = 'dev/aws-and-the-cloud'
   // const splitSlug = slug.split('/')
   // const partOfSlugNeeded = splitSlug[1]
@@ -431,7 +431,7 @@ export async function getCourseMeta(paramsSplit) {
           quizes,
           access,
           theme,
-          imageLayout,
+          imageLayout = 'regular',
           topicsCovered,
           reviews,
         }) => ({
@@ -453,7 +453,7 @@ export async function getCourseMeta(paramsSplit) {
           reviews,
         })
       )
-      .find(({ courseSlug }) => courseSlug.toLowerCase() === paramsSplit)
+      .find(({ courseSlug }) => courseSlug.toLowerCase() === params)
     // console.log('Course-META-2', courseData)
 
     return courseData
