@@ -361,7 +361,7 @@ export default function Curriculum({ course, components }, props) {
                   {title}
                 </h1>
                 <h3 className="my-4 text-lg font-medium  text-gray-900  dark:text-slate-200 ">
-                  <Link href={`/courses/${course.courseSlug}`}>
+                  <Link href={`/courses/${courseSlug}`}>
                     Officially crafted course in collabortion with brave
                     Mountains and nas design
                   </Link>
@@ -517,7 +517,7 @@ export default function Curriculum({ course, components }, props) {
 
                   <Link
                     type="button"
-                    href={`/courses/${course.courseSlug}`}
+                    href={`/courses/${courseSlug}`}
                     className={[
                       theme.button
                         ? [theme.button, theme.hover]
