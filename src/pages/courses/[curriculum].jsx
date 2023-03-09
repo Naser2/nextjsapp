@@ -202,7 +202,7 @@ const CoursePageContentNav = ({ tags, specifics, courseCategory, theme }) => {
         <li>
           <div className="flex items-center">
             <Link
-              href={`/courses/${course.courseSlug}`}
+              href={`/courses/${courseCategory}`}
               className="mr-2 text-sm font-medium text-gray-900"
             >
               {courseCategory}
