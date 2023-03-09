@@ -814,7 +814,7 @@ export async function getStaticProps({ params }) {
   if (process.env.NODE_ENV !== 'production') {
     paramsSplit = params.curriculum.split('&')[1]
   } else {
-    paramsSplit = params.curriculum.split('/')[1]
+    paramsSplit = params.curriculum.split('&')[1]
   }
   // console.log(
   //   'PARAMS-params.curriculum.split(' & ')[1]??',
