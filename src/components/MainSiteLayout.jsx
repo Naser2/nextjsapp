@@ -56,8 +56,8 @@ export function MainSiteLayout({
   const [navigationState, setNavigationState] = useState([])
 
   const router = useRouter()
-  console.log('MAINSITE NAVIGATion', navigation)
-  console.log('MAINSITE-SITE_NAV_PROPS ', siteNavigation)
+  // console.log('MAINSITE NAVIGATion', navigation)
+  // console.log('MAINSITE-SITE_NAV_PROPS ', siteNavigation)
 
   // console.log('MAINSITE Sections', sections)
   // console.log('MAINSITE NAVIGATion', navigation)

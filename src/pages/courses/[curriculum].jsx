@@ -234,11 +234,11 @@ const CoursePageContentNav = ({ tags, specifics, courseCategory, theme }) => {
 export default function Curriculum({ course, components }, props) {
   const [rating, setRating] = useState(2)
   console.log('CURRICULLUM COURSE', course.data)
-  console.log('COURSE-SULG', course.courseSlug)
-  console.log(
-    'COURSE-PATH-/courses/${course.courseSlug}',
-    `/courses/${course.courseSlug}`
-  )
+  // console.log('COURSE-SULG', course.courseSlug)
+  // console.log(
+  //   'COURSE-PATH-/courses/${course.courseSlug}',
+  //   `/courses/${course.courseSlug}`
+  // )
 
   let { tags, specifics, title, description, chapters } = course
   let {
@@ -258,7 +258,7 @@ export default function Curriculum({ course, components }, props) {
     theme,
     reviews,
   } = course.data
-  console.log('REVIEWS COUNT :', reviews.reviewsCount)
+  // console.log('REVIEWS COUNT :', reviews.reviewsCount)
   // const contentText = episode.content[0].children.map((child) => {
   //   return child.text
   //   console.log('CHILD', child.text)

@@ -404,7 +404,7 @@ export async function getStaticProps() {
 
   const music = await client.fetch(`*[_type == "music"]`)
 
-  let options = { projectId, dataSet }
+  let options = { PROJECT_ID, DATA_SET }
   // const podcasts = await client.fetch(`*[_type == "episode"]`)
   console.log('SANITY-MUSIC   ----> ', music)
   // console.log('SANITYPODCAST  ----> ', podcasts)

@@ -454,7 +454,7 @@ export async function getCourseMeta(paramsSplit) {
         })
       )
       .find(({ courseSlug }) => courseSlug.toLowerCase() === paramsSplit)
-    console.log('Course-META-2', courseData)
+    // console.log('Course-META-2', courseData)
 
     return courseData
   } catch (e) {
