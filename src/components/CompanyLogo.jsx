@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export const CompanyLogo = () => {
   return (
-    <div className="company-logo my-4 flex lg:mr-0 lg:pt-16  xl:mr-64">
+    <div className="company-logo my-4 flex lg:mr-0   xl:mr-64">
       <div className="company-logo-left">
         {/* <div className="header-line-one">
           <span className="the">The</span>{' '}

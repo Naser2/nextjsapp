@@ -405,9 +405,11 @@ export async function getCourseMeta(params) {
   console.log('COURSE_DATA_SLUG', params)
   // COURSE_DATA_SLUG dev/aws-and-the-cloud
   let slug
-  if (params.startswith('dev')) {
+  if (params.startsWith('dev')) {
     slug = params.split('/')[1]
+    slug
   } else {
+    slug = params
     slug = params
   }
   // ProdSlug = 'dev/aws-and-the-cloud'

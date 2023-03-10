@@ -9,6 +9,7 @@ export const Intro = ({
   descriptionClass,
   name,
   nameClass,
+  padding,
   tag = '',
   href,
 }) => {
@@ -20,21 +21,24 @@ export const Intro = ({
     <div
       className={clsx(
         name && IntroGrid,
-        'lg:max-w-8xl mx-auto  px-8 pt-10 lg:mx-0 xl:pt-40'
+        padding ? padding : 'pt-10 xl:pt-40',
+        'lg:max-w-8xl mx-auto px-8 lg:mx-0 '
       )}
     >
       <div
         id="intro-name-mobile"
         className="mx-4 mt-4 max-w-3xl md:mt-0  lg:sr-only"
       >
-        <h1
-          className={clsx(
-            nameClass,
-            'col-start-1 row-start-2 -mx-4 mt-4 mt-4  max-w-[36rem] px-4 px-2 text-4xl font-extrabold tracking-tight text-slate-900 sm:mx-0 sm:text-7xl sm:text-6xl md:pt-10 lg:col-span-7 lg:mt-0 xl:col-span-6  xl:max-w-[43.5rem] '
-          )}
-        >
-          {name}
-        </h1>
+        {name && (
+          <h1
+            className={clsx(
+              nameClass,
+              'col-start-1 row-start-2 -mx-4 mt-4  max-w-[36rem] px-4 px-2 text-4xl font-extrabold tracking-tight text-slate-900 sm:mx-0 sm:text-7xl sm:text-6xl md:pt-10 lg:col-span-7 lg:mt-0 xl:col-span-6  xl:max-w-[43.5rem] '
+            )}
+          >
+            {name}
+          </h1>
+        )}
         {content.tag && (
           <p
             className={clsx(
@@ -50,7 +54,7 @@ export const Intro = ({
         <h1
           className={clsx(
             h1Class,
-            'col-start-1 row-start-2 mt-4 max-w-[36rem] px-4 px-2 text-4xl font-extrabold tracking-tight sm:text-7xl sm:text-6xl  xl:max-w-[43.5rem]'
+            'col-start-1 row-start-2 max-w-[36rem] px-4 px-2 text-4xl font-extrabold tracking-tight sm:text-7xl sm:text-6xl md:mt-4  xl:max-w-[43.5rem]'
           )}
         >
           {h1}
@@ -61,7 +65,7 @@ export const Intro = ({
               h20Class
                 ? [
                     h20Class,
-                    'headline typography-headline px-4  text-3xl font-medium tracking-tight text-slate-100/80',
+                    'headline typography-header-detail px-4  font-medium tracking-tight text-slate-100/80',
                   ]
                 : 'headline typography-headline px-4  text-3xl font-medium tracking-tight text-slate-100/80 dark:text-slate-100 dark:text-white'
             )}
@@ -74,9 +78,11 @@ export const Intro = ({
               </span>
             )}
 
-            <span className={clsx(h21Class, 'text-red-40 mr-1 lg:mr-2')}>
-              .
-            </span>
+            {h2[1] && (
+              <span className={clsx(h21Class, 'text-red-40 mr-1 lg:mr-2')}>
+                .
+              </span>
+            )}
             {h2[2] ?? ' '}
           </h2>
 
@@ -94,19 +100,32 @@ export const Intro = ({
       </div>
       <div
         id="intro-name"
-        className="sr-only mx-4 mt-4 max-w-3xl md:mt-0 lg:not-sr-only"
+        className="sr-only mt-0 max-w-3xl md:mx-4 md:mt-0 lg:not-sr-only"
       >
-        <h1
-          className={clsx(
-            nameClass,
-            'col-start-1 row-start-2 -mx-4 mt-4 mt-4  max-w-[36rem] px-4 px-2 text-4xl font-extrabold tracking-tight text-slate-900 sm:mx-0 sm:text-7xl sm:text-6xl md:pt-10 lg:col-span-7 lg:mt-0 xl:col-span-6  xl:max-w-[43.5rem] '
-          )}
+        {name && (
+          <h1
+            className={clsx(
+              nameClass,
+              'col-start-1 row-start-2 -mx-4 mt-0 max-w-[36rem]  px-4 px-2 text-4xl font-extrabold tracking-tight text-slate-900 sm:mx-0 sm:text-7xl sm:text-6xl md:mt-4 md:pt-10 lg:col-span-7 lg:mt-0 xl:col-span-6  xl:max-w-[43.5rem] '
+            )}
+          >
+            {name}
+          </h1>
+        )}
+        {/* <a
+          class="text-sky-500 dark:text-white dark:hover:text-sky-400 md:mx-6"
+          href="/showcase"
         >
-          {name}
-        </h1>
-        <p className="eyebrow-red  ml-4  mt-2 mb-4 hover:text-red-700 active:text-blue-500 dark:text-sky-500 dark:hover:text-indigo-400">
-          {content.tag.text}
-        </p>
+          Ipad / Mpbile
+          <span class="ml-4 rounded-full bg-sky-600 px-2 py-0.5 text-xs font-medium leading-5 text-white dark:bg-white dark:text-indigo-600">
+            react
+          </span>
+        </a> */}
+        {content.tag && (
+          <p className="eyebrow-red  ml-4  mt-2 mb-4 hover:text-red-700 active:text-blue-500 dark:text-sky-500 dark:hover:text-indigo-400">
+            {content.tag.text}
+          </p>
+        )}
         {description && (
           <p
             className={clsx(

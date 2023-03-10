@@ -24,7 +24,7 @@ export function ArrowRight({ className, color }) {
         x-description="Heroicon name: mini/chevron-right"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
-        fill="currentColor"
+        fill={clsx(color ? color : 'currentColor')}
         aria-hidden="true"
       >
         <path
@@ -36,12 +36,12 @@ export function ArrowRight({ className, color }) {
     </div>
   )
 }
-export function ArrowLeftIcon(props, className, color, size) {
+export function ArrowLeftIcon({ className }, props, color, size) {
   return (
     <div id="svg-style" className={clsx(className)}>
       <svg
         className={clsx(
-          'fill-white group-active:fill-white/80',
+          className ? className : 'fill-white group-active:fill-white/80',
           {
             large: 'h-9 w-9',
             medium: 'h-7 w-7',
@@ -50,6 +50,7 @@ export function ArrowLeftIcon(props, className, color, size) {
         )}
       >
         <path
+          className={className}
           d="M7.25 11.25 3.75 8m0 0 3.5-3.25M3.75 8h8.5"
           strokeWidth="1.5"
           strokeLinecap="round"

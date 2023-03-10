@@ -361,7 +361,7 @@ export default function Curriculum({ course, components }, props) {
                   {title}
                 </h1>
                 <h3 className="my-4 text-lg font-medium  text-gray-900  dark:text-slate-200 ">
-                  <Link href={`/courses/${courseSlug}`}>
+                  <Link href={`/courses/dev/${courseSlug.toLowerCase()}`}>
                     Officially crafted course in collabortion with brave
                     Mountains and nas design
                   </Link>
@@ -401,7 +401,11 @@ export default function Curriculum({ course, components }, props) {
                         theme={theme}
                       />
                       <h4
-                        className={`${theme.text}  dark:${theme.text} text-base text-gray-900`}
+                        className={`${
+                          theme && theme.text && theme.text
+                        }  dark:${
+                          theme && theme.text && theme.text
+                        } text-base text-gray-900`}
                       >
                         ( {chapters[0].length - chapters[0].slice(0, 5).length}{' '}
                         more chapters)
@@ -418,12 +422,16 @@ export default function Curriculum({ course, components }, props) {
                 <h2 className="sr-only">Course information</h2>
                 <p className="relative text-3xl tracking-tight text-gray-900">
                   <span
-                    className={`${theme.bg} "mt-4 bg-sky-200 px-2   lg:py-2`}
+                    className={`${
+                      theme && theme.bg
+                    } "mt-4 bg-sky-200 px-2   lg:py-2`}
                   >
                     {access}
                   </span>
                   <span
-                    className={`border border-${theme.text} absolute bottom-1  ml-2 inline-flex rounded-full bg-white px-2 text-xs font-semibold leading-5 text-slate-800 lg:ml-4`}
+                    className={`border border-${
+                      theme && theme.text
+                    } absolute bottom-1  ml-2 inline-flex rounded-full bg-white px-2 text-xs font-semibold leading-5 text-slate-800 lg:ml-4`}
                   >
                     New
                   </span>
@@ -452,7 +460,13 @@ export default function Curriculum({ course, components }, props) {
                 >
                   <legend className="dark:text-slate-300">
                     Created by{' '}
-                    <span className={`${theme.text} font-bold`}>{author}</span>
+                    <span
+                      className={`${
+                        theme && theme.text && theme.text
+                      } font-bold`}
+                    >
+                      {author}
+                    </span>
                   </legend>
                   <p className="relative z-10 mt-2 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
                     <svg
@@ -484,7 +498,8 @@ export default function Curriculum({ course, components }, props) {
                     Language
                     <span className="ml-2 font-medium text-slate-600  dark:text-slate-400 ">
                       {/* {language.ToUppercase()} */}
-                      {language.charAt(0).toUpperCase() + language.slice(1)}
+                      {language &&
+                        language.charAt(0).toUpperCase() + language.slice(1)}
                     </span>
                   </p>
                 </div>
@@ -506,7 +521,9 @@ export default function Curriculum({ course, components }, props) {
                             {name}
                           </dt>
                           <dd
-                            className={`${theme.text} mt-0.5 text-2xl font-semibold tracking-tight`}
+                            className={`${
+                              theme && theme.text && theme.text
+                            } mt-0.5 text-2xl font-semibold tracking-tight`}
                           >
                             {value}
                           </dd>
@@ -517,9 +534,9 @@ export default function Curriculum({ course, components }, props) {
 
                   <Link
                     type="button"
-                    href={`/courses/${courseSlug}`}
+                    href={`/courses/dev/${courseSlug.toLowerCase()}`}
                     className={[
-                      theme.button
+                      theme && theme.button
                         ? [theme.button, theme.hover]
                         : `mt-10 flex w-full items-center justify-center rounded-md border border-transparent  
                         py-3 px-8 text-base font-medium text-white 
@@ -536,13 +553,13 @@ export default function Curriculum({ course, components }, props) {
         <div
           id="course-curriculum-description"
           className={`${
-            theme.bg ?? ' bg-sky-200'
+            theme ? theme.bg ?? ' bg-sky-200' : ''
           } max-w-10xl mx-auto px-8 pt-6 pb-16 sm:px-6  lg:px-0 lg:px-28 lg:py-32 lg:pt-10 lg:pt-16 `}
         >
           <h2
             className={`${
-              theme.text ?? 'text-gray-900'
-            } text-sm text-xl font-medium`}
+              theme && theme.text && 'text-gray-900'
+            } 'text-sm text-xl font-medium`}
           >
             Description
           </h2>
@@ -565,7 +582,9 @@ export default function Curriculum({ course, components }, props) {
       <div className="mx-auto max-w-2xl px-4 pt-10 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pt-16">
         <div className="lg:col-span-2 lg:mb-4 lg:border-r lg:border-gray-200 lg:pr-8">
           <h1
-            className={`${theme.text} text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl`}
+            className={`${
+              theme && theme.text
+            } text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl`}
           >
             Course Reviews
           </h1>
@@ -811,7 +830,7 @@ export async function getStaticProps({ params }) {
   const courses = await getCourses()
 
   // let paramsSplit = params.curriculum.split('&')[1]
-  let paramsSplit
+  // let paramsSplit
   console.log('PARAMS-IN-CURRICULUM', params.curriculum)
   // if (process.env.NODE_ENV !== 'production') {
   //   paramsSplit = params.curriculum.split('&')[1]
@@ -822,7 +841,7 @@ export async function getStaticProps({ params }) {
   //   'PARAMS-params.curriculum.split(' & ')[1]??',
   //   params.curriculum.split('/')
   // )
-  console.log('PARAMS_SPLIT', paramsSplit)
+  // console.log('PARAMS_SPLIT', paramsSplit)
   const splittedSlugToMatchPaths = (courseSlug) => {
     // console.log('slittedSlugToMatchPaths', courseSlug.split('/')[1])
     console.log(
@@ -838,7 +857,7 @@ export async function getStaticProps({ params }) {
   //   let course = await courses
   //     .map(
   //       ({
-  //         chapters,
+  //         chapters,theme.text
   //         meta,
   //         numberOfChapters,
   //         title,

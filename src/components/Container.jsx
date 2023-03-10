@@ -1,6 +1,23 @@
 import { forwardRef } from 'react'
 import clsx from 'clsx'
+import classNames from '@/lib/classNames'
 
+export const textcontainer =
+  'mx-12  md:mx-14 lg:mx-24 xl:mx-32 xl:max-w-[43.5rem]'
+
+export const TriangleDownSideUp = ({ classNames }) => {
+  console.log('Triangle Classnmae', classNames)
+  return (
+    <div
+      id="triangle"
+      className={clsx(
+        classNames ? classNames : ' bg-white',
+        'absolute inset-y-0 right-1/2 -z-10 -mr-10 w-[200%] skew-x-[-30deg] shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50'
+      )}
+      aria-hidden="true"
+    />
+  )
+}
 const OuterContainer = forwardRef(function OuterContainer(
   { className, children, ...props },
   ref

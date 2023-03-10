@@ -3356,3 +3356,26 @@ black-3-bg {
   letter-spacing: 0rem;
   font-variant-ligatures: ;
 }
+
+.project-page-tag-btn {
+  border-color: #1e1f20;
+
+  background: WHITE;
+  padding: 2px;
+  /* width: 117px; */
+  max-width: 207px;
+  text-align: center;
+  justify-content: center;
+  /* BORDER: BLACK; */
+  border-width: 1px;
+  border-radius: 2px;
+  padding-inline: 20px;
+}
+
+.typography-header-detail {
+  line-height: 1.08349;
+  font-weight: 600;
+  letter-spacing: -0.003em;
+  font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
+    'Arial', sans-serif;
+}

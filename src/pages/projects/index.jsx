@@ -12,6 +12,7 @@ import clsx from 'clsx'
 import projectJson from '../../lib/projectsJson'
 import Image from 'next/image'
 import Link from 'next/link'
+import { slugify } from '@/lib/slugify'
 function SpeakingSection({ children, ...props }) {
   return (
     <Section {...props}>
@@ -19,7 +20,35 @@ function SpeakingSection({ children, ...props }) {
     </Section>
   )
 }
-
+const HeaderMainDetails = ({ content }) => {
+  const { tech, category, name, device, tag } = content
+  return (
+    <>
+      <div
+        id="tag"
+        className="dark:bg-sky-10 border-b bg-black px-8  pt-2 pb-2 md:sr-only"
+      >
+        <a
+          class="text-sky-500 dark:text-white dark:hover:text-sky-400 md:mx-6"
+          href="/showcase"
+        >
+          {device}
+          <span class="ml-4 rounded-full bg-sky-600 px-2 py-0.5 text-xs font-medium leading-5 text-white dark:bg-white dark:text-indigo-600">
+            {tech}
+          </span>
+        </a>
+      </div>
+      <div className="categpry-name px-6 lg:mx-0 ">
+        <h2 className=" text-black-500 mt-6 flex rounded-md font-semibold dark:text-indigo-400">
+          {category}
+        </h2>
+        <p className="mt-1 text-3xl font-extrabold tracking-tight text-slate-800 dark:text-white sm:text-4xl ">
+          {name}
+        </p>
+      </div>
+    </>
+  )
+}
 function Appearance({ title, description, event, cta, href }) {
   return (
     <Card as="article">
@@ -59,14 +88,21 @@ export default function Projects() {
       <section id="modern-features">
         <div
           id="projects-broadcasct-baby"
-          className="projects-broadcast bg-wheat"
+          className="projects-broadcast bg-wheat pt-10 lg:pt-20 "
         >
-          <h1 className=" lg:Lmy-10 my-4 max-w-[36rem] justify-center px-2 text-center text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-7xl sm:text-6xl md:mt-4 xl:max-w-[43.5rem]">
+          {/* <h1 className="lg:Lmy-10 bordr-b my-4 max-w-[36rem]   justify-center border-b border-slate-900 px-2 pb-4 text-center  text-5xl font-extrabold tracking-tight text-slate-900 dark:text-slate-900/90 sm:text-7xl sm:text-6xl md:mt-4 md:border-transparent lg:justify-center lg:text-center xl:max-w-[43.5rem]">
             Projects Page
-          </h1>
-          <SuperChargedHalhPhone className="dark:bg-wheat mt-0 bg-transparent " />
+          </h1> */}
+          <SuperChargedHalhPhone
+            descriptionClass={'px-20'}
+            className="dark:bg-wheat mt-0 bg-transparent"
+            classNames={'dark:bg-slate-800 bg-amber-400/50'}
+          />
         </div>
-        <div id="project-list-wrapper" className="my-10 bg-sky-200/20">
+        <div
+          id="project-list-wrapper"
+          className="my-10 bg-sky-200/20 dark:bg-blue-300 md:py-10 lg:py-20 "
+        >
           <ProjectsIndex projects={projectJson} />
         </div>
 
@@ -155,11 +191,11 @@ export default function Projects() {
       </section>
       <div
         id="projects-page"
-        className="lg:px-34 mb-32 px-4  lg:mb-64"
+        className="lg:px-34 mb-32  px-4 lg:mb-64"
         // className="lg:px-34 mt-6 mb-32 px-4 sm:px-20   lg:mt-16 lg:mb-64 xl:mt-12 xl:px-32"
       >
         <SuperchagedTechSection />
-        <SectionProjects className={'black-3-bg'} />
+        <SectionProjects className={''} />
       </div>
 
       {/* <SimpleLayout
@@ -189,37 +225,45 @@ const ProjectsIndex = function () {
         return (
           <div
             key={project.id}
-            className="project-list relative  my-8 mt-20 grid  grid-cols-1 gap-x-4 gap-y-4 pb-2 sm:gap-x-6 md:gap-y-8 md:gap-y-8 md:gap-x-4 lg:my-20 lg:grid-cols-2 xl:gap-x-8"
+            className="project-list relative my-8 mt-20 grid  grid-cols-1 gap-x-4 gap-y-0  pb-2 sm:gap-x-6 md:gap-y-0 md:gap-x-4  lg:mt-20  lg:grid-cols-2 xl:gap-x-8 "
           >
-            <div className=" lg:mt-12lg:block sm:mx-6 lg:hidden">
+            <div className="shadow-t shadow-lg sm:mx-6  lg:block ">
               <Image
                 className={clsx(
-                  project.imageAspectRatio,
-                  ' rounded-md' ??
-                    'mt-2 aspect-[1216/640] sm:rounded-3xl md:mt-0 '
+                  // project.imageAspectRatio,
+                  // ' rounded-md' ??
+                  'mt-2 sm:rounded-3xl md:mt-0 '
                 )}
                 key={project.id}
                 src={project.images[0]}
                 alt={project.projectImage.alt}
-                sizes="100vw"
+                // sizes="100vw"
               />
             </div>
-
+            {/* project-page-tag-btn */}
             <div
-              id="project-content-text"
-              className="relative flex h-[35.625rem] max-h-[42vh] overflow-hidden bg-slate-800 px-8 shadow-xl dark:bg-slate-900/70 dark:ring-1 dark:ring-inset dark:ring-white/10 dark:backdrop-blur sm:max-h-[none] sm:rounded-xl lg:mx-6 lg:h-[51.625rem] lg:h-[34.6875rem] lg:max-h-[60vh] xl:h-[31.625rem]"
+              id="lg-project-content-text"
+              className="relative flex h-[23.2rem] max-h-[45vh] overflow-hidden bg-white shadow-xl dark:bg-black dark:ring-1
+               dark:ring-inset dark:ring-white/10 dark:backdrop-blur sm:max-h-[none] sm:rounded-xl md:mx-2 md:py-6 md:px-4  lg:mx-0  lg:h-[51.625rem] lg:h-[24.6875rem] lg:max-h-[65vh] xl:h-[40.625rem]"
             >
-              <div className="-mx-4 mt-2 sm:mx-0 lg:col-span-7 lg:mt-0 xl:col-span-6">
-                <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-                  <h2 className="mt-8 font-semibold text-indigo-500 dark:text-indigo-400">
-                    {project.category}
-                  </h2>
-                  <p className="mt-4 text-3xl font-extrabold tracking-tight text-slate-100 dark:text-slate-50 sm:text-4xl ">
-                    {project.name}
-                  </p>
-                  <div className="mt-2 max-w-3xl space-y-6 text-slate-200 lg:hidden">
+              <div className="sm:mx-0  sm:mt-4 lg:col-span-7 lg:mt-0 xl:col-span-6">
+                <div className="max-w-8xl mx-auto px-0 sm:px-6">
+                  <HeaderMainDetails
+                    content={{
+                      device: 'Ipad / Mpbile',
+                      tech: 'react-native',
+                      category: project.category,
+                      name: project.name,
+                      tag: project.tag,
+                    }}
+                  />
+
+                  <div
+                    id="small-screen-content-and-image"
+                    className="mt-4 max-w-3xl space-y-6 px-8 text-slate-800 dark:text-slate-200 lg:mx-6 lg:hidden "
+                  >
                     <p>{project.description}</p>
-                    <div className="md hidden py-4 sm:mx-6 lg:flex">
+                    <div className="sr-only py-2  sm:mx-6 lg:not-sr-only lg:flex">
                       <Image
                         className={clsx(
                           project.imageAspectRatio,
@@ -232,20 +276,40 @@ const ProjectsIndex = function () {
                         sizes="100vw"
                       />
                     </div>
-                    {/* <p>
-                      We've got first-class CSS grid support, composable
-                      transforms and gradients powered by CSS variables, support
-                      for modern state selectors like{' '}
-                      <code className="font-mono font-medium text-slate-900 dark:text-slate-200 ">
-                        :focus-visible
-                      </code>
-                      , and tons more.
-                    </p> */}
+                    <p>
+                      Tech: <span>react</span> backend: <span>Nodejs </span>{' '}
+                      year:
+                      <span>2017 </span>
+                    </p>
+                  </div>
+                  <div
+                    id="lg-description"
+                    className="sr-only mx-10 mt-6 max-w-3xl text-slate-800 dark:text-slate-200 md:px-4 lg:not-sr-only lg:mx-6  lg:mt-4 lg:mb-6 lg:space-y-6"
+                  >
+                    <p>{project.description}</p>
+                    <p>
+                      Tech: <span>react</span> backend: <span>Nodejs </span>{' '}
+                      year:
+                      <span>2017 </span>
+                    </p>
+                    {/* <div className="sr-only py-4  sm:mx-6 md:not-sr-only lg:flex">
+                      <Image
+                        className={clsx(
+                          project.imageAspectRatio,
+                          ' rounded-md' ??
+                            'mt-2 aspect-[1216/640] sm:rounded-3xl md:mt-0 lg:mt-12'
+                        )}
+                        key={project.id}
+                        src={project.images[0]}
+                        alt={project.projectImage.alt}
+                        sizes="100vw"
+                      />
+                    </div> */}
                   </div>
 
                   <Link
-                    className="group mt-8 inline-flex h-9 items-center whitespace-nowrap rounded-full bg-indigo-500 px-3 text-sm font-semibold text-indigo-100 hover:bg-indigo-200 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-indigo-500 dark:text-slate-100 dark:hover:bg-slate-600 dark:hover:text-white dark:focus:ring-slate-500"
-                    href="/docs/grid-template-columns"
+                    className="group mx-8 mt-8 inline-flex h-9 items-center whitespace-nowrap rounded-full bg-black px-3 text-sm font-semibold text-indigo-100 hover:bg-slate-400 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-indigo-500 dark:text-slate-100 dark:hover:bg-slate-600 dark:hover:text-white dark:focus:ring-slate-500"
+                    href={`projects/${slugify(project.name)}`}
                   >
                     More details
                     <span className="sr-only">Visit the projects page</span>

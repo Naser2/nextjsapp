@@ -50,8 +50,9 @@ export function MainSiteLayout({
   children,
   sections = [],
   navigation,
-  props,
   siteNavigation,
+  previousPathname,
+  ...props
 }) {
   const [navigationState, setNavigationState] = useState([])
 
@@ -111,6 +112,7 @@ export function MainSiteLayout({
                 sections={sections}
                 course={navigation}
                 courseChapters={navigationState}
+                previousPathname={previousPathname}
                 className="hidden lg:mt-10 lg:block"
               />
             </div>
@@ -127,8 +129,12 @@ export function MainSiteLayout({
     )
   }
   //BASIC-LAYOUT
-  const BasicLayout = () => {
-    return <>{children}</>
+  const BasicLayout = ({ previousPathnam, rops }) => {
+    return (
+      <div previousPathname={previousPathname} {...props}>
+        {children}
+      </div>
+    )
   }
 
   const isCoursesRoute = useMemo(
@@ -162,11 +168,17 @@ export function MainSiteLayout({
         // chapters={navigationState}
         course={navigation}
         courseChapters={navigationState}
+        previousPathname={previousPathname}
       />
       {/* <h1 className="text-5xl text-black dark:text-white">{layoutType}</h1> */}
       {layoutType === 'BasicLayout' && <BasicLayout />}
       {layoutType === 'CoursesLayout' && (
-        <CoursesLayout {...children} sections={sections} {...props} />
+        <CoursesLayout
+          {...children}
+          sections={sections}
+          previousPathname={previousPathname}
+          {...props}
+        />
       )}
     </>
   )

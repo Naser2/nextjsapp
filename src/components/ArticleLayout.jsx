@@ -190,7 +190,7 @@ export function ArticleLayout({
                              dark:hover:ring-white/20 lg:absolute lg:-left-1
                            lg:ml-8 lg:h-16 lg:w-16 xl:-top-4 xl:left-0"
                     >
-                      <ArrowLeftIcon className="h-4 w-4  stroke-sky-600 transition group-hover:stroke-zinc-700 dark:stroke-white dark:stroke-zinc-100 dark:group-hover:stroke-zinc-400 lg:h-8 lg:w-8" />
+                      <ArrowLeftIcon className="h-4 w-4 stroke-sky-600 transition group-hover:stroke-zinc-700 dark:stroke-white dark:stroke-zinc-100 dark:group-hover:stroke-zinc-400 lg:h-8 lg:w-8" />
                     </button>
                   </div>
                 )}

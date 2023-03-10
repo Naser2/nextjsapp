@@ -10,7 +10,10 @@ import { SuperChagedCodeblock } from '@/components/codeblocks'
 import { Intro } from '@/components/Intro'
 import clsx from 'clsx'
 import Link from 'next/link'
-export default function SuperchagedTechSection() {
+import { textcontainer } from '@/components/Container'
+import { TriangleDownSideUp } from '@/components/Container'
+import classNames from '@/lib/classNames'
+export default function SuperchagedTechSection(classNames) {
   const introContent = {
     h1: 'Build for everyone.',
     h2: ['Every feature you need', 'to win', 'Try it for yourself'],
@@ -48,7 +51,7 @@ export default function SuperchagedTechSection() {
                   id="SM-supercharged-code-inner"
                   className="SM-supercharged-code-inner   pl-4  pt-8 sm:pt-16 md:hidden  md:pr-0 lg:px-6 lg:pl-16"
                 >
-                  <SuperChagedCodeblock />
+                  <SuperChagedCodeblock classNames={'bg-black'} />
                 </div>
               </div>
             </div>
@@ -70,10 +73,7 @@ export default function SuperchagedTechSection() {
               </div>
             </div>
             <div className="sr-only sm:mt-4 md:not-sr-only md:mx-auto md:max-w-2xl lg:mx-0 lg:mt-0 lg:mt-0 lg:w-screen">
-              <div
-                className="absolute inset-y-0 right-1/2 -z-10 -mr-10 w-[200%] skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50  "
-                aria-hidden="true"
-              />
+              <TriangleDownSideUp classNames={classNames} />
               <div className="shadow-lg md:rounded-3xl">
                 <div className="bg-indigo-500 [clip-path:inset(0)] md:[clip-path:inset(0_round_theme(borderRadius.3xl))]">
                   {/* <div
@@ -120,11 +120,27 @@ export default function SuperchagedTechSection() {
   )
 }
 
-export const SuperChargedHalhPhone = ({ className }) => {
+{
+  /* <a
+class="mx-12 text-sky-500 dark:text-amber-500  dark:hover:text-sky-400 md:mx-6 "
+href="/showcase"
+>
+Ipad / Mpbile
+<span class=" ml-6 rounded-full bg-red-500  px-2 py-0.5 text-xs font-medium leading-5 text-white dark:bg-red-300 dark:bg-white dark:text-white dark:text-indigo-600">
+  react-native
+</span>
+</a> */
+}
+
+export const SuperChargedHalhPhone = ({
+  className,
+  classNames,
+  descriptionClass,
+}) => {
   const introContent = {
     h1: 'BrodcastBaby',
-    h2: ['React Native', 'App'],
-    tag: { text: 'Mobile', color: 'primary' },
+    h2: ['React Native'],
+    // tag: { text: 'Mobile', color: 'primary' },
     description:
       ' Broadcastbaby was built to help childtren co-wor and help eachothers imptove reading skills',
   }
@@ -135,19 +151,39 @@ export const SuperChargedHalhPhone = ({ className }) => {
         className
           ? [
               className,
-              'relative isolate  overflow-hidden bg-gradient-to-b from-indigo-100/20',
+              'relative isolate  overflow-hidden bg-gradient-to-b from-indigo-100/20  md:ml-10 md:pt-10',
             ]
           : 'rrelative isolate  overflow-hidden bg-gradient-to-b from-indigo-100/20 lg:my-10 lg:my-24'
       )}
     >
+      <a
+        class={`max-w-[36rem] text-indigo-500 dark:text-red-500/70  dark:hover:text-sky-400 
+       ${textcontainer}
+        `}
+        href="/showcase"
+      >
+        Ipad / Mpbile
+        <span class=" ml-6 rounded-full bg-indigo-500  px-2 py-0.5 text-xs font-medium leading-5 text-white dark:bg-red-300 dark:bg-white dark:text-white dark:text-indigo-600">
+          react-native
+        </span>
+      </a>
       <Intro
         content={introContent}
-        h1Class="text-indigo-400 dark:text-black"
-        h20Class="text-indigo-400 dark:text-black"
+        h1Class="text-indigo-900/80 dark:text-slate-800 text-5xl"
+        h20Class="ext-indigo-500/80  dark:text-indigo-500/80 text-3xl"
         h21Class="text-indigo-400 dark:text-black"
         nameClass="text-indigo-700"
-        descriptionClass="text-slate-200"
+        descriptionClass="text-slate-200 dark:text-slate-100  mx-10"
+        padding={'pt-0'}
       />
+      <div class="mx-10 mt-1 text-base md:mt-2">
+        <a
+          class="mx-3 font-semibold text-indigo-600/60 md:mx-12 "
+          href={'projects/broadcast-baby'}
+        >
+          See project<span aria-hidden="true"> →</span>
+        </a>
+      </div>
       <div className="mx-2 grid grid-cols-1 gap-x-8 gap-y-8 sm:gap-x-6 md:grid-cols-2 md:grid-cols-2 lg:mx-24 lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-8">
         <div className="px-0 lg:-mt-4">
           <div className="mx-auto  max-w-2xl  lg:mt-6">
@@ -156,11 +192,13 @@ export const SuperChargedHalhPhone = ({ className }) => {
             </div>
           </div>
         </div>
+
         <div className="sr-only sm:mt-4 md:not-sr-only md:mx-auto md:max-w-2xl lg:mx-0 lg:mt-0 lg:mt-0 lg:w-screen">
-          <div
+          <TriangleDownSideUp classNames={classNames} />
+          {/* <div
             className="absolute inset-y-0 right-1/2 -z-10 -mr-10 w-[200%] skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50  "
             aria-hidden="true"
-          />
+          /> */}
           <div className="shadow-lg md:rounded-3xl">
             <div className="bg-indigo-500 [clip-path:inset(0)] md:[clip-path:inset(0_round_theme(borderRadius.3xl))]">
               {/* <div
