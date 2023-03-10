@@ -28,7 +28,7 @@ const HeaderMainDetails = ({ content }) => {
         id="tag"
         className="dark:bg-sky-10 border-b bg-black px-8  pt-2 pb-2 md:sr-only"
       >
-        <a
+        <Link
           class="text-sky-500 dark:text-white dark:hover:text-sky-400 md:mx-6"
           href="/showcase"
         >
@@ -36,7 +36,7 @@ const HeaderMainDetails = ({ content }) => {
           <span class="ml-4 rounded-full bg-sky-600 px-2 py-0.5 text-xs font-medium leading-5 text-white dark:bg-white dark:text-indigo-600">
             {tech}
           </span>
-        </a>
+        </Link>
       </div>
       <div className="categpry-name px-6 lg:mx-0 ">
         <h2 className=" text-black-500 mt-6 flex rounded-md font-semibold dark:text-indigo-400">

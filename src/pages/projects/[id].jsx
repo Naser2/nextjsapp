@@ -24,7 +24,7 @@ const Project = function ({ project, previousPathname, ...props }) {
     >
       <header class="max-w-4xl">
         <div id="section-note-wrapper">
-          <a class="inline-flex space-x-6" href="/projects#">
+          <Link class="inline-flex space-x-6" href="/projects#">
             {!previousPathname && (
               <div className="lg:ml-4 lg:py-2">
                 <Link
@@ -78,7 +78,7 @@ const Project = function ({ project, previousPathname, ...props }) {
                 ></path>
               </svg>
             </span>
-          </a>
+          </Link>
         </div>
         <div class=" large-10 large-centered medium-12 pb-20">
           <figure
