@@ -11,6 +11,8 @@ import { WebsiteUrl } from '@/components/WebsiteUrl'
 import { MediaGallery } from '@/components/SocialMediaGallery'
 import Image from 'next/image'
 import { CustomTag } from '@/components/CustomTag'
+import { NextButton } from '@/components/PageCommonPaginators'
+import PageCommonPaginators from '@/components/PageCommonPaginators'
 
 const Project = function ({ project, previousPathname, ...props }) {
   const delivrables = {
@@ -118,76 +120,11 @@ const Project = function ({ project, previousPathname, ...props }) {
       className="md:py-26 mx-8  py-14 lg:mx-32 "
     >
       <header class="lg:max-w-8xl">
-        <div
-          id="section-top-item-and-go-back"
-          className="my-6 grid max-w-4xl grid-cols-[1fr,auto]  items-center md:mr-10 md:max-w-4xl lg:mt-10 lg:mb-20"
-        >
-          {/* <Link class="inline-flex space-x-6" href="/projects#"> */}
-          {!previousPathname && (
-            <div className="max-w-10xl mt-2 lg:ml-4">
-              <Link
-                type="link"
-                href={'/projects/'}
-                aria-label="No-previous-pathname-go-to-project"
-                className="group h-10 w-10 items-center justify-center
-                shadow-zinc-600/5 ring-1 ring-zinc-600/5 transition hover:bg-slate-300 
-              dark:border-zinc-700/50 dark:bg-black dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700
-                dark:hover:ring-white/20 md:justify-center md:rounded-full md:bg-white md:p-3 md:shadow-md lg:absolute"
-              >
-                <ArrowLeftIcon
-                  className="h-4 w-4 stroke-black text-sky-600 transition group-hover:stroke-zinc-700 
-                 dark:stroke-white dark:stroke-zinc-100 dark:group-hover:stroke-zinc-400 lg:h-8 lg:w-8"
-                />
-              </Link>
-            </div>
-          )}
-          {previousPathname && (
-            <div className="flex">
-              <button
-                type="button"
-                onClick={() => router.back()}
-                aria-label="Go back to projects"
-                className="group h-10 w-10 items-center justify-center
-                justify-center bg-transparent p-3 shadow-md 
-                shadow-zinc-600/5 ring-1 ring-zinc-600/5 transition dark:border  dark:border-zinc-700/50
-                dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20 lg:absolute lg:rounded-full lg:dark:bg-black 
-               
-                "
-              >
-                <ArrowLeftIcon
-                  large
-                  className="h-4 w-4 stroke-black  transition group-hover:stroke-zinc-700 dark:stroke-white dark:stroke-zinc-100 dark:group-hover:stroke-zinc-400 lg:h-8 lg:w-8"
-                />
-              </button>
-            </div>
-          )}
-          {/* <span class="bg-wheat rounded-full px-3 py-1 text-sm font-semibold leading-6 text-black ring-1 ring-inset ring-orange-600/20">
-              <h1 class="hero-title typography-body-bold  ">project-page</h1>
-            </span> */}
-          <div
-            className="justify-stretch lg:bg-wheat flex inline-flex space-y-0 space-x-2 py-2 pl-5 text-sm  text-sm font-medium leading-6 text-gray-700 text-black hover:rounded-full hover:bg-black hover:px-3 
-            hover:text-white dark:items-center dark:bg-black dark:text-slate-400  sm:flex-row sm:space-y-0 sm:space-x-4 lg:rounded-full lg:px-3 lg:py-1 lg:font-semibold lg:leading-6 lg:ring-1 lg:ring-inset lg:ring-sky-600/20"
-            //   class="inline-flex items-center space-x-2 pl-10 text-sm font-medium leading-6 text-gray-700 dark:text-slate-400 sm:flex sm:min-w-0
-            // sm:flex-1 sm:items-center sm:justify-end sm:space-x-6 sm:pb-1 md:ml-0"
-          >
-            <span>See next project</span>
-            <svg
-              className="h-5 w-5 text-gray-700 dark:text-slate-400"
-              x-description="Heroicon name: mini/chevron-right"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-          </div>
-          {/* </Link> */}
-        </div>
+        <PageCommonPaginators
+          href="/projects/talk-it-out"
+          previousPathname={previousPathname}
+          text={'Next project'}
+        />
         <div
           id="project-header"
           className={clsx(
@@ -226,30 +163,58 @@ const Project = function ({ project, previousPathname, ...props }) {
             >
               whith {project.tech[0]}
             </h2>
-            <div id="status" className="max-w-100 flex">
+            <div
+              id="status"
+              className="max-w-100 flex bg-sky-200/10 px-2 py-2  dark:mt-4 dark:rounded-md dark:bg-sky-200/10"
+            >
               <p className="mr-2 min-w-0 flex-1" type="default">
-                <div className=" text-4xl font-bold text-slate-500  dark:text-slate-400/80">
+                <div className="text-xl font-bold text-slate-800 dark:font-medium dark:text-slate-300/80">
                   STATUS
                 </div>
-                <span className="ml-1 text-slate-500 dark:text-slate-300">
+                <span className="text-slate-900 dark:text-slate-400">
                   Ready <span className="deployment-status ready"></span>
                 </span>
               </p>
               <div className="flex-2 min-w-0" type="default">
-                <div className="text-4xl font-bold text-slate-400  dark:text-slate-400/80">
-                  <span className="ml-4 text-yellow-400">DEPLOYED</span>
+                <div className="text-xl font-bold text-slate-800  dark:text-slate-400/80">
+                  <span className="ml-4 text-xl text-slate-800  dark:font-medium dark:text-slate-300/80">
+                    DEPLOYED
+                  </span>
                 </div>
-                <span className="ml-4 text-yellow-400">
+                <span className="ml-4 text-slate-400 dark:rounded-md dark:bg-slate-700 dark:px-2 dark:py-1">
                   14 months
-                  <span className="dark:text-yellow-400"> (+2d ago)</span>
+                  <span className="dark:text-yellow-400/80"> (+2d ago)</span>
                 </span>
               </div>
             </div>
-            <span className="ml-4 text-yellow-400">DOMAIN</span>
-            <WebsiteUrl
-              link={'nasdesign.vercel.app'}
-              href="https://nasdesign.vercel.app/blogs"
-            />
+            <span className="dark:black-2-bg  inline-flex bg-sky-200/10 px-2 pr-14 text-slate-900 dark:rounded-b dark:border-b  dark:border-red-300/30 dark:bg-transparent dark:py-2 dark:text-slate-200">
+              <span className="mt-1 pr-2">
+                <svg
+                  data-testid="geist-icon"
+                  fill="none"
+                  height="16"
+                  shape-rendering="geometricPrecision"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  className="color: currentcolor"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M2 12h20"></path>
+                  <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"></path>
+                </svg>
+              </span>
+              <span className="dark:text-sky-400 ">DOMAIN</span>
+              <span id="url" className="ml-4 -mt-0.5">
+                <WebsiteUrl
+                  link={'nasdesign.vercel.app'}
+                  href="https://nasdesign.vercel.app/blogs"
+                />
+              </span>
+            </span>
           </div>
           <p
             id="project-satement"
@@ -284,11 +249,11 @@ const Project = function ({ project, previousPathname, ...props }) {
               </div>
             </div>
             <div className="mt-6 mb-4 sm:col-span-7 sm:mt-0 md:row-end-1">
-              <h3 className="  text-2xl  font-medium text-gray-900 dark:text-white ">
+              <h3 className="text-2xl font-medium text-gray-900 dark:text-white ">
                 DESCRIPTION
               </h3>
 
-              <p className="mt-2  flex max-w-lg bg-sky-100/30 py-2 px-2 text-gray-500 dark:bg-transparent">
+              <p className="mt-2 flex  max-w-lg bg-sky-100/10 py-2 px-2 font-medium text-gray-800 dark:bg-transparent dark:text-slate-300">
                 {project.description}
               </p>
               <h3 className="mt-6 mb-2 text-2xl font-medium text-gray-900 dark:text-white">
@@ -300,7 +265,7 @@ const Project = function ({ project, previousPathname, ...props }) {
                     return (
                       <p
                         key={t}
-                        className="mr-4 rounded-sm bg-sky-100/50 px-4 py-1 text-sm text-gray-600 dark:text-slate-800 dark:text-slate-200 "
+                        className="mr-4 rounded-sm bg-sky-100/50  px-4 py-1 text-sm text-gray-600 dark:bg-transparent dark:text-sky-300/70  dark:text-slate-200 "
                       >
                         {t}
                       </p>
@@ -309,7 +274,7 @@ const Project = function ({ project, previousPathname, ...props }) {
               </ul>
             </div>
             <div className="sm:col-span-12 md:col-span-7">
-              <dl className="grid grid-cols-1 gap-y-8 border-b border-gray-200 py-4 sm:grid-cols-2 sm:gap-x-6 sm:py-6 md:py-10">
+              <dl className="grid grid-cols-1 gap-y-8 border-b border-gray-200 py-4 dark:border-gray-800 sm:grid-cols-1 sm:gap-x-6 sm:py-6 md:py-10">
                 <div>
                   <dt className="text-2xl  font-medium text-gray-900 dark:text-white">
                     DELIVERABLES
@@ -319,10 +284,10 @@ const Project = function ({ project, previousPathname, ...props }) {
                     return <TablewithTags array={scopes} key={project.name} />
                   })}
                 </div>
-                <div>
-                  <dt className="text-2xl font-medium text-gray-900 dark:text-white">
+                {/*<div>
+                 <dt className="text-2xl font-medium text-gray-900 dark:text-white">
                     PENDING FEATURES
-                    <span className="deployment-status .pending"></span>
+            
                   </dt>
                   <dd className="mt-3 space-y-3 text-gray-500">
                     <p>{project.email}</p>
@@ -359,7 +324,7 @@ const Project = function ({ project, previousPathname, ...props }) {
                       Edit
                     </button>
                   </dd>
-                </div>
+                </div> */}
               </dl>
               <p className="mt-6 font-medium text-gray-900 md:mt-10">
                 {project.status} on{' '}
@@ -411,6 +376,12 @@ const Project = function ({ project, previousPathname, ...props }) {
             </div>
           </div>
         ))}
+        <PageCommonPaginators
+          href="/projects/talk-it-out"
+          previousPathname={previousPathname}
+          text={'Next project'}
+        />
+        <NextButton text={'See next project'} href={'/projects/talk-it-out'} />
 
         {/* collection,
     galleryTitle,
