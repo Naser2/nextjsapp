@@ -544,7 +544,7 @@ export default function Curriculum({ course, components }, props) {
                         focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-white dark:text-black `,
                     ]}
                   >
-                    Start
+                    Start {`/courses/dev/${slugify(courseSlug)}`}
                   </Link>
                 </form>
               </div>

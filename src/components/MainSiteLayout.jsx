@@ -117,7 +117,7 @@ export function MainSiteLayout({
               />
             </div>
           </motion.header>
-          <div className="lg:pt-46 xl:px-46 xl:px-26 relative h-screen px-8  pt-12 pt-20 sm:px-6 lg:px-36 lg:pt-36">
+          <div className="lg:pt-46 xl:px-46 xl:px-26 relative h-full min-h-screen px-8  pt-12 pt-20 sm:px-6 lg:px-36 lg:pt-36">
             <div id="course-site-prose" className="text-align-center ">
               <Prose as="article">{children}</Prose>
             </div>
