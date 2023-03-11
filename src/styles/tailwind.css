@@ -60,6 +60,7 @@
   --accents-6: #444;
   --accents-7: #333;
   --accents-8: #111;
+  --geist-cyan: #50e3c2;
 }
 .sahara_bg {
   background-color: #f0e8e4;
@@ -3431,4 +3432,21 @@ black-3-bg {
   line-height: 1.6;
   /* --themed-bg: var(--geist-background);
   --themed-border: var(--themed-fg); */
+}
+
+.ready {
+  background: var(--geist-cyan) !important;
+}
+
+.deployment-status {
+  margin-left: 8px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background: var(--accents-2);
+}
+
+.max-w-100 {
+  width: 258px;
 }

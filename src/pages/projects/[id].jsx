@@ -110,7 +110,8 @@ const Project = function ({ project, previousPathname, ...props }) {
     props.previousPathname
   )
   let router = useRouter()
-
+  const IntroGrid =
+    'flex-col md:lg:col-span-5 md:gap-x-10 lg:gap-x-20 md:xl:col-span-6 flex md:flex-row'
   return (
     <section
       aria-labelledby="products-heading"
@@ -123,17 +124,20 @@ const Project = function ({ project, previousPathname, ...props }) {
         >
           {/* <Link class="inline-flex space-x-6" href="/projects#"> */}
           {!previousPathname && (
-            <div className="lg:ml-4">
+            <div className="max-w-10xl mt-2 lg:ml-4">
               <Link
                 type="link"
                 href={'/projects/'}
                 aria-label="No-previous-pathname-go-to-project"
                 className="group h-10 w-10 items-center justify-center
-                justify-center rounded-full bg-white p-3 shadow-md 
-                shadow-zinc-600/5 ring-1 ring-zinc-600/5 transition hover:bg-slate-300 dark:border
-                dark:border-zinc-700/50 dark:bg-black dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20 lg:absolute"
+                shadow-zinc-600/5 ring-1 ring-zinc-600/5 transition hover:bg-slate-300 
+              dark:border-zinc-700/50 dark:bg-black dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700
+                dark:hover:ring-white/20 md:justify-center md:rounded-full md:bg-white md:p-3 md:shadow-md lg:absolute"
               >
-                <ArrowLeftIcon className="h-4 w-4 stroke-black  text-sky-600  transition group-hover:stroke-zinc-700 dark:stroke-white dark:stroke-zinc-100 dark:group-hover:stroke-zinc-400 lg:h-8 lg:w-8" />
+                <ArrowLeftIcon
+                  className="h-4 w-4 stroke-black text-sky-600 transition group-hover:stroke-zinc-700 
+                 dark:stroke-white dark:stroke-zinc-100 dark:group-hover:stroke-zinc-400 lg:h-8 lg:w-8"
+                />
               </Link>
             </div>
           )}
@@ -184,40 +188,76 @@ const Project = function ({ project, previousPathname, ...props }) {
           </div>
           {/* </Link> */}
         </div>
-        <div class=" large-10 large-centered medium-12 pb-20">
+        <div
+          id="project-header"
+          className={clsx(
+            project.projectDetails[0].statment && IntroGrid,
+            'large-10 large-centered medium-12 pb-20'
+          )}
+        >
           <div
-            class="justify-stretch lg:bg-wheat flex inline-flex space-y-0 space-x-2 
+            id="header-main-info"
+            className="sm:col-span-4 md:col-span-7 md:col-span-7 md:row-span-2 md:w-2/3"
+          >
+            <div
+              class="justify-stretch lg:bg-wheat flex inline-flex space-y-0 space-x-2 
           py-2 pl-5 text-sm text-sm font-medium leading-6 text-gray-700 text-black hover:rounded-full hover:bg-black hover:px-3 
           hover:text-white dark:items-center dark:text-slate-400 sm:flex-row sm:space-y-0 sm:space-x-4 
           lg:rounded-full lg:px-3 lg:py-1 lg:font-semibold lg:leading-6  lg:ring-inset lg:dark:ring-1 lg:dark:ring-sky-600/20"
-          >
-            <span>Project {project.name}</span>
+            >
+              <span className="sr-only md:not-sr-only">
+                Project {project.name}
+              </span>
+            </div>
+            <h2
+              class={clsx(
+                'typography-section-headline text-4xl',
+                project.theme
+                  ? project.theme.textcolor
+                  : 'text-slate-800 dark:text-slate-100'
+              )}
+            >
+              {project.name}
+            </h2>
+            <h2
+              class={clsx(
+                'typography-section-headline text-4xl  text-slate-800 dark:text-slate-100'
+              )}
+            >
+              whith {project.tech[0]}
+            </h2>
+            <div id="satus" className="max-w-100 flex">
+              <p className="mr-2 min-w-0 flex-1" type="default">
+                <div className=" text-4xl font-bold text-slate-500  dark:text-slate-400/80">
+                  Status
+                </div>
+                <span className="ml-1 text-slate-500 dark:text-slate-300">
+                  Ready <span className="deployment-status ready"></span>
+                </span>
+              </p>
+              <div className="flex-2 min-w-0" type="default">
+                <div className="text-4xl font-bold text-slate-400  dark:text-slate-400/80">
+                  <span className="ml-4 text-yellow-400">Deployed</span>
+                </div>
+                <span className="ml-4 text-yellow-400">
+                  14 months
+                  <span className="dark:text-yellow-400"> (+2d ago)</span>
+                </span>
+              </div>
+            </div>
+            <WebsiteUrl
+              link={'nasdesign.vercel.app'}
+              href="https://nasdesign.vercel.app/blogs"
+            />
           </div>
-          <h2
-            class={clsx(
-              'typography-section-headline text-4xl',
-              project.theme
-                ? project.theme.textcolor
-                : 'text-slate-800 dark:text-slate-100'
-            )}
-          >
-            {project.name}
-          </h2>
-          <h2
-            class={clsx(
-              'typography-section-headline text-4xl  text-slate-800 dark:text-slate-100'
-            )}
-          >
-            whith {project.tech[0]}
-          </h2>
           <p
-            class="flex text-4xl font-bold text-slate-400  dark:text-slate-400/80"
-            type="default"
+            id="project-satement"
+            class="eyebrow-red ml-4 mt-2 mb-4 max-w-3xl hover:text-red-700  active:text-blue-500 dark:text-sky-500 dark:hover:text-indigo-400 md:mx-4 md:mt-0 md:w-1/3 lg:my-20"
           >
-            Status <span className="ml-4 text-yellow-400">Deployed</span>
-            <span className="mt-4 ml-4 text-yellow-400/30">
-              <ArrowRight color={'text-yellow-400'} />
-            </span>
+            <h1 class="mt-6 mb-4 italic sm:col-span-7 sm:mt-0  md:row-end-1">
+              Inspired By
+            </h1>
+            {project.projectDetails[0].statment}
           </p>
         </div>
       </header>
@@ -225,13 +265,13 @@ const Project = function ({ project, previousPathname, ...props }) {
         Project Completed
       </h2>
 
-      <div className="space-y-24 ">
+      <div className="space-y-24">
         {products.map((product) => (
           <div
             key={project.id}
             className="grid grid-cols-1 text-sm sm:grid-cols-12 sm:grid-rows-1 sm:gap-x-6 md:gap-x-8 lg:gap-x-8"
           >
-            <div className="sm:col-span-4 md:col-span-5 md:row-span-2 md:row-end-2">
+            <div className="sm:col-span-4 md:col-span-7 md:row-span-2 md:row-end-2">
               <div className="overflow-hidden rounded-lg bg-gray-50">
                 <Image
                   src={project.images[0].src}
@@ -247,7 +287,7 @@ const Project = function ({ project, previousPathname, ...props }) {
                 Project Description
               </h3>
 
-              <p className="mt-2  flex max-w-lg bg-sky-200 py-2 px-2 text-gray-500 dark:bg-transparent">
+              <p className="mt-2  flex max-w-lg bg-sky-100/30 py-2 px-2 text-gray-500 dark:bg-transparent">
                 {project.description}
               </p>
               <h3 className="mt-6 mb-2 text-2xl font-medium text-gray-900 dark:text-white">
@@ -281,12 +321,15 @@ const Project = function ({ project, previousPathname, ...props }) {
                     Pending features
                   </h2>
                   {projectDetails.map((i) => (
-                    <li key="pendingFeatures">{i.pendingFeatures}</li>
+                    <li key="pendingFeatures" className="dark:text-slate-300">
+                      {i.pendingFeatures}
+                    </li>
                   ))}
                 </div>
                 <div>
                   <dt className="text-2xl font-medium text-gray-900 dark:text-white">
-                    Shipping updates
+                    Deployed
+                    <span className="deployment-status ready"></span>
                   </dt>
                   <dd className="mt-3 space-y-3 text-gray-500">
                     <p>{project.email}</p>
@@ -301,7 +344,7 @@ const Project = function ({ project, previousPathname, ...props }) {
                         title=""
                         type="secondary"
                       >
-                        Branch URL for&nbsp;&nbsp;
+                        GitHub URL for&nbsp;&nbsp;
                         <Link
                           href="https://github.com/Naser2/nextjsapp/tree/main"
                           rel="noopener"

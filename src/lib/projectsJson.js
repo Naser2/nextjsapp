@@ -69,6 +69,7 @@ const projectsList = [
     id: 3,
     category: 'Blog App',
     name: 'Blogon',
+
     tech: ['NextJs', 'MDX', 'Firebase'],
     theme: {
       bgcolor: 'bg-indigo-500',
@@ -89,7 +90,8 @@ const projectsList = [
     images: [blogLongRed, blogdeskMob, blog_photolarge],
     projectDetails: [
       {
-        time: '2 Weeeks',
+        statment: 'inspired by News+ Apple News and more',
+        deliveryTime: '2 Weeeks',
         technologies:
           'You awake in a new, mysterious land. Mist hangs low along the distant mountains. What does it mean?',
         scopes: [
