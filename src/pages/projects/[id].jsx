@@ -226,10 +226,10 @@ const Project = function ({ project, previousPathname, ...props }) {
             >
               whith {project.tech[0]}
             </h2>
-            <div id="satus" className="max-w-100 flex">
+            <div id="status" className="max-w-100 flex">
               <p className="mr-2 min-w-0 flex-1" type="default">
                 <div className=" text-4xl font-bold text-slate-500  dark:text-slate-400/80">
-                  Status
+                  STATUS
                 </div>
                 <span className="ml-1 text-slate-500 dark:text-slate-300">
                   Ready <span className="deployment-status ready"></span>
@@ -237,7 +237,7 @@ const Project = function ({ project, previousPathname, ...props }) {
               </p>
               <div className="flex-2 min-w-0" type="default">
                 <div className="text-4xl font-bold text-slate-400  dark:text-slate-400/80">
-                  <span className="ml-4 text-yellow-400">DOMAINS</span>
+                  <span className="ml-4 text-yellow-400">DEPLOYED</span>
                 </div>
                 <span className="ml-4 text-yellow-400">
                   14 months
@@ -245,7 +245,7 @@ const Project = function ({ project, previousPathname, ...props }) {
                 </span>
               </div>
             </div>
-            <span className="ml-4 text-yellow-400">Domain</span>
+            <span className="ml-4 text-yellow-400">DOMAIN</span>
             <WebsiteUrl
               link={'nasdesign.vercel.app'}
               href="https://nasdesign.vercel.app/blogs"
@@ -285,14 +285,14 @@ const Project = function ({ project, previousPathname, ...props }) {
             </div>
             <div className="mt-6 mb-4 sm:col-span-7 sm:mt-0 md:row-end-1">
               <h3 className="  text-2xl  font-medium text-gray-900 dark:text-white ">
-                Project Description
+                DESCRIPTION
               </h3>
 
               <p className="mt-2  flex max-w-lg bg-sky-100/30 py-2 px-2 text-gray-500 dark:bg-transparent">
                 {project.description}
               </p>
               <h3 className="mt-6 mb-2 text-2xl font-medium text-gray-900 dark:text-white">
-                Techonolgies
+                TECHNOLOGIES
               </h3>
               <ul className="inline-flex">
                 {project.tech &&
@@ -312,34 +312,30 @@ const Project = function ({ project, previousPathname, ...props }) {
               <dl className="grid grid-cols-1 gap-y-8 border-b border-gray-200 py-4 sm:grid-cols-2 sm:gap-x-6 sm:py-6 md:py-10">
                 <div>
                   <dt className="text-2xl  font-medium text-gray-900 dark:text-white">
-                    Delivery scope
+                    DELIVERABLES
                   </dt>
 
                   {projectDetails.map(({ scopes }, i) => {
                     return <TablewithTags array={scopes} key={project.name} />
                   })}
-                  <h2 className="mt-2 text-2xl font-medium text-slate-700 dark:text-white">
-                    Pending features
-                  </h2>
-                  {projectDetails.map((i) => (
-                    <li key="pendingFeatures" className="dark:text-slate-300">
-                      {i.pendingFeatures}
-                    </li>
-                  ))}
                 </div>
                 <div>
                   <dt className="text-2xl font-medium text-gray-900 dark:text-white">
-                    Deployed
-                    <span className="deployment-status ready"></span>
+                    PENDING FEATURES
+                    <span className="deployment-status .pending"></span>
                   </dt>
                   <dd className="mt-3 space-y-3 text-gray-500">
                     <p>{project.email}</p>
                     <p>{project.phone}</p>
                     <div>
-                      <WebsiteUrl
-                        link={'nasdesign.vercel.app'}
-                        href="https://nasdesign.vercel.app/blogs"
-                      />
+                      {projectDetails.map((i) => (
+                        <li
+                          key="pendingFeatures"
+                          className="dark:text-slate-300"
+                        >
+                          {i.pendingFeatures}
+                        </li>
+                      ))}
                       <p
                         className="geist-text body-2"
                         title=""

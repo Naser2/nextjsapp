@@ -40,6 +40,7 @@ import clsx from 'clsx'
 import { ArrowDownExpand } from '@/components/icons/BellIcon'
 import { StarRated } from '@/components/StarRated'
 import Link from 'next/link'
+import { slugify } from '@/lib/slugify'
 const ExpandableItem = ({
   item,
   itemIdx,
@@ -201,12 +202,12 @@ const CoursePageContentNav = ({ tags, specifics, courseCategory, theme }) => {
 
         <li>
           <div className="flex items-center">
-            <Link
+            {/* <Link
               href={`/courses/${courseCategory}`}
               className="mr-2 text-sm font-medium text-gray-900"
             >
               {courseCategory}
-            </Link>
+            </Link> */}
             <svg
               width="16"
               height="20"
@@ -361,7 +362,7 @@ export default function Curriculum({ course, components }, props) {
                   {title}
                 </h1>
                 <h3 className="my-4 text-lg font-medium  text-gray-900  dark:text-slate-200 ">
-                  <Link href={`/courses/dev/${courseSlug.toLowerCase()}`}>
+                  <Link href={`/courses/dev/${slugify(courseSlug)}`}>
                     Officially crafted course in collabortion with brave
                     Mountains and nas design
                   </Link>
@@ -534,7 +535,7 @@ export default function Curriculum({ course, components }, props) {
 
                   <Link
                     type="button"
-                    href={`/courses/dev/${courseSlug.toLowerCase()}`}
+                    href={`/courses/dev/${slugify(courseSlug)}`}
                     className={[
                       theme && theme.button
                         ? [theme.button, theme.hover]
