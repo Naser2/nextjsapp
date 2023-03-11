@@ -34,7 +34,7 @@ const Project = function ({ project, previousPathname, ...props }) {
     console.log('ARRAY', array)
     // array.map((field) => {
     return (
-      <dd className="mt-3 " key={project.name}>
+      <dd className="mt-3 " key={project.title}>
         {array.map((field) => {
           return (
             <div key={field.label} className="flex">
@@ -143,7 +143,7 @@ const Project = function ({ project, previousPathname, ...props }) {
           lg:rounded-full lg:px-3 lg:py-1 lg:font-semibold lg:leading-6  lg:ring-inset lg:dark:ring-1 lg:dark:ring-sky-600/20"
             >
               <span className="sr-only md:not-sr-only">
-                Project {project.name}
+                Project {project.title}
               </span>
             </div>
             <h2
@@ -154,7 +154,7 @@ const Project = function ({ project, previousPathname, ...props }) {
                   : 'text-slate-800 dark:text-slate-100'
               )}
             >
-              {project.name}
+              {project.title}
             </h2>
             <h2
               class={clsx(
@@ -281,8 +281,26 @@ const Project = function ({ project, previousPathname, ...props }) {
                   </dt>
 
                   {projectDetails.map(({ scopes }, i) => {
-                    return <TablewithTags array={scopes} key={project.name} />
+                    return <TablewithTags array={scopes} key={project.title} />
                   })}
+                </div>
+                <div class="status-indicator_content__7XAr8">
+                  <small
+                    class="geist-text small"
+                    // style={color: 'var(--geist-foreground)' font-size:"14px"}
+                  >
+                    Status:
+                  </small>
+                  <span
+                    class="status-indicator_indicator__sOs1Y"
+                    data-testid="footer/status/success"
+                  ></span>
+                  <small
+                    class="geist-themed geist-success geist-ellipsis geist-text small w-500"
+                    type="success"
+                  >
+                    All systems normal.
+                  </small>
                 </div>
                 {/*<div>
                  <dt className="text-2xl font-medium text-gray-900 dark:text-white">
@@ -451,9 +469,9 @@ export async function getStaticPaths() {
   // let feed = await parse('https://their-side-feed.vercel.app/api/feed')
 
   return {
-    paths: projects.map(({ name }) => ({
+    paths: projects.map(({ title }) => ({
       params: {
-        id: name.toString(),
+        id: title.toString(),
       },
     })),
     fallback: 'blocking',

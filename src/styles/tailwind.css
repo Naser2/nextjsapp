@@ -2476,8 +2476,14 @@ a {
   line-height: 65px;
   font-weight: 700;
 }
+
 .dark .dark\:course-title {
   color: #bbc3d2 important;
+}
+@media (max-width: 768px) {
+  .course-title {
+    font-size: 45px;
+  }
 }
 /* .dark .prose :where(h1):not(:where([class~='course-title'] *)) {
   color: #bbc3d2 important;
@@ -3449,4 +3455,15 @@ black-3-bg {
 
 .max-w-100 {
   width: 328px;
+}
+.h-100 {
+  height: 100px;
+}
+
+.h-150 {
+  height: 150px;
+}
+
+.h-200 {
+  height: 100px;
 }

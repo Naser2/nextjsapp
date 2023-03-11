@@ -14,11 +14,23 @@ function Label({ id, children }) {
   )
 }
 
-export function TextField({ id, label, type = 'text', className, ...props }) {
+export function TextField({
+  id,
+  label,
+  type = 'text',
+  className,
+  formStyle,
+  ...props
+}) {
   return (
     <div className={className}>
       {label && <Label id={id}>{label}</Label>}
-      <input id={id} type={type} {...props} className={formClasses} />
+      <input
+        id={id}
+        type={type}
+        {...props}
+        className={clsx(formStyle, formClasses)}
+      />
     </div>
   )
 }

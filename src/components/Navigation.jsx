@@ -275,10 +275,30 @@ export function Navigation(props) {
     return slugified
   }
 
-  const { siteNavigation, course, courseChapters, courseTitle, sections } =
-    props
+  const {
+    siteNavigation,
+    coursesRouteVavigation,
+    course,
+    courseChapters,
+    courseTitle,
+    sections,
+  } = props
+
+  // const coursesNav = props.pageProps
+  // console.log('IN_NAVIGATION-coursesRouteVavigation', coursesRouteVavigation)
+  //
+  // Array(4)
+
+  // {chapters: Array(1), meta: {…}, numberOfChapters: 12, title: 'Aws-and-the-cloud', courseSlug: 'dev/aws-and-the-cloud', …}
+
+  // {chapters: Array(1), meta: {…}, numberOfChapters: 12, title: 'Javascript-and-jquery', courseSlug: 'dev/javascript-and-jquery', …}
+
+  // {chapters: Array(1), meta: {…}, numberOfChapters: 12, title: 'React', courseSlug: 'dev/react', …}
+
+  // {chapters: Array(1), meta: {…}, numberOfChapters: 12, title: 'Uiux', courseSlug: 'dev/uiux', …}
+
   console.log('NAVIVATION-SITE-NAV', siteNavigation)
-  console.log('NAVIGATION-SECTION', course)
+  // console.log('NAVIGATION-SECTION', coursesRouteVavigation)
   console.log('NAVIGATION-COURSE', sections)
   const coursePath = ['/courses/dev']
   const isCoursePage = router.pathname.includes(coursePath)

@@ -141,7 +141,8 @@ export function MobileNavigation(props) {
               >
                 <motion.div
                   layoutScroll
-                  className="ring-zinc-900/7.5 fixed left-0 top-14 bottom-0 w-full overflow-y-auto bg-white  pb-4 shadow-lg shadow-zinc-900/10 ring-1 dark:bg-zinc-900 dark:ring-zinc-800 min-[416px]:max-w-sm sm:px-6 sm:pb-10"
+                  className="ring-zinc-900/7.5 fixed left-0 top-14 bottom-0 w-full overflow-y-auto bg-white 
+                   pb-4 shadow-lg shadow-zinc-900/10 ring-1 dark:bg-zinc-900 dark:ring-zinc-800 min-[416px]:max-w-sm sm:pb-10 md:px-6"
                 >
                   <div className="flex items-center gap-4  p-4 ">
                     <img

@@ -3,7 +3,7 @@ const getProjectById = async function (projects, projectId) {
   let project = projects
     .map(
       ({
-        name,
+        title,
         description,
         longDescription,
         projectImage,
@@ -12,7 +12,7 @@ const getProjectById = async function (projects, projectId) {
         tech,
         projectDetails,
       }) => ({
-        name,
+        title,
         description,
         longDescription,
         projectImage,
@@ -22,9 +22,9 @@ const getProjectById = async function (projects, projectId) {
         projectDetails,
       })
     )
-    .find(({ name }) => {
-      console.log('NAMMMEEE', slugify(name), 'PROJJJJJJ-ID', projectId)
-      return slugify(name) === slugify(projectId)
+    .find(({ title }) => {
+      console.log('NAMMMEEE', slugify(title), 'PROJJJJJJ-ID', projectId)
+      return slugify(title) === slugify(projectId)
     })
 
   console.log('PROJECT_ID', projectId, 'ITEM --->', project)

@@ -47,17 +47,24 @@ import { useState } from 'react'
 //   )
 // }
 export function MainSiteLayout({
-  children,
+  siteNavigation,
+  blogsRouteVavigation,
+  coursesRouteVavigation,
+  projectsRouteVavigation,
   sections = [],
   navigation,
-  siteNavigation,
   previousPathname,
+  handleSubmit,
+  pageProps,
+  children,
+
   ...props
 }) {
   const [navigationState, setNavigationState] = useState([])
 
   const router = useRouter()
-  // console.log('MAINSITE NAVIGATion', navigation)
+  console.log('MAINSITE Mainsite', navigation)
+  console.log('PAGE_PROPS', pageProps, 'HANDLE_SUB', handleSubmit)
   // console.log('MAINSITE-SITE_NAV_PROPS ', siteNavigation)
 
   // console.log('MAINSITE Sections', sections)
@@ -69,7 +76,8 @@ export function MainSiteLayout({
   //   console.log('MAIN_SITE-Layout', sections)
   //   console.log('MAIN-SITE-LAYOUT-PROPS', props)
   const [layoutType, setLayoutType] = useState('BasicLayout')
-  useEffect(() => {
+
+  useMemo(() => {
     if (navigation !== []) {
       setNavigationState(navigation)
     } else {
@@ -78,12 +86,44 @@ export function MainSiteLayout({
       )
       // setCurrentTime(null)
     }
-  }, [navigation, navigationState])
+  }, [navigation])
+
+  // const coursesRouteVavigation = useMemo(() => {
+  //   if (pageProps.courses !== undefined) {
+  //     return pageProps.courses.map(({ title, courseSlug }) => {
+  //       const courseTitle = title.split('-').join(' ').toUpperCase()
+  //       const courseLink = `/courses/${courseSlug}`
+  //       // console.log(
+  //       //   'COURSE-TOP_NAVIGATION in MAin Site',
+  //       //   courseTitle,
+  //       //   courseLink
+  //       // )
+  //       return [{ courseTitle: courseTitle, courseLink: courseLink }]
+  //     })
+  //   } else {
+  //     console.log('NO COURSES_NAVIGATION ')
+  //   }
+  // }, [pageProps.courses])
   // const courseTitle =
   //   navigation && navigation.length > []
   //     ? navigation[0].title
   //     : 'No Course Title'
   //COURSES-LAYOUT
+  // if (pageProps.courses) {
+  //   const coursesRouteVavigation = pageProps.courses.map(
+  //     ({ title, courseSlug }) => {
+  //       const courseTitle = title.split('-').join(' ').toUpperCase()
+  //       const courseLink = `/courses/${courseSlug}`
+  //       // console.log(
+  //       //   'COURSE-TOP_NAVIGATION in MAin Site',
+  //       //   courseTitle,
+  //       //   courseLink
+  //       // )
+  //       return [{ courseTitle: courseTitle, courseLink: courseLink }]
+  //     }
+  //   )
+  //   return coursesRouteVavigation
+  // }
 
   const courseTitle = router.pathname.split('/')[3]
 
@@ -108,20 +148,32 @@ export function MainSiteLayout({
               </div>
 
               <Navigation
-                courseTitle={courseTitle}
+                siteNavigation={siteNavigation}
+                blogsRouteVavigation={blogsRouteVavigation}
+                coursesRouteVavigation={coursesRouteVavigation}
+                projectsRouteVavigation={projectsRouteVavigation}
+                courseTitle={courseTitle ?? 'loading-course-title'}
                 sections={sections}
                 course={navigation}
                 courseChapters={navigationState}
-                previousPathname={previousPathname}
+                previousPathname={previousPathname ?? 'No-previous-pathname'}
                 className="hidden lg:mt-10 lg:block"
               />
             </div>
           </motion.header>
-          <div className="lg:pt-46 xl:px-46 xl:px-26 relative h-full min-h-screen px-8  pt-12 pt-20 sm:px-6 lg:px-36 lg:pt-36">
+          <div className="lg:pt-46 xl:px-46 xl:px-26 relative h-full min-h-screen px-16  pt-12 pt-20 md:px-6 lg:px-36 lg:pt-36">
             <div id="course-site-prose" className="text-align-center ">
               <Prose as="article">{children}</Prose>
             </div>
-            <Footer />
+            <Footer
+              course={navigation}
+              siteNavigation={siteNavigation}
+              blogsRouteVavigation={blogsRouteVavigation}
+              coursesRouteVavigation={coursesRouteVavigation}
+              projectsRouteVavigation={projectsRouteVavigation}
+              courseChapters={navigationState}
+              previousPathname={previousPathname ?? 'No-previous-pathname'}
+            />
           </div>
         </div>
         {/* </SectionProvider> */}
@@ -129,9 +181,18 @@ export function MainSiteLayout({
     )
   }
   //BASIC-LAYOUT
-  const BasicLayout = ({ previousPathnam, rops }) => {
+  const BasicLayout = ({ previousPathname, rops }) => {
     return (
-      <div previousPathname={previousPathname} {...props}>
+      <div
+        previousPathname={previousPathname}
+        siteNavigation={siteNavigation}
+        blogsRouteVavigation={blogsRouteVavigation}
+        coursesRouteVavigation={coursesRouteVavigation}
+        projectsRouteVavigation={projectsRouteVavigation}
+        pageProps={pageProps}
+        handleSubmit={handleSubmit}
+        {...props}
+      >
         {children}
       </div>
     )
@@ -144,40 +205,49 @@ export function MainSiteLayout({
 
   console.log('ROUTER', isCoursesRoute)
 
-  useEffect(() => {
-    if (isCoursesRoute) {
-      console.log('ROUTER SHOULD RENdER COURSES_LAYOUT')
-      setLayoutType('CoursesLayout')
-    } else {
-      console.log('ROUTER SHOULD RENdER BASIC_LAYOUT')
-      setLayoutType('BasicLayout')
-    }
+  // useEffect(() => {
+  //   if (isCoursesRoute) {
+  //     console.log('ROUTER SHOULD RENdER COURSES_LAYOUT')
+  //     setLayoutType('CoursesLayout')
+  //   } else {
+  //     console.log('ROUTER SHOULD RENdER BASIC_LAYOUT')
+  //     setLayoutType('BasicLayout')
+  //   }
 
-    //   Layout()
-    //   const subscription = props.source.subscribe();
-    //   return () => {
-    //     subscription.unsubscribe();
-    //   };
-  }, [isCoursesRoute, router])
+  //   Layout()
+  //   const subscription = props.source.subscribe();
+  //   return () => {
+  //     subscription.unsubscribe();
+  //   };
+  // }, [isCoursesRoute, router])
   return (
     <>
       <Header
         siteNavigation={siteNavigation}
+        blogsRouteVavigation={blogsRouteVavigation}
+        coursesRouteVavigation={coursesRouteVavigation}
+        projectsRouteVavigation={projectsRouteVavigation}
         courseTitle={courseTitle}
         sections={sections}
         // chapters={navigationState}
+        // coursesRouteVavigation={coursesRouteVavigation}
         course={navigation}
         courseChapters={navigationState}
         previousPathname={previousPathname}
+        pageProps={pageProps}
+        handleSubmit={handleSubmit}
       />
       {/* <h1 className="text-5xl text-black dark:text-white">{layoutType}</h1> */}
       {layoutType === 'BasicLayout' && <BasicLayout />}
       {layoutType === 'CoursesLayout' && (
         <CoursesLayout
-          {...children}
+          // coursesRouteVavigation={coursesRouteVavigation}
           sections={sections}
           previousPathname={previousPathname}
           {...props}
+          pageProps={pageProps}
+          handleSubmit={handleSubmit}
+          {...children}
         />
       )}
     </>

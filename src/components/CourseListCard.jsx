@@ -19,7 +19,7 @@ const courseListCardImages = [
   {
     alt: 'uiux',
     href: '#',
-    name: 'UIUX',
+    title: 'UIUX',
     description:
       'A dynamic, open source programming language with a focus on simplicity and productivity.',
     logo: uiux,
@@ -27,19 +27,19 @@ const courseListCardImages = [
   {
     alt: 'a PHP course image',
     href: '#',
-    name: 'PHP',
+    title: 'PHP',
     logo: logoPhp,
   },
   {
     alt: 'A AWS course image',
     href: '#',
-    name: 'Aws-and-the-cloud',
+    title: 'Aws-and-the-cloud',
     logo: awsImage,
   },
   {
     alt: 'A Ruby course image',
     href: '#',
-    name: 'Ruby',
+    title: 'Ruby',
     description:
       'A dynamic, open source programming language with a focus on simplicity and productivity.',
     logo: logoRuby,
@@ -47,19 +47,19 @@ const courseListCardImages = [
   {
     alt: 'A Javascrip course image',
     href: '#',
-    name: 'Javascript-and-jquery',
+    title: 'Javascript-and-jquery',
     logo: javascriptImage,
   },
   {
     alt: 'A React course image',
     href: '#',
-    name: 'React',
+    title: 'React',
     logo: reactImage,
   },
   {
     alt: 'A Python course image',
     href: '#',
-    name: 'Python',
+    title: 'Python',
     description:
       'Python is a programming language that lets you work quickly and integrate systems more effectively.',
     logo: logoPython,
@@ -67,7 +67,7 @@ const courseListCardImages = [
   {
     alt: 'a Go course image',
     href: '#',
-    name: 'Go',
+    title: 'Go',
     description:
       'An open-source programming language supported by Google with built-in concurrency.',
     logo: logoGo,
@@ -75,7 +75,7 @@ const courseListCardImages = [
   {
     alt: 'a PHP course image',
     href: '#',
-    name: 'PHP',
+    title: 'PHP',
     description:
       'A popular general-purpose scripting language that is especially suited to web development.',
     logo: logoPhp,
@@ -90,10 +90,10 @@ export function CourseListCardImages() {
       </Heading>
       <div className="not-prose mt-4 grid grid-cols-1 gap-x-6 gap-y-10 border-t border-zinc-900/5 pt-10 dark:border-white/5 sm:grid-cols-2 xl:max-w-none xl:grid-cols-3">
         {libraries.map((library) => (
-          <div key={library.name} className="flex flex-row-reverse gap-6">
+          <div key={library.title} className="flex flex-row-reverse gap-6">
             <div className="flex-auto">
               <h3 className="text-sm font-semibold text-zinc-900 dark:text-white">
-                {library.name}
+                {library.title}
               </h3>
               <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
                 {library.description}
@@ -118,7 +118,7 @@ export function CourseListCardImages() {
 }
 
 export function CourseListCard({ course }) {
-  // console.log('COURSE in COurse List Card', course)
+  console.log('COURSE in COurse List Card', course)
   // let
   // console.log('COURSE CHAPTERS', course[0].chapters)
   // course.chapters.map((chapter) =>
@@ -147,14 +147,14 @@ export function CourseListCard({ course }) {
         >
           <div className="flex-shrink-0">
             {courseListCardImages.map((obj) => {
-              if (course.title.toLowerCase() === obj.name.toLowerCase()) {
+              if (course.title.toLowerCase() === obj.title.toLowerCase()) {
                 // console.log('IMAGE MATCHES', obj)
                 return (
                   <Image
                     // href={course.courseSlug}
                     src={obj.logo}
                     alt={obj.alt}
-                    key={obj.name}
+                    key={obj.title}
                     className="h-48 w-full object-cover"
                     optimized="true"
                   />
@@ -208,7 +208,7 @@ export function CourseListCard({ course }) {
               ) : (
                 <div className="flex-shrink-0">
                   {/* <Link href={course.author.href}> */}
-                  <span className="sr-only">{course.author.name}</span>
+                  <span className="sr-only">{course.author.title}</span>
                   <Image
                     className="h-10 w-10 rounded-full"
                     src={authorPlaceHolderImage}
@@ -228,7 +228,7 @@ export function CourseListCard({ course }) {
                 ) : (
                   <p className="text-sm font-medium text-gray-900">
                     {/* <Link href={course.author.href} className="hover:underline">
-                      {course.author.name}
+                      {course.author.title}
                     </Link> */}
                   </p>
                 )}

@@ -33,8 +33,8 @@ Project.Heading = function Project({ children, ...props }) {
     >
       <h3 className="md:mt-4 md:hidden">
         <button
-          key={props.id + props.name}
-          onClick={() => props.onSelected(name)}
+          key={props.id + props.title}
+          onClick={() => props.onSelected(title)}
           type="button"
           className={
             props.activeProject === props.projectname
@@ -49,8 +49,8 @@ Project.Heading = function Project({ children, ...props }) {
       <h3 className="hidden md:mt-4 md:flex">
         {/* dark:${props.projectThemeTextColor} ${props.projectThemeTextColor} */}
         <button
-          key={props.id + props.name}
-          onClick={() => props.onSelected(name)}
+          key={props.id + props.title}
+          onClick={() => props.onSelected(title)}
           type="button"
           className={
             props.activeProject === props.projectname
@@ -100,7 +100,7 @@ Project.Heading = function Project({ children, ...props }) {
 
 const SectionProjects = forwardRef(
   (className, defaultActiveProjectName, ref, ...props) => {
-    const [activeProject, setActiveProject] = useState(projectsList[2].name)
+    const [activeProject, setActiveProject] = useState(projectsList[2].title)
     // console.log('Projectsss REf:', ref)
 
     const defaultTheme = useMemo(() => {
@@ -113,8 +113,8 @@ const SectionProjects = forwardRef(
     })
     // const projectsSection = useRef(null)
     const projects = useMemo(() => {
-      const handleSetActiveProjectTab = function (name) {
-        setActiveProject(name)
+      const handleSetActiveProjectTab = function (title) {
+        setActiveProject(title)
       }
       const getProjectThemeColor = (idx, projectTheme) => {
         if (activeProject == idx) {
@@ -135,7 +135,7 @@ const SectionProjects = forwardRef(
         return (
           <Project
             key={project.id}
-            projectname={project.name}
+            projecttitle={project.title}
             projectdescription={project.description}
             projectCategory={project.category}
             activeProject={activeProject}
@@ -145,7 +145,7 @@ const SectionProjects = forwardRef(
             projectDefaultTheme={defaultTheme}
             activeproject={activeProject}
             defaultActiveProjectName={activeProject}
-            onSelected={() => handleSetActiveProjectTab(project.name)}
+            onSelected={() => handleSetActiveProjectTab(project.title)}
           />
         )
       })
@@ -219,11 +219,11 @@ const SectionProjects = forwardRef(
             >
               {projectsList.map((i) => (
                 <>
-                  {activeProject === i.name && (
+                  {activeProject === i.title && (
                     <div
                       className="w-full flex-none sm:px-4"
                       // key={i.id}
-                      id={i.name.toLocaleLowerCase()}
+                      id={i.title.toLocaleLowerCase()}
                     >
                       <p
                         className={`${i.theme.bgcolor} text-md rounded-lg py-2 px-8 leading-6 text-slate-700 dark:text-gray-200 sm:px-0 md:hidden`}
@@ -238,7 +238,7 @@ const SectionProjects = forwardRef(
                         sizes="100vw"
                       />
                       {/* <Project.Image
-                        key={`${i.name + i.id}`}
+                        key={`${i.title + i.id}`}
                         imgProps={i.projectImage}
                         className="mt-10 aspect-[1216/640] sm:rounded-3xl md:mt-0"
                       /> */}
@@ -268,7 +268,7 @@ SectionProjects.displayName = 'SectionProjects'
 // }
 
 // SectionProjects.defaultProps = {
-//   defaultActiveProjectName: projectsList[2].name,
+//   defaultActiveProjectName: projectsList[2].title,
 
 //   projectDefaultTheme: {
 //     isInactiveProjectBorder:

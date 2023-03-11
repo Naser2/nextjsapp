@@ -9,7 +9,7 @@ import SuperchagedTechSection, {
 } from '@/components/indexComponents/SuperchagedTechSection'
 import clsx from 'clsx'
 
-import projectJson from '../../lib/projectsJson'
+import getProjects from '@/lib/getProjects'
 import Image from 'next/image'
 import Link from 'next/link'
 import { slugify } from '@/lib/slugify'
@@ -21,7 +21,7 @@ function SpeakingSection({ children, ...props }) {
   )
 }
 const HeaderMainDetails = ({ content }) => {
-  const { tech, category, name, device, tag } = content
+  const { tech, category, title, device, tag } = content
   return (
     <>
       <div
@@ -38,12 +38,12 @@ const HeaderMainDetails = ({ content }) => {
           </span>
         </Link>
       </div>
-      <div className="categpry-name px-6 lg:mx-0 ">
+      <div className="categpry-title px-6 lg:mx-0 ">
         <h2 className=" text-black-500 mt-6 flex rounded-md font-semibold dark:text-indigo-400">
           {category}
         </h2>
         <p className="mt-1 text-3xl font-extrabold tracking-tight text-slate-800 dark:text-white sm:text-4xl ">
-          {name}
+          {title}
         </p>
       </div>
     </>
@@ -62,13 +62,14 @@ function Appearance({ title, description, event, cta, href }) {
   )
 }
 
-export default function Projects() {
+export default function Projects({ projects }) {
+  console.log('PROJECT--->', projects)
   return (
     <>
       <Head>
         <title>Speaking - Spencer Sharp</title>
         <meta
-          name="description"
+          title="description"
           content="I’ve spoken at events all around the world and been interviewed for many podcasts."
         />
       </Head>
@@ -103,7 +104,7 @@ export default function Projects() {
           id="project-list-wrapper"
           className="my-10 bg-sky-200/20 dark:bg-blue-300 md:py-10 lg:py-20 "
         >
-          <ProjectsIndex projects={projectJson} />
+          <ProjectsIndex projects={projects} />
         </div>
 
         <div className="relative mt-10 pt-10 xl:mt-2 xl:pt-0">
@@ -218,10 +219,10 @@ export default function Projects() {
   )
 }
 
-const ProjectsIndex = function () {
+const ProjectsIndex = function ({ projects }) {
   return (
     <>
-      {projectJson.map((project) => {
+      {projects.map((project) => {
         return (
           <div
             key={project.id}
@@ -253,7 +254,7 @@ const ProjectsIndex = function () {
                       device: 'Ipad / Mpbile',
                       tech: 'react-native',
                       category: project.category,
-                      name: project.name,
+                      title: project.title,
                       tag: project.tag,
                     }}
                   />
@@ -309,7 +310,7 @@ const ProjectsIndex = function () {
 
                   <Link
                     className="group mx-8 mt-8 inline-flex h-9 items-center whitespace-nowrap rounded-full bg-black px-3 text-sm font-semibold text-indigo-100 hover:bg-slate-400 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-indigo-500 dark:text-slate-100 dark:hover:bg-slate-600 dark:hover:text-white dark:focus:ring-slate-500"
-                    href={`projects/${slugify(project.name)}`}
+                    href={`projects/${slugify(project.title)}`}
                   >
                     More details
                     <span className="sr-only">Visit the projects page</span>
@@ -430,5 +431,13 @@ const ProjectsIndex = function () {
             </ul>
           </div>
         </div> */
+  }
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      projects: await getProjects(),
+    },
   }
 }

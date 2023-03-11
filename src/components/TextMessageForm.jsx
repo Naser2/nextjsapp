@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { ArrowRight } from './icons/Arrows'
 import { ModeToggle } from './ModeToggle'
-
+import { ActionAbleButton } from '@/components/Button'
 export const TextMessageForm = ({ toggleModal }) => {
   // const { register, errors, handleSubmit } = useForm();
 
@@ -155,7 +155,13 @@ export const TextMessageForm = ({ toggleModal }) => {
             </div>
           )} */}
         {/* <div className="rounded-lg   bg-black mt-8 text-center mx-2"> */}
-        <div className="mt-6 flex items-center justify-center">
+        <ActionAbleButton
+          handleSubmit={handleSubmit}
+          showSendingBtn={showSendingBtn}
+          btnText={'send'}
+          fetchingBtnText={''}
+        />
+        {/* <div className="mt-6 flex items-center justify-center">
           {!showSendingBtn && (
             <button
               type="button"
@@ -196,7 +202,7 @@ export const TextMessageForm = ({ toggleModal }) => {
               <ArrowRight color="text-white" />
             </button>
           )}
-        </div>
+        </div> */}
         {/* <div className="flex justify-center">   
              <button type="button" className="text-center inline-flex bg-black hover:bg-slate-700 py-2 px-3 text-center text-sm font-semibold text-white" type="submit" onClick={handleSubmit}>
             Send  <span classname="px-4 py-0"></span></button>

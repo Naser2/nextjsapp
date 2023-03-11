@@ -1,36 +1,8 @@
-// import { useMemo } from 'react'
-// import Head from 'next/head'
 import { parse } from 'rss-to-json'
 import Image from 'next/image'
 import { useState, useMemo } from 'react'
-// import { PodcastsPageLayout } from '@/components/PodcastComponents/PodcastsPageLayout.jsx'
-// import { useAudioPlayer } from '@/components/PodcastComponents/AudioProvider'
-import { Container } from '@/components/PodcastComponents/Container'
-// import { FormattedDate } from '@/components/PodcastComponents/FormattedDate'
-// import { PlayButton } from '@/components/PodcastComponents/player/PlayButton'
-// import { createClient } from 'next-sanity'
 import getCourses from '@/lib/getCourses'
-// import getSanityItemById from '@/lib/getSanityItemById'
-// import Image from 'next/image'
-// import { ArrowLeftIcon } from '@/components/icons/Arrows'
-// import EpisodeBG from '@/images/projectImages/lars_episode_bg.jpg'
-// import { useNextSanityImage } from 'next-sanity-image'
-// import ImageUrlBuilder from '@sanity/image-url'
-// import cleardot from '@/images/cleardot.gif'
-// import { Eyebrow } from '@/components/siteMdxComponents'
-// import { client } from '../../sanityClient'
-// import { useRouter } from 'next/router'
 import { getCourseMeta } from '../../lib/courses-meta'
-
-// import { useMemo } from 'react'
-// import Head from 'next/head'
-// import { parse } from 'rss-to-json'
-
-// import { useAudioPlayer } from '@/components/AudioProvider'
-// import { Container } from '@/components/Container'
-// import { FormattedDate } from '@/components/FormattedDate'
-// import { PlayButton } from '@/components/player/PlayButton'
-// const router = useRouter()
 import { ThreeGridSection } from '@/components/TwoGridSection'
 import backgroundImage from '@/images/background.jpg'
 import matter from 'gray-matter'
@@ -41,6 +13,8 @@ import { ArrowDownExpand } from '@/components/icons/BellIcon'
 import { StarRated } from '@/components/StarRated'
 import Link from 'next/link'
 import { slugify } from '@/lib/slugify'
+import { TextField } from '@/components/next13Components/Fields'
+import { ActionAbleButton } from '@/components/Button'
 const ExpandableItem = ({
   item,
   itemIdx,
@@ -64,7 +38,7 @@ const ExpandableItem = ({
           className={[
             isExpanded && itemIdx == idx
               ? `${theme.clicableListitem}`
-              : 'text-gray-700  dark:text-slate-300',
+              : 'text-xl text-gray-700  dark:text-slate-300  md:text-xl',
           ]}
         >
           {item.title}
@@ -113,7 +87,11 @@ const Item = ({ item, idx, theme }) => {
   return (
     <li key={idx} scope="col" className={[` text-sm  `]}>
       <p className="group inline-flex">
-        <span className={['text-slate-600 dark:text-slate-300/70']}>
+        <span
+          className={[
+            'text-xl text-slate-600 dark:text-slate-300/70 md:text-xl',
+          ]}
+        >
           {item}
         </span>
       </p>
@@ -131,11 +109,6 @@ const ListItem = ({ title, list, theme, type }) => {
     setITemIdx(idx)
   }
 
-  // const List = useMemo(() => {
-  //   return topicsCovered.map((item, idx) => {
-  //     return <Item key={idx} theme={theme} />
-  //   })
-  // }, [topicsCovered, theme])
   const ExpandableList = useMemo(() => {
     return list.map((item, idx) => {
       return (
@@ -153,7 +126,7 @@ const ListItem = ({ title, list, theme, type }) => {
   }, [isExpanded, list, itemIdx, theme])
   return (
     <div id="curriculum" className="mt-2 lg:mt-4">
-      <h3 className="text-sm font-medium text-slate-900 dark:text-slate-200  md:text-2xl ">
+      <h3 className="text-3xl  font-medium text-slate-900 dark:text-slate-200  md:text-2xl ">
         {title}
       </h3>
 
@@ -235,8 +208,10 @@ const CoursePageContentNav = ({ tags, specifics, courseCategory, theme }) => {
     </nav>
   )
 }
-export default function Curriculum({ course, components }, props) {
+function Curriculum({ course, components }, props) {
   const [rating, setRating] = useState(2)
+  const [reviewForm, setReviewFrom] = useState(false)
+  const [reviewText, setReviewText] = useState({ reviewdata: '' })
   console.log('CURRICULLUM COURSE', course.data)
   // console.log('COURSE-SULG', course.courseSlug)
   // console.log(
@@ -287,6 +262,20 @@ export default function Curriculum({ course, components }, props) {
   const onCourseRating = (index) => {
     setRating(index)
     // return console.log('You havent taken  this class', JSON.stringify(index))
+  }
+
+  const toggleReviewForm = (val) => {
+    console.log('TOGGLED - FORM ', val)
+    setReviewFrom(!reviewForm)
+  }
+  const handleReviewForm = (e) => {
+    e.preventDefault()
+    const { name, value } = e.target
+    console.log('NAME', name, 'VALUE', value)
+    setReviewText((prevProps) => ({
+      ...prevProps,
+      [name]: value,
+    }))
   }
 
   // console.log(
@@ -386,7 +375,7 @@ export default function Curriculum({ course, components }, props) {
                     id="breakdown"
                     className="block w-full lg:flex lg:gap-x-4"
                   >
-                    <div className="w-1/4 lg:w-1/2">
+                    <div className="w-full lg:w-2/4 lg:w-1/2">
                       <ListItem
                         type="non-expandable"
                         title={"What you'll learn"}
@@ -394,7 +383,7 @@ export default function Curriculum({ course, components }, props) {
                         theme={theme}
                       />
                     </div>
-                    <div className="lg:w-3/4  ">
+                    <div className="w-full lg:w-3/4  ">
                       <ListItem
                         type="expandable"
                         title={'Curriculum'}
@@ -537,11 +526,11 @@ export default function Curriculum({ course, components }, props) {
                     type="button"
                     href={`/courses/dev/${slugify(courseSlug)}`}
                     className={[
-                      theme && theme.button
-                        ? [theme.button, theme.hover]
-                        : `mt-10 flex w-full items-center justify-center rounded-md border border-transparent  
-                        py-3 px-8 text-base font-medium text-white 
-                        focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-white dark:text-black `,
+                      // theme && theme.button
+                      //   ? [theme.button, theme.hover]:
+                      `mt-10 flex w-full items-center justify-center rounded-md border border-transparent  
+                        bg-black py-3 px-8 text-base font-medium 
+                        text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-white dark:text-black `,
                     ]}
                   >
                     Start {`/courses/dev/${slugify(courseSlug)}`}
@@ -683,12 +672,46 @@ export default function Curriculum({ course, components }, props) {
               customers
             </p>
 
-            <Link
-              href="#"
-              className="mt-6 inline-flex w-full items-center justify-center rounded-md border border-gray-300 bg-white py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-50 dark:text-white sm:w-auto lg:w-full"
+            <button
+              type="button"
+              onClick={() => toggleReviewForm(true)}
+              className="my-6 inline-flex w-full items-center justify-center rounded-md border border-gray-300 bg-white py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-50 dark:text-white sm:w-auto lg:w-full"
             >
-              Write a review
-            </Link>
+              {!reviewForm === false ? 'Close review form' : 'Write a review'}
+            </button>
+            {reviewForm && (
+              <div>
+                <form
+                  className="flex w-full justify-center md:w-auto"
+                  onSubmit={handleReviewForm}
+                >
+                  <TextField
+                    id="course-review-form"
+                    type="text"
+                    aria-label="Leave review"
+                    placeholder="Leave review"
+                    autoComplete="none"
+                    required
+                    className="w-full  min-w-0 shrink"
+                    formStyle="h-100"
+                  />
+                </form>
+                <ActionAbleButton
+                  handleSubmit={handleSubmit}
+                  showSendingBtn={showSendingBtn}
+                  btnText={'send'}
+                  fetchingBtnText={''}
+                />
+                <button
+                  type="submit"
+                  color="cyan"
+                  className="ml-4 flex-none"
+                  onSubmit={() => handleReviewForm(e)}
+                >
+                  <span className="hidden lg:inline">Join our newsletter</span>
+                </button>
+              </div>
+            )}
           </div>
           {/* <!-- Reviews --> */}
           <div className="mt-6">
@@ -786,39 +809,6 @@ export default function Curriculum({ course, components }, props) {
                   </div>
                 </div>
               ))}
-
-              {/* <div className="flex flex-col sm:flex-row">
-                <div className="order-2 mt-6 sm:mt-0 sm:ml-16">
-                  <h3 className="text-sm font-medium text-gray-900">
-                    This is the best white t-shirt out there
-                  </h3>
-                  <p className="sr-only">5 out of 5 stars</p>
-
-                  <div className="mt-3 space-y-6 text-sm text-gray-600">
-                    <p>
-                      I've searched my entire life for a t-shirt that reflects
-                      every color in the visible spectrum. Scientists said it
-                      couldn't be done, but when I look at this shirt, I see
-                      white light bouncing right back into my eyes. Incredible!
-                    </p>
-                  </div>
-                </div>
-
-                <div className="order-1 flex items-center sm:flex-col sm:items-start">
-                  <img
-                    src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&amp;ixqx=oilqXxSqey&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                    alt="Mark Edwards."
-                    className="h-12 w-12 rounded-full"
-                  />
-
-                  <div className="ml-4 sm:ml-0 sm:mt-4">
-                    <p className="text-sm font-medium text-gray-900">
-                      Mark Edwards
-                    </p>
-                    <div className="mt-2 flex items-center"></div>
-                  </div>
-                </div>
-              </div> */}
             </div>
           </section>
         </div>
@@ -844,7 +834,7 @@ export async function getStaticProps({ params }) {
   // )
   // console.log('PARAMS_SPLIT', paramsSplit)
   const splittedSlugToMatchPaths = (courseSlug) => {
-    // console.log('slittedSlugToMatchPaths', courseSlug.split('/')[1])
+    console.log('COurse-SLUG', courseSlug)
     console.log(
       'STATIC_PROPS_SPLITTED-SlugToMatchPaths',
       courseSlug.split('/')[1]
@@ -853,59 +843,6 @@ export async function getStaticProps({ params }) {
   }
   const courseData = await getCourseMeta(params.curriculum)
   console.log('STATIC_PROPS_COURSE_DATA', courseData)
-  // console.log('courseMeta- -->', courseData)
-  // try {
-  //   let course = await courses
-  //     .map(
-  //       ({
-  //         chapters,theme.text
-  //         meta,
-  //         numberOfChapters,
-  //         title,
-  //         courseSlug,
-  //         shortDescription,
-  //       }) => ({
-  //         chapters,
-  //         meta,
-  //         numberOfChapters,
-  //         title,
-  //         courseSlug,
-  //         shortDescription,
-  //         data: courseData,
-  //         pathithizedSlug: slittedSlugToMatchPaths(courseSlug),
-  //       })
-  //     )
-  //     .find(({ pathithizedSlug }) => pathithizedSlug === paramsSplit)
-  //   console.log('TRY CATCH course', course)
-  // } catch (e) {
-  //   course = new Error("Couldn't create the file", e)
-  //   console.log('EROR IN GETTING COURSE META', e)
-  //   return course
-  //     ? new Error("Couldn't create the file", e)
-  //     : { message: 'Problem here in meta.', e }
-  // }
-
-  // const { content } = matter(course.meta)
-  // console.log('content', typeof content)
-  // const courseStripped = course.meta
-  //   .replace(/^\s+|\s+$/gm, '')
-  //   .split('\n')
-  //   .slice(0, content.length + 1)
-  //   .join(' ')
-  // console.log('COMPILED TO STRING', String(await compile(courseStripped)))
-
-  // console.log('METTTTT', courseStripped.courseCategory)
-  // const code = await compile(courseStripped, {
-  //   outputFormat: 'program',
-  //   development: false,
-  // })
-
-  // const { meta, content } = matter(course.mdxContent)
-  // console.log('COURSE___MDX', 'Meta', meta, 'CONTENT', content)
-  // const code = 'export {number} from "./data.js"\n\n# hi'
-  // const baseUrl = 'https://a.full/url' // Typically `import.meta.url`
-
-  // console.log('STRING COMP', String(await compile(code, { baseUrl })))
 
   return {
     props: {
@@ -948,3 +885,5 @@ export async function getStaticPaths() {
     fallback: 'blocking',
   }
 }
+
+export default Curriculum

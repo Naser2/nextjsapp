@@ -21,7 +21,7 @@ const projectsList = [
   {
     id: 1,
     category: 'React-Sanity',
-    name: 'Mir Project',
+    title: 'Mir Project',
     tech: ['react-native', 'mogoBD'],
     description:
       'You can finally stop procrastinating and record your first episode.',
@@ -82,7 +82,7 @@ const projectsList = [
   {
     id: 3,
     category: 'Blog App',
-    name: 'Blogon',
+    title: 'Blogon',
     tech: ['NextJs', 'MDX', 'Firebase'],
     theme: {
       bgcolor: 'bg-indigo-500',
@@ -144,7 +144,7 @@ const projectsList = [
   {
     id: 2,
     category: 'Podcast',
-    name: 'Talk It Out',
+    title: 'Talk It Out',
     tech: ['NextJs', 'Sanity'],
     theme: {
       bgcolor: 'bg-indigo-500',
@@ -206,7 +206,7 @@ const projectsList = [
     id: 4,
     category: 'Geolocation',
     tech: ['React /React-native', 'mongodb'],
-    name: 'Oneway',
+    title: 'Oneway',
     theme: {
       bgcolor: 'bg-sky-500 dark:bg-black',
       color: 'border-blue-500',
@@ -267,7 +267,7 @@ const projectsList = [
     id: 2,
     category: 'Chef App',
     tech: ['VueJs', 'Firebase'],
-    name: 'Chef Kenneth',
+    title: 'Chef Kenneth',
     theme: {
       bgcolor: 'bg-indigo-500',
       color: 'border-idigo-500',
@@ -327,7 +327,7 @@ const projectsList = [
   {
     id: 2,
     category: 'Blockchain',
-    name: 'Ethereum Contract Deployer',
+    title: 'Ethereum Contract Deployer',
     tech: ['Solidity'],
     theme: {
       bgcolor: 'bg-indigo-500',
@@ -389,7 +389,7 @@ const projectsList = [
     id: 2,
     category: 'Kid Learning App',
     tech: ['React-Native', 'Fire-Store'],
-    name: 'BroadcastBaby',
+    title: 'BroadcastBaby',
     theme: {
       bgcolor: 'bg-indigo-500',
       color: 'border-idigo-500',
@@ -449,7 +449,7 @@ const projectsList = [
   {
     id: 4,
     category: 'Courses',
-    name: 'Development Courses',
+    title: 'Development Courses',
     tech: ['NextJs', 'mdx'],
     theme: {
       bgcolor: 'bg-yellow-600',

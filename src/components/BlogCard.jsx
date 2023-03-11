@@ -23,7 +23,7 @@ export function BlogCard({ blog }) {
                 <div
                   key={blog.hrf}
                   className={clsx(
-                    'w-100 h-100  lg:w-100 relative  aspect-[9/10] flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl'
+                    ' relative  aspect-[9/10] flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl'
                   )}
                 >
                   <Image
@@ -138,7 +138,7 @@ export function BlogCard({ blog }) {
                 <div
                   key={blog.hrf}
                   className={clsx(
-                    'w-100 h-100  lg:w-100 relative  aspect-[9/10] flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl'
+                    ' relative  aspect-[9/10] flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl'
                     // rotations[imageIndex % rotations.length]
                   )}
                 >

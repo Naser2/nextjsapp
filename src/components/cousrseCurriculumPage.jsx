@@ -32,7 +32,7 @@ export function cousrseCurriculumPage({ course }) {
                   href={courseObj.category.href}
                   className="hover:underline"
                 >
-                  {courseObj.category.name}
+                  {courseObj.category.title}
                 </Link>
               </p>
               <Link href={courseObj.href} className="mt-2 block">
@@ -47,7 +47,7 @@ export function cousrseCurriculumPage({ course }) {
             <div className="mt-6 flex items-center">
               <div className="flex-shrink-0">
                 <Link href={courseObj.author.href}>
-                  <span className="sr-only">{courseObj.author.name}</span>
+                  <span className="sr-only">{courseObj.author.title}</span>
                   <img
                     className="h-10 w-10 rounded-full"
                     src={courseObj.author.imageUrl}
@@ -61,7 +61,7 @@ export function cousrseCurriculumPage({ course }) {
                     href={courseObj.author.href}
                     className="hover:underline"
                   >
-                    {courseObj.author.name}
+                    {courseObj.author.title}
                   </Link>
                 </p>
                 <div className="flex space-x-1 text-sm text-gray-500">
