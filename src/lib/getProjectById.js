@@ -24,7 +24,7 @@ const getProjectById = async function (projects, projectId) {
     )
     .find(({ name }) => {
       console.log('NAMMMEEE', slugify(name), 'PROJJJJJJ-ID', projectId)
-      return slugify(name) === projectId
+      return slugify(name) === slugify(projectId)
     })
 
   console.log('PROJECT_ID', projectId, 'ITEM --->', project)
