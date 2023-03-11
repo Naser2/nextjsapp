@@ -40,19 +40,33 @@ const projectsList = [
     images: [miras_work_main],
     projectDetails: [
       {
-        price: '$36.00',
+        statment: 'inspired by News+ Apple News and more',
+        deliveryTime: '2 Weeeks',
         technologies:
           'You awake in a new, mysterious land. Mist hangs low along the distant mountains. What does it mean?',
         scopes: [
-          'User can send a request',
-          'user can describe project details',
-          'user can view projects',
-          'website basic pages ',
+          {
+            label: 'User can',
+            value: ['write', 'a blog'],
+          },
+          {
+            label: 'User can',
+            value: ['edit', 'delete', 'a blog'],
+          },
+          {
+            label: 'User can',
+            value: ['rate', 'comment'],
+          },
+          {
+            label: 'User can',
+            value: ['like', 'share', 'a blog'],
+          },
         ],
         email: 'f•••@example.com',
         phone: '1•••••••••40',
         href: '#',
         status: 'Completed',
+        pendingFeatures: 'User can like and comment on a blog',
         step: 5,
         date: 'March 24, 2021',
         dateTime: '2021-03-24',
@@ -332,14 +346,33 @@ const projectsList = [
     images: [eth_deployer_2],
     projectDetails: [
       {
-        price: '$36.00',
+        statment: 'inspired by News+ Apple News and more',
+        deliveryTime: '2 Weeeks',
         technologies:
           'You awake in a new, mysterious land. Mist hangs low along the distant mountains. What does it mean?',
-        scopes: ['Floyd Miles', '7363 Cynthia Pass', 'Toronto, ON N3Y 4H8'],
+        scopes: [
+          {
+            label: 'User can',
+            value: ['write', 'a blog'],
+          },
+          {
+            label: 'User can',
+            value: ['edit', 'delete', 'a blog'],
+          },
+          {
+            label: 'User can',
+            value: ['rate', 'comment'],
+          },
+          {
+            label: 'User can',
+            value: ['like', 'share', 'a blog'],
+          },
+        ],
         email: 'f•••@example.com',
         phone: '1•••••••••40',
         href: '#',
         status: 'Completed',
+        pendingFeatures: 'User can like and comment on a blog',
         step: 5,
         date: 'March 24, 2021',
         dateTime: '2021-03-24',

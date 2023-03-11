@@ -237,7 +237,7 @@ const Project = function ({ project, previousPathname, ...props }) {
               </p>
               <div className="flex-2 min-w-0" type="default">
                 <div className="text-4xl font-bold text-slate-400  dark:text-slate-400/80">
-                  <span className="ml-4 text-yellow-400">Deployed</span>
+                  <span className="ml-4 text-yellow-400">DOMAINS</span>
                 </div>
                 <span className="ml-4 text-yellow-400">
                   14 months
@@ -245,6 +245,7 @@ const Project = function ({ project, previousPathname, ...props }) {
                 </span>
               </div>
             </div>
+            <span className="ml-4 text-yellow-400">Domain</span>
             <WebsiteUrl
               link={'nasdesign.vercel.app'}
               href="https://nasdesign.vercel.app/blogs"
