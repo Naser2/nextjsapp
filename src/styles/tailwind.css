@@ -50,6 +50,16 @@
   --yellow-100: #fef9db;
   --gradient-start-color: rgba(255, 209, 199, 0.25);
   --gradient-stop-color: rgba(58, 54, 228, 0.4);
+  --geist-success: #0070f3;
+  --geist-secondary: #666;
+  --accents-1: #fafafa;
+  --accents-2: #eaeaea;
+  --accents-3: #999;
+  --accents-4: #888;
+  --accents-5: #666;
+  --accents-6: #444;
+  --accents-7: #333;
+  --accents-8: #111;
 }
 .sahara_bg {
   background-color: #f0e8e4;
@@ -2594,6 +2604,12 @@ a {
   background-color: #f73558;
   color: #fff;
 }
+.red {
+  color: #f73558;
+}
+.dark .dark\:.red {
+  color: #f73558;
+}
 
 /* ***************PHONE  */
 .section-audio .grid-cell-iphone {
@@ -3378,4 +3394,41 @@ black-3-bg {
   letter-spacing: -0.003em;
   font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
     'Arial', sans-serif;
+}
+
+.geist-text.body-2 {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.geist-text.geist-themed {
+  color: var(--themed-fg, var(--geist-foreground));
+
+  --geist-link-color: var(--geist-success);
+}
+
+.geist-container.jsx-499702677 > * {
+  --gap-ratio: 1;
+}
+
+.geist-text.body-2 {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.geist-text.geist-themed {
+  color: var(--themed-fg, var(--geist-foreground));
+}
+
+.geist-secondary {
+  color: var(--geist-success);
+  --themed-fg: var(--geist-secondary);
+  /* font-size: 1.025rem; */
+  /* font-size: 0.895rem; */
+  font-weight: 500;
+  font-size: 1.0505rem;
+  line-height: 1.6;
+  /* --themed-bg: var(--geist-background);
+  --themed-border: var(--themed-fg); */
 }

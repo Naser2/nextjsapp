@@ -214,7 +214,7 @@ const SocialMediaGallery = React.forwardRef(
                       )}
                     >
                       <Image
-                        src={img.source}
+                        src={img.source ?? img}
                         alt=""
                         className={clsx(
                           img.current ? '' : 'group-hover:opacity-75',
@@ -246,4 +246,84 @@ const SocialMediaGallery = React.forwardRef(
 )
 
 SocialMediaGallery.displayName = 'SocialMediaGallery'
+
 export default SocialMediaGallery
+
+export const MediaGallery = ({
+  socialsRef,
+  collection,
+  galleryTitle,
+  galleryTitleUndeline,
+  galleryMessage = '',
+}) => {
+  if (!collection) {
+    alert('SocialMediaGallery: Please PAss a Collection to render')
+  }
+  const borderTopGray =
+    'dark:bg-tansparent -my-4 grid grid-cols-3 gap-x-1 gap-y-1 border-t border-gray-300 px-3 py-4'
+  const galleryTitleStyle =
+    'gallery-title underline-red text-md mb-4 flex border-b border-indigo-500 py-1 pr-1 font-bold dark:text-white'
+  return (
+    <section
+      id={`social-media-gallery-${galleryTitle}`}
+      aria-label="Newsletter"
+      link={socialsRef}
+      className={
+        'dark:crisp-black max-w-lg rounded-sm bg-gray-100 md:mx-2 md:mt-1  md:rounded-lg lg:px-0'
+      }
+    >
+      <Container className="mx-0 rounded-sm px-4  pt-2 sm:px-0 md:rounded-lg lg:mt-8 lg:px-6 lg:px-2 lg:pt-4 lg:pb-8">
+        <div role="list" className="dark:highlight-white/10 rounded-t-xl">
+          {/* dark:border-indigo-500/20 */}
+          <div className={clsx(galleryTitleUndeline, galleryTitleStyle)}>
+            {galleryTitle}
+          </div>
+          <ul
+            role="list"
+            className={[
+              '-my-4 grid grid-cols-3 gap-x-4 gap-y-1 border-t border-gray-300 px-3 py-4',
+            ]}
+          >
+            {collection.map((img) => {
+              return (
+                <li key={img.name} className="relative">
+                  <div
+                    className={clsx(
+                      img.current
+                        ? 'ring-2 ring-indigo-500 ring-offset-2'
+                        : 'focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100',
+                      'group aspect-w-14 aspect-h-14 block w-full overflow-hidden  rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100'
+                    )}
+                  >
+                    <Image
+                      src={img.source ?? img}
+                      alt={img}
+                      width={img.width ?? 'auto'}
+                      height={img.height ?? 'auto'}
+                      className={clsx(
+                        img.current ? '' : 'group-hover:opacity-75',
+                        'pointer-events-none object-cover'
+                      )}
+                    />
+                    {img.link && (
+                      <button
+                        onClick={() => scrollToSection(img.link)}
+                        type="button"
+                        className="pt-4block inset-0  bottom-0 truncate px-8 text-2xl font-bold tracking-tight text-transparent hover:text-yellow-400 dark:text-zinc-100 sm:text-4xl"
+                      ></button>
+                    )}
+                  </div>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+        {galleryMessage && (
+          <p className="sr-only tracking-tight text-black dark:text-slate-300 md:not-sr-only md:mt-4 md:px-4 md:pb-4 md:pb-0  md:text-lg xl:hidden">
+            {galleryMessage}
+          </p>
+        )}
+      </Container>
+    </section>
+  )
+}

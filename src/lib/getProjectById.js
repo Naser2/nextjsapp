@@ -8,13 +8,17 @@ const getProjectById = async function (projects, projectId) {
         longDescription,
         projectImage,
         images,
-        projectDetails = [],
+        theme,
+        tech,
+        projectDetails,
       }) => ({
         name,
         description,
         longDescription,
         projectImage,
         images,
+        theme,
+        tech,
         projectDetails,
       })
     )

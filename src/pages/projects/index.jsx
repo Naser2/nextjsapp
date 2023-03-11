@@ -225,9 +225,9 @@ const ProjectsIndex = function () {
         return (
           <div
             key={project.id}
-            className="project-list relative my-8 mt-20 grid  grid-cols-1 gap-x-4 gap-y-0  pb-2 sm:gap-x-6 md:gap-y-0 md:gap-x-4  lg:mt-20  lg:grid-cols-2 xl:gap-x-8 "
+            className="project-list relative my-8 mt-20 grid  grid-cols-1 gap-x-4 gap-y-0  pb-2 sm:mx-6 sm:gap-x-6 md:gap-y-0  md:gap-x-4  lg:mt-20 lg:grid-cols-2  xl:mx-10 xl:gap-x-8 "
           >
-            <div className="shadow-t shadow-lg sm:mx-6  lg:block ">
+            <div className="shadow-t   lg:block ">
               <Image
                 className={clsx(
                   // project.imageAspectRatio,
@@ -244,7 +244,7 @@ const ProjectsIndex = function () {
             <div
               id="lg-project-content-text"
               className="relative flex h-[23.2rem] max-h-[45vh] overflow-hidden bg-white shadow-xl dark:bg-black dark:ring-1
-               dark:ring-inset dark:ring-white/10 dark:backdrop-blur sm:max-h-[none] sm:rounded-xl md:mx-2 md:py-6 md:px-4  lg:mx-0  lg:h-[51.625rem] lg:h-[24.6875rem] lg:max-h-[65vh] xl:h-[40.625rem]"
+               dark:ring-inset dark:ring-white/10 dark:backdrop-blur sm:max-h-[none] sm:rounded-xl md:mx-2 md:py-6 md:px-4  lg:mx-0  lg:h-[24.6875rem] lg:max-h-[55vh] xl:h-[40.625rem]"
             >
               <div className="sm:mx-0  sm:mt-4 lg:col-span-7 lg:mt-0 xl:col-span-6">
                 <div className="max-w-8xl mx-auto px-0 sm:px-6">

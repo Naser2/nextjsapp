@@ -37,6 +37,19 @@ const valueColorMap = {
   post: 'sky',
   put: 'amber',
   delete: 'rose',
+  get: 'emerald',
+  update: 'amber',
+  write: 'sky',
+  deploy: 'sky',
+  edit: 'emerald',
+  delete: 'rose',
+  add: 'emerald',
+  post: 'sky',
+  put: 'amber',
+  comment: 'rose',
+  rate: 'emaeral',
+  like: 'amber',
+  share: 'amber',
 }
 
 export function Tag({
@@ -44,6 +57,7 @@ export function Tag({
   variant = 'medium',
   color = valueColorMap[children.toLowerCase()] ?? 'emerald',
 }) {
+  console.log('TAG-CHILDREN', children)
   return (
     <span
       className={clsx(
