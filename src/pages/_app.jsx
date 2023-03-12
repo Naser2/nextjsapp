@@ -51,10 +51,10 @@ export default function App({ Component, pageProps, children }) {
   }
   const coursesRouteVavigation = useMemo(() => {
     if (pageProps.courses) {
-      return pageProps.courses.map(({ title, courseSlug }) => {
+      return pageProps.courses.map(({ title, courseSlug, status_ }) => {
         const refTitle = title.split('-').join(' ').toUpperCase()
         const link = `/courses/${courseSlug}`
-        return [{ refTitle: refTitle, link: link }]
+        return { refTitle: refTitle, link: link, status_: status_ ?? null }
       })
     } else {
       console.log('NO COURSES_NAVIGATION ')
@@ -62,11 +62,11 @@ export default function App({ Component, pageProps, children }) {
   }, [pageProps.courses])
   const blogsRouteVavigation = useMemo(() => {
     if (pageProps.blogs) {
-      return pageProps.blogs.map(({ slug }) => {
+      return pageProps.blogs.map(({ slug, status_ }) => {
         const refTitle = slug.split('-').join(' ').toUpperCase()
         const link = `/blogs/${slug}`
 
-        return { refTitle: refTitle, link: link }
+        return { refTitle: refTitle, link: link, status_: status_ }
       })
     } else {
       console.log('NO BLOGS_NAVIGATION ')
@@ -74,11 +74,11 @@ export default function App({ Component, pageProps, children }) {
   }, [pageProps.blogs])
   const projectsRouteVavigation = useMemo(() => {
     if (pageProps.projects) {
-      return pageProps.projects.map(({ title }) => {
+      return pageProps.projects.map(({ title, status_ }) => {
         const refTitle = title.split('-').join(' ').toUpperCase()
         const link = `/projects/${slugify(title)}`
 
-        return { refTitle: refTitle, link: link }
+        return { refTitle: refTitle, link: link, status_: status_ }
       })
     } else {
       console.log('NO PROJECTS_NAVIGATION ')

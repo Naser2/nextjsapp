@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
@@ -10,18 +10,22 @@ import { useSectionStore } from '@/components/SectionProvider'
 import { Tag } from '@/components/Tag'
 import { remToPx } from '@/lib/remToPx'
 import { slugifyWithCounter } from '@sindresorhus/slugify'
-
+import useWindowDimensions from './useWindowSize'
 function useInitialValue(value, condition = true) {
   let initialValue = useRef(value).current
   return condition ? initialValue : value
 }
 
-function TopLevelNavItem({ href, children }) {
+function TopLevelNavItem({ href, children, hasPageLocalNav }) {
   return (
     <li id={'mobile-nav-' + `${children}`} className="">
       <Link
         href={href}
-        className="block py-6 text-left text-2xl text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+        className={
+          hasPageLocalNav
+            ? 'nav-el py-2 text-left text-xl text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white'
+            : 'block py-6 text-left text-2xl text-zinc-600 transition hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white'
+        }
       >
         {children}
       </Link>
@@ -262,42 +266,34 @@ export const courseNavigation = [
 // const courses = await getCourseMeta()
 
 export function Navigation(props) {
+  const [hasPageLocalNav, setHasPageLocalNav] = useState(false)
   const router = new useRouter()
-  // console.log('ROUTE-PATH: ' + router.pathname)
+
   function slugifly(element) {
-    // console.log('ELEMENT_TITLE', element.title)
     let title = element.title
     let slugify = slugifyWithCounter()
     let slugified = slugify(title)
-    // console.log('SLUGIFY', slugified)
 
-    //  `${element.title.replace(' ', '-').toLowerCase()}`
     return slugified
   }
 
   const {
     siteNavigation,
     coursesRouteVavigation,
+    blogsRouteVavigation,
+    projectsRouteVavigation,
     course,
     courseChapters,
     courseTitle,
     sections,
   } = props
 
-  // const coursesNav = props.pageProps
-  // console.log('IN_NAVIGATION-coursesRouteVavigation', coursesRouteVavigation)
-  //
-  // Array(4)
-
-  // {chapters: Array(1), meta: {…}, numberOfChapters: 12, title: 'Aws-and-the-cloud', courseSlug: 'dev/aws-and-the-cloud', …}
-
-  // {chapters: Array(1), meta: {…}, numberOfChapters: 12, title: 'Javascript-and-jquery', courseSlug: 'dev/javascript-and-jquery', …}
-
-  // {chapters: Array(1), meta: {…}, numberOfChapters: 12, title: 'React', courseSlug: 'dev/react', …}
-
-  // {chapters: Array(1), meta: {…}, numberOfChapters: 12, title: 'Uiux', courseSlug: 'dev/uiux', …}
-
-  console.log('NAVIVATION-SITE-NAV', siteNavigation)
+  console.log(
+    'NAVIVATION-SITE-NAV',
+    coursesRouteVavigation,
+    blogsRouteVavigation,
+    projectsRouteVavigation
+  )
   // console.log('NAVIGATION-SECTION', coursesRouteVavigation)
   console.log('NAVIGATION-COURSE', sections)
   const coursePath = ['/courses/dev']
@@ -308,11 +304,54 @@ export function Navigation(props) {
   // const goBackToMainPage = router.pathname.split('#')[0]
   // console.log('SLUGIFY : ', slugify('Making your first API request'))
   const goBackToMainPage = router.pathname.split('/').slice(0, -1).join('/')
+  const pageLocalNavigation = useMemo(() => {
+    if (router.pathname === '/blogs') {
+      setHasPageLocalNav(true)
+      return blogsRouteVavigation
+    }
+    if (router.pathname === '/courses' && router.pathname.substr(1) !== '/') {
+      setHasPageLocalNav(true)
+      return coursesRouteVavigation
+    }
+    if (router.pathname === '/projects') {
+      setHasPageLocalNav(true)
+      return projectsRouteVavigation
+    } else {
+      setHasPageLocalNav(false)
+    }
+  }, [
+    blogsRouteVavigation,
+    coursesRouteVavigation,
+    projectsRouteVavigation,
+    router.pathname,
+  ])
+  // Usage
+
+  const { width, height } = useWindowDimensions()
+
+  console.log('WINDOW_SIZE', height)
+
+  console.log('NAVVVVVVVVVVVVVVVVVV', pageLocalNavigation)
+  // let pageLocalNavigation
+  // if (router.pathname === '/blogs' && !router.pathname === '/blogs/') {
+  //   return (pageLocalNavigation = blogsRouteVavigation)
+  // }
+  // if (router.pathname === '/courses' && !router.pathname === '/courses/dev/') {
+  //   return (pageLocalNavigation = coursesRouteVavigation)
+  // }
+  // if (router.pathname === '/projects' && !router.pathname === '/projects/') {
+  //   return (pageLocalNavigation = projectsRouteVavigation)
+  // }
+  console.log(
+    'LOCAL_NAV_UNDEFINED',
+    pageLocalNavigation !== undefined,
+    pageLocalNavigation
+  )
   return (
     <div>
       {isCoursePage && (
         <nav {...props}>
-          <ul role="list" className="z-100  px-10">
+          <ul role="list" className="z-100 relative px-10">
             {/* <h1 href={router.pathnam + courseTitle}>{courseTitle}</h1> */}
             <TopLevelNavItem
               key={router.pathname}
@@ -362,9 +401,10 @@ export function Navigation(props) {
                     </TopLevelNavItem>
                   )
                 })}
+
             <li className="sticky bottom-0 z-10 mt-6 min-[416px]:hidden">
               <Button href="#" variant="filled" className="w-full py-4">
-                Sign inn
+                Signnnn inn
               </Button>
             </li>
           </ul>
@@ -372,24 +412,238 @@ export function Navigation(props) {
       )}
       {!isCoursePage && siteNavigation && (
         <nav {...props}>
-          <ul role="list" className="px-10">
+          <ul role="list" className="">
+            <div
+              id="site-navigation"
+              className={clsx(
+                hasPageLocalNav ? 'bg-slate-100 px-10 py-5' : ' px-10 py-5'
+              )}
+              style={
+                hasPageLocalNav ? { height: height / 3 } : { height: height }
+              }
+            >
+              {siteNavigation.links.map((el, idx) => {
+                console.log('CHAPTER:', el)
+                return (
+                  <TopLevelNavItem
+                    key={el.title}
+                    href={el.href.toLowerCase()}
+                    hasPageLocalNav={hasPageLocalNav}
+                  >
+                    {el.title}
+                  </TopLevelNavItem>
+                )
+              })}
+            </div>
             {/* <h1 href={router.pathname}>{siteNavigation.title}</h1> */}
-            {siteNavigation.links.map((el, idx) => {
-              console.log('CHAPTER:', el)
-              return (
-                <TopLevelNavItem key={el.title} href={el.href.toLowerCase()}>
-                  {el.title}
-                </TopLevelNavItem>
-              )
-            })}
-            <li className="sticky bottom-0 z-10 mt-6 min-[416px]:hidden">
+            {pageLocalNavigation !== undefined && (
+              <div
+                id="local-page-navigtion"
+                className={clsx(
+                  'nav-secondary',
+                  hasPageLocalNav ??
+                    'active nav-secondary active  mt-0.5 -mr-0.5 origin-top-right scale-100 transform divide-y divide-gray-100 overflow-y-auto scroll-smooth  bg-white  text-sm font-normal text-slate-900 opacity-100 shadow-md ring-1 ring-slate-900/5 focus:outline-none sm:-mr-3.5'
+                )}
+                style={{ height: height / 2.5 }}
+              >
+                <div className="relative">
+                  <div className="sticky top-0 top-0 left-0 right-0">
+                    Contacts
+                  </div>
+                </div>
+                <span class="nav-secondary-title flex bg-slate-200/80 px-4 py-3 pr-2  tracking-tight text-black">
+                  List of
+                  <span className="pl-2">
+                    {router.pathname.replace('/', '').charAt(0).toUpperCase() +
+                      router.pathname
+                        .replace('/', '')
+                        .slice(1, router.pathname.length)}
+                  </span>
+                </span>
+                {pageLocalNavigation.map((nav) => {
+                  return (
+                    <>
+                      <Link
+                        href={nav.link}
+                        key={nav.link}
+                        className={[
+                          'nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300',
+                        ]}
+                      >
+                        {nav.refTitle.slice(0, 1) +
+                          nav.refTitle
+                            .toLowerCase()
+                            .slice(1, nav.refTitle.length)}
+                        {nav.status_ !== undefined && (
+                          <div class="ml-2 rounded-full bg-sky-500 px-1.5 py-0 text-xs text-white sm:hidden">
+                            {nav.status_}
+                          </div>
+                        )}
+                      </Link>
+                    </>
+                  )
+                })}
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+                <a
+                  class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
+                  href="/blogs/introducing-animaginary"
+                >
+                  Introducing animaginary
+                </a>
+              </div>
+            )}
+
+            <li className="bottom-0 z-10 mt-6 min-[416px]:hidden">
               <Button
                 href="#"
                 variant="filled"
                 className="w-full  py-4"
                 rounded="rounded-"
               >
-                Sign in
+                Sign iiin
               </Button>
             </li>
           </ul>

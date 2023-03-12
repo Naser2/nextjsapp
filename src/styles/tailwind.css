@@ -57,10 +57,12 @@
   --accents-3: #999;
   --accents-4: #888;
   --accents-5: #666;
+
   --accents-6: #444;
   --accents-7: #333;
   --accents-8: #111;
   --geist-cyan: #50e3c2;
+  --geist-space-gap: 24px;
 }
 .sahara_bg {
   background-color: #f0e8e4;
@@ -1723,9 +1725,10 @@ element.style {
 @media only screen and (max-width: 600px) {
   .typography-section-headline {
     /* background-color: lightblue; */
-    font-size: 62px;
+    font-size: 52px;
     /* padding: 0px; */
   }
+
   .blog-moto {
     background-color: lightblue;
   }
@@ -3466,4 +3469,72 @@ black-3-bg {
 
 .h-200 {
   height: 100px;
+}
+
+.nav-el {
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: calc(2 * var(--geist-space-gap));
+  transition: background-color 0.2s ease-in-out;
+  z-index: 2000;
+}
+
+.nav-secondary {
+  left: -200%;
+  transition: 0.5s;
+}
+.nav-secondary.active {
+  left: 0;
+}
+.nav-secondary-title {
+  line-height: 1.5;
+  font-size: 1.25rem;
+  letter-spacing: -0.020625rem;
+  font-weight: 600;
+}
+
+.nav-secondary-el {
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: var(--accents-6);
+  font-size: 1rem;
+  height: calc(2 * var(--geist-space-gap));
+  border-bottom: 1px solid var(--accents-2);
+  transition: background-color 0.2s ease-in-out;
+  z-index: 2000;
+}
+
+.Progress {
+  background-color: var(--color-neutral-muted);
+  border-radius: 6px;
+  display: flex;
+  height: 8px;
+  outline: 1px solid #0000;
+  overflow: hidden;
+}
+.git-blue-bg {
+  background-color: #3178c6 !important;
+  width: 82.3;
+}
+
+.git-green-bg {
+  background-color: #89e051 !important;
+  width: 10.1%;
+}
+.git-yellow-bg {
+  background-color: #f1e05a !important;
+  width: 4.4%;
+}
+
+.git-indigo-bg {
+  background-color: #563d7c !important;
+  width: 3.2%;
 }

@@ -856,6 +856,7 @@ export async function getStaticProps({ params }) {
             title,
             courseSlug,
             shortDescription,
+            status_ = 'undefined',
           }) => ({
             chapters,
             meta,
@@ -864,6 +865,7 @@ export async function getStaticProps({ params }) {
             courseSlug,
             shortDescription,
             data: courseData,
+            status_: status_ ?? undefined,
             pathithizedSlug: splittedSlugToMatchPaths(courseSlug),
           })
         )

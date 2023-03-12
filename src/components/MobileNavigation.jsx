@@ -53,6 +53,13 @@ export function MobileNavigation(props) {
   const router = new useRouter()
 
   console.log('MOPBILE_NAV_PROPS', props)
+
+  const {
+    siteNavigation,
+    blogsRouteVavigation,
+    coursesRouteVavigation,
+    projectsRouteVavigation,
+  } = props
   let isInsideMobileNavigation = useIsInsideMobileNavigation()
   let { isOpen, toggle, close } = useMobileNavigationStore()
   let ToggleIcon = isOpen ? XIcon : MenuIcon
@@ -89,6 +96,9 @@ export function MobileNavigation(props) {
     return router.pathname.includes(navEl) ? true : false
   }
 
+  // const PageLocalNavigation = () => {
+
+  // }
   return (
     <IsInsideMobileNavigationContext.Provider value={true}>
       <button
@@ -150,7 +160,7 @@ export function MobileNavigation(props) {
                       src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80"
                     />
                     <strong className="text-sm font-medium text-slate-900 dark:text-slate-200">
-                      User.name
+                      Nasser Sanou
                     </strong>
                   </div>
                   {router.pathname.includes(['/dev/']) && (

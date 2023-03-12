@@ -12,6 +12,7 @@ import office from '@/images/blogsImages/office.png'
 import work from '@/images/blogsImages/work_space.png'
 import author from '@/images/nas_about.png'
 import BlackNewYorkers from '@/images/blogsImages/black-New-yorkers.webp'
+import { AuthorIconAndName } from './icons/Image'
 // import { HeroPattern } from '@/components/HeroPattern'
 
 let BlogSamples = [
@@ -233,6 +234,7 @@ function Blog({ sample }) {
     >
       <div className="flex-shrink-0">
         <BlogPattern {...sample.pattern} mouseX={mouseX} mouseY={mouseY} />
+
         <Image
           href={sample.href}
           src={sample.image}
@@ -276,6 +278,7 @@ function Blog({ sample }) {
           <div className="flex-shrink-0">
             <Link href={sample.author.href}>
               <span className="sr-only">{sample.author.name}</span>
+
               <Image
                 className="h-10 w-10 rounded-full md:rounded-sm"
                 src={sample.author.image}
@@ -320,22 +323,29 @@ function MainBlog() {
               {blogSample.imageDescription}
             </figcaption>
           </div>
-          <div className=" mt-6 px-8 text-gray-900  text-zinc-600 dark:text-zinc-200">
+          <div className=" px-8 text-gray-900  text-zinc-600 dark:text-zinc-200">
             <div className="authoring-deails dark:text-geay-200 grid-cols-2 gap-2 ">
-              <span className="authorIcon mr-2 ">
-                <img
+              <span className="-mt-24 ">
+                <AuthorIconAndName
+                  imageKind={'portrait'}
+                  size="small"
+                  author={blogSample.author}
+                  image={blogSample.author.image}
+                  nodetails
+                />
+                {/* <img
                   className="figma-1jtmbgc mx-4 "
                   src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fnasportrait.7b07bff1.jpg&amp;w=2048&amp;q=75"
                   width="985"
                   height="1516"
                   loading="lazy"
-                />
+                /> */}
               </span>
-              <span className="author-nname pl-1 dark:text-gray-500/70">
+              <span className="author-name pl-1  text-slate-300 dark:text-slate-800">
                 {blogSample.author.name} |
                 <time
                   dateTime="2022-10-06T00:00:00.000Z"
-                  className="author-proffesion pl-2 font-medium  text-slate-300  dark:text-gray-700"
+                  className="author-proffesion pl-2 font-medium  text-slate-300  dark:text-gray-300"
                 >
                   October 6, 2022
                 </time>
@@ -354,7 +364,7 @@ function MainBlog() {
       <div className="main-blog-right -mt-2 px-4 text-gray-900 text-zinc-600 dark:text-zinc-200 md:py-8  lg:px-4 xl:-mt-8">
         <div className="">
           <div className="dark:text-300 px-4  text-slate-400">
-            {blogSample.author.name}
+            Taken from the
             <time
               dateTime="2022-10-06T00:00:00.000Z"
               className="pl-2 text-red-500"

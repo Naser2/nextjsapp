@@ -16,6 +16,7 @@ export const coursesMeta = [
     author: 'Nassser Sanou',
     courseSlug: 'UIUX',
     courseCategory: 'Design and Development',
+    status_: 'trending',
     image: javascriptImage,
     topicsCovered: [
       'Shadow DOM',
@@ -125,6 +126,7 @@ export const coursesMeta = [
   {
     author: 'Nassser Sanou',
     courseSlug: 'javascript-and-jquery',
+    status_: 'trending',
     courseCategory: 'Software Development',
     image: javascriptImage,
     topicsCovered: [
@@ -310,6 +312,7 @@ export const coursesMeta = [
     author: 'Nassser Sanou',
     courseSlug: 'react',
     courseCategory: 'Software Development',
+    status_: 'new',
     image: reactImage,
     topicsCovered: [
       'Shadow DOM',
@@ -429,6 +432,7 @@ export async function getCourseMeta(params) {
         ({
           author,
           courseSlug,
+          status_,
           courseCategory,
           image,
           images,
@@ -446,6 +450,7 @@ export async function getCourseMeta(params) {
         }) => ({
           author,
           courseSlug,
+          status_,
           image,
           images: images ? images : [],
           courseCategory,

@@ -206,68 +206,6 @@ export default function Home({ blogs, music, episodes, className }) {
         </Head>
         <SectionLandingHero />
         <IntroSection />
-        {/*    {music.map((tune) => {
-          return (
-            <div
-              key={'sample.title'}
-              // onMouseMove={'onMouseMove'}
-              className="dark:bg-white/2.5 group relative flex flex flex-col overflow-hidden  rounded-lg  bg-white 
-           shadow-lg transition-shadow hover:shadow-md hover:shadow-zinc-900/5 dark:hover:shadow-black/5 md:rounded-sm"
-            >
-              <div className="flex-shrink-0">
-               <Image
-                  href={'/'}
-                  // width={100%}
-                  // height={100}
-                  src={tune.coverArt.asset.src}
-                  alt="Model wearing plain black basic tee."
-                  className="md:rounded-t-0 ytd-action-companion-ad-renderer style-scope ytd-action-companion-ad-renderer  no-transition h-48 w-full object-cover"
-                />
-              </div>
-
-              <div className="flex flex-1 flex-col justify-between">
-                <div id="blog-card-body" className="bg-white px-6 py-4">
-                  <div className="flex-1">
-                    <p className="text-sm font-medium text-indigo-600">
-                      <Link href={'sample.href'} className="hover:underline">
-                        {'sample.name'}
-                      </Link>
-                    </p>
-                    <Link href={'sample.href'} className="mt-2 block">
-                      <p className="commom-blog-card-title-typography text-xl font-semibold text-gray-900 ">
-                        {'sample.title'}
-                      </p>
-                    </Link>
-                  </div>
-                </div>
-
-                <div className="mt-0 flex items-center bg-gray-100 px-6 py-4">
-                  <div className="flex-shrink-0">
-                    <Link href={'sample.author.href'}>
-                      <span className="sr-only">{'sample.author.name'}</span>
-                      {/* <Image
-                    className="h-10 w-10 rounded-full md:rounded-sm"
-                    src={'sample.author.image'}
-                    alt="the author image"
-                  />
-                    </Link>
-                  </div>
-
-                  <div className="ml-3">
-                    <p className="text-sm font-medium text-gray-900">
-                      <Link
-                        href={'sample.author.href'}
-                        className="hover:underline"
-                      >
-                        author Name
-                      </Link>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )
-        })} */}
 
         <HomeMusicPlayer />
 

@@ -8,6 +8,8 @@ import Image from 'next/image'
 import Image1 from '@/images/blogsImages/resolution_keep.png'
 import clsx from 'clsx'
 import Link from 'next/link'
+
+import { AuthorIconAndName } from '@/components/icons/Image'
 function ArrowLeftIcon(props) {
   return (
     <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
@@ -117,43 +119,7 @@ export function ArticleLayout({
       </div>
     )
   }
-  const AuthorIconAndName = () => {
-    return (
-      <div className="mt-24 sm:mt-32 lg:mt-16">
-        <div className="figma-1k1pkug">
-          <Link href="https://twitter.com/AliaFite" className="figma-clygmv ">
-            <div className="figma-13icjhm border-lg author-icon-bg rounded-full rounded-full bg-orange-400 px-1 py-1">
-              <Image
-                alt="author-image"
-                src={meta.author.image}
-                className="figma-1jtmbgc  author-image-w-ring mx-4
-                        "
-              />
-            </div>
-            {meta.author && meta.author.name && (
-              <div className="contributor ml-4  text-black  dark:text-white">
-                {meta.author.name.split(' ')[0]}
-                <div className="author--position figma-p7oszx">
-                  {meta.author.name.split(' ')[1]}
-                </div>
-              </div>
-            )}
-            {meta.author && !meta.author.name && (
-              <div className="contributor ml-4  text-black  dark:text-white">
-                {meta.author}
-                {/* <div className="author--position figma-p7oszx">
-                  {meta.author.name.split(' ')[1]}
-                </div> */}
-              </div>
-            )}
-          </Link>
-          <div className="ml-12 text-sm text-slate-400">
-            {meta.author.proffession ? meta.author.proffession : 'NasDesigns'}
-          </div>
-        </div>
-      </div>
-    )
-  }
+
   console.log('ARTICLE-LAYOUTMETA-DATA', meta)
   console.log('ARTICLE-LAYOU-CHILDREN', children)
   return (
@@ -215,7 +181,12 @@ export function ArticleLayout({
 
               <header className="max-w-4xl lg:my-10 ">
                 <div className="hidden lg:my-20 ">
-                  <AuthorIconAndName />
+                  {/* <AuthorIconAndName
+                    imageKind={'portrait'}
+                    size={'small'}
+                    author={meta.author}
+                    image={meta.author.image.src}
+                  /> */}
                 </div>
                 <div className="large-10 large-centered medium-12">
                   <div
@@ -295,7 +266,12 @@ export function ArticleLayout({
           </div>
         </div>
         <div id="blog-author-hero-top-desktop" className="lg:w-1/3 lg:px-10 ">
-          <AuthorIconAndName />
+          <AuthorIconAndName
+            imageKind={'portrait'}
+            size="small"
+            author={meta.author}
+            image={meta.author.image.src}
+          />
         </div>
       </div>
       <Container className="dark:bg-yellow-4 bg-black py-2 px-1">

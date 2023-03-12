@@ -22,6 +22,7 @@ const projectsList = [
     id: 1,
     category: 'React-Sanity',
     title: 'Mir Project',
+    status_: 'most-liked',
     tech: ['react-native', 'mogoBD'],
     description:
       'You can finally stop procrastinating and record your first episode.',

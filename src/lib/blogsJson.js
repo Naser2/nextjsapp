@@ -37,6 +37,7 @@ let blogsJson = [
   {
     author: { name: 'Nasser Sanou', href: '/about', image: author },
     href: 'blogs/meet-the-man',
+    status_: 'new',
     category: 'Environment-technology',
     event: 'music',
     date: '2022-09-02',
@@ -151,6 +152,7 @@ let blogsJson = [
   },
   {
     author: { name: 'Nasser Sanou', href: '/about', image: author },
+    status_: 'promotted',
     href: 'blogs/crafting-a-design-system-for-a-multiplanetary-future',
     event: 'music',
     date: '2022-09-02',
