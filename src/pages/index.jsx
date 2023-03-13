@@ -256,8 +256,8 @@ export default function Home({ blogs, music, episodes, className }) {
           <Podcast />
         </div> */}
         <BlogsSample ref={blogsRef} />
-        <div className="announcementBanner_root blue">
-          <div className="blue SkipToContent_skipToContent__Rsvqx px-8 text-left lg:px-20">
+        <div className="announcementBanner_root bg-white text-black dark:bg-black dark:text-sky-400">
+          <div className="SkipToContent_skipToContent__Rsvqx px-8 text-left lg:px-20">
             <Link className="" href="/projects">
               Projects
             </Link>

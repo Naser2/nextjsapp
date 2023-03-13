@@ -3056,7 +3056,7 @@ https://vercel.com/ */
   min-height: 100%;
 }
 .announcementBanner_root {
-  color: #fff;
+  /* color: #fff; */
   display: block;
   font-size: 1em;
   font-weight: 600;
@@ -3607,4 +3607,8 @@ black-3-bg {
   podcast-pb-color {
     background: black !important;
   }
+}
+
+.negative-btn-mr {
+  margin-right: -0.86rem;
 }
