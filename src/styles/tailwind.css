@@ -3138,6 +3138,9 @@ https://vercel.com/ */
   grid-template-columns: 6rem 1fr;
   position: relative;
   /* width: 440px; */
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  max-width: 480px;
 }
 
 .CommunityPersonPreview_twoColumn__Qwbfa .CommunityPersonPreview_info__DL5Hv {
@@ -3152,8 +3155,8 @@ https://vercel.com/ */
 
 .most_read_blog_mobile_image {
   height: 68px;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
+
+  /* ommunityPersonPreview_photoWra */
 }
 
 .CommunityPersonPreview_photoWrapper__LN7Ly {
@@ -3206,13 +3209,15 @@ https://vercel.com/ */
 }
 
 .CommunityPersonPreview_twoColumn__Qwbfa .CommunityPersonPreview_photo__ztqTs {
-  border-radius: 0.75rem;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  /* border-radius-: 0.75rem; */
   grid-column: 1;
   grid-row: 1/-1;
 }
 
 .CommunityPersonPreview_photo__ztqTs {
-  border-radius: 1.25rem;
+  /* border-radius: 1.25rem; */
   overflow: hidden;
 }
 .Image_root__GJXWR {
@@ -3537,4 +3542,69 @@ black-3-bg {
 .git-indigo-bg {
   background-color: #563d7c !important;
   width: 3.2%;
+}
+
+.md\:rounded-b-xxl {
+  border-bottom-right-radius: 20.75rem;
+  border-bottom-left-radius: 20.75rem;
+}
+@media (min-width: 768px) {
+  .md\:rounded-b-xxl {
+    border-bottom-right-radius: 12.25rem;
+    border-bottom-left-radius: 12.25rem;
+  }
+}
+
+.about-statement-bg {
+  /* background: #228eed; beautifull blue */
+  background-color: #fff0d1;
+}
+
+.first-desktop-feature-element-bg {
+  /* background: #ffdd40 !important; beautifull yellow  */
+  background: #fde163 !important;
+}
+
+.first-desktop-feature-last-element-bg {
+  background-color: #e8d7b4;
+}
+
+.rounded-t-xxl {
+  border-top-left-radius: 3.99rem;
+  border-top-right-radius: 3.99rem;
+}
+
+@media (min-width: 768px) {
+  .md\:rounded-b-xl {
+    border-top-left-radius: 3.99rem;
+    border-top-right-radius: 3.99rem;
+  }
+}
+/* .rounded-b-xxl {
+  border-top-left-radius: 3.99rem;
+  border-top-right-radius: 3.99rem;
+}
+ */
+
+.podcast-footer {
+  background: #454b5147;
+  margin-top: 3px;
+  padding-top: 19px;
+  opacity: 100;
+  z-index: 100;
+}
+@media (max-width: 768px) {
+  .podcast-footer {
+    background: black !important;
+    margin-top: -6px;
+    padding-top: 25px;
+  }
+}
+.podcast-pb-color {
+  background: #454b5147;
+}
+@media (max-width: 768px) {
+  podcast-pb-color {
+    background: black !important;
+  }
 }
