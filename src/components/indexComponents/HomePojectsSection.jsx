@@ -26,7 +26,7 @@ const ProjectSection = forwardRef((props, ref) => {
         ref={ref}
         className="max-w-10xl overflow-hidden  lg:px-4 lg:pt-0"
         section="Projects"
-        mb="mb-10"
+        mb="py-14 lg:py-10"
         id="projects"
         bgColor="dark:bg-indigo-500"
         band

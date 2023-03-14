@@ -72,10 +72,10 @@ Project.Heading = function Project({ children, ...props }) {
       <p
         className={clsx(
           props.activeProject === props.projecttitle
-            ? `flex border-slate-800  bg-white px-2 py-1 text-center text-sm leading-6 text-black shadow-lg md:order-first 
-             md:rounded-md  md:px-2  md:text-xs md:font-semibold md:leading-7 lg:px-4`
-            : `${props.defaultTheme} bg-slate-500  px-3 text-sm leading-6  text-white group-hover:bg-sky-400 group-hover:text-slate-900
-            md:order-first  md:rounded-full md:px-2 md:text-xs  md:font-semibold md:leading-7  lg:px-4 `
+            ? `flex border-slate-800 px-2 py-1 text-center text-sm leading-6 text-sky-400 text-black shadow-lg md:order-first md:rounded-md md:bg-white 
+             md:px-2  md:text-xs  md:font-semibold md:leading-7 md:text-black lg:px-4`
+            : `${props.defaultTheme} px-3  text-sm leading-6 text-white  group-hover:bg-sky-400 group-hover:text-slate-900 md:order-first
+            md:rounded-full  md:bg-slate-500 md:px-2 md:text-xs  md:font-semibold md:leading-7  lg:px-4 `
         )}
       >
         {props.projectCategory}{' '}
@@ -177,16 +177,18 @@ const SectionProjects = forwardRef(
                 Projects I had the opportunity to built with Next.js, React
                 Native, React and , VueJs amongst others. Every project will
                 redirect you to a fully dedicated page.{' '}
-                <NextButton
-                  text="See More"
-                  href="/podcasts"
-                  customize="bg-transparent hover:bg-black"
-                />
+                <div id="project-see-btn" className="sr-only md:not-sr-only">
+                  <NextButton
+                    text="See More"
+                    href="/podcasts"
+                    customize="bg-transparent hover:bg-black"
+                  />
+                </div>
               </p>
             </div>
             <div className="basic_highlight dark:basic_highlight mt-6 inline-flex items-center rounded-md px-2 pb-1 text-slate-800  dark:text-slate-100/80 md:ml-4 md:hidden md:pb-0 lg:px-4">
               <Link
-                className="text-base  text-xl font-semibold text-slate-400 hover:text-black"
+                className="subtle-link text-base text-xl font-semibold text-slate-400 hover:text-black"
                 href="/projects"
               >
                 Scrollable bar bellow | See more projects

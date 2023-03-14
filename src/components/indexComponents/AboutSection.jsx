@@ -46,12 +46,12 @@ const AboutSection = forwardRef((props, ref) => {
                   can't beat checking off some items on a paper card.
                 </p>
                 <div className={clsx(padding, 'mt-6')}>
-                  <a
+                  <Link
                     href="#"
                     className="inline-block rounded-md border border-transparent bg-black py-3 px-8 font-medium text-white hover:bg-black"
                   >
                     See Profile
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

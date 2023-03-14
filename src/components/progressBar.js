@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export const progressBar = () => {
   return (
     <>
@@ -55,7 +57,7 @@ export const progressBar = () => {
           </a>
         </li>
         <li class="d-inline">
-          <a
+          <Link
             class="d-inline-flex flex-items-center Link--secondary text-small mr-3 flex-nowrap no-underline"
             href="/planetscale/beam/search?l=shell"
             data-ga-click="Repository, language stats search click, location:repo overview"
@@ -74,10 +76,10 @@ export const progressBar = () => {
             </svg>
             <span class="color-fg-default text-bold mr-1">Shell</span>
             <span>10.1%</span>
-          </a>
+          </Link>
         </li>
         <li class="d-inline">
-          <a
+          <Link
             class="d-inline-flex flex-items-center Link--secondary text-small mr-3 flex-nowrap no-underline"
             href="/planetscale/beam/search?l=javascript"
             data-ga-click="Repository, language stats search click, location:repo overview"
@@ -96,10 +98,10 @@ export const progressBar = () => {
             </svg>
             <span class="color-fg-default text-bold mr-1">JavaScript</span>
             <span>4.4%</span>
-          </a>
+          </Link>
         </li>
         <li class="d-inline">
-          <a
+          <Link
             class="d-inline-flex flex-items-center Link--secondary text-small mr-3 flex-nowrap no-underline"
             href="/planetscale/beam/search?l=css"
             data-ga-click="Repository, language stats search click, location:repo overview"
@@ -118,7 +120,7 @@ export const progressBar = () => {
             </svg>
             <span class="color-fg-default text-bold mr-1">CSS</span>
             <span>3.2%</span>
-          </a>
+          </Link>
         </li>
       </ul>
     </>

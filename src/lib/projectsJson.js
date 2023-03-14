@@ -29,7 +29,7 @@ const projectsList = [
     longDescription:
       'We’ve actually published four info products ourselves and this landing page is honestly better than the sites we designed for all of those.',
     theme: {
-      bgcolor: 'bg-black',
+      bgcolor: 'bg-sky-100 bg-black',
       color: 'border-black',
       textcolor: 'text-black dark:text-yellow-400/70',
     },
@@ -148,7 +148,7 @@ const projectsList = [
     title: 'Talk It Out',
     tech: ['NextJs', 'Sanity'],
     theme: {
-      bgcolor: 'bg-indigo-500',
+      bgcolor: 'bg-indigo-300',
       color: 'border-idigo-500',
       textcolor: 'text-indigo-600',
     },
@@ -268,7 +268,7 @@ const projectsList = [
     tech: ['VueJs', 'Firebase'],
     title: 'Chef Kenneth',
     theme: {
-      bgcolor: 'bg-indigo-500',
+      bgcolor: 'bg-teal-100',
       color: 'border-idigo-500',
       textcolor: 'text-indigo-600',
     },

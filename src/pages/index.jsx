@@ -267,7 +267,7 @@ export default function Home({ blogs, music, episodes, className }) {
         </div>
         <ProjectSample id="Podcasts" ref={podcastRef} />
         <ProjectSection id="Projects" ref={sectProjectRef} />
-        <AboutMe ref={sectAboutMeRef} />
+        {/* <AboutMe ref={sectAboutMeRef} /> */}
         {/* <CustomizedContainer
           ref={blogsRef}
           id="blogs-list-section"
