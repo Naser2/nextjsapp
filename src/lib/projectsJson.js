@@ -41,6 +41,7 @@ const projectsList = [
     images: [miras_work_main],
     projectDetails: [
       {
+        delivrables: { delivrablesStatus: 'bg-blue-500' },
         statment: 'inspired by News+ Apple News and more',
         deliveryTime: '2 Weeeks',
         technologies:
@@ -104,6 +105,7 @@ const projectsList = [
     images: [blogLongRed, blogdeskMob, blog_photolarge],
     projectDetails: [
       {
+        delivrables: { delivrablesStatus: 'bg-blue-500' },
         statment: 'inspired by News+ Apple News and more',
         deliveryTime: '2 Weeeks',
         technologies:
@@ -163,6 +165,7 @@ const projectsList = [
     images: [podcast_main],
     projectDetails: [
       {
+        delivrables: [{ delivrablesStatus: 'bg-green-500' }],
         statment: 'inspired by News+ Apple News and more',
         deliveryTime: '2 Weeeks',
         technologies:
@@ -223,6 +226,7 @@ const projectsList = [
     images: [oneway],
     projectDetails: [
       {
+        delivrables: { delivrablesStatus: 'bg-yellow-500' },
         statment: 'inspired by News+ Apple News and more',
         deliveryTime: '2 Weeeks',
         technologies:
@@ -245,6 +249,7 @@ const projectsList = [
             value: ['like', 'share', 'a blog'],
           },
         ],
+
         email: 'f•••@example.com',
         phone: '1•••••••••40',
         href: '#',
@@ -284,6 +289,7 @@ const projectsList = [
     images: [chef_1, chef_2],
     projectDetails: [
       {
+        delivrables: { delivrablesStatus: 'bg-green-500' },
         statment: 'inspired by News+ Apple News and more',
         deliveryTime: '2 Weeeks',
         technologies:
@@ -332,6 +338,7 @@ const projectsList = [
       color: 'border-idigo-500',
       textcolor: 'text-indigo-600',
     },
+
     description:
       'You’ve ordered your SM7B, boom arm, and a bunch of acoustd your first episode.',
     longDescription:
@@ -344,6 +351,7 @@ const projectsList = [
     images: [eth_deployer_2],
     projectDetails: [
       {
+        delivrables: { delivrablesStatus: 'bg-blue-500' },
         statment: 'inspired by News+ Apple News and more',
         deliveryTime: '2 Weeeks',
         technologies:
@@ -406,6 +414,7 @@ const projectsList = [
     images: [podcastBabe1],
     projectDetails: [
       {
+        delivrables: { delivrablesStatus: 'bg-orange-500' },
         statment: 'inspired by News+ Apple News and more',
         deliveryTime: '2 Weeeks',
         technologies:
@@ -454,6 +463,7 @@ const projectsList = [
       color: 'border-orange-500',
       textcolor: 'text-yellow-600',
     },
+
     description: 'stop procrastinating and record your first episode.',
     longDescription:
       "You’ve ordered your SM7B, boom arm, and a bunch of acoustic foam. With this,ouhveueqqeouhuoho'uh j/ilhj",
@@ -465,6 +475,7 @@ const projectsList = [
     images: [courses_site_2],
     projectDetails: [
       {
+        delivrables: { delivrablesStatus: 'bg-blue-500' },
         statment: 'inspired by News+ Apple News and more',
         deliveryTime: '2 Weeeks',
         technologies:

@@ -32,14 +32,13 @@ const Project = function ({ project, previousPathname, ...props }) {
   }
 
   const TablewithTags = ({ array }) => {
-    console.log('ARRAY', array)
+    console.log('ARRAY-->>>>>', array)
     // array.map((field) => {
     return (
-      <dd className="mt-3 " key={project.title}>
+      <dd className="mt-3 px-6" key={project.title}>
         {array.map((field) => {
           return (
             <div key={field.label} className="flex">
-              {/* <div className="pl-2 text-sm text-gray-500">{field.label}</div> */}
               <div className="text-sm text-gray-900" key={field.label}>
                 <span
                   className="inlie-flex px-2 dark:text-slate-300"
@@ -48,7 +47,7 @@ const Project = function ({ project, previousPathname, ...props }) {
                   {delivrables[field.value[0].trim().toLowerCase()] !==
                   'undefined' ? (
                     <>
-                      <span className="pr-2 text-sm text-gray-500">
+                      <span className="pr-2 text-sm text-slate-900 dark:text-gray-500">
                         {field.label}
                       </span>
                       <CustomTag variant="medium">{field.value[0]}</CustomTag>
@@ -65,7 +64,7 @@ const Project = function ({ project, previousPathname, ...props }) {
                     <CustomTag variant="medium">{field.value[1]}</CustomTag>
                   </span>
                 ) : (
-                  <span className="px-0  dark:text-slate-300">
+                  <span className="px-0  text-slate-900 dark:text-gray-500">
                     {field.value[1]}
                   </span>
                 )}
@@ -77,7 +76,7 @@ const Project = function ({ project, previousPathname, ...props }) {
                   </span>
                 ) : (
                   <span
-                    className="px-2 dark:text-slate-300"
+                    className="px-2 text-slate-900 dark:text-gray-500"
                     key={field.value[2]}
                   >
                     {field.value[2]}
@@ -94,9 +93,6 @@ const Project = function ({ project, previousPathname, ...props }) {
                     {field.value[3]}
                   </span>
                 )}
-                {/* <span className="px-2" key={field.value[3]}>
-                  {field.value[-1]}
-                </span> */}
               </div>
             </div>
           )
@@ -118,9 +114,9 @@ const Project = function ({ project, previousPathname, ...props }) {
   return (
     <section
       aria-labelledby="products-heading"
-      className="md:py-26 mx-8  py-14 lg:mx-32 "
+      className="md:py-26 mx-8  py-14 pt-5 lg:mx-32 "
     >
-      <header class="lg:max-w-8xl">
+      <header class="lg:max-w-8xl pt-6 md:pt-10">
         <PageCommonPaginators
           href="/projects/talk-it-out"
           previousPathname={previousPathname}
@@ -164,75 +160,87 @@ const Project = function ({ project, previousPathname, ...props }) {
             >
               whith {project.tech[0]}
             </h2>
+            <div class="status-indicator max-w-100 flex rounded-md border border-slate-200 bg-transparent px-4 py-2">
+              <small
+                class="text-lg text-slate-900 dark:text-slate-400"
+                // style={color: 'var(--geist-foreground)' font-size:"14px"}
+              >
+                Activity Monitor
+              </small>
+              <span class="relative mx-3 mt-2 flex h-3 w-3 ">
+                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
+                <span class="relative inline-flex h-3 w-3 rounded-full bg-sky-500"></span>
+              </span>
+              <small
+                class="geist-themed system-normal geist-ellipsis text-md blue_txt mt-1"
+                type="system-normal"
+              >
+                All systems normal.
+              </small>
+            </div>
             <div
               id="status"
-              className="max-w-100 flex bg-sky-200/10 px-2 py-2  dark:mt-4 dark:rounded-md "
+              className="max-w-100 dark:bg-sky-fade flex px-3 py-2  dark:mt-4 dark:rounded-md "
             >
               {/* dark:bg-sky-200/10 */}
-              <p className="mr-2 min-w-0 flex-1" type="default">
-                <div className="text-xl font-bold text-slate-800 dark:font-medium dark:text-slate-300/80">
+              <p className="mr-2 min-w-0 flex-1 py-1" type="default">
+                <div className="my-0.1 text-lg  text-slate-800 dark:font-medium dark:text-slate-300/80">
                   STATUS
                 </div>
                 <span className="text-slate-900 dark:text-slate-400">
                   Ready <span className="deployment-status ready"></span>
                 </span>
               </p>
-              <div className="flex-2 min-w-0" type="default">
-                <div className="text-xl font-bold text-slate-800  dark:text-slate-400/80">
+              <div className="flex-2 -mt-1" type="default">
+                <div className="my-0.1 text-lg text-slate-800  dark:text-slate-400/80">
                   <span className="ml-4 text-xl text-slate-800  dark:font-medium dark:text-slate-300/80">
                     DEPLOYED
                   </span>
                 </div>
-                <span className="ml-4 text-slate-400 dark:rounded-md dark:bg-slate-700 dark:px-2 dark:py-1">
+                <span className="ml-4 dark:rounded-md dark:bg-slate-700 dark:px-2 dark:py-1 dark:text-slate-400">
                   14 months
                   <span className="dark:text-yellow-400/80"> (+2d ago)</span>
                 </span>
               </div>
             </div>
-            <span className="dark:black-2-bg  inline-flex bg-sky-200/10 px-2 pr-14 text-slate-900 dark:rounded-b dark:border-b  dark:border-red-300/30 dark:bg-transparent dark:py-2 dark:text-slate-200">
-              <span className="mt-1 pr-2">
-                <svg
-                  data-testid="geist-icon"
-                  fill="none"
-                  height="16"
-                  shape-rendering="geometricPrecision"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  viewBox="0 0 24 24"
-                  width="16"
-                  className="color: currentcolor"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <path d="M2 12h20"></path>
-                  <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"></path>
-                </svg>
-              </span>
-              <span className="dark:text-sky-400 ">DOMAIN</span>
-              <span id="url" className="ml-4 -mt-0.5">
-                <WebsiteUrl
-                  link={'nasdesign.vercel.app'}
-                  href="https://nasdesign.vercel.app/blogs"
-                />
-              </span>
-            </span>
           </div>
           <p
             id="project-satement"
             class="eyebrow-red ml-4 mt-2 mb-4 max-w-3xl hover:text-red-700  active:text-blue-500 dark:text-sky-500 dark:hover:text-indigo-400 md:mx-4 md:mt-0 md:w-1/3 lg:my-20"
           >
             <h1 class="mt-6 mb-4 text-slate-400 sm:col-span-7 sm:mt-0  md:row-end-1">
-              Developers on main
+              Developers on main branch
             </h1>
+            <div
+              class="flex h-10 w-10 animate-bounce 
+            items-center justify-center rounded-full bg-white p-2 shadow-lg
+             ring-1 ring-slate-900/5 dark:bg-slate-800 dark:ring-slate-200/20"
+            >
+              <svg
+                class="h-6 w-6 text-violet-500"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+              </svg>
+            </div>
             <div className="flex items-center gap-4  p-4 ">
               <img
-                className="h-12 w-12 rounded-full"
+                className=" hover:animate-ring h-12 w-12 rounded-full transition duration-150 ease-in-out"
                 src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80"
               />
-              <strong className="text-sm font-medium text-slate-900 dark:text-slate-200">
-                Nasser Sanou
-              </strong>
+              <div id="dev-on-development" className="flex-block">
+                <div className="rounded-md bg-slate-100 px-2 py-0.5 text-sm font-medium text-slate-900 dark:bg-slate-600 dark:bg-slate-100 dark:text-slate-200">
+                  Main dev
+                </div>
+                <strong className="rounded-md  text-sm font-medium text-slate-900 dark:text-slate-200">
+                  Nasser Sanou
+                </strong>
+              </div>
             </div>
             {/* <AuthorIconAndName image={devImage} /> */}
             {project.projectDetails[0].statment}
@@ -260,110 +268,82 @@ const Project = function ({ project, previousPathname, ...props }) {
                 />
               </div>
             </div>
-            <div className="mt-6 mb-4 sm:col-span-7 sm:mt-0 md:row-end-1">
-              <h3 className="text-2xl font-medium text-gray-900 dark:text-white ">
-                DESCRIPTION
-              </h3>
-
-              <p className="mt-2 flex  max-w-lg bg-sky-100/10 py-2 px-2 font-medium text-gray-800 dark:bg-transparent dark:text-slate-300">
-                {project.description}
-              </p>
-              <h3 className="mt-6 mb-2 text-2xl font-medium text-gray-900 dark:text-white">
-                TECHNOLOGIES
-              </h3>
-              <ul className="inline-flex">
-                {project.tech &&
-                  project.tech.map((t) => {
-                    return (
-                      <p
-                        key={t}
-                        className="mr-4 rounded-sm bg-sky-100/50  px-4 py-1 text-sm text-gray-600 dark:bg-transparent dark:text-sky-300/70  dark:text-slate-200 "
-                      >
-                        {t}
-                      </p>
-                    )
-                  })}
-              </ul>
+            <div className=" mb-4 bg-sky-100/10  dark:bg-white sm:col-span-7 sm:mt-0 md:row-end-1 ">
+              <div className=" dark:bg-white sm:col-span-12 md:col-span-7">
+                <dl className="grid grid-cols-1 gap-y-2 border-b border-gray-200 py-4 dark:border-gray-800 sm:grid-cols-1 sm:gap-x-6 ">
+                  <div>
+                    <dt className="tech-max-w rounded-sm  bg-sky-300/20 px-2.5 py-0.5 text-2xl  font-medium text-gray-900">
+                      DESCRIPTION
+                    </dt>
+                    <p className="py-2  px-4 text-xl  text-gray-700 dark:bg-transparent">
+                      {project.description}
+                    </p>
+                  </div>
+                </dl>
+              </div>
+              <div className=" dark:bg-white sm:col-span-12 md:col-span-7">
+                <dl className="grid grid-cols-1 gap-y-2 border-b border-gray-200 py-4 dark:border-gray-800 sm:grid-cols-1 sm:gap-x-6 sm:py-3 ">
+                  <div>
+                    <dt className="tech-max-w bg-sky-slate/30  rounded-sm px-2.5 py-0.5 text-2xl  font-medium text-gray-900">
+                      TECHNOLOGIES
+                    </dt>
+                    <ul className="inline-flex px-2 py-4">
+                      {project.tech &&
+                        project.tech.map((t) => {
+                          return (
+                            <p
+                              key={t}
+                              className="mr-4 rounded-sm bg-sky-100/50  px-4 py-1 text-sm text-gray-600 dark:bg-transparent dark:text-sky-600/90 "
+                            >
+                              {t}
+                            </p>
+                          )
+                        })}
+                    </ul>
+                  </div>
+                </dl>
+              </div>
             </div>
-            <div className="sm:col-span-12 md:col-span-7">
-              <dl className="grid grid-cols-1 gap-y-8 border-b border-gray-200 py-4 dark:border-gray-800 sm:grid-cols-1 sm:gap-x-6 sm:py-6 md:py-10">
-                <div>
-                  <dt className="text-2xl  font-medium text-gray-900 dark:text-white">
-                    DELIVERABLES
-                  </dt>
 
-                  {projectDetails.map(({ scopes }, i) => {
-                    return <TablewithTags array={scopes} key={project.title} />
-                  })}
-                </div>
-                <div class="status-indicator_content__7XAr8">
-                  <small
-                    class="geist-text small"
-                    // style={color: 'var(--geist-foreground)' font-size:"14px"}
-                  >
-                    Status:
-                  </small>
-                  <span
-                    class="status-indicator_indicator__sOs1Y"
-                    data-testid="footer/status/success"
-                  ></span>
-                  <small
-                    class="geist-themed geist-success geist-ellipsis geist-text small w-500"
-                    type="success"
-                  >
-                    All systems normal.
-                  </small>
-                </div>
-                {/*<div>
-                 <dt className="text-2xl font-medium text-gray-900 dark:text-white">
-                    PENDING FEATURES
-            
+            <div className="pb-20 dark:bg-white sm:col-span-12 md:col-span-7 ">
+              <dl className="grid grid-cols-1 gap-y-2 border-b border-gray-200 py-4 dark:border-gray-800 sm:grid-cols-1 sm:gap-x-6 sm:py-1 md:py-4">
+                <div>
+                  <dt className="tech-max-w flex rounded-sm  px-2.5 py-0.5 text-2xl  font-medium text-gray-900">
+                    DELIVERABLES{' '}
+                    <span class="flex translate-x-5 flex-col items-center space-y-2">
+                      <div
+                        id="project-deliverables-status"
+                        class={clsx(
+                          project.projectDetails[0].delivrables
+                            .delivrablesStatus
+                            ? project.projectDetails[0].delivrables
+                                .delivrablesStatus
+                            : 'bg-blue-500',
+                          '-mt-1  h-8  w-8 rounded-full border-4  border-white shadow-lg'
+                        )}
+                      ></div>
+                      <div class="h-4 w-0.5 bg-slate-300"></div>
+                    </span>
                   </dt>
-                  <dd className="mt-3 space-y-3 text-gray-500">
-                    <p>{project.email}</p>
-                    <p>{project.phone}</p>
-                    <div>
-                      {projectDetails.map((i) => (
-                        <li
-                          key="pendingFeatures"
-                          className="dark:text-slate-300"
-                        >
-                          {i.pendingFeatures}
-                        </li>
-                      ))}
-                      <p
-                        className="geist-text body-2"
-                        title=""
-                        type="secondary"
-                      >
-                        GitHub URL for&nbsp;&nbsp;
-                        <Link
-                          href="https://github.com/Naser2/nextjsapp/tree/main"
-                          rel="noopener"
-                          target="_blank"
-                          class="link_link__LTNaQ filter-branch-entity-bar_entitySpan__AcHdW"
-                        >
-                          main
-                        </Link>
-                      </p>
-                    </div>
-                    <button
-                      type="button"
-                      className="font-medium text-indigo-600 hover:text-indigo-500"
-                    >
-                      Edit
-                    </button>
-                  </dd>
-                </div> */}
+                  <span className="">
+                    {projectDetails.map((detail, i) => {
+                      console.log('DELIVRABLES-SCOPES-->:', detail)
+                      // return <h1 key={i}>Scope</h1>
+                      return (
+                        <TablewithTags
+                          array={detail.scopes}
+                          key={project.title}
+                        />
+                      )
+                    })}
+                  </span>
+                </div>
               </dl>
-              <p className="mt-6 font-medium text-gray-900 md:mt-10">
-                {project.status} on{' '}
-                <time dateTime={project.dateTime}>{project.date}</time>
-              </p>
-              <div className="mt-6">
+
+              <div className="mt-6 px-4">
                 <div className="opacity-1  z-30 overflow-hidden rounded-full bg-gray-200">
                   <div
-                    className="z-30 h-2 rounded-full bg-gradient-to-r from-indigo-600  to-teal-300 to-teal-600 py-2 text-base dark:bg-gray-700 "
+                    className="z-30 h-1.5 rounded-full bg-gradient-to-r from-indigo-600  to-teal-300 to-teal-600 py-2 text-base dark:bg-gray-700 "
                     style={{
                       width: `calc((${project.step} * 2 + 1) / 8 * 100%)`,
                     }}
@@ -371,14 +351,14 @@ const Project = function ({ project, previousPathname, ...props }) {
                 </div>
 
                 <div className="mt-6 grid grid-cols-4 text-sm text-gray-600 sm:grid md:font-medium">
-                  <div className="text-indigo-600">Order placed</div>
+                  <div className="text-indigo-600">Wireframed</div>
                   <div
                     className={clsx(
                       project.step > 0 ? 'text-indigo-400' : '',
                       'text-center'
                     )}
                   >
-                    Processing
+                    Developing
                   </div>
                   <div
                     className={clsx(
@@ -386,7 +366,7 @@ const Project = function ({ project, previousPathname, ...props }) {
                       'text-center'
                     )}
                   >
-                    Shipped
+                    Iterations
                   </div>
 
                   <div
@@ -395,13 +375,13 @@ const Project = function ({ project, previousPathname, ...props }) {
                       'text-right'
                     )}
                   >
-                    Delivered
+                    Completed
                   </div>
                 </div>
-                <MediaGallery
+                {/* <MediaGallery
                   galleryTitle={'More Imges'}
                   collection={project.images.reverse()}
-                />
+                /> */}
               </div>
             </div>
           </div>
@@ -411,7 +391,6 @@ const Project = function ({ project, previousPathname, ...props }) {
           previousPathname={previousPathname}
           text={'Next project'}
         />
-        <NextButton text={'See next project'} href={'/projects/talk-it-out'} />
 
         {/* collection,
     galleryTitle,

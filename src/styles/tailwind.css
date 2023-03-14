@@ -63,6 +63,7 @@
   --accents-8: #111;
   --geist-cyan: #50e3c2;
   --geist-space-gap: 24px;
+  --geist-background: #fff;
 }
 .sahara_bg {
   background-color: #f0e8e4;
@@ -90,6 +91,9 @@
   .landing-video-container {
     height: 44rem;
   }
+}
+.blue_txt {
+  color: #0070e0;
 }
 .globalnav-curtain {
   background: rgba(232, 232, 237, 0.4);
@@ -3685,11 +3689,6 @@ black-3-bg {
   line-height: 2rem;
   display: inline-block;
 }
-*,
-:after,
-:before {
-  box-sizing: inherit;
-}
 .inline-button.inline-button-theme {
   --component-inline-button: #0070e0;
   color: var(--component-inline-button);
@@ -3720,4 +3719,21 @@ black-3-bg {
   width: 1.75rem;
   padding: 0.119rem 0.9rem;
   transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.bg-sky-fade {
+  background-color: rgb(85 187 239 / 15%);
+}
+.dark .dark\:bg-sky-fade {
+  background-color: rgb(69 114 137 / 10%);
+}
+
+.desc-max-w {
+  max-width: 181px;
+}
+.tech-max-w {
+  max-width: 200px;
+}
+.del-max-w {
+  max-width: 215px;
 }
