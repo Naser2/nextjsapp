@@ -289,7 +289,9 @@
     padding-right: 403px;
   }
 } */
-
+.subtle-link {
+  color: #a0cbef;
+}
 .company-logo .company-logo-line-two {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -364,8 +366,8 @@ element.style {
   .section-content {
     margin-left: auto;
     margin-right: auto;
-    /* width: 980px; */
-    width: 469px;
+    width: 980px;
+    /* width: 469px; */
     padding-top: 0px !important;
   }
 }
@@ -1834,7 +1836,7 @@ element.style {
   color: #f73558;
 }
 
-.section-features .headline {
+.headline {
   font-weight: 700;
 }
 .typography-news-copy {
@@ -3560,6 +3562,26 @@ black-3-bg {
   background-color: #fff0d1;
 }
 
+@media (min-width: 768px) {
+  .md\:about-statement-bg {
+    background-color: #fff0d1;
+  }
+}
+.about-me-h2 {
+  color: #215787f5;
+}
+@media (min-width: 768px) {
+  .dark\:about-me-h2 {
+    color: #215787f5 !important;
+  }
+}
+
+@media (min-width: 1470px) {
+  .about-statement-bg {
+    max-width: 39.5rem !important;
+  }
+}
+
 .first-desktop-feature-element-bg {
   /* background: #ffdd40 !important; beautifull yellow  */
   background: #fde163 !important;
@@ -3570,8 +3592,8 @@ black-3-bg {
 }
 
 .rounded-t-xxl {
-  border-top-left-radius: 3.99rem;
-  border-top-right-radius: 3.99rem;
+  border-top-left-radius: 3.19rem;
+  border-top-right-radius: 3.19rem;
 }
 
 @media (min-width: 768px) {
@@ -3585,21 +3607,34 @@ black-3-bg {
   border-top-right-radius: 3.99rem;
 }
  */
+.dark .dark\:podcast-footer {
+  background: black !important;
+  margin-top: -6px;
+  padding-top: 25px;
+}
 
 .podcast-footer {
-  background: #454b5147;
+  /* background: white !important; */
   margin-top: 3px;
   padding-top: 19px;
   opacity: 100;
   z-index: 100;
 }
-@media (max-width: 768px) {
+/* .podcast-footer {
+  background: #454b5147;
+  margin-top: 3px;
+  padding-top: 19px;
+  opacity: 100;
+  z-index: 100;
+} */
+/* @media (max-width: 768px) {
   .podcast-footer {
-    background: black !important;
+    background: black;
     margin-top: -6px;
     padding-top: 25px;
   }
-}
+} */
+
 .podcast-pb-color {
   background: #454b5147;
 }

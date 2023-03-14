@@ -53,7 +53,7 @@ import KeysProvider from '@/lib/keys'
 import Link from 'next/link'
 import { AboutMe } from '@/components/indexComponents/AboutMe'
 import { TriangleDownSideUp } from '@/components/Container'
-import { ProjectSample } from '@/components/indexComponents/ProjectSample'
+import ProjectSample from '@/components/indexComponents/ProjectSample'
 
 const { PROJECT_ID, TITLE, NAME, DATA_SET } = KeysProvider()
 console.log('PROJECT_ID_KEYZ', PROJECT_ID, TITLE, NAME, DATA_SET)
@@ -62,6 +62,7 @@ export default function Home({ blogs, music, episodes, className }) {
   console.log('MUSIC[0]', music)
   const sectAboutRef = useRef(null)
   const sectAboutMeRef = useRef(null)
+  const podcastsRef = useRef(null)
   const sectProjectRef = useRef(null)
   const blogsRef = useRef(null)
   const learnCode = useRef(null)
@@ -225,9 +226,10 @@ export default function Home({ blogs, music, episodes, className }) {
         <SocialMediaaHandles />
 
         <Galery
+          aboutRef={sectAboutRef}
+          podcastsRef={podcastsRef}
           projectsRef={sectProjectRef}
           learnToCode={learnCode}
-          aboutRef={sectAboutRef}
           blogsRef={blogsRef}
           podcastRef={podcastRef}
           socialsRef={socialsRef}
@@ -263,10 +265,10 @@ export default function Home({ blogs, music, episodes, className }) {
             </Link>
           </div>
         </div>
-        <ProjectSample />
-        <ProjectSection />
-        <AboutMe ref={sectAboutMeRef} />
-        <CustomizedContainer
+        <ProjectSample id="Podcasts" ref={podcastRef} />
+        <ProjectSection id="Projects" ref={sectProjectRef} />
+        {/* <AboutMe ref={sectAboutMeRef} /> */}
+        {/* <CustomizedContainer
           ref={blogsRef}
           id="blogs-list-section"
           page={false}
@@ -282,7 +284,7 @@ export default function Home({ blogs, music, episodes, className }) {
           title="Stay amazing. Keep reading &  Stay Cool"
           description="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
           sectionNameinnerStyle="smooth-indo-bg border border-indigo-700/10  p-4 lg:p-24 dark:subtle-indigo  dark:border-0"
-        ></CustomizedContainer>
+        ></CustomizedContainer> */}
 
         {/* <SectionProjects ref={sectProjectRef} /> */}
         {/* <CallToAction /> */}
