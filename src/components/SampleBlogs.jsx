@@ -408,10 +408,14 @@ function MainBlog() {
   )
 }
 
-const BlogsSample = (props) => {
-  // console.log('ARTICLE REF: ' + ref)
+const BlogsSample = forwardRef((props, ref) => {
+  console.log('BLOGS_SAMPLE_REF ', ref)
   return (
-    <section className="bg-slate overflow-hidden bg-black ">
+    <section
+      id="blogs"
+      ref={ref}
+      className="bg-slate overflow-hidden bg-black pb-10"
+    >
       {/* <HeroPattern/> */}
       <div className="my-0  xl:max-w-none">
         <div className="max-w-10xl  ">
@@ -421,7 +425,7 @@ const BlogsSample = (props) => {
             </h2>
           </div>
           <MainBlog />
-          <div className="not-prose mt-4 grid grid-cols-1 gap-8 border-t border-zinc-900/5 px-4 pt-10 dark:border-white/5 sm:grid-cols-2 md:px-0 lg:px-10 xl:grid-cols-3 ">
+          <div className="not-prose mt-4   grid grid-cols-1 gap-8 border-t border-zinc-900/5 px-4 pt-10 dark:border-white/5 sm:grid-cols-2 md:px-0 lg:px-10 xl:grid-cols-3 ">
             {BlogSamples.slice(1, -3).map((sample) => (
               <Blog key={sample.href} sample={sample} />
             ))}
@@ -445,7 +449,7 @@ const BlogsSample = (props) => {
       </div>
     </section>
   )
-}
+})
 
 // export async function getStaticProps() {
 //   return {
@@ -454,5 +458,5 @@ const BlogsSample = (props) => {
 //     },
 //   }
 // }
-// BlogsSample.displayName = BlogsSample
+BlogsSample.displayName = BlogsSample
 export default BlogsSample

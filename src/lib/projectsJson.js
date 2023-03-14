@@ -92,7 +92,7 @@ const projectsList = [
     },
 
     description:
-      'Su You’ve ordered your SM7B, boom arm, and a bunch of acoustic foam.',
+      'You can finally stop procrastinating and record your first episode',
     longDescription:
       'You’ve ordered your SM7B, boom arm, and a bunch of acoustic foam. With this template, you can finally stop procrastinating and record your first episode.',
 
@@ -152,8 +152,7 @@ const projectsList = [
       color: 'border-idigo-500',
       textcolor: 'text-indigo-600',
     },
-    description:
-      'coustic foam. With this template, you can finally stop procrastinating and record your first episode.',
+    description: 'A great podcast for building conversion and engaging....',
     longDescription:
       ' You’ve ordered your SM7B, boom arm, and a bunch of acoustic foam. With this template, you can finally stop procrastinating and record your first episode.',
     projectImage: {
@@ -213,8 +212,7 @@ const projectsList = [
       color: 'border-blue-500',
       textcolor: 'main-blue',
     },
-    description:
-      'A geo-location technology  for west Africa and beyond is enough to make you rip your hair out withs',
+    description: 'A geo-location technology  for west Africa and beyond.',
     longDescription:
       ' You’ve ordered your SM7B, boom arm, and a bunch of acoustic foam. With this template, you can finally stop procrastinating and record your first episode.',
     projectImage: {
@@ -274,8 +272,7 @@ const projectsList = [
       color: 'border-idigo-500',
       textcolor: 'text-indigo-600',
     },
-    description:
-      'Su You’ve ordered your SM7B, boom arm, and a bunch of acoustic foam. With',
+    description: 'A Vue Js app built for Chef Kenneth as a service app.',
     longDescription:
       ' You’ve ordered your SM7B, boom arm, and a bunch of acoustic foam. With this template, you can finally stop procrastinating and record your first episode.',
     projectImage: {

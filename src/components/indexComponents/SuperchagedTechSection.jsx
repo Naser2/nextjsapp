@@ -30,11 +30,12 @@ export default function SuperchagedTechSection({ classNames }) {
           className="px-0  sm:px-8 lg:px-6"
         >
           <Intro
-            padding="-mt-4 px-4  lg:mt-10"
+            introWrapper="text-white  bg-black md:bg-transparent"
+            padding="-mt-4  px-4 py-4 md:py-0  md:px-4 lg:mt-10"
             content={introContent}
-            h1Class={' sr-only md:not-sr-only'}
+            h1Class={'sr-only md:not-sr-only dark:md:text-black md:pt-6'}
             h20Class={
-              'md:text-wheat text-slate-900  lg:text-slate-900  md:text-slate-800 dark:text-red-400'
+              'text-white  md:text-wheat text-slate-900  lg:text-slate-900  md:text-slate-800 dark:about-me-h2'
             }
             textBg="dark:bg-sky-600"
             h2Bg="about-statement-bg"

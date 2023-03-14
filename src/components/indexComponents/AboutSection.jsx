@@ -10,9 +10,9 @@ const AboutSection = forwardRef((props, ref) => {
   const padding = 'px-4 sm:px-6'
   return (
     <section
-      id="section-about"
+      id="About-Nas"
       ref={ref}
-      className="bg-black md:mt-10 md:mb-20"
+      className="relative bg-black md:mt-10 md:mb-20"
     >
       <div className="relative">
         <div className="h-full w-full sm:h-64 lg:absolute lg:top-0 lg:right-0 lg:h-full lg:w-1/2 ">

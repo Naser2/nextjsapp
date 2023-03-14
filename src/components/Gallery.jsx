@@ -224,7 +224,6 @@ const PodcastImage = () => {
 
 export const Galery = (
   {
-    sectionRefs,
     projectsRef,
     aboutRef,
     blogsRef,
@@ -237,22 +236,21 @@ export const Galery = (
 ) => {
   const intagramImgs = [
     {
-      ref: projectsRef,
-      id: 1,
-      name: 'Machined',
+      ref: aboutRef,
+      id: 2,
+      name: 'About-Nas',
       href: '#',
       source: istaImg1,
       imageAlt:
         'Black machined steel pen with hexagonal grip and small white logo at top.',
     },
     {
-      ref: aboutRef,
-      id: 2,
-      name: 'About',
+      ref: podcastRef,
+      id: 1,
+      name: 'Podcasts',
       href: '#',
       source: istaImg6,
-      imageAlt:
-        'Black machined steel pen with hexagonal grip and small white logo at top.',
+      imageAlt: 'this podcast was built.....',
     },
     {
       ref: projectsRef,
@@ -390,7 +388,7 @@ export const Podcast = (props) => {
   return (
     <>
       <section
-        id="podcast"
+        // id="podcast"
         className="max-h-xl md:mx-23
         relative my-4 max-w-7xl pb-4 md:my-24 lg:mx-20 lg:py-0 lg:pb-12"
         aria-labelledby="gallery-heading"

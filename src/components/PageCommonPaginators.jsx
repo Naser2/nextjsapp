@@ -3,20 +3,34 @@ import { ArrowLeftIcon } from './icons/Arrows'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
 
-export const NextButton = ({ text, href, customize }) => {
+export const NextButton = ({ text, href, customize, textStyle }) => {
   return (
     <Link
       href={href}
       class={clsx(
-        customize && customize,
-        'justify-stretch lg:bg-wheat flex inline-flex space-y-0 space-x-2 py-2 px-8 text-sm text-sm font-medium leading-6 text-gray-700 text-black hover:rounded-full hover:bg-black hover:px-3 hover:text-white dark:items-center dark:bg-black dark:text-slate-400 sm:flex-row sm:space-y-0 sm:space-x-4 lg:rounded-full lg:px-4 lg:py-1.5 lg:font-semibold lg:leading-6 lg:ring-1 lg:ring-inset lg:ring-sky-600/20'
+        customize
+          ? [
+              customize,
+              'justify-stretch flex inline-flex space-y-0 space-x-2 py-2 px-8 text-lg font-medium leading-6 leading-6 hover:rounded-full hover:bg-black hover:px-3 hover:text-white dark:items-center  sm:flex-row sm:space-y-0 sm:space-x-4 lg:rounded-full lg:px-4 lg:py-1.5 lg:font-semibold lg:leading-6 lg:ring-1 lg:ring-inset lg:ring-sky-600/20 ',
+            ]
+          : 'lg:bg-wheat text-sm text-gray-700 text-black dark:bg-black dark:text-slate-400'
       )}
     >
-      <span className="md:negative-btn-mr hover:text-white dark:text-white dark:text-black dark:hover:text-sky-100">
+      <span
+        className={clsx(
+          textStyle
+            ? [textStyle]
+            : 'md:negative-btn-mr hover:text-white dark:text-white dark:text-black dark:hover:text-sky-100'
+        )}
+      >
         {text}
       </span>
       <svg
-        class=" h-5 w-5 text-gray-700 dark:text-slate-400"
+        class={clsx(
+          textStyle
+            ? [textStyle, 'h-5 w-5 ']
+            : ' h-5 w-5 text-gray-700 dark:text-slate-400'
+        )}
         x-description="Heroicon name: mini/chevron-right"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
