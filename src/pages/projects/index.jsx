@@ -104,6 +104,14 @@ export default function Projects({ projects }) {
           id="project-list-wrapper"
           className="my-10 bg-sky-200/20 dark:bg-blue-300 md:py-10 lg:py-20 "
         >
+          <span
+            title="Feature Release Label: Beta"
+            aria-label="Feature Release Label: Beta"
+            data-view-component="true"
+            class="Label Label--success Label--inline mr-2 px-2"
+          >
+            Beta
+          </span>
           <ProjectsIndex projects={projects} />
         </div>
 

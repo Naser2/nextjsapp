@@ -3538,3 +3538,21 @@ black-3-bg {
   background-color: #563d7c !important;
   width: 3.2%;
 }
+
+.Label--inline {
+  display: inline;
+  font-size: 85%;
+  padding: 0.12em 0.5em;
+}
+.Label,
+.label {
+  --color-border-default: #30363d;
+  border: var(--primer-borderWidth-thin, 1px) solid var(--color-border-default);
+  border-radius: 2em;
+  display: inline-block;
+  font-size: var(--primer-text-body-size-small, 12px);
+  font-weight: var(--base-text-weight-medium, 500);
+  line-height: 18px;
+  padding: 0 7px;
+  white-space: nowrap;
+}
