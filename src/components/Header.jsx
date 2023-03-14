@@ -73,7 +73,7 @@ export const Header = forwardRef(function Header({ className, ...props }, ref) {
       />
       {/* {isCoursePage && <Search />} */}
 
-      <div className="flex items-center gap-5  lg:hidden">
+      <div className="flex items-center gap-3 md:gap-5  lg:hidden">
         <MobileNavigation {...props} />
         <Link href="/" aria-label="Home">
           <CompanyLogo />

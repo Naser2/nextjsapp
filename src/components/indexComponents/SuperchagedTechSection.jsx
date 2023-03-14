@@ -13,20 +13,33 @@ import Link from 'next/link'
 import { textcontainer } from '@/components/Container'
 import { TriangleDownSideUp } from '@/components/Container'
 import classNames from '@/lib/classNames'
-export default function SuperchagedTechSection(classNames) {
+export default function SuperchagedTechSection({ classNames }) {
   const introContent = {
     h1: 'Build for everyone.',
     h2: ['Every feature you need', 'to win', 'Try it for yourself'],
-    tag: { text: 'Projects samples ', color: 'text-sky-400' },
-    description:
-      ' MiraProjects was built with React and Sanity with a modular aproach and a simplitisc design concept.',
+    // tag: { text: 'Projects samples ', color: 'text-sky-400' },
+    // description:
+    //   ' MiraProjects was built with React and Sanity with a modular aproach and a simplitisc design concept.',
   }
 
   return (
     <>
       <div className="dark:bg-wheat bg-white">
-        <Container>
-          <Intro content={introContent} />
+        <Container
+          innerContainerClass="relative  px-0 sm:px-8 lg:px-6"
+          className="px-0  sm:px-8 lg:px-6"
+        >
+          <Intro
+            introWrapper="text-white  bg-black md:bg-transparent"
+            padding="-mt-4  px-4 py-4 md:py-0  md:px-4 lg:mt-10"
+            content={introContent}
+            h1Class={'sr-only md:not-sr-only dark:md:text-black md:pt-6'}
+            h20Class={
+              'text-white  md:text-wheat text-slate-900  lg:text-slate-900  md:text-slate-800 dark:about-me-h2'
+            }
+            textBg="dark:bg-sky-600"
+            h2Bg="about-statement-bg"
+          />
         </Container>
         <div className="mt-16 md:hidden">
           <FeaturesMobile />
@@ -64,7 +77,7 @@ export default function SuperchagedTechSection(classNames) {
           id="Podcast-superchage"
           className="elative relative isolate  overflow-hidden bg-gradient-to-b from-indigo-100/20 lg:my-10 lg:my-24"
         >
-          <div className="mx-2 grid grid-cols-1 gap-x-8 gap-y-8 sm:gap-x-6 md:grid-cols-2 md:grid-cols-2 lg:mx-24 lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-8">
+          <div className="bggap-x-8 mx-2 grid grid-cols-1 gap-y-8 sm:gap-x-6 md:grid-cols-2 md:grid-cols-2 lg:mx-4 lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-8">
             <div className="px-0 lg:-mt-4">
               <div className="mx-auto  max-w-2xl  lg:mt-6">
                 <div className="max-w-lg">
@@ -156,7 +169,7 @@ export const SuperChargedHalhPhone = ({
           : 'rrelative isolate  overflow-hidden bg-gradient-to-b from-indigo-100/20 lg:my-10 lg:my-24'
       )}
     >
-      <a
+      <Link
         class={`max-w-[36rem] text-indigo-500 dark:text-red-500/70  dark:hover:text-sky-400 
        ${textcontainer}
         `}
@@ -166,7 +179,7 @@ export const SuperChargedHalhPhone = ({
         <span class=" ml-6 rounded-full bg-indigo-500  px-2 py-0.5 text-xs font-medium leading-5 text-white dark:bg-red-300 dark:bg-white dark:text-white dark:text-indigo-600">
           react-native
         </span>
-      </a>
+      </Link>
       <Intro
         content={introContent}
         h1Class="text-indigo-900/80 dark:text-slate-800 text-5xl"
@@ -177,12 +190,12 @@ export const SuperChargedHalhPhone = ({
         padding={'pt-0'}
       />
       <div class="mx-10 mt-1 text-base md:mt-2">
-        <a
+        <Link
           class="mx-3 font-semibold text-indigo-600/60 md:mx-12 "
           href={'projects/broadcast-baby'}
         >
           See project<span aria-hidden="true"> →</span>
-        </a>
+        </Link>
       </div>
       <div className="mx-2 grid grid-cols-1 gap-x-8 gap-y-8 sm:gap-x-6 md:grid-cols-2 md:grid-cols-2 lg:mx-24 lg:grid-cols-2 xl:grid-cols-2 xl:gap-x-8">
         <div className="px-0 lg:-mt-4">

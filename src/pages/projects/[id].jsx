@@ -13,7 +13,8 @@ import Image from 'next/image'
 import { CustomTag } from '@/components/CustomTag'
 import { NextButton } from '@/components/PageCommonPaginators'
 import PageCommonPaginators from '@/components/PageCommonPaginators'
-
+import { AuthorIconAndName } from '@/components/icons/Image'
+// import devImage from '@/images/nas_portraitt.png'
 const Project = function ({ project, previousPathname, ...props }) {
   const delivrables = {
     write: 'write',
@@ -165,8 +166,9 @@ const Project = function ({ project, previousPathname, ...props }) {
             </h2>
             <div
               id="status"
-              className="max-w-100 flex bg-sky-200/10 px-2 py-2  dark:mt-4 dark:rounded-md dark:bg-sky-200/10"
+              className="max-w-100 flex bg-sky-200/10 px-2 py-2  dark:mt-4 dark:rounded-md "
             >
+              {/* dark:bg-sky-200/10 */}
               <p className="mr-2 min-w-0 flex-1" type="default">
                 <div className="text-xl font-bold text-slate-800 dark:font-medium dark:text-slate-300/80">
                   STATUS
@@ -220,9 +222,19 @@ const Project = function ({ project, previousPathname, ...props }) {
             id="project-satement"
             class="eyebrow-red ml-4 mt-2 mb-4 max-w-3xl hover:text-red-700  active:text-blue-500 dark:text-sky-500 dark:hover:text-indigo-400 md:mx-4 md:mt-0 md:w-1/3 lg:my-20"
           >
-            <h1 class="mt-6 mb-4 italic sm:col-span-7 sm:mt-0  md:row-end-1">
-              Inspired By
+            <h1 class="mt-6 mb-4 text-slate-400 sm:col-span-7 sm:mt-0  md:row-end-1">
+              Developers on main
             </h1>
+            <div className="flex items-center gap-4  p-4 ">
+              <img
+                className="h-12 w-12 rounded-full"
+                src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80"
+              />
+              <strong className="text-sm font-medium text-slate-900 dark:text-slate-200">
+                Nasser Sanou
+              </strong>
+            </div>
+            {/* <AuthorIconAndName image={devImage} /> */}
             {project.projectDetails[0].statment}
           </p>
         </div>

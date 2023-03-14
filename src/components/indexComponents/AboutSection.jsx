@@ -2,12 +2,64 @@ import { forwardRef } from 'react'
 import { CustomizedContainer } from '../CustomizedContainer'
 import Image from 'next/image'
 import nasSings from '@/images/nas_singing.jpeg'
+import nas_portrait from '@/images/nas_portrait_long.jpeg'
 import Link from 'next/link'
+import clsx from 'clsx'
 const AboutSection = forwardRef((props, ref) => {
   // console.log('ABOUT IMAGE', nasSings)
+  const padding = 'px-4 sm:px-6'
   return (
-    <section ref={ref} className="bg-black">
-      <CustomizedContainer
+    <section
+      id="About-Nas"
+      ref={ref}
+      className="relative bg-black md:mt-10 md:mb-20"
+    >
+      <div className="relative">
+        <div className="h-full w-full sm:h-64 lg:absolute lg:top-0 lg:right-0 lg:h-full lg:w-1/2 ">
+          <img
+            src={nas_portrait.src}
+            alt=""
+            className="aspect-h-0 md:rounded-b-xxl lg:aspect-h-0  aspect-w-4 sr-only rounded-t-xl object-cover object-center lg:aspect-w-3 md:not-sr-only"
+          />
+        </div>
+        <img
+          src={nas_portrait.src}
+          alt=""
+          className="aspect-h-0 rounded_b-none  lg:aspect-h-0  aspect-w-4 rounded-t-xl object-cover object-center lg:aspect-w-3 md:hidden"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute hidden h-full w-1/2 bg-gray-100 lg:block"
+        />
+        <div className="relative bg-gray-100 pb-20 md:hidden">
+          <div className="mx-auto max-w-7xl  lg:grid lg:grid-cols-2 lg:px-8">
+            <div className="mx-auto max-w-2xl lg:max-w-none lg:py-64">
+              <div className="lg:pr-16">
+                <div id="moto" className={clsx(padding, 'bg-wheat py-4 ')}>
+                  <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl xl:text-6xl">
+                    Focus on what matters
+                  </h1>
+                </div>
+
+                <p className={clsx(padding, 'mt-4 text-xl text-gray-600 ')}>
+                  All the charts, datepickers, and notifications in the world
+                  can't beat checking off some items on a paper card.
+                </p>
+                <div className={clsx(padding, 'mt-6')}>
+                  <Link
+                    href="#"
+                    className="inline-block rounded-md border border-transparent bg-black py-3 px-8 font-medium text-white hover:bg-black"
+                  >
+                    See Profile
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* <CustomizedContainer
         className="max-w-10xl overflow-hidden lg:px-4 lg:pt-4  lg:pt-0 lg:pb-20"
         section="About"
         bgColor="dark:bg-indigo-500"
@@ -139,7 +191,7 @@ const AboutSection = forwardRef((props, ref) => {
             </span>
           </span>
         </button>
-      </div>
+      </div> */}
     </section>
   )
 })

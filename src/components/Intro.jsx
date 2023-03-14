@@ -10,6 +10,8 @@ export const Intro = ({
   name,
   nameClass,
   padding,
+  h2Bg,
+  introWrapper,
   tag = '',
   href,
 }) => {
@@ -22,7 +24,7 @@ export const Intro = ({
       className={clsx(
         name && IntroGrid,
         padding ? padding : 'pt-10 xl:pt-40',
-        'lg:max-w-8xl mx-auto px-8 lg:mx-0 '
+        introWrapper ? introWrapper : 'lg:max-w-8xl mx-auto lg:mx-0 lg:px-8 '
       )}
     >
       <div
@@ -59,25 +61,30 @@ export const Intro = ({
         >
           {h1}
         </h1>
-        <div className="max-w-3xl ">
+        <div
+          className={clsx(h2Bg && h2Bg, 'mt-4 max-w-xl rounded-md py-2 pb-4')}
+        >
           <h2
             className={clsx(
               h20Class
                 ? [
                     h20Class,
-                    'headline typography-header-detail px-4  font-medium tracking-tight text-slate-100/80',
+                    'headline typography-headline px-4  font-medium tracking-tight',
                   ]
                 : 'headline typography-headline px-4  text-3xl font-medium tracking-tight text-slate-100/80 dark:text-slate-100 dark:text-white'
             )}
           >
-            {h2[0] ?? defaultContent.h2[0]}
-
-            {h2[1] && (
+            {h2[0] ?? (
+              <span id="h2" className={clsx(textBg && textBg)}>
+                {defaultContent.h2[0]}
+              </span>
+            )}{' '}
+            {h2[1] ?? <span id="h2">{defaultContent.h2[1]}</span>}
+            {/* {h2[1] && (
               <span className={clsx(h21Class, 'ml-1  text-white lg:ml-2 ')}>
                 {h2[1] ?? ''}
               </span>
-            )}
-
+            )} */}
             {h2[1] && (
               <span className={clsx(h21Class, 'text-red-40 mr-1 lg:mr-2')}>
                 .

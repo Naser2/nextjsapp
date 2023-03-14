@@ -20,31 +20,82 @@ function SpeakingSection({ children, ...props }) {
     </Section>
   )
 }
+const Label = ({ label }) => {
+  return (
+    <span
+      title="Feature Release Label: Beta"
+      aria-label="Feature Release Label: Beta"
+      data-view-component="true"
+      className="Label Label--success Label--inline mr-2 ml-2 px-2  text-black dark:text-white"
+    >
+      {label}
+    </span>
+  )
+}
 const HeaderMainDetails = ({ content }) => {
-  const { tech, category, title, device, tag } = content
+  const { tech, category, title, device, description, tag, dateTime } = content
   return (
     <>
-      <div
-        id="tag"
-        className="dark:bg-sky-10 border-b bg-black px-8  pt-2 pb-2 md:sr-only"
-      >
-        <Link
-          class="text-sky-500 dark:text-white dark:hover:text-sky-400 md:mx-6"
-          href="/showcase"
+      <div id="project-header-details-card">
+        <div
+          id="project-header-details-card-level-1"
+          className="dark:bg-sky-10 bg:slate-400 flex border-b border-t border-slate-600 border-t-slate-600 px-6  py-4 text-white dark:border-orange-400/30  dark:bg-black "
         >
-          {device}
-          <span class="ml-4 rounded-full bg-sky-600 px-2 py-0.5 text-xs font-medium leading-5 text-white dark:bg-white dark:text-indigo-600">
+          <h4 id="project-cartd-level-1 " className="text-slate-800">
+            <div
+              id="stage"
+              className="rounded-md bg-sky-200/90 px-2 dark:bg-slate-900 dark:text-yellow-700 "
+            >
+              Vsist page for development status.
+            </div>
+          </h4>
+        </div>
+        {/* <div
+          id="boder"
+          className="dark:bg-sky-10 flex w-full border-b border-orange-400/70  bg-black"
+        /> */}
+
+        <div id="category-title" className=" px-6 lg:mx-0 ">
+          <h2 className="text-black-500 eyebrow dark:eyebrow-yellow mt-6 flex inline-flex justify-center rounded-full  border border-red-400 border-slate-600 px-3  py-0.5 text-center font-semibold">
+            {category}
+          </h2>
+          <Link
+            className="ml-4 text-sky-500 dark:text-sky-400 dark:hover:text-sky-400 md:mx-4"
+            href="/showcase"
+          >
             {tech}
-          </span>
-        </Link>
-      </div>
-      <div className="categpry-title px-6 lg:mx-0 ">
-        <h2 className=" text-black-500 mt-6 flex rounded-md font-semibold dark:text-indigo-400">
-          {category}
-        </h2>
-        <p className="mt-1 text-3xl font-extrabold tracking-tight text-slate-800 dark:text-white sm:text-4xl ">
-          {title}
-        </p>
+            {/* <span className="ml-4 rounded-full bg-sky-600 px-2 py-0.5 text-xs font-bold font-medium leading-5 text-white dark:bg-white dark:text-indigo-600">
+            {tech}
+          </span> */}
+          </Link>
+          <p className="mt-1 text-3xl font-extrabold tracking-tight text-slate-800 dark:text-white sm:text-4xl ">
+            {title}
+          </p>
+          <p className="my-4 font-medium text-slate-700 dark:text-slate-200">
+            {description}
+          </p>
+          <p className="font-bold text-slate-400">
+            <span className="ml-2 font-medium text-slate-700 dark:text-slate-300">
+              Tech:
+            </span>
+            <span className="font-medium dark:text-slate-300">
+              <Label label={'react'} />
+            </span>
+            <span className="font-medium text-slate-700 dark:text-slate-300">
+              backend:
+            </span>
+            <span className="font-medium dark:text-slate-300">
+              <Label label={'NodeJs'} />
+            </span>
+
+            <span className="font-medium text-slate-700 dark:text-slate-300">
+              year:
+            </span>
+            <span className="font-medium dark:text-slate-300">
+              <Label label={dateTime} />
+            </span>
+          </p>
+        </div>
       </div>
     </>
   )
@@ -100,18 +151,7 @@ export default function Projects({ projects }) {
             classNames={'dark:bg-slate-800 bg-amber-400/50'}
           />
         </div>
-        <div
-          id="project-list-wrapper"
-          className="my-10 bg-sky-200/20 dark:bg-blue-300 md:py-10 lg:py-20 "
-        >
-          <span
-            title="Feature Release Label: Beta"
-            aria-label="Feature Release Label: Beta"
-            data-view-component="true"
-            class="Label Label--success Label--inline mr-2 px-2"
-          >
-            Beta
-          </span>
+        <div id="project-list-wrapper" className="my-10  md:py-10 lg:py-20 ">
           <ProjectsIndex projects={projects} />
         </div>
 
@@ -241,8 +281,9 @@ const ProjectsIndex = function ({ projects }) {
                 className={clsx(
                   // project.imageAspectRatio,
                   // ' rounded-md' ??
-                  'mt-2 sm:rounded-3xl md:mt-0 '
+                  'mt-2 md:mt-0 lg:rounded-3xl '
                 )}
+                x
                 key={project.id}
                 src={project.images[0]}
                 alt={project.projectImage.alt}
@@ -252,78 +293,39 @@ const ProjectsIndex = function ({ projects }) {
             {/* project-page-tag-btn */}
             <div
               id="lg-project-content-text"
-              className="relative flex h-[23.2rem] max-h-[45vh] overflow-hidden bg-white shadow-xl dark:bg-black dark:ring-1
-               dark:ring-inset dark:ring-white/10 dark:backdrop-blur sm:max-h-[none] sm:rounded-xl md:mx-2 md:py-6 md:px-4  lg:mx-0  lg:h-[24.6875rem] lg:max-h-[55vh] xl:h-[40.625rem]"
+              className="relative overflow-hidden bg-white pb-10 pb-6 shadow-xl
+               dark:bg-black dark:ring-1 dark:ring-inset dark:ring-white/10 dark:backdrop-blur sm:rounded-b-xl md:pt-0  lg:max-h-[35vh]"
             >
-              <div className="sm:mx-0  sm:mt-4 lg:col-span-7 lg:mt-0 xl:col-span-6">
-                <div className="max-w-8xl mx-auto px-0 sm:px-6">
+              <div className="sm:mx-0 lg:col-span-7 lg:mt-0 xl:col-span-6">
+                <div className="max-w-8xl mx-auto px-0 sm:px-0">
+                  {/* <p>{project.projectDetails[0]}</p> */}
                   <HeaderMainDetails
                     content={{
-                      device: 'Ipad / Mpbile',
-                      tech: 'react-native',
                       category: project.category,
                       title: project.title,
+                      description: project.description,
                       tag: project.tag,
+
+                      //  => {
+                      //   console.log('PROJECTDETAILS', detail)
+                      // }),
+                      dateTime: project.projectDetails.map(
+                        (detail) => detail.dateTime
+                      ),
+
+                      device: 'Ipad / Mpbile',
+                      tech: 'react-native',
                     }}
                   />
 
-                  <div
-                    id="small-screen-content-and-image"
-                    className="mt-4 max-w-3xl space-y-6 px-8 text-slate-800 dark:text-slate-200 lg:mx-6 lg:hidden "
-                  >
-                    <p>{project.description}</p>
-                    <div className="sr-only py-2  sm:mx-6 lg:not-sr-only lg:flex">
-                      <Image
-                        className={clsx(
-                          project.imageAspectRatio,
-                          ' rounded-md' ??
-                            'mt-2 aspect-[1216/640] sm:rounded-3xl md:mt-0 lg:mt-12'
-                        )}
-                        key={project.id}
-                        src={project.images[0]}
-                        alt={project.projectImage.alt}
-                        sizes="100vw"
-                      />
-                    </div>
-                    <p>
-                      Tech: <span>react</span> backend: <span>Nodejs </span>{' '}
-                      year:
-                      <span>2017 </span>
-                    </p>
-                  </div>
-                  <div
-                    id="lg-description"
-                    className="sr-only mx-10 mt-6 max-w-3xl text-slate-800 dark:text-slate-200 md:px-4 lg:not-sr-only lg:mx-6  lg:mt-4 lg:mb-6 lg:space-y-6"
-                  >
-                    <p>{project.description}</p>
-                    <p>
-                      Tech: <span>react</span> backend: <span>Nodejs </span>{' '}
-                      year:
-                      <span>2017 </span>
-                    </p>
-                    {/* <div className="sr-only py-4  sm:mx-6 md:not-sr-only lg:flex">
-                      <Image
-                        className={clsx(
-                          project.imageAspectRatio,
-                          ' rounded-md' ??
-                            'mt-2 aspect-[1216/640] sm:rounded-3xl md:mt-0 lg:mt-12'
-                        )}
-                        key={project.id}
-                        src={project.images[0]}
-                        alt={project.projectImage.alt}
-                        sizes="100vw"
-                      />
-                    </div> */}
-                  </div>
-
                   <Link
-                    className="group mx-8 mt-8 inline-flex h-9 items-center whitespace-nowrap rounded-full bg-black px-3 text-sm font-semibold text-indigo-100 hover:bg-slate-400 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-indigo-500 dark:text-slate-100 dark:hover:bg-slate-600 dark:hover:text-white dark:focus:ring-slate-500"
+                    className="group mx-8 mt-8 inline-flex h-9 items-center whitespace-nowrap rounded-full bg-black px-3 text-sm font-semibold text-indigo-100 hover:bg-slate-400 hover:text-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-600 dark:hover:text-white dark:focus:ring-slate-500 xl:bg-transparent"
                     href={`projects/${slugify(project.title)}`}
                   >
                     More details
                     <span className="sr-only">Visit the projects page</span>
                     <svg
-                      className="ml-3 overflow-visible text-indigo-300 group-hover:text-indigo-400 dark:text-white dark:group-hover:text-slate-400"
+                      className="ml-3 overflow-visible text-indigo-300 group-hover:text-indigo-400 dark:text-black dark:group-hover:text-slate-400"
                       width="3"
                       height="6"
                       viewBox="0 0 3 6"

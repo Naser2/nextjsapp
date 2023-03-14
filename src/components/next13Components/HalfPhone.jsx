@@ -897,7 +897,7 @@ export function FeaturesMobile() {
           <div
             key={featureIndex}
             ref={(ref) => (slideRefs.current[featureIndex] = ref)}
-            className="w-full flex-none snap-center  sm:px-10"
+            className="w-full flex-none snap-center sm:mr-4 sm:px-4"
           >
             <div className="relative transform overflow-hidden rounded-2xl bg-transparent px-5 py-6 lg:bg-black">
               {/* <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">

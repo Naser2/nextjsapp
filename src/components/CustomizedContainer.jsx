@@ -262,7 +262,7 @@ const OuterContainer = forwardRef(function OuterContainer(
         'Helvetica',
         'Arial',
         'sans-serif',
-        'mb-28',
+        props.mb ? props.mb : 'mb-28',
         bgColorsStyles[bgColor],
         margins[margin]
       )}
@@ -314,7 +314,7 @@ export const CustomizedContainer = forwardRef(function CustomizedContainer(
 ) {
   return (
     <OuterContainer ref={ref} {...props}>
-      <div>{children}</div>
+      <div ref={ref}>{children}</div>
     </OuterContainer>
   )
 })
@@ -336,6 +336,7 @@ CustomizedContainer.propTypes = {
   sticky: propTypes.bool,
   sectionNameinnerStyle: propTypes.string,
   bandtext: propTypes.string,
+  mb: propTypes.string,
 }
 
 CustomizedContainer.defaultProps = {

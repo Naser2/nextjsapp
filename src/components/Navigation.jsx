@@ -483,7 +483,7 @@ export function Navigation(props) {
                     </>
                   )
                 })}
-                <a
+                {/* <a
                   class="nav-secondary-el flex py-1.5 py-1.5 px-3.5 hover:bg-sky-300"
                   href="/blogs/introducing-animaginary"
                 >
@@ -632,7 +632,7 @@ export function Navigation(props) {
                   href="/blogs/introducing-animaginary"
                 >
                   Introducing animaginary
-                </a>
+                </a> */}
               </div>
             )}
 

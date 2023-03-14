@@ -21,11 +21,13 @@ const ProjectSection = forwardRef((props, ref) => {
       ' MiraProjects was built with React and Sanity with a modular aproach and a simplitisc design concept.',
   }
   return (
-    <section ref={ref} className="bg-black">
+    <section className="bg-black">
       <CustomizedContainer
-        className="max-w-10xl overflow-hidden lg:px-4 lg:pt-4  lg:pt-0 lg:pb-20"
+        ref={ref}
+        className="max-w-10xl overflow-hidden  lg:px-4 lg:pt-0"
         section="Projects"
-        id="Projects"
+        mb="py-14 lg:py-10"
+        id="projects"
         bgColor="dark:bg-indigo-500"
         band
         bandcolor="bg-blue-2"
@@ -35,32 +37,8 @@ const ProjectSection = forwardRef((props, ref) => {
         variant="small"
         bandtext="Only writting about what passionates me"
       >
-        <Intro
-          content={introContent}
-          h1Class="text-amber-200"
-          h21Class="text-amber-200"
-          descriptionClass="text-slate-200"
-          // tag= { text: "Collection",  color:"text-sky-400"}
-          name="Miras Project"
-          nameClass="text-white"
-        />
-        <Link
-          className="md:-pt-10  mx-12 pt-10  text-sky-500 dark:hover:text-sky-400 md:mx-6 md:ml-20"
-          href="/showcase"
-        >
-          Desktop / mobile
-          <span className="ml-2 rounded-full bg-sky-600 px-2 py-0.5 text-xs font-medium leading-5 text-sky-600 dark:text-sky-100">
-            react-native{' '}
-          </span>
-        </Link>
-        <div className="mt-16 md:hidden">
-          <FeaturesMobile />
-        </div>
-        <Container className="mt-8 hidden md:mt-20 md:block xl:mt-20">
-          <FeaturesDesktop header />
-        </Container>
+        <SectionProjects />
       </CustomizedContainer>
-      <SectionProjects />
     </section>
   )
 })

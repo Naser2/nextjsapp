@@ -120,7 +120,7 @@ export const AuthorIconAndName = ({
   console.log('KIND:', valueKindMap[size])
   console.log('SIZE:', imageSizes[imgSize].width)
   return (
-    <div className="mt-24 sm:mt-32 lg:mt-16">
+    <div className="mt-4">
       <div className="figma-1k1pkug">
         <Link href="https://twitter.com/AliaFite" className="figma-clygmv ">
           <div className="figma-13icjhm border-lg author-icon-bg rounded-full rounded-full  px-1 py-1">
