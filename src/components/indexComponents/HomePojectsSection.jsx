@@ -35,7 +35,7 @@ const ProjectSection = forwardRef((props, ref) => {
         variant="small"
         bandtext="Only writting about what passionates me"
       >
-        <Intro
+        {/* <Intro
           content={introContent}
           h1Class="text-amber-200"
           h21Class="text-amber-200"
@@ -43,8 +43,8 @@ const ProjectSection = forwardRef((props, ref) => {
           // tag= { text: "Collection",  color:"text-sky-400"}
           name="Miras Project"
           nameClass="text-white"
-        />
-        <Link
+        /> */}
+        {/* <Link
           className="md:-pt-10  mx-12 pt-10  text-sky-500 dark:hover:text-sky-400 md:mx-6 md:ml-20"
           href="/showcase"
         >
@@ -52,13 +52,13 @@ const ProjectSection = forwardRef((props, ref) => {
           <span className="ml-2 rounded-full bg-sky-600 px-2 py-0.5 text-xs font-medium leading-5 text-sky-600 dark:text-sky-100">
             react-native{' '}
           </span>
-        </Link>
-        <div className="mt-16 md:hidden">
+        </Link> */}
+        {/* <div className="mt-16 md:hidden">
           <FeaturesMobile />
         </div>
         <Container className="mt-8 hidden md:mt-20 md:block xl:mt-20">
           <FeaturesDesktop header />
-        </Container>
+        </Container> */}
       </CustomizedContainer>
       <SectionProjects />
     </section>

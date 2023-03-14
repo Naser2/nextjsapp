@@ -51,6 +51,9 @@ import ProjectSection from '@/components/indexComponents/HomePojectsSection'
 
 import KeysProvider from '@/lib/keys'
 import Link from 'next/link'
+import { AboutMe } from '@/components/indexComponents/AboutMe'
+import { TriangleDownSideUp } from '@/components/Container'
+import { ProjectSample } from '@/components/indexComponents/ProjectSample'
 
 const { PROJECT_ID, TITLE, NAME, DATA_SET } = KeysProvider()
 console.log('PROJECT_ID_KEYZ', PROJECT_ID, TITLE, NAME, DATA_SET)
@@ -58,6 +61,7 @@ console.log('PROJECT_ID_KEYZ', PROJECT_ID, TITLE, NAME, DATA_SET)
 export default function Home({ blogs, music, episodes, className }) {
   console.log('MUSIC[0]', music)
   const sectAboutRef = useRef(null)
+  const sectAboutMeRef = useRef(null)
   const sectProjectRef = useRef(null)
   const blogsRef = useRef(null)
   const learnCode = useRef(null)
@@ -135,13 +139,14 @@ export default function Home({ blogs, music, episodes, className }) {
   const HomeMusicPlayer = () => {
     return (
       <>
-        <div className="px-auto xl:items-left relative mt-4 flex flex items-center items-center items-center gap-4 gap-4 px-8 pt-4 lg:px-28 lg:pt-1"></div>
-        <div className="px-auto xl:items-left relative flex items-center items-center gap-4 px-8 pt-0 lg:px-28 lg:pt-1">
+        <div className="px-auto xl:items-left relative mt-10  mb-4 flex items-center items-center gap-4 bg-slate-100 py-2  px-4 dark:bg-transparent lg:px-28 lg:pt-1">
           <button
             type="button"
             onClick={() => player.toggle()}
-            className="-400 flex items-center  rounded-full rounded border border-black bg-slate-900  py-5 px-5 text-sm font-bold leading-6 text-white text-red-400 hover:text-red-500 active:text-blue-900 dark:rounded-full  
-            dark:border-sky-500 dark:bg-sky-400 dark:px-5 dark:py-1 dark:text-white dark:hover:text-sky-600"
+            className="-400 ml-4 flex  items-center rounded-full rounded border border-black bg-slate-900 py-3.5 pt-4 pl-5 pr-3  text-sm font-bold
+            text-black text-white  hover:text-red-500 active:text-blue-900 dark:rounded-full dark:border-sky-500 
+            dark:bg-white dark:px-5  
+            dark:py-1 dark:text-black dark:hover:text-sky-600 md:ml-0 md:ml-0 md:ml-10"
             aria-label={`${player.playing ? 'Pause' : 'Play'} episode`}
           >
             <PlayPauseIcon
@@ -151,7 +156,7 @@ export default function Home({ blogs, music, episodes, className }) {
                 // player.meta &&
                 // player.meta.title === episode.title
               }
-              className="h-6 w-6 fill-current dark:h-2.5 dark:w-2.5 "
+              className="h-5 w-5 fill-current pr-1.5 shadow-lg   dark:h-2.5 dark:w-3  dark:pr-0 "
             />
             {/* <span className="hidden dark:ml-3" aria-hidden="true">
               PLAY
@@ -168,7 +173,7 @@ export default function Home({ blogs, music, episodes, className }) {
             |
           </span>
           <span
-            className="flex items-center text-sm  font-bold leading-6 text-black hover:text-red-700 active:text-blue-500 dark:text-sky-500 dark:hover:text-indigo-400 "
+            className="flex items-center text-sm  font-bold leading-6 text-black hover:text-red-700 active:text-blue-500 dark:text-sky-100 dark:hover:text-indigo-400 "
             aria-label="Show notes for episode 5: Bill Lumbergh"
             href="/podcasts/5"
           >
@@ -176,21 +181,29 @@ export default function Home({ blogs, music, episodes, className }) {
           </span>
         </div>
 
-        <time
-          dateTime="2022-02-24T00:00:00.000Z"
-          className="relative  order-first -mt-6 flex items-center items-center gap-x-4 px-10 px-8 pb-4 text-sm font-medium italic leading-7 text-slate-500 dark:mt-0 lg:mx-4 lg:px-24 lg:pt-1 "
+        <div
+          className=":md:not-sr-only sr-only relative order-first -mt-10 flex items-center items-center gap-x-4 px-10 px-8 pb-4 text-sm
+           font-medium italic leading-7 text-slate-500 dark:mt-0 lg:mx-4 lg:px-24 lg:pt-1 "
         >
           <h2
-            id="episode-5-title"
-            className="ml-24 text-lg font-bold text-slate-400 dark:ml-32 dark:text-slate-300/90 "
+            id="music-title"
+            className="ml-28 -mt-1 text-lg text-slate-400 dark:ml-32 dark:text-slate-300/90 "
           >
             Cool mix
           </h2>
-          Chill Mix
-          <span aria-hidden="true" className="text-sm font-bold text-slate-300">
+          <span
+            aria-hidden="true"
+            className="-mt-1 text-sm font-bold text-slate-300"
+          >
             |
           </span>
-        </time>
+          <span
+            aria-hidden="true"
+            className="-mt-1 text-sm font-bold text-slate-400"
+          >
+            Chill Mix
+          </span>
+        </div>
       </>
     )
   }
@@ -221,7 +234,7 @@ export default function Home({ blogs, music, episodes, className }) {
           githubRef={githubRef}
         />
 
-        <div
+        {/* <div
           className={[
             skyToIndigo,
             'z-[100] hidden h-[40px] w-full flex-col items-center justify-center bg-gray-100 bg-gradient-to-r from-sky-500 to-indigo-500 py-2 text-base dark:bg-gray-700 sm:flex-row sm:py-0 md:text-lg lg:flex',
@@ -233,14 +246,26 @@ export default function Home({ blogs, music, episodes, className }) {
           >
             The journey
           </Link>
-        </div>
+        </div> */}
         <AboutSection ref={sectAboutRef} />
-
-        <SuperchagedTechSection />
-        <div className="pocast-mask mask-image: linear-gradient(to bottom, white, white, transparent);mx-auto xl:max-w-8xl max-w-7xl   sm:px-6 md:px-0">
+        {/* <TriangleDownSideUp
+          classNames={'dark:bg-red-500 max-w-xl fixed absolute top-0'}
+        /> */}
+        <SuperchagedTechSection classNames={'bg-wheat dark:bg-white'} />
+        {/* <div className="pocast-mask mask-image: linear-gradient(to bottom, white, white, transparent);mx-auto xl:max-w-8xl max-w-7xl   sm:px-6 md:px-0">
           <Podcast />
+        </div> */}
+        <BlogsSample ref={blogsRef} />
+        <div className="announcementBanner_root bg-white text-black dark:bg-black dark:text-sky-400">
+          <div className="SkipToContent_skipToContent__Rsvqx px-8 text-left lg:px-20">
+            <Link className="" href="/projects">
+              Projects
+            </Link>
+          </div>
         </div>
-
+        <ProjectSample />
+        <ProjectSection />
+        <AboutMe ref={sectAboutMeRef} />
         <CustomizedContainer
           ref={blogsRef}
           id="blogs-list-section"
@@ -257,17 +282,7 @@ export default function Home({ blogs, music, episodes, className }) {
           title="Stay amazing. Keep reading &  Stay Cool"
           description="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
           sectionNameinnerStyle="smooth-indo-bg border border-indigo-700/10  p-4 lg:p-24 dark:subtle-indigo  dark:border-0"
-        >
-          <BlogsSample ref={blogsRef} />
-        </CustomizedContainer>
-        <div className="announcementBanner_root blue">
-          <div className="blue SkipToContent_skipToContent__Rsvqx px-8 text-left lg:px-20">
-            <Link className="" href="/projects">
-              Projects
-            </Link>
-          </div>
-        </div>
-        <ProjectSection />
+        ></CustomizedContainer>
 
         {/* <SectionProjects ref={sectProjectRef} /> */}
         {/* <CallToAction /> */}

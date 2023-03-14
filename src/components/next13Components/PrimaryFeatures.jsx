@@ -30,19 +30,20 @@ const MotionAppScreenBody = motion(AppScreen.Body)
 
 const features = [
   {
-    name: 'Send us Message to get a consultation',
-    description:
-      'For Project,  ...you get insider notifications And it’s  about 2 days for our team to get back to you.',
-    icon: DeviceUserIcon,
-    screen: SendMessageScreen,
-  },
-  {
     name: 'Works and Projects',
     description:
       'Mira Projects is a design, project and construction management consultancy. Our Boutique team has expertise in retail office and hopitality projects.',
     // icon: DeviceNotificationIcon,
     screen: WorkScreen,
   },
+  {
+    name: 'Send us Message to get a consultation',
+    description:
+      'For Project,  ...you get insider notifications And it’s  about 2 days for our team to get back to you.',
+    icon: DeviceUserIcon,
+    screen: SendMessageScreen,
+  },
+
   {
     name: 'Services',
     description:
@@ -615,15 +616,32 @@ export function FeaturesDesktop() {
       <Tab.List className="relative z-10 order-last col-span-6 space-y-6">
         {features.map((feature, featureIndex) => (
           <div
+            id={`${(featureIndex, feature.name)}`}
             key={feature.name}
-            className="relative rounded-2xl transition-colors hover:bg-gray-800/30"
+            className={clsx(
+              featureIndex === 0
+                ? `${featureIndex}  first-desktop-feature-element-bg  hover:first-desktop-feature-element-bg" relative rounded-2xl transition-colors`
+                : featureIndex === 1 &&
+                  feature.name === 'Send us Message to get a consultation'
+                ? `${featureIndex} relative  rounded-2xl bg-indigo-700 transition-colors`
+                : 'first-desktop-feature-last-element-bg relative rounded-2xl transition-colors hover:bg-gray-800/30'
+              //  className="relative rounded-2xl transition-colors hover:bg-gray-800/30"}
+            )}
           >
             {featureIndex === selectedIndex && (
               <motion.div
+                id={featureIndex}
                 layoutId="activeBackground"
-                className="absolute inset-0 bg-gray-800"
+                className={clsx(
+                  featureIndex === 1
+                    ? `first-desktop-feature-element-bg absolute`
+                    : 'absolute inset-0 bg-gray-800'
+                )}
                 initial={{ borderRadius: 16 }}
               />
+              //   featureIndex === 0
+              // ? ` ${featureIndex}  first-desktop-feature-element-bg absolute `
+              // : 'absolute inset-0 bg-gray-800'bg-gray-800
             )}
             <div className="relative z-10 px-8 pt-2 pb-8">
               {/* <feature.icon className="h-8 w-8" /> */}
@@ -634,6 +652,8 @@ export function FeaturesDesktop() {
                     className={
                       selectedIndex === featureIndex
                         ? 'dark:text-white'
+                        : selectedIndex == 1
+                        ? 'text-white'
                         : 'text-slate-800'
                     }
                   >
@@ -642,7 +662,14 @@ export function FeaturesDesktop() {
                   {dynamicSpan(selectedIndex, featureIndex)}
                 </Tab>
               </h3>
-              <p className="mt-2 text-sm text-gray-500  ">
+              <p
+                className={clsx(
+                  selectedIndex === featureIndex
+                    ? 'text-white'
+                    : 'mt-2 text-sm text-gray-400'
+                  // "mt-2 text-sm text-gray-500"
+                )}
+              >
                 {feature.description}
               </p>
             </div>
