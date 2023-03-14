@@ -171,7 +171,7 @@ const LearnCodeSection = forwardRef((props, ref) => {
           aria-labelledby="sale-heading"
           id="section-coding-course-photos"
         >
-          <div className="mb-20 overflow-hidden bg-white pt-32 dark:bg-teal-600  sm:pt-14">
+          <div className="overflow-hidden bg-white pt-32 dark:bg-teal-600 sm:pt-14  lg:mb-0">
             <div className="bg-black">
               <div className=" max-w-10xl mx-auto ">
                 <div className="relative mx-auto max-w-7xl px-4 pt-48 pb-16 sm:px-6 sm:pb-24 lg:px-8">
