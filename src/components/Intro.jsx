@@ -11,6 +11,7 @@ export const Intro = ({
   nameClass,
   padding,
   h2Bg,
+  introWrapper,
   tag = '',
   href,
 }) => {
@@ -23,7 +24,7 @@ export const Intro = ({
       className={clsx(
         name && IntroGrid,
         padding ? padding : 'pt-10 xl:pt-40',
-        'lg:max-w-8xl mx-auto lg:mx-0 lg:px-8 '
+        introWrapper ? introWrapper : 'lg:max-w-8xl mx-auto lg:mx-0 lg:px-8 '
       )}
     >
       <div
